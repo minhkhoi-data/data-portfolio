@@ -1,159 +1,208 @@
-📦 Olist E-commerce SQL Analysis
+📦 Olist E-commerce SQL Analytics Project
 
-A complete end-to-end SQL analytics project using the Brazilian Olist E-commerce Dataset.
-This project uses PostgreSQL + DBeaver, with data stored under schema raw.
+An end-to-end SQL analytics project using the Brazilian Olist E-commerce Dataset, designed to simulate a real-world analytics workflow from business questions to data-driven insights.
 
-📌 1. Objective
+Core focus:
+Business understanding → Data modeling → SQL analysis → Actionable interpretation
+Technology: PostgreSQL (SQL-only analysis)
 
-The goal of this project is to analyze customer behavior, order performance, delivery efficiency, product categories, and seller operations using SQL only.
+1. Project Objective
 
-This project simulates a real analytics workflow:
+The objective of this project is to analyze the operational and commercial performance of an e-commerce marketplace, focusing on:
 
-Business Questions → Data Modeling → SQL Analysis → Insights
+Order and revenue dynamics
 
-📚 2. Dataset Overview
+Customer behavior and repeat purchasing
 
-The Olist dataset contains 9 raw tables, each representing a key part of the e-commerce operation:
+Delivery and logistics efficiency
+
+Product category performance
+
+Seller operational quality
+
+The project is intentionally constrained to SQL only, reflecting real analytics environments where SQL is the primary decision-making tool.
+
+This repository mirrors a production-style analytics workflow:
+
+Business Questions → Data Modeling → SQL Queries → Interpreted Insights
+
+2. Dataset Overview
+
+The project uses the public Olist Brazilian E-commerce Dataset, consisting of 9 core raw tables, each representing a critical business domain.
 
 Table	Description
-customers	Customer IDs, city, state
-orders	Order lifecycle timestamps & statuses
-order_items	Product, seller, price, freight
-order_payments	Payment type and amount
+customers	Customer identifiers and geographic attributes
+orders	Order lifecycle timestamps and statuses
+order_items	Line-item level data (product, seller, price, freight)
+order_payments	Payment methods and transaction values
 order_reviews	Customer satisfaction feedback
 products	Product attributes
 sellers	Seller information
-geolocation	Geospatial mapping
-product_category_name_translation	Category names EN → PT
+geolocation	Geographic reference data
+product_category_name_translation	Product category name mapping (PT → EN)
+
 Database structure:
-database: olist
-schema: raw
 
+Database: olist
 
-CSV files are stored locally and excluded from Git via .gitignore.
+Schema: raw
 
-🎯 3. Business Questions (Analytics Scope)
+All CSV source files are stored locally and excluded from version control via .gitignore.
 
-To reflect a real analytics workflow, questions are grouped into five themes.
+3. Analytics Scope & Business Questions
 
-🟦 A. Orders & Revenue Performance
-Q1.1 – Monthly revenue, order count, AOV over time
+Business questions are grouped into analytical themes to reflect how analytics teams typically structure investigations.
 
-Insights from SQL results:
+A. Orders & Revenue Performance
 
-Sales activity begins to scale significantly from January 2017, growing from a few hundred orders per month to several thousand.
+Q1.1 — Revenue, order volume, and AOV trends over time
 
-Monthly revenue shows a strong upward trajectory throughout 2017 and early 2018, peaking at 1.15M BRL (Nov 2017) and consistently remaining above 1M BRL during 2018.
+Monthly revenue growth
 
-Order volume reaches its highest levels around May–July 2018, with 6,700–7,000+ orders per month.
+Order count dynamics
 
-AOV stays stable between 150–170 BRL, indicating consistent customer spending even as order volume rises.
+Average Order Value (AOV) stability
 
-Extremely low early months (e.g., Dec 2016: 1 order) are edge cases—likely due to incomplete dataset coverage at the start.
+Key insight summary:
+The marketplace experiences rapid scaling from early 2017 onward, with revenue exceeding 1M BRL per month during peak periods. Despite strong volume growth, AOV remains stable (≈150–170 BRL), suggesting revenue expansion is driven primarily by increased order volume rather than higher per-order spending.
 
-Overall trend: Strong sustained growth in revenue and orders → a healthy, rapidly expanding marketplace.
+Business implication:
+Growth strategy appears volume-led rather than price-led, highlighting the importance of acquisition and marketplace expansion over upselling.
 
-Q1.2 – Order status funnel
+Q1.2 — Order status funnel
+Distribution of delivered, shipped, canceled, and unpaid orders to assess operational health.
 
-Delivered, shipped, canceled, unpaid distribution.
+Q1.3 — Daily and weekly sales patterns
+Identification of seasonality, weekday effects, and peak transaction periods.
 
-Q1.3 – Daily & weekly sales trends
+Q1.4 — Freight cost impact on revenue
+Analysis of freight value variation across states and its relationship to order size.
 
-Seasonality, weekday patterns, peak days.
+B. Customer Behavior & Loyalty
 
-Q1.4 – Freight impact on revenue
+Q2.1 — One-time vs returning customers
+Repeat purchase rate and customer retention profile.
 
-How freight value varies across states and its relation to order size.
+Q2.2 — Customer Lifetime Value (LTV) proxy
+Approximation of customer value based on cumulative order spend.
 
-🟩 B. Customer Behavior & Loyalty
+Q2.3 — Delivery performance by customer region
+Comparison of delivery times across geographic segments.
 
-Q2.1 – Returning vs one-time customers (repeat rate)
+C. Delivery & Logistics Efficiency
 
-Q2.2 – Customer LTV approximation (based on total order value)
+Q3.1 — Actual vs estimated delivery times
+Assessment of delivery reliability.
 
-Q2.3 – Delivery time differences across regions
+Q3.2 — Late deliveries by state and seller
+Identification of geographic and seller-level risk areas.
 
-🟧 C. Delivery & Logistics Efficiency
+Q3.3 — Timestamp inconsistencies
+Detection of anomalous records (e.g., delivered before shipped).
 
-Q3.1 – Actual vs estimated delivery time
+Business implication:
+Logistics performance varies significantly by region and seller, indicating opportunities for operational optimization and seller performance monitoring.
 
-Q3.2 – Late deliveries by state & by seller
+D. Product & Category Insights
 
-Q3.3 – Inconsistent timestamps (e.g., delivered before shipped)
+Q4.1 — Best-selling product categories
+Performance by quantity sold and revenue contribution.
 
-🟪 D. Product & Category Insights
+Q4.2 — Category-level customer satisfaction
+Average review scores by category.
 
-Q4.1 – Best-selling categories (quantity & revenue)
+Q4.3 — Price distribution across categories
+Identification of premium vs mass-market segments.
 
-Q4.2 – Categories with highest review scores
+E. Seller Performance
 
-Q4.3 – Price distribution across categories
+Q5.1 — Top sellers by revenue
+Revenue concentration and seller contribution analysis.
 
-🟨 E. Seller Performance
+Q5.2 — Seller cancellation rates
+Operational reliability assessment.
 
-Q5.1 – Top sellers by revenue
+Q5.3 — Seller delivery performance
+Correlation between seller behavior and delivery delays.
 
-Q5.2 – Seller cancellation rate
+4. Data Model
 
-Q5.3 – Seller delivery performance
-
-(You may expand these analyses further.)
-
-🗺️ 4. Data Model (ERD)
-
-The Olist dataset follows a star-schema-like structure:
+The dataset follows a star-schema-like structure, centered on the orders table.
 
 customers  ←  orders  →  order_items  →  sellers
                                  ↓
                              products
                                  ↓
-                 product_category_name_translation
+              product_category_name_translation
 
 
-You can add your ERD diagram later:
+An ERD diagram can be added for visual reference:
 
-![ERD](./docs/erd.png)
+docs/erd.png
 
-🧠 5. SQL Queries
+5. SQL Implementation
 
-All SQL queries are stored in:
+All analytical queries are stored in:
 
-👉 queries.sql
+queries.sql
 
-Each query is labeled and aligned with the question numbers above.
 
-🛠️ 6. Tools Used
+Query design principles:
+
+CTEs for clarity and modular logic
+
+Window functions for time-based metrics and ranking
+
+Conditional aggregation for funnels and performance metrics
+
+Explicit date handling to avoid implicit assumptions
+
+Each query is clearly labeled and mapped to the corresponding business question.
+
+6. Tools & Environment
 
 PostgreSQL 16
 
-DBeaver (Community or Ultimate)
+DBeaver (Community / Ultimate)
 
 Git & GitHub
 
-(Optional) Power BI or Python for extended analysis
+(Optional future layers: Power BI, Python, machine learning models)
 
-🚀 7. How to Use This Repository
+7. Reproducibility Guide
 
-Clone the repo
+Clone this repository
 
 Create PostgreSQL database olist
 
 Create schema raw
 
-Import CSV files into tables
+Import CSV files into corresponding tables
 
-Run queries inside queries.sql
+Execute queries in queries.sql
 
-🔮 8. Future Extensions
+8. Assumptions & Data Limitations
 
-After SQL analysis is complete, future work will include:
+Early dataset periods (e.g., late 2016) contain sparse records and should be interpreted cautiously.
 
-Power BI dashboard
+Customer LTV is a proxy, not a true lifetime measure.
 
-Python exploratory analysis
+Review scores may be biased toward extreme customer experiences.
 
-ML mini-model: delivery delay prediction
+The dataset represents historical snapshots rather than real-time operations.
 
-📄 9. License
+Explicitly stating these limitations aligns with real analytics reporting standards.
 
-This project is open-source under the MIT License.
+9. Future Extensions
+
+Planned enhancements beyond SQL analysis:
+
+Power BI dashboard for executive-level reporting
+
+Python-based exploratory analysis
+
+Machine learning mini-project: delivery delay prediction
+
+10. License
+
+This project is released under the MIT License.
