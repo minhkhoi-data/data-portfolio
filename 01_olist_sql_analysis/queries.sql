@@ -34,14 +34,28 @@ ORDER BY 1;
 
 
 ---------------------------------------------------------------
--- Q1.2 – Order Status Funnel
+-- Q1.2 - Order Status Distribution (Operational Funnel)
 -- Goal:
---   • Count orders by order_status.
---   • Derive % of total for each status (delivered, shipped, canceled, etc.).
+--   • Assess operational outcomes by order status.
+--   • Evaluate marketplace health via delivered vs failed vs in-progress orders.
+-- Notes:
+--   • This reflects a post-operational snapshot, not a real-time conversion funnel.
 ---------------------------------------------------------------
 
--- TODO: write query for status funnel (count + percentage by status).
-
+SELECT
+    CASE
+        WHEN order_status = 'delivered' THEN 'Delivered'
+        WHEN order_status IN ('canceled', 'unavailable') THEN 'Failed'
+        ELSE 'In Progress'
+    END AS funnel_stage,
+    COUNT(*) AS order_count,
+    ROUND(
+        COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (),
+        2
+    ) AS percentage
+FROM raw.orders
+GROUP BY funnel_stage
+ORDER BY order_count DESC;
 
 ---------------------------------------------------------------
 -- Q1.3 – Daily / Weekly Seasonality
