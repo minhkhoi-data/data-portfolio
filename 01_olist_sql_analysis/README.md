@@ -1,18 +1,18 @@
-\# 📦 Olist E-commerce SQL Analytics Project
+# 📦 Olist E-commerce SQL Analytics Project
 
 
 
-An end-to-end \*\*SQL analytics project\*\* using the Brazilian \*\*Olist E-commerce Dataset\*\*, designed to simulate a real-world analytics workflow from \*\*business questions → data-driven insights\*\*.
+An end-to-end **SQL analytics project** using the Brazilian **Olist E-commerce Dataset**, designed to simulate a real-world analytics workflow from **business questions → data-driven insights**.
 
 
 
-\*\*Core focus:\*\*  
+**Core focus:**  
 
 Business understanding → Data modeling → SQL analysis → Actionable interpretation  
 
 
 
-\*\*Technology:\*\* PostgreSQL (SQL-only analysis)
+**Technology:** PostgreSQL (SQL-only analysis)
 
 
 
@@ -20,31 +20,31 @@ Business understanding → Data modeling → SQL analysis → Actionable interpr
 
 
 
-\## 1. Project Objective
+## 1. Project Objective
 
 
 
-The objective of this project is to analyze the \*\*operational and commercial performance\*\* of an e-commerce marketplace, focusing on:
+The objective of this project is to analyze the **operational and commercial performance** of an e-commerce marketplace, focusing on:
 
 
 
-\- Order and revenue dynamics  
+- Order and revenue dynamics  
 
-\- Customer behavior and repeat purchasing  
+- Customer behavior and repeat purchasing  
 
-\- Delivery and logistics efficiency  
+- Delivery and logistics efficiency  
 
-\- Product category performance  
+- Product category performance  
 
-\- Seller operational quality  
-
-
-
-The project is intentionally constrained to \*\*SQL only\*\*, reflecting real analytics environments where SQL is the primary decision-making tool.
+- Seller operational quality  
 
 
 
-This repository mirrors a \*\*production-style analytics workflow\*\*:
+The project is intentionally constrained to **SQL only**, reflecting real analytics environments where SQL is the primary decision-making tool.
+
+
+
+This repository mirrors a **production-style analytics workflow**:
 
 
 
@@ -56,11 +56,11 @@ This repository mirrors a \*\*production-style analytics workflow\*\*:
 
 
 
-\## 2. Dataset Overview
+## 2. Dataset Overview
 
 
 
-The project uses the public \*\*Olist Brazilian E-commerce Dataset\*\*, consisting of \*\*9 core raw tables\*\*, each representing a critical business domain.
+The project uses the public **Olist Brazilian E-commerce Dataset**, consisting of **9 core raw tables**, each representing a critical business domain.
 
 
 
@@ -72,11 +72,11 @@ The project uses the public \*\*Olist Brazilian E-commerce Dataset\*\*, consisti
 
 | orders | Order lifecycle timestamps and statuses |
 
-| order\_items | Line-item level data (product, seller, price, freight) |
+| order_items | Line-item level data (product, seller, price, freight) |
 
-| order\_payments | Payment methods and transaction values |
+| order_payments | Payment methods and transaction values |
 
-| order\_reviews | Customer satisfaction feedback |
+| order_reviews | Customer satisfaction feedback |
 
 | products | Product attributes |
 
@@ -84,15 +84,15 @@ The project uses the public \*\*Olist Brazilian E-commerce Dataset\*\*, consisti
 
 | geolocation | Geographic reference data |
 
-| product\_category\_name\_translation | Product category name mapping (PT → EN) |
+| product_category_name_translation | Product category name mapping (PT → EN) |
 
 
 
-\*\*Database structure:\*\*
+**Database structure:**
 
-\- Database: `olist`  
+- Database: `olist`  
 
-\- Schema: `raw`
+- Schema: `raw`
 
 
 
@@ -104,7 +104,7 @@ All CSV source files are stored locally and excluded from version control via `.
 
 
 
-\## 3. Analytics Scope \& Business Questions
+## 3. Analytics Scope & Business Questions
 
 
 
@@ -116,53 +116,31 @@ Business questions are grouped into analytical themes to reflect how analytics t
 
 
 
-\### A. Orders \& Revenue Performance
+### A. Orders & Revenue Performance
 
 
 
-\#### Q1.1 — Revenue, Order Volume, and AOV Trends Over Time
+#### Q1.1 — Revenue, Order Volume, and AOV Trends Over Time
 
 
 
-\- Monthly revenue growth  
+- Monthly revenue growth  
 
-\- Order count dynamics  
+- Order count dynamics  
 
-\- Average Order Value (AOV) stability  
-
-
-
-\*\*Key insight:\*\*  
-
-The marketplace experiences rapid scaling from early 2017 onward, with revenue exceeding \*\*1M BRL per month\*\* during peak periods. Despite strong volume growth, \*\*AOV remains stable (≈150–170 BRL)\*\*, indicating that revenue expansion is driven primarily by increased order volume rather than higher per-order spending.
+- Average Order Value (AOV) stability  
 
 
 
-\*\*Business implication:\*\*  
+**Key insight:**  
 
-Growth strategy appears \*\*volume-led rather than price-led\*\*, highlighting the importance of customer acquisition and marketplace expansion over upselling.
-
-
-
----
+The marketplace experiences rapid scaling from early 2017 onward, with revenue exceeding **1M BRL per month** during peak periods. Despite strong volume growth, **AOV remains stable (≈150–170 BRL)**, indicating that revenue expansion is driven primarily by increased order volume rather than higher per-order spending.
 
 
 
-\#### Q1.2 — Order Status Distribution (Operational Funnel)
+**Business implication:**  
 
-
-
-\*\*Insight:\*\*  
-
-Approximately \*\*97% of orders were successfully delivered\*\*, indicating generally stable marketplace operations. Failed orders (canceled and unavailable) account for a small but non-trivial share, suggesting potential issues related to inventory accuracy, seller reliability, or last-mile logistics.  
-
-Notably, the low proportion of in-progress orders reflects that the dataset represents a \*\*post-operational snapshot\*\*, rather than a real-time order lifecycle funnel.
-
-
-
-\*\*Business implication:\*\*  
-
-While overall operational execution appears strong, targeted analysis at the \*\*seller and regional level\*\* is required to identify the drivers of order failures and mitigate operational risk.
+Growth strategy appears **volume-led rather than price-led**, highlighting the importance of customer acquisition and marketplace expansion over upselling.
 
 
 
@@ -170,29 +148,21 @@ While overall operational execution appears strong, targeted analysis at the \*\
 
 
 
-\#### Q1.3 — Daily and Weekly Sales Patterns
+#### Q1.2 — Order Status Distribution (Operational Funnel)
 
 
 
-\- Identification of seasonality  
+**Insight:**  
 
-\- Weekday effects  
+Approximately **97% of orders were successfully delivered**, indicating generally stable marketplace operations. Failed orders (canceled and unavailable) account for a small but non-trivial share, suggesting potential issues related to inventory accuracy, seller reliability, or last-mile logistics.  
 
-\- Peak transaction periods  
-
-
-
----
+Notably, the low proportion of in-progress orders reflects that the dataset represents a **post-operational snapshot**, rather than a real-time order lifecycle funnel.
 
 
 
-\#### Q1.4 — Freight Cost Impact on Revenue
+**Business implication:**  
 
-
-
-\- Analysis of freight value variation across states  
-
-\- Relationship between freight cost and order size  
+While overall operational execution appears strong, targeted analysis at the **seller and regional level** is required to identify the drivers of order failures and mitigate operational risk.
 
 
 
@@ -200,27 +170,20 @@ While overall operational execution appears strong, targeted analysis at the \*\
 
 
 
-\### B. Customer Behavior \& Loyalty
+#### Q1.3 — Daily and Weekly Sales Patterns
 
 
 
-\#### Q2.1 — One-Time vs Returning Customers
+**Insight:**  
 
-\- Repeat purchase rate  
+Completed orders show a clear weekday-driven sales pattern. Order volume is highest during mid-week (Monday to Thursday), with Tuesday and Wednesday recording peak activity. In contrast, weekend order volumes (Saturday and Sunday) are consistently lower.
 
-\- Customer retention profile  
-
-
-
-\#### Q2.2 — Customer Lifetime Value (LTV) Proxy
-
-\- Approximation of customer value based on cumulative order spend  
+This indicates that purchasing behavior on the platform is largely routine-based, aligned with weekday work patterns rather than discretionary weekend shopping.
 
 
+**Business implication:**  
 
-\#### Q2.3 — Delivery Performance by Customer Region
-
-\- Comparison of delivery times across geographic segments  
+Marketing campaigns, promotions, and operational capacity planning are likely to be most effective when concentrated during mid-week periods. The consistently lower weekend activity suggests limited short-term uplift from weekend-focused initiatives unless customer behavior is intentionally shifted.
 
 
 
@@ -228,29 +191,71 @@ While overall operational execution appears strong, targeted analysis at the \*\
 
 
 
-\### C. Delivery \& Logistics Efficiency
+#### Q1.4 — Freight Cost Impact on Revenue
 
 
 
-\#### Q3.1 — Actual vs Estimated Delivery Times
+- Analysis of freight value variation across states  
 
-\- Assessment of delivery reliability  
-
-
-
-\#### Q3.2 — Late Deliveries by State and Seller
-
-\- Identification of geographic and seller-level risk areas  
+- Relationship between freight cost and order size  
 
 
 
-\#### Q3.3 — Timestamp Inconsistencies
-
-\- Detection of anomalous records (e.g., delivered before shipped)  
+---
 
 
 
-\*\*Business implication:\*\*  
+### B. Customer Behavior & Loyalty
+
+
+
+#### Q2.1 — One-Time vs Returning Customers
+
+- Repeat purchase rate  
+
+- Customer retention profile  
+
+
+
+#### Q2.2 — Customer Lifetime Value (LTV) Proxy
+
+- Approximation of customer value based on cumulative order spend  
+
+
+
+#### Q2.3 — Delivery Performance by Customer Region
+
+- Comparison of delivery times across geographic segments  
+
+
+
+---
+
+
+
+### C. Delivery & Logistics Efficiency
+
+
+
+#### Q3.1 — Actual vs Estimated Delivery Times
+
+- Assessment of delivery reliability  
+
+
+
+#### Q3.2 — Late Deliveries by State and Seller
+
+- Identification of geographic and seller-level risk areas  
+
+
+
+#### Q3.3 — Timestamp Inconsistencies
+
+- Detection of anomalous records (e.g., delivered before shipped)  
+
+
+
+**Business implication:**  
 
 Logistics performance varies significantly by region and seller, indicating opportunities for operational optimization and seller performance monitoring.
 
@@ -260,51 +265,25 @@ Logistics performance varies significantly by region and seller, indicating oppo
 
 
 
-\### D. Product \& Category Insights
+### D. Product & Category Insights
 
 
 
-\#### Q4.1 — Best-Selling Product Categories
+#### Q4.1 — Best-Selling Product Categories
 
-\- Performance by quantity sold and revenue contribution  
-
-
-
-\#### Q4.2 — Category-Level Customer Satisfaction
-
-\- Average review scores by category  
+- Performance by quantity sold and revenue contribution  
 
 
 
-\#### Q4.3 — Price Distribution Across Categories
+#### Q4.2 — Category-Level Customer Satisfaction
 
-\- Identification of premium vs mass-market segments  
-
-
-
----
+- Average review scores by category  
 
 
 
-\### E. Seller Performance
+#### Q4.3 — Price Distribution Across Categories
 
-
-
-\#### Q5.1 — Top Sellers by Revenue
-
-\- Revenue concentration and seller contribution analysis  
-
-
-
-\#### Q5.2 — Seller Cancellation Rates
-
-\- Operational reliability assessment  
-
-
-
-\#### Q5.3 — Seller Delivery Performance
-
-\- Correlation between seller behavior and delivery delays  
+- Identification of premium vs mass-market segments  
 
 
 
@@ -312,11 +291,37 @@ Logistics performance varies significantly by region and seller, indicating oppo
 
 
 
-\## 4. Data Model
+### E. Seller Performance
 
 
 
-The dataset follows a \*\*star-schema-like structure\*\*, centered on the `orders` table.
+#### Q5.1 — Top Sellers by Revenue
+
+- Revenue concentration and seller contribution analysis  
+
+
+
+#### Q5.2 — Seller Cancellation Rates
+
+- Operational reliability assessment  
+
+
+
+#### Q5.3 — Seller Delivery Performance
+
+- Correlation between seller behavior and delivery delays  
+
+
+
+---
+
+
+
+## 4. Data Model
+
+
+
+The dataset follows a **star-schema-like structure**, centered on the `orders` table.
 
 
 

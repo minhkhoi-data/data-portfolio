@@ -64,7 +64,15 @@ ORDER BY order_count DESC;
 --   • Use delivered orders as baseline.
 ---------------------------------------------------------------
 
--- TODO: write query for daily / weekly sales patterns.
+
+SELECT
+  EXTRACT(DOW FROM order_purchase_timestamp::timestamp) AS weekday,
+  COUNT(*) AS order_count
+FROM raw.orders
+WHERE order_status = 'delivered'
+GROUP BY weekday
+ORDER BY weekday;
+
 
 
 ---------------------------------------------------------------
