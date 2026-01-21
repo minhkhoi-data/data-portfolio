@@ -2,7 +2,7 @@
 
 **Project type:** Exploratory Data Analysis (EDA)  
 **Focus:** Identifying key factors associated with higher medical insurance charges  
-**Tools:** Python (pandas, numpy, matplotlib, seaborn)  
+**Tools:** Python (pandas, matplotlib)  
 
 ---
 
@@ -94,7 +94,7 @@ The notebook follows a structured EDA process:
 
 ## 8. Repository Structure
 - `analysis.ipynb` — main EDA notebook  
-- `insurance.csv` — dataset  
+- `data/insurance.csv` — dataset  
 - `README.md` — project overview  
 
 ---
@@ -102,4 +102,4 @@ The notebook follows a structured EDA process:
 ## 9. How to Run
 1. Install required libraries:
    ```bash
-   pip install pandas numpy matplotlib seaborn
+   pip install pandas matplotlib
