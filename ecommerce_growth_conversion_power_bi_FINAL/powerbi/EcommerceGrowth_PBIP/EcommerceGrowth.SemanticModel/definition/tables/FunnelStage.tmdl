@@ -1,0 +1,18 @@
+/// Disconnected display table that controls funnel stage order.
+table FunnelStage
+
+	column Stage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Stage
+		sortByColumn: Sort
+
+	column Sort
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: Sort
+
+	partition FunnelStage = calculated
+		mode: import
+		source = DATATABLE("Stage", STRING, "Sort", INTEGER, {{"Sessions",1},{"Product View",2},{"Add to Cart",3},{"Checkout",4},{"Purchase",5}})

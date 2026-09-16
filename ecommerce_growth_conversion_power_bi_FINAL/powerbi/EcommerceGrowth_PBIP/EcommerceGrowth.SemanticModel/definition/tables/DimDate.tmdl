@@ -1,0 +1,79 @@
+/// Shared calendar dimension for all three fact tables.
+table DimDate
+	dataCategory: Time
+
+	column date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		isKey
+		summarizeBy: none
+		sourceColumn: date
+
+	column year
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: year
+
+	column month_no
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: month_no
+
+	column month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: month
+		sortByColumn: month_no
+
+	column year_month
+		dataType: string
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column week_start
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		summarizeBy: none
+		sourceColumn: week_start
+
+	column day_of_week
+		dataType: string
+		summarizeBy: none
+		sourceColumn: day_of_week
+		sortByColumn: day_of_week_no
+
+	column day_of_week_no
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: day_of_week_no
+
+	column is_weekend
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+	partition DimDate = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/dim_date.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {
+				{"date", type date},
+				{"year", Int64.Type},
+				{"month_no", Int64.Type},
+				{"month", type text},
+				{"year_month", type text},
+				{"week_start", type date},
+				{"day_of_week", type text},
+				{"day_of_week_no", Int64.Type},
+				{"is_weekend", Int64.Type}
+				})
+			in
+				Typed

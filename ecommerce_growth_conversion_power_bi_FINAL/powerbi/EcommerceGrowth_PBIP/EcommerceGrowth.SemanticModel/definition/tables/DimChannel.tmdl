@@ -1,0 +1,27 @@
+/// Standardized marketing channel dimension shared by session and order facts.
+table DimChannel
+
+	column channel_id
+		dataType: int64
+		isHidden
+		isKey
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel
+
+	partition DimChannel = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/dim_channel.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {
+				{"channel_id", Int64.Type},
+				{"channel", type text}
+				})
+			in
+				Typed

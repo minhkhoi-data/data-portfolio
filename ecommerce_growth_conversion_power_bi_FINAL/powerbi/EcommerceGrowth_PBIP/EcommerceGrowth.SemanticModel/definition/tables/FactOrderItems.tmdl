@@ -1,0 +1,94 @@
+/// One row per order line; source columns are hidden in favor of explicit measures.
+table FactOrderItems
+
+	column order_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: order_id
+
+	column session_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: session_id
+
+	column user_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: user_id
+
+	column order_date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		isHidden
+		summarizeBy: none
+		sourceColumn: order_date
+
+	column product_key
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column channel_id
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column device_id
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: device_id
+
+	column geo_id
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: geo_id
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: quantity
+
+	column unit_price
+		dataType: decimal
+		formatString: $#,##0.00
+		isHidden
+		summarizeBy: none
+		sourceColumn: unit_price
+
+	column item_revenue
+		dataType: decimal
+		formatString: $#,##0.00
+		isHidden
+		summarizeBy: none
+		sourceColumn: item_revenue
+
+	partition FactOrderItems = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/fact_order_items.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {
+				{"order_id", type text},
+				{"session_id", type text},
+				{"user_id", type text},
+				{"order_date", type date},
+				{"product_key", Int64.Type},
+				{"channel_id", Int64.Type},
+				{"device_id", Int64.Type},
+				{"geo_id", Int64.Type},
+				{"quantity", Int64.Type},
+				{"unit_price", Currency.Type},
+				{"item_revenue", Currency.Type}
+				})
+			in
+				Typed

@@ -1,0 +1,43 @@
+product_key,product_id,product_name,category,subcategory,base_price
+1,P001,Google Classic Logo Tee,Apparel,T-Shirts,24.99
+2,P002,Google Cloud Tee,Apparel,T-Shirts,27.99
+3,P003,YouTube Creator Tee,Apparel,T-Shirts,26.99
+4,P004,Android Mascot Tee,Apparel,T-Shirts,25.99
+5,P005,Google Zip Hoodie,Apparel,Outerwear,54.99
+6,P006,Google Crewneck Sweatshirt,Apparel,Outerwear,49.99
+7,P007,Google Performance Jacket,Apparel,Outerwear,79.99
+8,P008,Google Cap,Apparel,Headwear,22.99
+9,P009,YouTube Cap,Apparel,Headwear,23.99
+10,P010,Google Socks,Apparel,Accessories,14.99
+11,P011,Google Tote Bag,Bags,Tote,18.99
+12,P012,Google Campus Backpack,Bags,Backpack,59.99
+13,P013,Google Laptop Backpack,Bags,Backpack,74.99
+14,P014,YouTube Drawstring Bag,Bags,Drawstring,16.99
+15,P015,Google Water Bottle 24oz,Drinkware,Bottle,24.99
+16,P016,Google Stainless Bottle,Drinkware,Bottle,32.99
+17,P017,Google Ceramic Mug,Drinkware,Mug,17.99
+18,P018,YouTube Mug,Drinkware,Mug,18.99
+19,P019,Google Travel Tumbler,Drinkware,Tumbler,29.99
+20,P020,Google Notebook,Office,Notebook,12.99
+21,P021,Google Premium Notebook,Office,Notebook,21.99
+22,P022,Google Pen Set,Office,Stationery,9.99
+23,P023,Google Desk Pad,Office,Desk,19.99
+24,P024,Google Mouse Pad,Office,Desk,14.99
+25,P025,Google Sticker Pack,Accessories,Stickers,6.99
+26,P026,Android Sticker Pack,Accessories,Stickers,7.99
+27,P027,Google Lanyard,Accessories,Lanyard,8.99
+28,P028,Google Keychain,Accessories,Keychain,9.99
+29,P029,Google Enamel Pin,Accessories,Pin,10.99
+30,P030,Android Figurine,Lifestyle,Collectible,24.99
+31,P031,Google Mini Umbrella,Lifestyle,Travel,29.99
+32,P032,Google Travel Pouch,Lifestyle,Travel,19.99
+33,P033,Google Picnic Blanket,Lifestyle,Outdoor,44.99
+34,P034,Google Recycled Tote,Bags,Tote,21.99
+35,P035,Google Kids Tee,Apparel,T-Shirts,19.99
+36,P036,YouTube Kids Tee,Apparel,T-Shirts,20.99
+37,P037,Google Beanie,Apparel,Headwear,24.99
+38,P038,Google Phone Stand,Office,Desk,16.99
+39,P039,Google Cable Organizer,Office,Desk,11.99
+40,P040,Google Lunch Bag,Bags,Lunch Bag,28.99
+41,P041,Google Reusable Cup,Drinkware,Cup,15.99
+42,P042,Google Shopping Bag,Bags,Tote,12.99

@@ -1,0 +1,149 @@
+/// One row per website session; source columns are hidden in favor of explicit measures.
+table FactSessions
+
+	column session_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: session_id
+
+	column user_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: user_id
+
+	column session_date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		isHidden
+		summarizeBy: none
+		sourceColumn: session_date
+
+	column channel_id
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column device_id
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: device_id
+
+	column geo_id
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: geo_id
+
+	column source
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: source
+
+	column medium
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: medium
+
+	column is_new_user
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: is_new_user
+
+	column engaged_session
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: engaged_session
+
+	column engagement_seconds
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: engagement_seconds
+
+	column pageviews
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: pageviews
+
+	column view_item
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: view_item
+
+	column add_to_cart
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: add_to_cart
+
+	column begin_checkout
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: begin_checkout
+
+	column purchase
+		dataType: int64
+		formatString: 0
+		isHidden
+		summarizeBy: none
+		sourceColumn: purchase
+
+	column order_id
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: order_id
+
+	column session_revenue
+		dataType: decimal
+		formatString: $#,##0.00
+		isHidden
+		summarizeBy: none
+		sourceColumn: session_revenue
+
+	partition FactSessions = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/fact_sessions.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Headers, {
+				{"session_id", type text},
+				{"user_id", type text},
+				{"session_date", type date},
+				{"channel_id", Int64.Type},
+				{"device_id", Int64.Type},
+				{"geo_id", Int64.Type},
+				{"source", type text},
+				{"medium", type text},
+				{"is_new_user", Int64.Type},
+				{"engaged_session", Int64.Type},
+				{"engagement_seconds", Int64.Type},
+				{"pageviews", Int64.Type},
+				{"view_item", Int64.Type},
+				{"add_to_cart", Int64.Type},
+				{"begin_checkout", Int64.Type},
+				{"purchase", Int64.Type},
+				{"order_id", type text},
+				{"session_revenue", Currency.Type}
+				})
+			in
+				Typed

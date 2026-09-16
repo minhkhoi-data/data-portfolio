@@ -1,0 +1,4 @@
+device_category,sessions,users,transactions,conversion_rate,revenue,revenue_per_session
+desktop,27881,14385,2445,0.087694,111401.69,4.0
+mobile,43497,21091,2070,0.047589,95934.81,2.21
+tablet,3859,2208,222,0.057528,10142.0,2.63

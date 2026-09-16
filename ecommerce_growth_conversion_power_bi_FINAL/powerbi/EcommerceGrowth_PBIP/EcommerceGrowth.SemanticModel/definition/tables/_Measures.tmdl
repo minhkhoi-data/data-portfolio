@@ -1,0 +1,175 @@
+/// Central measure table for report-ready business metrics.
+table _Measures
+
+	/// Distinct website sessions in the current filter context.
+	measure 'Sessions' = DISTINCTCOUNT(FactSessions[session_id])
+		formatString: #,##0
+		displayFolder: Traffic & Engagement
+
+	/// Distinct users with at least one session in the current filter context.
+	measure 'Users' = DISTINCTCOUNT(FactSessions[user_id])
+		formatString: #,##0
+		displayFolder: Traffic & Engagement
+
+	/// Sessions meeting the engagement rule in the prepared source data.
+	measure 'Engaged Sessions' = CALCULATE([Sessions], FactSessions[engaged_session] = 1)
+		formatString: #,##0
+		displayFolder: Traffic & Engagement
+
+	/// Share of sessions classified as engaged.
+	measure 'Engagement Rate' = DIVIDE([Engaged Sessions], [Sessions])
+		formatString: 0.00%
+		displayFolder: Traffic & Engagement
+
+	/// Sessions containing at least one product-view event.
+	measure 'Product View Sessions' = CALCULATE([Sessions], FactSessions[view_item] = 1)
+		formatString: #,##0
+		displayFolder: Funnel
+
+	/// Sessions containing at least one add-to-cart event.
+	measure 'Add to Cart Sessions' = CALCULATE([Sessions], FactSessions[add_to_cart] = 1)
+		formatString: #,##0
+		displayFolder: Funnel
+
+	/// Sessions containing at least one begin-checkout event.
+	measure 'Checkout Sessions' = CALCULATE([Sessions], FactSessions[begin_checkout] = 1)
+		formatString: #,##0
+		displayFolder: Funnel
+
+	/// Sessions containing a purchase event.
+	measure 'Purchase Sessions' = CALCULATE([Sessions], FactSessions[purchase] = 1)
+		formatString: #,##0
+		displayFolder: Funnel
+
+	/// Product-view sessions divided by all sessions.
+	measure 'Product View Rate' = DIVIDE([Product View Sessions], [Sessions])
+		formatString: 0.00%
+		displayFolder: Funnel
+
+	/// Add-to-cart sessions divided by product-view sessions.
+	measure 'View to Cart Rate' = DIVIDE([Add to Cart Sessions], [Product View Sessions])
+		formatString: 0.00%
+		displayFolder: Funnel
+
+	/// Checkout sessions divided by add-to-cart sessions.
+	measure 'Cart to Checkout Rate' = DIVIDE([Checkout Sessions], [Add to Cart Sessions])
+		formatString: 0.00%
+		displayFolder: Funnel
+
+	/// Purchase sessions divided by checkout sessions.
+	measure 'Checkout to Purchase Rate' = DIVIDE([Purchase Sessions], [Checkout Sessions])
+		formatString: 0.00%
+		displayFolder: Funnel
+
+	/// Purchase sessions divided by all sessions.
+	measure 'Session Conversion Rate' = DIVIDE([Purchase Sessions], [Sessions])
+		formatString: 0.00%
+		displayFolder: Funnel
+
+	/// Gross order revenue before cost, margin, returns, and refunds.
+	measure 'Revenue' = SUM(FactOrders[total_revenue])
+		formatString: $#,##0.00
+		displayFolder: Commercial
+
+	/// Distinct completed orders.
+	measure 'Transactions' = DISTINCTCOUNT(FactOrders[order_id])
+		formatString: #,##0
+		displayFolder: Commercial
+
+	/// Revenue divided by transactions.
+	measure 'AOV' = DIVIDE([Revenue], [Transactions])
+		formatString: $#,##0.00
+		displayFolder: Commercial
+
+	/// Revenue divided by sessions.
+	measure 'Revenue per Session' = DIVIDE([Revenue], [Sessions])
+		formatString: $#,##0.00
+		displayFolder: Commercial
+
+	/// Revenue divided by users with a session.
+	measure 'Revenue per User' = DIVIDE([Revenue], [Users])
+		formatString: $#,##0.00
+		displayFolder: Commercial
+
+	/// Total item quantity recorded on completed orders.
+	measure 'Units Sold' = SUM(FactOrders[total_quantity])
+		formatString: #,##0
+		displayFolder: Commercial
+
+	/// Distinct users with at least one order in the current filter context.
+	measure 'Purchasers' = DISTINCTCOUNT(FactOrders[user_id])
+		formatString: #,##0
+		displayFolder: Customer
+
+	/// Purchasers with more than one distinct order in the current filter context.
+	measure 'Repeat Purchasers' = ```
+		VAR CustomerOrders = ADDCOLUMNS(VALUES(FactOrders[user_id]), "__OrderCount", CALCULATE(DISTINCTCOUNT(FactOrders[order_id]))) RETURN COUNTROWS(FILTER(CustomerOrders, [__OrderCount] > 1))
+		```
+		formatString: #,##0
+		displayFolder: Customer
+
+	/// Repeat purchasers divided by all purchasers in the selected period.
+	measure 'Repeat Purchase Rate' = DIVIDE([Repeat Purchasers], [Purchasers])
+		formatString: 0.00%
+		displayFolder: Customer
+
+	/// Purchase-session rate for sessions flagged as the user's first session.
+	measure 'New User Session Conversion' = ```
+		DIVIDE(CALCULATE([Purchase Sessions], FactSessions[is_new_user] = 1), CALCULATE([Sessions], FactSessions[is_new_user] = 1))
+		```
+		formatString: 0.00%
+		displayFolder: Customer
+
+	/// Purchase-session rate for sessions after the user's first session.
+	measure 'Returning User Session Conversion' = ```
+		DIVIDE(CALCULATE([Purchase Sessions], FactSessions[is_new_user] = 0), CALCULATE([Sessions], FactSessions[is_new_user] = 0))
+		```
+		formatString: 0.00%
+		displayFolder: Customer
+
+	/// Revenue allocated to order lines for product analysis.
+	measure 'Product Revenue' = SUM(FactOrderItems[item_revenue])
+		formatString: $#,##0.00
+		displayFolder: Product
+
+	/// Units recorded on order lines.
+	measure 'Product Units' = SUM(FactOrderItems[quantity])
+		formatString: #,##0
+		displayFolder: Product
+
+	/// Distinct orders containing the selected product scope.
+	measure 'Product Orders' = DISTINCTCOUNT(FactOrderItems[order_id])
+		formatString: #,##0
+		displayFolder: Product
+
+	/// Product revenue divided by product units.
+	measure 'Average Selling Price' = DIVIDE([Product Revenue], [Product Units])
+		formatString: $#,##0.00
+		displayFolder: Product
+
+	/// Session count returned for the selected disconnected funnel stage.
+	measure 'Funnel Stage Sessions' = ```
+		SWITCH(SELECTEDVALUE(FunnelStage[Stage]), "Sessions", [Sessions], "Product View", [Product View Sessions], "Add to Cart", [Add to Cart Sessions], "Checkout", [Checkout Sessions], "Purchase", [Purchase Sessions])
+		```
+		formatString: #,##0
+		displayFolder: Funnel
+
+	/// Revenue shifted one calendar month back under the current date context.
+	measure 'Revenue Previous Month' = CALCULATE([Revenue], DATEADD(DimDate[date], -1, MONTH))
+		formatString: $#,##0.00
+		displayFolder: Time Intelligence
+
+	/// Percentage change from previous-month revenue.
+	measure 'Revenue MoM %' = DIVIDE([Revenue] - [Revenue Previous Month], [Revenue Previous Month])
+		formatString: 0.00%
+		displayFolder: Time Intelligence
+
+	column Dummy
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: Dummy
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("Dummy", BLANK())
