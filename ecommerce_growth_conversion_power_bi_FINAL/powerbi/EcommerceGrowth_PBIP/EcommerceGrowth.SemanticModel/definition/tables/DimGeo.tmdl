@@ -1,33 +1,38 @@
 /// Country and regional grouping dimension shared by session and order facts.
 table DimGeo
+	lineageTag: 43163169-f5f5-4e92-b660-a023a8c53a5c
 
 	column geo_id
 		dataType: int64
 		isHidden
 		isKey
+		lineageTag: 22fe6aa7-84ae-486a-9584-adbc0e61e397
 		summarizeBy: none
 		sourceColumn: geo_id
 
 	column country
 		dataType: string
+		lineageTag: fa56bde6-8203-426d-9ab7-cd38ac400be9
 		summarizeBy: none
 		sourceColumn: country
 
 	column region_group
 		dataType: string
+		lineageTag: e8ff9a2c-e9ff-4b0f-bb9f-cdf4042c5902
 		summarizeBy: none
 		sourceColumn: region_group
 
 	partition DimGeo = m
 		mode: import
 		source =
-			let
-				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/dim_geo.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				Typed = Table.TransformColumnTypes(Headers, {
-				{"geo_id", Int64.Type},
-				{"country", type text},
-				{"region_group", type text}
-				})
-			in
-				Typed
+				let
+					Source = Csv.Document(File.Contents(DataRoot & "\dim_geo.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+					{"geo_id", Int64.Type},
+					{"country", type text},
+					{"region_group", type text}
+					})
+				in
+					Typed
+

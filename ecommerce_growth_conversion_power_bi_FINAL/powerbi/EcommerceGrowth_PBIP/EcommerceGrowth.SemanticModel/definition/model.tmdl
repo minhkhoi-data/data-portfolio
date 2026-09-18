@@ -3,6 +3,15 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	discourageImplicitMeasures
 	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["FactSessions","FactOrders","FactOrderItems","DimDate","DimChannel","DimDevice","DimGeo","DimProduct","DataRoot"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
 
 ref table FactSessions
 ref table FactOrders
@@ -14,3 +23,4 @@ ref table DimGeo
 ref table DimProduct
 ref table FunnelStage
 ref table _Measures
+

@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1069.9151617983264,
+            "y": 487.25367702367953
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "c5c4de8f-aa01-4d8e-9088-ae8c21971293",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 806.524683093871,
+            "y": 151.47251901830623
+          },
+          "nodeIndex": "DimChannel",
+          "nodeLineageTag": "37f8b650-4f6a-47d0-8866-9de15de32fc7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 218.48610658736152
+          },
+          "nodeIndex": "DimDate",
+          "nodeLineageTag": "c988c0f9-61a5-40c6-a74e-1873751e40bf",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 835.91516179832661,
+            "y": 472.10309298604579
+          },
+          "nodeIndex": "DimDevice",
+          "nodeLineageTag": "89ac2ad0-aa85-4757-803d-d1c922c4381a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 263.3669636233742,
+            "y": 650.233276495926
+          },
+          "nodeIndex": "DimGeo",
+          "nodeLineageTag": "43163169-f5f5-4e92-b660-a023a8c53a5c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 761.25266400073247,
+            "y": 1000.5073540473595
+          },
+          "nodeIndex": "DimProduct",
+          "nodeLineageTag": "e21f65c3-c973-44d2-a91f-1c39240ba3c4",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 644.20096614959948,
+            "y": 650.262744508454
+          },
+          "nodeIndex": "FactOrderItems",
+          "nodeLineageTag": "aa5ee600-fedd-44de-bbc7-6a0928fd4d32",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 522.403901998451,
+            "y": 300.0996332152672
+          },
+          "nodeIndex": "FactOrders",
+          "nodeLineageTag": "767b31e5-5644-4de4-9fe6-accd92129aa2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.1161910121748,
+            "y": -50
+          },
+          "nodeIndex": "FactSessions",
+          "nodeLineageTag": "5dac2609-7313-42cd-83a3-922ad7bc8539",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1353.9151617983264,
+            "y": 573.25367702367953
+          },
+          "nodeIndex": "FunnelStage",
+          "nodeLineageTag": "e7bf9d43-f79c-40bc-a7a2-8bf98c4ee274",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

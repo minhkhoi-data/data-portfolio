@@ -49,3 +49,4 @@ relationship 8c39b612-b4f0-46a0-a751-980084d2af93
 relationship 711332c2-7857-4e29-b3fc-60cfde3b2e87
 	fromColumn: FactOrderItems.product_key
 	toColumn: DimProduct.product_key
+

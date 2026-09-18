@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "78cda39676ce130ad393",
   "position": {
     "x": 20,
     "y": 415,
     "z": 4000,
-    "width": 590,
     "height": 235,
+    "width": 590,
     "tabOrder": 4000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "DimChannel.channel",
-              "nativeQueryRef": "channel"
+              "nativeQueryRef": "channel",
+              "active": true
             }
           ]
         },
@@ -69,7 +70,6 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -91,6 +91,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

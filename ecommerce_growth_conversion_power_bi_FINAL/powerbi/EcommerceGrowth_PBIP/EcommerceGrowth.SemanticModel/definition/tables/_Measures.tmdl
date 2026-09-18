@@ -1,175 +1,199 @@
 /// Central measure table for report-ready business metrics.
 table _Measures
+	lineageTag: c5c4de8f-aa01-4d8e-9088-ae8c21971293
 
 	/// Distinct website sessions in the current filter context.
-	measure 'Sessions' = DISTINCTCOUNT(FactSessions[session_id])
+	measure Sessions = DISTINCTCOUNT(FactSessions[session_id])
 		formatString: #,##0
 		displayFolder: Traffic & Engagement
+		lineageTag: 3a0df2dd-7390-4bed-9cb4-bbe56e99f446
 
 	/// Distinct users with at least one session in the current filter context.
-	measure 'Users' = DISTINCTCOUNT(FactSessions[user_id])
+	measure Users = DISTINCTCOUNT(FactSessions[user_id])
 		formatString: #,##0
 		displayFolder: Traffic & Engagement
+		lineageTag: 9c658e0f-5442-417d-8927-97b43ebab224
 
 	/// Sessions meeting the engagement rule in the prepared source data.
 	measure 'Engaged Sessions' = CALCULATE([Sessions], FactSessions[engaged_session] = 1)
 		formatString: #,##0
 		displayFolder: Traffic & Engagement
+		lineageTag: 5c4023f8-db08-4d3c-ad39-57917dfa909b
 
 	/// Share of sessions classified as engaged.
 	measure 'Engagement Rate' = DIVIDE([Engaged Sessions], [Sessions])
 		formatString: 0.00%
 		displayFolder: Traffic & Engagement
+		lineageTag: ee5ebf27-911f-4ece-8906-38117567399b
 
 	/// Sessions containing at least one product-view event.
 	measure 'Product View Sessions' = CALCULATE([Sessions], FactSessions[view_item] = 1)
 		formatString: #,##0
 		displayFolder: Funnel
+		lineageTag: d8dd1fb1-77a6-47c0-998a-f1becea30260
 
 	/// Sessions containing at least one add-to-cart event.
 	measure 'Add to Cart Sessions' = CALCULATE([Sessions], FactSessions[add_to_cart] = 1)
 		formatString: #,##0
 		displayFolder: Funnel
+		lineageTag: c5f257f0-5b37-4dc3-bf09-aebb727cdf57
 
 	/// Sessions containing at least one begin-checkout event.
 	measure 'Checkout Sessions' = CALCULATE([Sessions], FactSessions[begin_checkout] = 1)
 		formatString: #,##0
 		displayFolder: Funnel
+		lineageTag: 0396952c-695c-4677-8de8-9b6158b09636
 
 	/// Sessions containing a purchase event.
 	measure 'Purchase Sessions' = CALCULATE([Sessions], FactSessions[purchase] = 1)
 		formatString: #,##0
 		displayFolder: Funnel
+		lineageTag: 871a5533-82e2-4d8a-a52c-d739aa0f9665
 
 	/// Product-view sessions divided by all sessions.
 	measure 'Product View Rate' = DIVIDE([Product View Sessions], [Sessions])
 		formatString: 0.00%
 		displayFolder: Funnel
+		lineageTag: bfbbf148-a67c-4295-b2d6-36aa6f87806e
 
 	/// Add-to-cart sessions divided by product-view sessions.
 	measure 'View to Cart Rate' = DIVIDE([Add to Cart Sessions], [Product View Sessions])
 		formatString: 0.00%
 		displayFolder: Funnel
+		lineageTag: 3dec934e-b6c7-4e16-8181-406e85bd970f
 
 	/// Checkout sessions divided by add-to-cart sessions.
 	measure 'Cart to Checkout Rate' = DIVIDE([Checkout Sessions], [Add to Cart Sessions])
 		formatString: 0.00%
 		displayFolder: Funnel
+		lineageTag: 9cefbb29-93fe-4867-a399-0cf40c614e89
 
 	/// Purchase sessions divided by checkout sessions.
 	measure 'Checkout to Purchase Rate' = DIVIDE([Purchase Sessions], [Checkout Sessions])
 		formatString: 0.00%
 		displayFolder: Funnel
+		lineageTag: 02238de6-d35d-4078-923e-45d3ea3a994a
 
 	/// Purchase sessions divided by all sessions.
 	measure 'Session Conversion Rate' = DIVIDE([Purchase Sessions], [Sessions])
 		formatString: 0.00%
 		displayFolder: Funnel
+		lineageTag: c067c2b7-22c2-4354-8314-1cc0029425a4
 
 	/// Gross order revenue before cost, margin, returns, and refunds.
-	measure 'Revenue' = SUM(FactOrders[total_revenue])
+	measure Revenue = SUM(FactOrders[total_revenue])
 		formatString: $#,##0.00
 		displayFolder: Commercial
+		lineageTag: 125fb441-3e2a-41f0-ba4d-17c7ab16d487
 
 	/// Distinct completed orders.
-	measure 'Transactions' = DISTINCTCOUNT(FactOrders[order_id])
+	measure Transactions = DISTINCTCOUNT(FactOrders[order_id])
 		formatString: #,##0
 		displayFolder: Commercial
+		lineageTag: f1259a88-b9b8-4901-81a7-9ce2df03266f
 
 	/// Revenue divided by transactions.
-	measure 'AOV' = DIVIDE([Revenue], [Transactions])
+	measure AOV = DIVIDE([Revenue], [Transactions])
 		formatString: $#,##0.00
 		displayFolder: Commercial
+		lineageTag: eaac63bb-014b-4129-82ce-665e2e3109e8
 
 	/// Revenue divided by sessions.
 	measure 'Revenue per Session' = DIVIDE([Revenue], [Sessions])
 		formatString: $#,##0.00
 		displayFolder: Commercial
+		lineageTag: 86275b4a-b5f0-41ca-9b77-94e6f62118c8
 
 	/// Revenue divided by users with a session.
 	measure 'Revenue per User' = DIVIDE([Revenue], [Users])
 		formatString: $#,##0.00
 		displayFolder: Commercial
+		lineageTag: 993bc80d-0ba8-4901-b3b3-4246d6d34b3a
 
 	/// Total item quantity recorded on completed orders.
 	measure 'Units Sold' = SUM(FactOrders[total_quantity])
 		formatString: #,##0
 		displayFolder: Commercial
+		lineageTag: a54ef12d-f106-410e-937f-68d03e1fca53
 
 	/// Distinct users with at least one order in the current filter context.
-	measure 'Purchasers' = DISTINCTCOUNT(FactOrders[user_id])
+	measure Purchasers = DISTINCTCOUNT(FactOrders[user_id])
 		formatString: #,##0
 		displayFolder: Customer
+		lineageTag: 60353151-e688-4108-babd-bdce903ee608
 
 	/// Purchasers with more than one distinct order in the current filter context.
-	measure 'Repeat Purchasers' = ```
-		VAR CustomerOrders = ADDCOLUMNS(VALUES(FactOrders[user_id]), "__OrderCount", CALCULATE(DISTINCTCOUNT(FactOrders[order_id]))) RETURN COUNTROWS(FILTER(CustomerOrders, [__OrderCount] > 1))
-		```
+	measure 'Repeat Purchasers' = VAR CustomerOrders = ADDCOLUMNS(VALUES(FactOrders[user_id]), "__OrderCount", CALCULATE(DISTINCTCOUNT(FactOrders[order_id]))) RETURN COUNTROWS(FILTER(CustomerOrders, [__OrderCount] > 1))
 		formatString: #,##0
 		displayFolder: Customer
+		lineageTag: 270123b6-5bed-4f44-b673-270c08262011
 
 	/// Repeat purchasers divided by all purchasers in the selected period.
 	measure 'Repeat Purchase Rate' = DIVIDE([Repeat Purchasers], [Purchasers])
 		formatString: 0.00%
 		displayFolder: Customer
+		lineageTag: 4fcb67ad-7374-45d6-bb6d-47178a2b8e23
 
 	/// Purchase-session rate for sessions flagged as the user's first session.
-	measure 'New User Session Conversion' = ```
-		DIVIDE(CALCULATE([Purchase Sessions], FactSessions[is_new_user] = 1), CALCULATE([Sessions], FactSessions[is_new_user] = 1))
-		```
+	measure 'New User Session Conversion' = DIVIDE(CALCULATE([Purchase Sessions], FactSessions[is_new_user] = 1), CALCULATE([Sessions], FactSessions[is_new_user] = 1))
 		formatString: 0.00%
 		displayFolder: Customer
+		lineageTag: cc399d8f-55cb-435b-ab99-b3150fdce070
 
 	/// Purchase-session rate for sessions after the user's first session.
-	measure 'Returning User Session Conversion' = ```
-		DIVIDE(CALCULATE([Purchase Sessions], FactSessions[is_new_user] = 0), CALCULATE([Sessions], FactSessions[is_new_user] = 0))
-		```
+	measure 'Returning User Session Conversion' = DIVIDE(CALCULATE([Purchase Sessions], FactSessions[is_new_user] = 0), CALCULATE([Sessions], FactSessions[is_new_user] = 0))
 		formatString: 0.00%
 		displayFolder: Customer
+		lineageTag: 38a67f95-c710-4287-9bf0-351bccd83b2b
 
 	/// Revenue allocated to order lines for product analysis.
 	measure 'Product Revenue' = SUM(FactOrderItems[item_revenue])
 		formatString: $#,##0.00
 		displayFolder: Product
+		lineageTag: 24bdc9ad-212f-4621-969f-60f402cb0185
 
 	/// Units recorded on order lines.
 	measure 'Product Units' = SUM(FactOrderItems[quantity])
 		formatString: #,##0
 		displayFolder: Product
+		lineageTag: 159725ff-ddb0-49cf-8242-c9b4c8661180
 
 	/// Distinct orders containing the selected product scope.
 	measure 'Product Orders' = DISTINCTCOUNT(FactOrderItems[order_id])
 		formatString: #,##0
 		displayFolder: Product
+		lineageTag: 6b247692-6545-4f76-8392-d726679f1ae9
 
 	/// Product revenue divided by product units.
 	measure 'Average Selling Price' = DIVIDE([Product Revenue], [Product Units])
 		formatString: $#,##0.00
 		displayFolder: Product
+		lineageTag: 677c2393-bd9c-4244-8f6b-4bb8489de81d
 
 	/// Session count returned for the selected disconnected funnel stage.
-	measure 'Funnel Stage Sessions' = ```
-		SWITCH(SELECTEDVALUE(FunnelStage[Stage]), "Sessions", [Sessions], "Product View", [Product View Sessions], "Add to Cart", [Add to Cart Sessions], "Checkout", [Checkout Sessions], "Purchase", [Purchase Sessions])
-		```
+	measure 'Funnel Stage Sessions' = SWITCH(SELECTEDVALUE(FunnelStage[Stage]), "Sessions", [Sessions], "Product View", [Product View Sessions], "Add to Cart", [Add to Cart Sessions], "Checkout", [Checkout Sessions], "Purchase", [Purchase Sessions])
 		formatString: #,##0
 		displayFolder: Funnel
+		lineageTag: 5c74cfda-b6ef-46dc-a577-0b347e025c1d
 
 	/// Revenue shifted one calendar month back under the current date context.
 	measure 'Revenue Previous Month' = CALCULATE([Revenue], DATEADD(DimDate[date], -1, MONTH))
 		formatString: $#,##0.00
 		displayFolder: Time Intelligence
+		lineageTag: b3026dc8-85a3-49ce-99e5-49d6dae2d0a3
 
 	/// Percentage change from previous-month revenue.
 	measure 'Revenue MoM %' = DIVIDE([Revenue] - [Revenue Previous Month], [Revenue Previous Month])
 		formatString: 0.00%
 		displayFolder: Time Intelligence
+		lineageTag: 147ff27d-8532-4b1e-8ecd-1a9d9f9507f6
 
 	column Dummy
-		dataType: string
-		isHidden
-		summarizeBy: none
-		sourceColumn: Dummy
+		lineageTag: 0baf9a9b-e873-40a8-9fbf-4a6d123dabd9
+		isNameInferred
+		sourceColumn: [Dummy]
 
 	partition _Measures = calculated
 		mode: import
 		source = ROW("Dummy", BLANK())
+

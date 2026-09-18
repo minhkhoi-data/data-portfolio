@@ -1,52 +1,60 @@
 /// Product catalog attributes used by the order-line fact.
 table DimProduct
+	lineageTag: e21f65c3-c973-44d2-a91f-1c39240ba3c4
 
 	column product_key
 		dataType: int64
 		isHidden
 		isKey
+		lineageTag: 44c99f8d-44e5-428d-9ae5-6d4026b78a7a
 		summarizeBy: none
 		sourceColumn: product_key
 
 	column product_id
 		dataType: string
+		lineageTag: 0a20e9b7-25f6-416a-91bc-adaa4a641ac5
 		summarizeBy: none
 		sourceColumn: product_id
 
 	column product_name
 		dataType: string
+		lineageTag: 1ece5241-90d5-4076-abac-912c165040fc
 		summarizeBy: none
 		sourceColumn: product_name
 
 	column category
 		dataType: string
+		lineageTag: e8fc2798-575c-4518-8cd8-aca9c93c6355
 		summarizeBy: none
 		sourceColumn: category
 
 	column subcategory
 		dataType: string
+		lineageTag: ea790052-fb0d-41ac-a0ad-68a885630f19
 		summarizeBy: none
 		sourceColumn: subcategory
 
 	column base_price
 		dataType: decimal
 		formatString: $#,##0.00
+		lineageTag: 6068b01f-364e-45f4-b5e7-030f990083a6
 		summarizeBy: none
 		sourceColumn: base_price
 
 	partition DimProduct = m
 		mode: import
 		source =
-			let
-				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/dim_product.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				Typed = Table.TransformColumnTypes(Headers, {
-				{"product_key", Int64.Type},
-				{"product_id", type text},
-				{"product_name", type text},
-				{"category", type text},
-				{"subcategory", type text},
-				{"base_price", Currency.Type}
-				})
-			in
-				Typed
+				let
+					Source = Csv.Document(File.Contents(DataRoot & "\dim_product.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+					{"product_key", Int64.Type},
+					{"product_id", type text},
+					{"product_name", type text},
+					{"category", type text},
+					{"subcategory", type text},
+					{"base_price", Currency.Type}
+					})
+				in
+					Typed
+

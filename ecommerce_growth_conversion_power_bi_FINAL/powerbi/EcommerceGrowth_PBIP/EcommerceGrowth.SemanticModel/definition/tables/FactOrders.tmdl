@@ -1,87 +1,101 @@
 /// One row per completed order; source columns are hidden in favor of explicit measures.
 table FactOrders
+	lineageTag: 767b31e5-5644-4de4-9fe6-accd92129aa2
 
 	column order_id
 		dataType: string
 		isHidden
+		lineageTag: d4f5113b-eebc-495d-9917-bbe24a879a95
 		summarizeBy: none
 		sourceColumn: order_id
 
 	column session_id
 		dataType: string
 		isHidden
+		lineageTag: 4784c813-c392-4284-a1e1-196ca4beef3c
 		summarizeBy: none
 		sourceColumn: session_id
 
 	column user_id
 		dataType: string
 		isHidden
+		lineageTag: 63d91b3b-5686-4352-81fc-2a4abaa4993e
 		summarizeBy: none
 		sourceColumn: user_id
 
 	column order_date
 		dataType: dateTime
-		formatString: yyyy-MM-dd
 		isHidden
+		formatString: yyyy-MM-dd
+		lineageTag: 02626fda-ce25-43f2-894b-13079600645b
 		summarizeBy: none
 		sourceColumn: order_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column channel_id
 		dataType: int64
 		isHidden
+		lineageTag: d1e80f39-c8a5-41d4-9a2e-4a1e263b64f9
 		summarizeBy: none
 		sourceColumn: channel_id
 
 	column device_id
 		dataType: int64
 		isHidden
+		lineageTag: 612d4d1c-921a-4467-bb90-e4f1b925ec3f
 		summarizeBy: none
 		sourceColumn: device_id
 
 	column geo_id
 		dataType: int64
 		isHidden
+		lineageTag: 5b121a14-9d61-4dfd-964a-3f753af3ce70
 		summarizeBy: none
 		sourceColumn: geo_id
 
 	column total_quantity
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
+		lineageTag: 574fc3f8-94a0-4d42-99fb-811ce030a815
 		summarizeBy: none
 		sourceColumn: total_quantity
 
 	column distinct_products
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
+		lineageTag: 43d89312-5719-41d5-989a-82a833141d60
 		summarizeBy: none
 		sourceColumn: distinct_products
 
 	column total_revenue
 		dataType: decimal
-		formatString: $#,##0.00
 		isHidden
+		formatString: $#,##0.00
+		lineageTag: afb796c8-1dcc-47a5-94db-16c9fbe21b15
 		summarizeBy: none
 		sourceColumn: total_revenue
 
 	partition FactOrders = m
 		mode: import
 		source =
-			let
-				Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/minhkhoi-data/data-portfolio/main/ecommerce_growth_conversion_power_bi/data/fact_orders.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
-				Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				Typed = Table.TransformColumnTypes(Headers, {
-				{"order_id", type text},
-				{"session_id", type text},
-				{"user_id", type text},
-				{"order_date", type date},
-				{"channel_id", Int64.Type},
-				{"device_id", Int64.Type},
-				{"geo_id", Int64.Type},
-				{"total_quantity", Int64.Type},
-				{"distinct_products", Int64.Type},
-				{"total_revenue", Currency.Type}
-				})
-			in
-				Typed
+				let
+					Source = Csv.Document(File.Contents(DataRoot & "\fact_orders.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+					{"order_id", type text},
+					{"session_id", type text},
+					{"user_id", type text},
+					{"order_date", type date},
+					{"channel_id", Int64.Type},
+					{"device_id", Int64.Type},
+					{"geo_id", Int64.Type},
+					{"total_quantity", Int64.Type},
+					{"distinct_products", Int64.Type},
+					{"total_revenue", Currency.Type}
+					})
+				in
+					Typed
+
