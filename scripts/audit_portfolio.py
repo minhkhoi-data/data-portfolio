@@ -25,6 +25,7 @@ EXPECTED_PROJECTS = {
     "insurance_risk_segmentation_sql",
     "product_affinity_network_analysis",
     "airline_performance_visual_analytics",
+    "supervised_learning_regression_classification_r",
 }
 
 
@@ -38,20 +39,51 @@ def run(command: list[str], cwd: Path) -> None:
 
 
 def check_structure() -> None:
-    projects = {path.name for path in ROOT.iterdir() if path.is_dir() and path.name != "scripts"}
+    projects = {
+        path.name
+        for path in ROOT.iterdir()
+        if path.is_dir() and path.name not in {"scripts", ".git"}
+    }
     assert projects == EXPECTED_PROJECTS, f"Unexpected project set: {sorted(projects)}"
-    assert not (ROOT / ".git").exists(), "Embedded Git metadata should not ship in the ZIP"
 
+    forbidden_parts = {".pbi", "__pycache__", ".ipynb_checkpoints"}
     forbidden = []
     oversized = []
-    for path in ROOT.rglob("*"):
-        if any(part in {".git", ".pbi", "__pycache__", ".ipynb_checkpoints"} for part in path.parts):
-            forbidden.append(path)
-        if path.is_dir() and path.name.lower().endswith("_final"):
-            forbidden.append(path)
-        if path.is_file() and path.stat().st_size >= 100 * 1024 * 1024:
-            oversized.append(path)
-    assert not forbidden, f"Forbidden cache/duplicate paths: {forbidden}"
+
+    # In a cloned Git repository, audit what can actually be published/tracked.
+    if (ROOT / ".git").exists():
+        completed = subprocess.run(
+            ["git", "ls-files", "-z"],
+            cwd=ROOT,
+            text=False,
+            capture_output=True,
+        )
+        assert completed.returncode == 0, completed.stderr.decode(errors="replace")
+        tracked = [
+            ROOT / raw.decode("utf-8", errors="replace")
+            for raw in completed.stdout.split(b"\0")
+            if raw
+        ]
+        for path in tracked:
+            rel_parts = path.relative_to(ROOT).parts
+            if any(part in forbidden_parts for part in rel_parts):
+                forbidden.append(path)
+            if any(part.lower().endswith("_final") for part in rel_parts):
+                forbidden.append(path)
+            if path.is_file() and path.stat().st_size >= 100 * 1024 * 1024:
+                oversized.append(path)
+    else:
+        # For a publication ZIP/snapshot without .git, scan the filesystem.
+        for path in ROOT.rglob("*"):
+            rel_parts = path.relative_to(ROOT).parts
+            if any(part in forbidden_parts for part in rel_parts):
+                forbidden.append(path)
+            if path.is_dir() and path.name.lower().endswith("_final"):
+                forbidden.append(path)
+            if path.is_file() and path.stat().st_size >= 100 * 1024 * 1024:
+                oversized.append(path)
+
+    assert not forbidden, f"Forbidden tracked/cache/duplicate paths: {forbidden}"
     assert not oversized, f"Files exceed GitHub's 100 MiB limit: {oversized}"
 
 
@@ -166,6 +198,13 @@ def check_flagship_outputs() -> None:
     )
     assert campaign_quality["Count"].sum() == 0
     assert campaign_channels["ROAS"].gt(0).all()
+    campaign_overall = pd.read_csv(
+        ROOT / "marketing_campaign_funnel_analysis/outputs/overall_metrics.csv"
+    ).set_index("Metric")["Value"]
+    assert int(float(campaign_overall["Campaigns"])) == 10_000
+    assert abs(float(campaign_overall["CTR"]) - 0.0547678863) < 1e-8
+    assert abs(float(campaign_overall["Click to lead"]) - 0.3012909964) < 1e-8
+    assert abs(float(campaign_overall["Lead to conversion"]) - 0.4022744847) < 1e-8
 
     experiment_summary = pd.read_csv(
         ROOT / "ecommerce_growth_conversion_power_bi/experiment/outputs/experiment_summary.csv"
@@ -193,6 +232,7 @@ def check_recruiter_contract() -> None:
         "Campaign & Growth Performance",
         "Product Funnel, Growth & Experimentation",
         "Supporting evidence",
+        "Supervised Learning — Regression & Classification",
     ]
     for phrase in required_phrases:
         assert phrase in root_readme, f"Root README missing recruiter cue: {phrase}"
@@ -207,10 +247,6 @@ def main() -> None:
     run(
         [sys.executable, "analysis/run_analysis.py"],
         ROOT / "ecommerce_customer_segmentation_rfm",
-    )
-    run(
-        [sys.executable, "src/generate_synthetic_campaigns.py"],
-        ROOT / "marketing_campaign_funnel_analysis",
     )
     run(
         [sys.executable, "analysis/run_analysis.py"],

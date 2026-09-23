@@ -3,7 +3,7 @@
 I am an entry-level, business-facing Data Analyst focused on customer, marketing, product, and commercial decisions. This portfolio shows how I move from data quality and metric design to an actionable recommendation—without presenting descriptive patterns as causal proof.
 
 **Core tools:** SQL · Excel · Power BI/DAX · Python · Statistics · Tableau  
-**Target roles:** Customer Analyst · CRM Analyst · Growth Analyst · Marketing/Data Analyst · Product Analyst · Commercial Analyst
+**Target roles:** Data / BI Analyst · Customer / CRM Analyst · Marketing / Growth Analyst · Product Analyst · Commercial / E-commerce Analyst
 
 ## Start here: three flagship decisions
 
@@ -18,8 +18,8 @@ These three projects are the shortest route through the portfolio.
 ### 2. [Campaign & Growth Performance](marketing_campaign_funnel_analysis/)
 
 **Decision:** where does the funnel weaken, and which campaigns deserve scale, optimisation, pause, or investigation review?  
-**Evidence:** 10,000 reproducible synthetic campaigns; weighted CTR, lead rates, CAC, ROAS, data-quality gates, and transparent triage rules.  
-**Result:** 4.20% weighted CTR, $22.52 observed CAC, and 3.35x observed ROAS; recommendations remain review actions rather than automatic budget changes.
+**Evidence:** 10,000 campaign-level records; weighted CTR, lead rates, CAC, ROAS, data-quality gates, and transparent triage rules.  
+**Result:** 5.48% weighted CTR, 30.13% click-to-lead, 40.23% lead-to-conversion, $2.53 observed CAC, and 2.00x observed ROAS; recommendations remain review actions rather than automatic budget changes.
 
 ### 3. [Product Funnel, Growth & Experimentation](ecommerce_growth_conversion_power_bi/)
 
@@ -35,6 +35,7 @@ These three projects are the shortest route through the portfolio.
 | [Insurance Cost Drivers](insurance_risk_segmentation_sql/) | PostgreSQL, CTEs, windows, percentiles, QA | Demonstrates SQL depth and careful descriptive segmentation |
 | [Product Affinity Network](product_affinity_network_analysis/) | Python, basket transformation, network exports | Demonstrates an additional customer/product analytical technique |
 | [Australian Airline Performance](airline_performance_visual_analytics/) | R pipeline and Tableau | Demonstrates reproducible visual analytics on a public operational domain |
+| [Supervised Learning — Regression & Classification](supervised_learning_regression_classification_r/) | R, cross-validation, logistic regression, ROC/AUC | Demonstrates supporting statistical modelling and model-evaluation depth |
 
 Supporting projects add tool evidence; they are not presented as equally important flagship stories.
 
@@ -48,19 +49,18 @@ Every flagship contains:
 4. findings connected to an action;
 5. limitations, causal boundaries, and a next test.
 
-The repository-level [`FUNCTIONAL_AUDIT.md`](FUNCTIONAL_AUDIT.md) records runtime, integrity, link, hygiene, and recruiter-readiness checks. Dataset origin and redistribution scope are documented in [`DATA_SOURCES.md`](DATA_SOURCES.md).
+Dataset origin, disclosure, and redistribution scope are documented in [`DATA_SOURCES.md`](DATA_SOURCES.md).
 
 ## Reproduce the Python flagships
 
 ```bash
 python ecommerce_customer_segmentation_rfm/analysis/run_analysis.py
-python marketing_campaign_funnel_analysis/src/generate_synthetic_campaigns.py
 python marketing_campaign_funnel_analysis/analysis/run_analysis.py
 python ecommerce_growth_conversion_power_bi/experiment/run_experiment.py
 python ecommerce_growth_conversion_power_bi/scripts/validate_dataset.py
 ```
 
-All paths are repository-relative. Generated outputs are deterministic, and each canonical script stops on failed validation gates.
+All paths are repository-relative. Canonical scripts use repository-relative paths and stop on failed validation gates.
 
 ## Repository structure
 
@@ -73,6 +73,7 @@ data-portfolio/
 ├── insurance_risk_segmentation_sql/            # supporting SQL
 ├── product_affinity_network_analysis/           # supporting network analysis
 ├── airline_performance_visual_analytics/        # supporting R/Tableau
+├── supervised_learning_regression_classification_r/ # supporting statistical modelling
 ├── DATA_SOURCES.md
 └── LICENSE
 ```

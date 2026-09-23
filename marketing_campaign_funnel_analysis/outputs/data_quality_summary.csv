@@ -1,5 +1,6 @@
 Check,Count
 Duplicate rows,0
+Duplicate campaign IDs,0
 Missing rows,0
 Invalid dates,0
 Invalid funnel,0

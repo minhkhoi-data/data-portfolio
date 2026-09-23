@@ -197,7 +197,7 @@ Then open:
 tableau/airline_visual_analytics.twb
 ```
 
-The final Tableau workbook has been tested with the bundled processed dataset and the relative datasource path. The original coursework-packaged raw workbook is intentionally not redistributed; [`data/raw/README.md`](data/raw/README.md) records the public BITRE source and the expected local filename for an authorised rerun.
+The final Tableau workbook has been tested with the bundled processed dataset and the relative datasource path. The coursework-provided raw workbook used by the R ingestion pipeline is also included under [`data/raw/`](data/raw/) to support end-to-end reproducibility. The repository does not claim ownership of the underlying aviation data; source context and attribution are documented in [`DATA_NOTE.md`](DATA_NOTE.md).
 
 ## Detailed Report
 

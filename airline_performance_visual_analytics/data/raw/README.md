@@ -1,15 +1,25 @@
-# Raw data access
+# Raw data
 
-The original coursework-packaged workbook is not redistributed in this public portfolio because its redistribution permission was not explicit.
+This folder contains the coursework-provided workbook used as the direct input to the R ingestion pipeline:
 
-The analysis is based on Australian domestic airline on-time performance statistics published by the Bureau of Infrastructure and Transport Research Economics (BITRE):
+```text
+Dataset Assignment 2.xlsx
+```
+
+The analysis is based on Australian domestic airline on-time performance statistics associated with the Bureau of Infrastructure and Transport Research Economics (BITRE):
 
 https://www.bitre.gov.au/resource/aviation/airline-time-performance-monthly-reports-and-time-series-data
 
-To rerun the original R ingestion scripts, place an authorised copy of the workbook at:
+The workbook is included so the audit, cleaning, feature-engineering, and findings scripts can be rerun from the original project input. The repository does not claim ownership of the underlying aviation data.
+
+Processed analytical files generated from the pipeline are stored under:
 
 ```text
-data/raw/Dataset Assignment 2.xlsx
+data/processed/
 ```
 
-The processed analytical CSV used by Tableau remains bundled so the visual workbook and published findings can be inspected without the coursework wrapper.
+The Tableau workbook uses:
+
+```text
+data/processed/airline_performance_analysis.csv
+```

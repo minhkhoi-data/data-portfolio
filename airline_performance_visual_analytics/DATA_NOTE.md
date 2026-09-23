@@ -9,11 +9,12 @@ Reference:
 - Bureau of Infrastructure and Transport Research Economics, *Airline on-time performance - Monthly reports and time series data*
 - https://www.bitre.gov.au/resource/aviation/airline-time-performance-monthly-reports-and-time-series-data
 
-The original Excel workbook was the project input used for this analysis. It is not redistributed in the public portfolio because the coursework wrapper did not provide explicit redistribution permission. The repository does **not** claim ownership of the underlying source data.
+The original coursework-provided Excel workbook is included in this repository because it is the direct input used by the R ingestion pipeline and supports end-to-end reproducibility. The repository does **not** claim ownership of the underlying aviation data.
 
 ## Bundled Files
 
 ```text
+data/raw/Dataset Assignment 2.xlsx
 data/raw/README.md
 data/processed/airline_performance_clean.csv
 data/processed/airline_performance_analysis.csv
@@ -51,4 +52,4 @@ See the four R Markdown scripts under `scripts/` for the executable transformati
 
 ## Redistribution and Attribution
 
-Source-data ownership and redistribution rights remain with BITRE and any applicable source terms. The code, documentation, transformation logic, and portfolio presentation in this repository are separate from ownership of the underlying aviation data. Processed analytical CSVs are retained for inspection; the coursework-packaged raw workbook is deliberately excluded.
+The underlying aviation data are attributed to BITRE and remain subject to any applicable source terms. The code, documentation, transformation logic, and portfolio presentation in this repository are separate from ownership of the underlying data. The coursework-provided raw workbook and processed analytical CSVs are included to make the analytical workflow inspectable and reproducible.

@@ -16,11 +16,11 @@ The compressed CSV is retained for reproducibility with source attribution.
 ## Campaign & Growth Performance
 
 **Bundled file:** `marketing_campaign_funnel_analysis/data/marketing_campaign_performance_10000.csv`  
-**Source type:** deterministic synthetic portfolio data  
-**Generator:** `marketing_campaign_funnel_analysis/src/generate_synthetic_campaigns.py`  
-**Seed:** `2026`
+**Source:** Kaggle, *Marketing Campaign Performance Dataset*  
+**Publisher identified in the canonical notebook:** Mirza Yasir Abdullah Baig  
+**Source page:** https://www.kaggle.com/datasets/mirzayasirabdullah07/marketing-campaign-performance-dataset/data
 
-The former third-party campaign file was replaced because its redistribution license was not explicit. The replacement data do not represent a real advertiser, employer, client, or commercial outcome.
+The repository uses the full 10,000-row CSV analysed by `marketing_campaign_funnel_analysis.ipynb`. The data are used as a portfolio analysis dataset and are not presented as data from a specific employer, client, or advertising account. The repository does not restate or override Kaggle/source redistribution terms; users should review the current source terms before republishing the dataset elsewhere.
 
 ## Commercial & CRM Operations
 
@@ -60,11 +60,22 @@ This project answers a different question: product co-purchase relationships rat
 
 ## Australian Airline Performance
 
+**Bundled raw input:** `airline_performance_visual_analytics/data/raw/Dataset Assignment 2.xlsx`  
 **Bundled analytical files:** processed CSVs under `airline_performance_visual_analytics/data/processed/`  
 **Underlying public source:** Bureau of Infrastructure and Transport Research Economics (BITRE), Australian airline on-time performance reports and time-series data  
 **Source page:** https://www.bitre.gov.au/resource/aviation/airline-time-performance-monthly-reports-and-time-series-data
 
-The coursework-packaged raw workbook is intentionally not redistributed because its wrapper did not state explicit redistribution permission. [`airline_performance_visual_analytics/data/raw/README.md`](airline_performance_visual_analytics/data/raw/README.md) explains how to supply an authorised local input. The Tableau workbook remains inspectable using the bundled processed analytical CSV.
+The coursework-provided raw workbook is included because it is the direct input used by the R pipeline and supports end-to-end reproducibility. The repository does not claim ownership of the underlying aviation data. The Tableau workbook uses the bundled processed analytical CSV.
+
+## Supervised Learning — Regression & Classification
+
+**Bundled files:**  
+- `supervised_learning_regression_classification_r/data/energy_homes.csv`  
+- `supervised_learning_regression_classification_r/data/learners.csv`
+
+**Source type:** coursework-provided datasets
+
+These coursework-provided datasets are included as the direct inputs used by the analysis so the regression and classification workflow can be reproduced end to end. The repository does not claim ownership of the underlying data.
 
 ## Publication rule
 
