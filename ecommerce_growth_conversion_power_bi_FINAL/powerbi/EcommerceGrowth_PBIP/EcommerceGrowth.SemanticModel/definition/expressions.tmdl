@@ -1,6 +1,0 @@
-/// Local folder containing the bundled CSV inputs.
-expression DataRoot = "D:\data_remake\data-portfolio\ecommerce_growth_conversion_power_bi_FINAL\data" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: d31b9220-dd3d-445c-9acc-31f8c1db526d
-
-	annotation PBI_ResultType = Text
-

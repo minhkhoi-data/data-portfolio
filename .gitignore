@@ -15,12 +15,16 @@ venv/
 .DS_Store
 anaconda_projects/
 
-# Raw and processed datasets are not committed unless redistribution is explicitly allowed.
-**/data/raw/*
-**/data/processed/*
+# Project datasets required for reproducibility are intentionally tracked in this portfolio build.
 
 # Generated binary/model artifacts
 *.pkl
 *.joblib
 *.npy
 *.crc
+
+# Large reproducible Product Affinity intermediates
+product_affinity_network_analysis/data/processed/online_retail_cleaned.csv
+product_affinity_network_analysis/data/processed/invoice_baskets.csv
+product_affinity_network_analysis/data/processed/all_product_edges.csv
+

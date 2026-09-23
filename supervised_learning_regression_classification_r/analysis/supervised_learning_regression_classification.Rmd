@@ -1,25 +1,13 @@
 ---
-title: "COMP2025 Introduction to Data Science — Assignment 1"
+title: "Supervised Learning — Regression & Classification"
 author: "Pham Minh Khoi"
-date: "2026-06-20"
+date: "`r Sys.Date()`"
 output:
   pdf_document:
     toc: false
     number_sections: false
-  html_document:
-    toc: false
-    number_sections: false
-  word_document:
-    toc: false
 ---
 
-# Declaration
-
-By submitting this work I certify that: no part of it has been copied from another student or any other source except where acknowledged; no part was written or produced for me by another person except as authorised by the lecturer; I have disclosed all use of generative-AI tools in the Reflection Log; and I understand this work may be checked by plagiarism- and AI-detection software.
-
-Signed (typed name): Pham Minh Khoi  
-Student ID: 22145599  
-Date: `r Sys.Date()`
 
 # 0. Setup and Reproducibility
 
@@ -57,13 +45,13 @@ set.seed(D)
 D
 ```
 
-The personalised seed value is **599**, which is the last three digits of Student ID **22145599**. The command `set.seed(599)` is used wherever a random procedure is required. In this assignment, the seed affects the 10-fold cross-validation in Question 1, the 80/20 train-test split in Question 2, and the 10-fold cross-validation in Question 2.
+A fixed seed value of **599** is used for reproducibility. The command `set.seed(599)` is used wherever a random procedure is required. In this analysis, the seed affects the 10-fold cross-validation in Question 1, the 80/20 train-test split in Question 2, and the 10-fold cross-validation in Question 2.
 
 **c) Data files used**
 
 ```{r data-files-used}
-energy_file <- "D:/data-portfolio/07_learner_retention_analytics_r/data/energy_homes.csv"
-learners_file <- "D:/data-portfolio/07_learner_retention_analytics_r/data/learners.csv"
+energy_file <- "../data/energy_homes.csv"
+learners_file <- "../data/learners.csv"
 
 file.exists(energy_file)
 file.exists(learners_file)
@@ -80,7 +68,7 @@ This question uses `energy_homes.csv` to model `heating_load`, which is the annu
 **a) Data import, dimensions, and missing values**
 
 ```{r q1-1-a-import-energy}
-energy <- read.csv("D:/data-portfolio/07_learner_retention_analytics_r/data/energy_homes.csv")
+energy <- read.csv("../data/energy_homes.csv")
 
 dim(energy)
 names(energy)
@@ -344,7 +332,7 @@ The residuals vs fitted plot for Model B shows residuals mostly centred around z
 
 The Normal Q-Q plot shows that most residuals follow the straight line, with some departures at the tails. This suggests that the normality assumption is broadly acceptable but not perfect.
 
-The scale-location plot shows a reasonably even spread of residuals across fitted values, although some variation remains. Overall, the diagnostic plots suggest that Model B is acceptable for this assignment, but the regression assumptions are not perfectly satisfied.
+The scale-location plot shows a reasonably even spread of residuals across fitted values, although some variation remains. Overall, the diagnostic plots suggest that Model B is acceptable for this analysis, but the regression assumptions are not perfectly satisfied.
 
 **d) Model A versus Model B recommendation**
 
@@ -536,7 +524,7 @@ This question uses `learners.csv` to predict whether a learner completed the cou
 **a) Missing values and cleaning decision**
 
 ```{r q2-1-a-import-learners}
-learners <- read.csv("D:/data-portfolio/07_learner_retention_analytics_r/data/learners.csv", stringsAsFactors = FALSE)
+learners <- read.csv("../data/learners.csv", stringsAsFactors = FALSE)
 
 dim(learners)
 names(learners)
@@ -913,11 +901,11 @@ For the learning platform, the most useful finding is that course completion can
 
 ## 3.2 Reproducibility Statement
 
-This analysis can be reproduced by placing `energy_homes.csv` and `learners.csv` in the `data` folder, opening the same R Markdown file, installing the required packages, and running the report from top to bottom. The personalised seed value used in this report is `D = 599`, from the last three digits of Student ID `22145599`.
+This analysis can be reproduced by placing `energy_homes.csv` and `learners.csv` in the `data` folder, opening the same R Markdown file, installing the required packages, and running the report from top to bottom. The fixed seed value used in this report is `D = 599` for reproducibility.
 
 The command `set.seed(D)` affects every random procedure in the report. In Question 1, it affects the 10-fold cross-validation folds for comparing Model A and Model B, and the 10-fold cross-validation folds for the polynomial models of orders 1 to 5. In Question 2, it affects the stratified 80/20 train-test split, which then affects the fitted logistic regression model, the test-set confusion matrix, accuracy, sensitivity, specificity, ROC curve, AUC, and threshold-adjustment results. It also affects the 10-fold cross-validation folds used to estimate the final logistic model's misclassification rate.
 
-If a different student ran the same code using their own value of `D`, the deterministic outputs would stay the same, including the missing-value counts, completion rate, and regression models fitted on the full `energy` dataset. However, outputs depending on random folds or the train-test split could change slightly, including the cross-validated MSE values, the selected training and test rows, the logistic regression estimates fitted on the training set, and the test-set performance metrics.
+If the analysis is rerun with a different seed value, deterministic outputs would stay the same, including the missing-value counts, completion rate, and regression models fitted on the full `energy` dataset. Outputs depending on random folds or the train-test split could change slightly, including the cross-validated MSE values, the selected training and test rows, the logistic regression estimates fitted on the training set, and the test-set performance metrics.
 
 ## 3.3 Regression versus Classification
 

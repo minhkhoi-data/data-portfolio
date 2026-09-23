@@ -199,10 +199,10 @@ If more data were available, this analysis could be extended by:
 ## 13. Project Structure
 
 ```text
-04_ecommerce_customer_segmentation_rfm/
+ecommerce_customer_segmentation_rfm/
 │
 ├── data/
-│   └── online_retail_II.csv
+│   └── online_retail_II.csv.gz
 │
 ├── README.md
 └── ecommerce_customer_segmentation_rfm.ipynb
@@ -217,7 +217,7 @@ If more data were available, this analysis could be extended by:
 2. Make sure the dataset is stored in:
 
 ```text
-data/online_retail_II.csv
+data/online_retail_II.csv.gz
 ```
 
 3. Open the notebook:

@@ -8,7 +8,7 @@ library(dplyr)
 
 # Read the final analysis dataset
 airline <- read.csv(
-  "D:/data-portfolio/08_airline_service_performance_visual_analytics/data/processed/airline_performance_analysis.csv"
+  "../../data/processed/airline_performance_analysis.csv"
 )
 
 # Keep only network-level records

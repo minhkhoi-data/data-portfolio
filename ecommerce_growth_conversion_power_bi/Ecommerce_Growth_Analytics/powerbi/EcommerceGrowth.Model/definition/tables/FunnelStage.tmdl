@@ -1,0 +1,17 @@
+table FunnelStage
+	lineageTag: 682be2fb-8bf5-4151-ab9e-55e60a86a852
+
+	column Stage
+		lineageTag: 8f83d925-0246-4d6e-896c-c899daaab0e9
+		isNameInferred
+		sourceColumn: [Stage]
+
+	column Sort
+		lineageTag: 803f5546-b60e-4668-aa5b-e51888037992
+		isNameInferred
+		sourceColumn: [Sort]
+
+	partition FunnelStage = calculated
+		mode: import
+		source = DATATABLE("Stage", STRING, "Sort", INTEGER, {{"Sessions",1},{"Product View",2},{"Add to Cart",3},{"Checkout",4},{"Purchase",5}})
+

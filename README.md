@@ -1,65 +1,136 @@
-# Data Analytics Portfolio — Customer, Growth & Business Analytics
+# Data Analytics Portfolio
 
-A curated portfolio of analytics projects focused on turning business data into decisions. The work spans customer segmentation, marketing performance, predictive modelling, SQL analysis, product affinity, and visual analytics.
+## Customer, Growth & Business Analytics
 
-**Current toolkit:** Python • R • SQL (PostgreSQL) • Tableau • statistical modelling • business analytics
+This portfolio contains eight end-to-end analytics projects focused on a common objective: turning operational, customer, marketing, and commercial data into decisions.
 
-> Portfolio principle: fewer, stronger projects. Each project is kept only when it demonstrates a distinct analytical skill or business use case.
+The projects cover customer segmentation, CRM and sales operations, marketing performance, e-commerce growth, predictive modelling, SQL-based risk analysis, product affinity networks, and airline performance analytics.
 
-## Featured Projects
+**Core toolkit:** Excel • Power BI • Python • R • PostgreSQL • Tableau
 
-### 1. E-commerce Customer Segmentation & Retention Opportunity Analysis
-**Tools:** Python, pandas, matplotlib  
+---
+
+## Portfolio Projects
+
+### 1. E-commerce Customer Segmentation & Retention Analysis
+**Tools:** Python, pandas, matplotlib
+
 **Business question:** Which customer groups should be prioritised for retention, reactivation, and revenue growth?
 
+Key work:
 - Built customer-level RFM metrics from transaction data.
-- Found that **Champions represented 21.93% of customers but 68.03% of revenue**.
-- Identified **At Risk** customers as a meaningful win-back opportunity and translated segments into CRM actions and KPIs.
+- Segmented **5,878 customers** from **36,969 orders**.
+- Identified that the Champions segment represented **21.93% of customers but 68.03% of revenue**.
+- Translated segmentation results into CRM and retention actions.
 
-[Open project](./ecommerce_customer_segmentation_rfm)
+[View project](./ecommerce_customer_segmentation_rfm)
 
-### 2. Marketing Campaign Funnel & Channel Performance Analysis
-**Tools:** Python, pandas, NumPy, matplotlib  
-**Business question:** Where does the funnel lose efficiency, and which campaigns deserve scale, optimisation, investigation, or budget review?
+---
 
-- Analysed **10,000 campaign-level records**.
-- Built CTR, lead rate, conversion rate, CPC, cost per lead, CAC, and ROAS metrics.
-- Identified impression-to-click as the largest observed funnel drop-off, with **5.48% of impressions converting to clicks**.
-- Created a rule-based campaign prioritisation framework for business action.
+### 2. Marketing Campaign Funnel & Channel Performance
+**Tools:** Python, pandas, NumPy, matplotlib
 
-[Open project](./marketing_campaign_funnel_analysis)
+**Business question:** Where does marketing performance weaken across the funnel, and which campaigns or channels need optimisation?
 
-### 3. Supervised Learning — Regression & Classification
-**Tools:** R, R Markdown, `boot`, `pROC`  
-**Business question:** How should predictive models be selected and evaluated when the outcome is continuous versus binary?
+Key work:
+- Analysed **10,000 campaign records**.
+- Built CTR, lead rate, conversion rate, CPC, CPL, CAC, and ROAS metrics.
+- Reproduced an overall CTR of approximately **5.48%**.
+- Connected campaign metrics to practical scale, optimise, investigate, or reduce-spend decisions.
 
-- Compared linear, polynomial, multiple, and interaction regression models using diagnostics and 10-fold cross-validation.
-- Built a learner-completion logistic model with **AUC 0.813**.
-- Evaluated threshold trade-offs between sensitivity and specificity and connected model thresholds to operational decision costs.
+[View project](./marketing_campaign_funnel_analysis)
 
-[Open project](./supervised_learning_regression_classification_r)
+---
 
-## Supporting Projects
+### 3. Commercial & CRM Operations Analysis
+**Tools:** Excel
 
-| Project | Primary skill demonstrated | Key signal |
-|---|---|---|
-| [Insurance Risk Segmentation — SQL](./insurance_risk_segmentation_sql) | SQL analytics | CTEs, robust percentiles, segmentation, ranking, lift |
-| [Product Affinity & Co-Purchase Network](./product_affinity_network_analysis) | Relational/network analytics | 1M+ transaction rows, weighted product network, hubs and communities |
-| [Australian Airline Performance Visual Analytics](./airline_performance_visual_analytics) | R + Tableau | data integration, weighted KPIs, multidimensional visual analysis |
+**Business question:** Which parts of the sales funnel, acquisition mix, sales team, and open pipeline deserve management attention?
 
-## Skills Demonstrated
+Key work:
+- Built a formula-driven CRM model from **1,800 synthetic leads**.
+- Analysed funnel leakage, channel performance, sales-rep performance, stale opportunities, and weighted pipeline.
+- Produced an executive dashboard with auditable supporting sheets.
+- Final model tracks **$9.78M won revenue**, **$13.01M open pipeline**, and **358 stale open leads**.
 
-**Customer & growth analytics**  
-RFM segmentation • retention/reactivation logic • campaign funnel analysis • CAC/ROAS-style KPI interpretation • customer prioritisation
+[View project](./commercial_crm_excel_analytics)
 
-**Data analysis & programming**  
-Python • pandas • NumPy • R • SQL/PostgreSQL • data cleaning • EDA • reproducible notebooks/R Markdown
+---
 
-**Statistics & modelling**  
-Regression • logistic classification • cross-validation • ROC/AUC • threshold analysis • hypothesis testing • robust summary statistics
+### 4. E-commerce Growth & Conversion Analytics
+**Tools:** Power BI, DAX, Power Query
 
-**Visual analytics**  
-matplotlib • Tableau • KPI design • geographic/time-series/route visualisation • analytical storytelling
+**Business question:** How do traffic, funnel conversion, acquisition channels, customers, and products contribute to e-commerce growth?
+
+Key work:
+- Built a multi-page Power BI report and semantic model.
+- Analysed **75,237 sessions**, **32,000 users**, and **4,737 transactions**.
+- Validated total revenue of **$217,478.50**.
+- Covered acquisition, conversion funnel, customer behaviour, geographic performance, and product performance.
+
+[View project](./ecommerce_growth_conversion_power_bi)
+
+---
+
+### 5. Supervised Learning — Regression & Classification
+**Tools:** R, R Markdown, `boot`, `pROC`
+
+**Business question:** How should predictive models be selected, validated, and interpreted for continuous and binary outcomes?
+
+Key work:
+- Compared linear, polynomial, multiple-regression, and interaction models.
+- Used model diagnostics and **10-fold cross-validation** for model selection.
+- Built a logistic model for learner completion.
+- Achieved **AUC = 0.813** and evaluated threshold trade-offs between sensitivity and specificity.
+
+[View project](./supervised_learning_regression_classification_r)
+
+---
+
+### 6. Insurance Risk Segmentation
+**Tools:** PostgreSQL, SQL
+
+**Business question:** Which customer characteristics are associated with higher insurance charges, and which segments represent the highest observed cost risk?
+
+Key work:
+- Built a reproducible PostgreSQL workflow from raw data to analytical views.
+- Used CTEs, bucketing, percentiles, ranking, aggregation, and segmentation.
+- Verified **1,338 raw records** and **1,337 final records** after exact-duplicate removal.
+- Ranked high-cost customer segments using average, median, and 90th-percentile charges.
+
+[View project](./insurance_risk_segmentation_sql)
+
+---
+
+### 7. Product Affinity & Co-Purchase Network Analysis
+**Tools:** Python, pandas, Jupyter, Gephi-compatible network data
+
+**Business question:** Which products are repeatedly purchased together, and which products act as important nodes in the co-purchase network?
+
+Key work:
+- Converted transaction baskets into weighted product-product relationships.
+- Built reusable edge and node datasets for network analysis.
+- At the focused threshold, reproduced a network of **581 nodes and 1,948 edges**.
+- Exported network files for further exploration in Gephi.
+
+[View project](./product_affinity_network_analysis)
+
+---
+
+### 8. Australian Airline Performance Visual Analytics
+**Tools:** R, R Markdown, Tableau
+
+**Business question:** How do Australian airlines, airports, routes, and network conditions differ in punctuality, cancellation performance, and operating volume?
+
+Key work:
+- Built a reproducible pipeline from a multi-sheet workbook to clean and analysis-ready datasets.
+- Processed **80,972 analytical records** covering **2010–2024**.
+- Calculated weighted departure OTP, arrival OTP, cancellation rates, airport performance, route performance, and airline comparisons.
+- Built Tableau views covering network trends, geographic performance, heatmaps, route analysis, and airline comparisons.
+
+[View project](./airline_performance_visual_analytics)
+
+---
 
 ## Repository Structure
 
@@ -67,19 +138,42 @@ matplotlib • Tableau • KPI design • geographic/time-series/route visualisa
 data-portfolio/
 ├── ecommerce_customer_segmentation_rfm/
 ├── marketing_campaign_funnel_analysis/
+├── commercial_crm_excel_analytics/
+├── ecommerce_growth_conversion_power_bi/
 ├── supervised_learning_regression_classification_r/
 ├── insurance_risk_segmentation_sql/
 ├── product_affinity_network_analysis/
 ├── airline_performance_visual_analytics/
+├── DATA_SOURCES.md
+├── FUNCTIONAL_AUDIT.md
 ├── README.md
 └── LICENSE
 ```
 
-## Next Portfolio Builds
+Each project folder contains its own README with the business question, methodology, outputs, and reproduction instructions.
 
-The next additions will close two practical tooling gaps rather than add more generic projects:
+---
 
-- **Excel business analysis project** — structured operational/commercial analysis using formulas, PivotTables, data cleaning, and management-ready outputs.
-- **Power BI project** — an end-to-end dashboard project focused on e-commerce/customer/growth decision-making.
+## Reproducibility
 
-These will be added only when complete; unfinished placeholder projects are intentionally excluded from the public portfolio.
+The portfolio is structured so that project files can be opened and reproduced without relying on machine-specific working directories.
+
+- Python notebooks use project-relative paths.
+- Excel includes its supporting dataset and formula-driven analysis workbook.
+- Power BI is stored as a PBIP project with its semantic model and report definition.
+- R projects use relative paths and include the required analysis data.
+- PostgreSQL includes separate schema-setup and analysis scripts.
+- Tableau connects to the processed airline dataset through a relative datasource path.
+- Large reproducible intermediate files are excluded where they can be regenerated from the included source data.
+
+`FUNCTIONAL_AUDIT.md` records the final runtime verification status of the portfolio.
+
+---
+
+## Data Sources & Licensing
+
+Datasets in this repository come from a mixture of public sources, coursework-provided datasets, and synthetic portfolio data.
+
+Dataset provenance and usage notes are documented separately in [`DATA_SOURCES.md`](./DATA_SOURCES.md).
+
+The repository license applies to original code and documentation unless otherwise stated. Third-party datasets remain subject to the terms of their original sources.

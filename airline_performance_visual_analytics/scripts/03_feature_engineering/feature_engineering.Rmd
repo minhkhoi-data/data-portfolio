@@ -20,9 +20,9 @@ library(dplyr)
 
 # 2. FILE PATHS -----------------------------------------------------------
 
-input_path <- "D:/data-portfolio/08_airline_service_performance_visual_analytics/data/processed/airline_performance_clean.csv"
+input_path <- "../../data/processed/airline_performance_clean.csv"
 
-output_path <- "D:/data-portfolio/08_airline_service_performance_visual_analytics/data/processed/airline_performance_analysis.csv"
+output_path <- "../../data/processed/airline_performance_analysis.csv"
 
 
 # 3. READ CLEAN DATA ------------------------------------------------------

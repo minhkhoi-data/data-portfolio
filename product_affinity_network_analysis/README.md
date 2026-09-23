@@ -82,6 +82,9 @@ However, high degree or high co-purchase count does **not** automatically imply 
 
 ```text
 product_affinity_network_analysis/
+├── data/
+│   ├── raw/online_retail_II.csv.gz
+│   └── processed/
 ├── notebooks/
 │   └── 01_prepare_product_copurchase_network.ipynb
 ├── figures/
@@ -90,8 +93,11 @@ product_affinity_network_analysis/
 └── README.md
 ```
 
+## How to Run
+
+Open `notebooks/01_prepare_product_copurchase_network.ipynb` and run all cells from top to bottom. The notebook uses relative paths to the bundled `data/raw/online_retail_II.csv.gz` and regenerates the analysis intermediates plus the Gephi-ready exports under `data/processed/`. Large intermediate CSVs are intentionally not committed because they are reproducible from the bundled compressed raw dataset.
+
 ## Limitations & Best Next Extension
 
 Current edge weights measure repeated co-occurrence, not relative product affinity. The highest-value extension is to add **support, confidence, and lift** so that frequent pairs can be separated from relationships driven mainly by individually popular products.
 
-The raw dataset is not included in the public repository. The project notebook documents the expected local file structure.

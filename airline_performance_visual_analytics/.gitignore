@@ -1,0 +1,20 @@
+# R / RStudio local state
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# R Markdown / LaTeX intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.tex
+
+# Generated script-level PDFs are reproducible and not required in Git
+scripts/*/*.pdf
+
+# OS clutter
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+table DimChannel
+	lineageTag: df7936be-506d-42d4-80b7-48e6db55c703
+
+	column channel_id
+		dataType: int64
+		lineageTag: a36eee4d-9afc-4ea6-8e11-326a1342a64c
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column channel
+		dataType: string
+		lineageTag: c41b237f-8e3c-476a-be27-31dfe3951f3f
+		summarizeBy: none
+		sourceColumn: channel
+
+	partition DimChannel = m
+		mode: import
+		source =
+				let
+					EmbeddedBase64 = Text.Combine({
+						"H4sIAPhNsWoC/0vOSMzLS82Jz0zRSYYwuQx1/IvSE/MykxWCUxOLkjO4jHRcMotSk0u4jHUCEjNTYMImOkGpaalFRYk5XKZAFcUFOYmVXGY6rrmJmTlc5ghD8pMzgUoAb91UWmkAAAA="
+					}),
+					CompressedBinary = Binary.FromText(EmbeddedBase64, BinaryEncoding.Base64),
+					CsvBinary = Binary.Decompress(CompressedBinary, Compression.GZip),
+					Source = Csv.Document(CsvBinary, [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+					{"channel_id", Int64.Type},
+					{"channel", type text}
+					})
+				in
+					Typed
+

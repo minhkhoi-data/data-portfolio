@@ -1,0 +1,95 @@
+table DimDate
+	lineageTag: 5a0e4d09-286f-4ef8-9fcc-3b76967fb07a
+	dataCategory: Time
+
+	column date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 38021ba4-d58e-4401-b4b8-27f57983d8df
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 30b65006-def3-4b54-a18c-402f7715b121
+		summarizeBy: none
+		sourceColumn: year
+
+	column month_no
+		dataType: int64
+		formatString: 0
+		lineageTag: 72bd8da6-b0f6-4d9e-9f3b-75dac5b56b28
+		summarizeBy: none
+		sourceColumn: month_no
+
+	column month
+		dataType: string
+		lineageTag: 4da8c289-b864-4f3f-b71f-f9fa811054c1
+		summarizeBy: none
+		sourceColumn: month
+		sortByColumn: month_no
+
+	column year_month
+		dataType: string
+		lineageTag: a7c54a66-3ea7-4dd1-8b29-7c8399c94856
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column week_start
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 9e2d4366-4668-47cc-92d4-40528fc5953a
+		summarizeBy: none
+		sourceColumn: week_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column day_of_week
+		dataType: string
+		lineageTag: be87ec72-3d5f-44a4-a684-79556d950ad5
+		summarizeBy: none
+		sourceColumn: day_of_week
+		sortByColumn: day_of_week_no
+
+	column day_of_week_no
+		dataType: int64
+		formatString: 0
+		lineageTag: ca59e51f-e026-417f-a839-4912e19be563
+		summarizeBy: none
+		sourceColumn: day_of_week_no
+
+	column is_weekend
+		dataType: int64
+		formatString: 0
+		lineageTag: d83249dd-f403-4043-aa12-4571a98c7561
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+	partition DimDate = m
+		mode: import
+		source =
+				let
+					EmbeddedBase64 = Text.Combine({
+						"H4sIAPhNsWoC/4XXTWvbQBSF4X1/yxjmntHnvnQRaDcpdClErZJQKoMtJ+TfVx9uJXuO5qwq5ubpDS8DQ47t0LmPrj27P6d+eGn60/IxnzXL53vX/W4uQ3se3LH9aE6/mulk+z2x18v82fXHT/DwB7ODNzd9OjP37fTmbse3f/0BhXu+9uN/40pnK0ICzeOvpxmZ8ysKCn2/dpdJYasypX50x35xYetyue3lep5ZtmWFYl/OrxPKt6hU6LkdrueJFduKlWQkfZ1GNUtvXiGW3kwpnt4gt7H0FhQj6S1TiKa3XLI4vaXvxjhm6UuFaPpKqZ30tdzG0sMrRtLDFKLpAcni9EjfjXFM0iNTiKVHrhRPj0Juo+lLxVj6SiGevpYsTh/Sd2McR+mxvipwn7uftx/GFsXpsT4ru4qlx/qy7G+L02N9WnZZlB7ru7KLSHqs78o+e0yP9V1haB6z9JVCNH2tFE///2XZ38bSmylG0hsUouktSBantyyJxjFJb7lCLL0VSu2kL+U2mr5SjKWvFaLp4SWL0yN9N8YxSQ8oxNIjKMXTI5PbWHrkipH0KBTi6UvJSPr03RjHLH2tEEsfvFI8fTC57SH99DfO7UGy8Rd/ant3O92q+/KLgTCP4RcVlLrrvphsx/yb3mdfTnNhHqovx4VAUfRlUKpdtHklFGteC0ObL69QSsXNzVLGjDU3CMOaWxCIN7dM7WLNLReKNLdCGN68VIo0T94Iq2jzWhjWHF4g3hymdrHmgFCkOYIwtDkypeLmSN6IcUqaoxCGNi8F2mleqV20eS0UaR68MLR5MKXW5n8BI1M/kqoTAAA="
+					}),
+					CompressedBinary = Binary.FromText(EmbeddedBase64, BinaryEncoding.Base64),
+					CsvBinary = Binary.Decompress(CompressedBinary, Compression.GZip),
+					Source = Csv.Document(CsvBinary, [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+					{"date", type date},
+					{"year", Int64.Type},
+					{"month_no", Int64.Type},
+					{"month", type text},
+					{"year_month", type text},
+					{"week_start", type date},
+					{"day_of_week", type text},
+					{"day_of_week_no", Int64.Type},
+					{"is_weekend", Int64.Type}
+					})
+				in
+					Typed
+

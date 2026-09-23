@@ -146,7 +146,7 @@ This analysis has some limitations:
 ## Project Structure
 
 ```text
-05_marketing_campaign_funnel_analysis/
+marketing_campaign_funnel_analysis/
 │
 ├── data/
 │   └── marketing_campaign_performance_10000.csv

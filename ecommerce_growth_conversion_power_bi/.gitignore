@@ -1,0 +1,10 @@
+# Power BI local workspace/cache
+**/.pbi/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

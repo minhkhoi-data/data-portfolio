@@ -21,9 +21,9 @@ library(dplyr)
 
 # 2. FILE PATHS -----------------------------------------------------------
 
-file_path <- "D:/data-portfolio/08_airline_service_performance_visual_analytics/data/raw/Dataset Assignment 2.xlsx"
+file_path <- "../../data/raw/Dataset Assignment 2.xlsx"
 
-output_path <- "D:/data-portfolio/08_airline_service_performance_visual_analytics/data/processed/airline_performance_clean.csv"
+output_path <- "../../data/processed/airline_performance_clean.csv"
 
 
 # Make sure the processed folder exists

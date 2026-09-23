@@ -1,0 +1,40 @@
+table DimGeo
+	lineageTag: 141dcd02-65c8-4dd5-8c51-667150c97924
+
+	column geo_id
+		dataType: int64
+		lineageTag: e81a59f2-d798-4060-b12c-81c583f861a9
+		summarizeBy: none
+		sourceColumn: geo_id
+
+	column country
+		dataType: string
+		lineageTag: fdd266ad-1245-4d9e-9f9f-70b715722168
+		summarizeBy: none
+		sourceColumn: country
+
+	column region_group
+		dataType: string
+		lineageTag: 29c571dc-b54a-4c58-ab63-7fb517ef96f7
+		summarizeBy: none
+		sourceColumn: region_group
+
+	partition DimGeo = m
+		mode: import
+		source =
+				let
+					EmbeddedBase64 = Text.Combine({
+						"H4sIAPhNsWoC/12MOwrDMBAFe53CB9gizj+lCU5IAnFhUptFWmRBvCvWUuHbx2DcpHnwBmY8SRccWMmcdAIlH4Q7r5KjKeHDIZEr2oSJRniLpr6oBtJg0WzhiowO//BulV6BvZMB6qwSyezhwS4gVGNAc4Aqj0nxO4PGEvLMjnAnHZCn1TjBTZEtrf8MT4zIS+EC7dzHKEoLKDfQpJ50WfMDFK3V/dgAAAA="
+					}),
+					CompressedBinary = Binary.FromText(EmbeddedBase64, BinaryEncoding.Base64),
+					CsvBinary = Binary.Decompress(CompressedBinary, Compression.GZip),
+					Source = Csv.Document(CsvBinary, [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+					{"geo_id", Int64.Type},
+					{"country", type text},
+					{"region_group", type text}
+					})
+				in
+					Typed
+

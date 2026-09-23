@@ -1,7 +1,6 @@
 /* =====================================================================
    PROJECT: Insurance Charges Drivers & Risk Segmentation – SQL Analysis
-   Author: Pham Minh Khoi
-   Tool: DBeaver Ultimate | Database: PostgreSQL
+   Database: PostgreSQL 18 | Runtime-tested with pgAdmin 4
    Scope: Portfolio (SQL-only), single business story
    Grain: 1 row = 1 customer record
    ===================================================================== */
