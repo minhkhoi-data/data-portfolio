@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "aacf10b2086ec2081321",
-  "displayName": "Acquisition & Channel",
-  "displayOption": "FitToPage",
-  "height": 720,
-  "width": 1280
-}

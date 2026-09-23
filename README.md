@@ -74,8 +74,6 @@ data-portfolio/
 ├── product_affinity_network_analysis/           # supporting network analysis
 ├── airline_performance_visual_analytics/        # supporting R/Tableau
 ├── DATA_SOURCES.md
-├── FUNCTIONAL_AUDIT.md
-├── PUBLISHING_CHECKLIST.md
 └── LICENSE
 ```
 
