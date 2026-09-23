@@ -28,3 +28,15 @@ product_affinity_network_analysis/data/processed/online_retail_cleaned.csv
 product_affinity_network_analysis/data/processed/invoice_baskets.csv
 product_affinity_network_analysis/data/processed/all_product_edges.csv
 
+
+# Power BI Desktop local workspace/cache
+**/.pbi/
+
+# Additional local/editor artifacts
+.Ruserdata
+Thumbs.db
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

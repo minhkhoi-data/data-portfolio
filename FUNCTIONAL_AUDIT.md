@@ -257,11 +257,6 @@ Verified across the repository:
 
 **8/8 projects: FULL FUNCTIONAL PASS**
 
-At this point, further work should focus on:
-- documentation consistency
-- privacy/metadata cleanup
-- dataset attribution
-- GitHub presentation
-- visual polish
+No known functional or publication blockers remain in the audited repository snapshot. Final preflight also confirmed that project navigation links resolve, machine-specific absolute paths are absent from project source files, required binary artifacts open successfully, and no working-tree file exceeds GitHub's 100 MB per-file limit.
 
-Core project logic should not be changed unless a new reproducible functional defect is discovered.
+Third-party and coursework-provided datasets remain subject to the usage and redistribution notes in `DATA_SOURCES.md`. Core project logic should not be changed unless a new reproducible functional defect is discovered.

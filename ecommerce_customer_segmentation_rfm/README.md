@@ -97,7 +97,7 @@ After cleaning, the dataset contains:
 | Number of customers | 5,878 |
 | Number of orders | 36,969 |
 | Number of products | 4,631 |
-| Start date | 2009-12-07 |
+| Start date | 2009-12-01 |
 | End date | 2011-12-09 |
 
 ---
