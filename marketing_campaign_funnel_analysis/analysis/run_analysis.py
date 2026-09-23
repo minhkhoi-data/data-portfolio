@@ -163,7 +163,7 @@ def main() -> None:
     # Decision dashboard
     plt.close("all")
     fig, axes = plt.subplots(2, 2, figsize=(14, 9))
-    transition_labels = ["Impression → click", "Click → lead", "Lead → conversion"]
+    transition_labels = ["Impression -> click", "Click -> lead", "Lead -> conversion"]
     transition_rates = [overall["CTR"] * 100, overall["Click to lead"] * 100, overall["Lead to conversion"] * 100]
     axes[0, 0].barh(transition_labels, transition_rates)
     axes[0, 0].set_title("Overall Funnel Conversion")
@@ -233,8 +233,8 @@ The source is campaign-level and does not contain user-level behaviour, creative
     print("PASS — campaign analysis completed")
     print(f"Campaigns: {len(data):,}")
     print(f"CTR: {overall['CTR']:.2%}")
-    print(f"Click → Lead: {overall['Click to lead']:.2%}")
-    print(f"Lead → Conversion: {overall['Lead to conversion']:.2%}")
+    print(f"Click -> Lead: {overall['Click to lead']:.2%}")
+    print(f"Lead -> Conversion: {overall['Lead to conversion']:.2%}")
     print(f"CAC: ${overall['CAC']:.2f}")
     print(f"ROAS: {overall['ROAS']:.2f}x")
 
