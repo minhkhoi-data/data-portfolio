@@ -386,8 +386,8 @@ Protect high-value active customers first, run a measured win-back test for high
 - **{repeat_rate:.1%}** of {len(customers):,} customers made at least two orders.
 - Among customers observed for at least 90 days, **{repeat_90_rate:.1%}** made a second purchase within 90 days; the median time to second purchase among repeat customers was **{median_days_to_second:.0f} days**.
 - Weighted cohort retention was **{m1:.1%}** in month 1 and **{m3:.1%}** in month 3. Only cohorts with a complete observation window are used in these headline rates.
-- **{int(active['Customers']):,} active repeat customers generated {active['Revenue Share (%)']:.1f}% of historical revenue.**
-- **{int(at_risk['Customers']):,} at-risk customers generated {at_risk['Revenue Share (%)']:.1f}% of historical revenue and form the most defensible win-back pool.**
+- **{int(active['Customers']):,}** active repeat customers generated {active['Revenue Share (%)']:.1f}% of historical revenue.
+- **{int(at_risk['Customers']):,}** at-risk customers generated {at_risk['Revenue Share (%)']:.1f}% of historical revenue and form the most defensible win-back pool.
 
 ## Recommended test plan
 
