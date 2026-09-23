@@ -1,0 +1,7 @@
+Check,Count
+Raw rows,1067371
+Missing customer IDs,243007
+Cancelled invoice rows,19494
+Non-positive quantity rows,22950
+Non-positive price rows,6207
+Duplicate rows,34335

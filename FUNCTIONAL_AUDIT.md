@@ -1,262 +1,107 @@
-# Functional Audit
-
-**Portfolio status:** 8/8 projects functionally verified  
-**Verification date:** 23 September 2026
-
-This document records the final runtime verification status of the portfolio. It is intended as a technical audit trail, not as a replacement for each project's README.
-
----
-
-## Summary
-
-| Project | Primary Tool | Functional Status | Verification |
-|---|---|---:|---|
-| E-commerce Customer Segmentation & Retention | Python | PASS | Notebook executed end-to-end |
-| Marketing Campaign Funnel & Channel Performance | Python | PASS | Notebook executed end-to-end |
-| Commercial & CRM Operations Analysis | Excel | PASS | Workbook opened, formulas recalculated, dashboard verified |
-| E-commerce Growth & Conversion Analytics | Power BI | PASS | PBIP opened, refreshed, visuals and slicers verified |
-| Supervised Learning — Regression & Classification | R | PASS | R Markdown knitted successfully to PDF |
-| Insurance Risk Segmentation | PostgreSQL | PASS | Schema setup, CSV import, analytical pipeline and outputs verified |
-| Product Affinity & Co-Purchase Network Analysis | Python | PASS | Notebook executed end-to-end |
-| Australian Airline Performance Visual Analytics | R + Tableau | PASS | Four R Markdown stages knitted; Tableau datasource and worksheets verified |
-
----
-
-## 1. E-commerce Customer Segmentation & Retention Analysis
-
-**Status: PASS**
-
-Verification completed by executing the notebook from top to bottom.
-
-Runtime checks:
-- 22/22 code cells executed successfully.
-- No execution errors.
-- Source data loaded through project-relative paths.
-- Reproduced approximately **$17.37M revenue**.
-- Reproduced **5,878 customers**.
-- Reproduced **36,969 orders**.
-- Reproduced **4,631 products**.
-- RFM segmentation outputs rendered successfully.
-
-The source dataset is stored as a compressed `.csv.gz` file so the project remains suitable for GitHub while remaining directly readable by pandas.
-
----
-
-## 2. Marketing Campaign Funnel & Channel Performance
-
-**Status: PASS**
-
-Verification completed by executing the notebook from top to bottom.
-
-Runtime checks:
-- 28/28 code cells executed successfully.
-- No execution errors.
-- Source CSV loaded through project-relative paths.
-- Dataset contains **10,000 campaign records**.
-- Overall CTR reproduced at approximately **5.48%**.
-- Funnel, channel and campaign KPI outputs rendered successfully.
-
----
-
-## 3. Commercial & CRM Operations Analysis
-
-**Status: PASS**
-
-The workbook was opened and tested in Microsoft Excel.
-
-Verified:
-- Workbook opens without corruption or repair prompts.
-- CRM source data load correctly.
-- Formula-driven derived fields calculate correctly.
-- Channel normalisation and product mapping work after recalculation.
-- Rep Region and Team lookups return valid values.
-- No visible `#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?` or `#N/A` errors remain.
-- Dashboard KPIs calculate correctly.
-- All four management charts display correctly:
-  - Sales Funnel by Stage
-  - Won Revenue by Channel
-  - Monthly Won Revenue Trend
-  - Won Revenue vs Target by Sales Rep
-
-Verified headline outputs include:
-- Won Revenue: **$9,775,630**
-- Open Pipeline: **$13,011,200**
-- Weighted Pipeline: **$7,830,015**
-- Win Rate: **26.0%**
-- Average Won Deal: **$27,079**
-- Stale Open Leads: **358**
-
-Compatibility-related lookup formulas were standardised using `VLOOKUP` where required.
-
----
-
-## 4. E-commerce Growth & Conversion Analytics
-
-**Status: PASS**
-
-The PBIP project was opened and tested in Power BI Desktop.
-
-Verified:
-- PBIP project opens successfully.
-- Data model and relationships load correctly.
-- Refresh completes successfully.
-- Report pages render without broken visuals.
-- Slicers and filter interactions work.
-- No missing datasource or missing-field errors were observed.
-
-Verified model totals:
-- Sessions: **75,237**
-- Users: **32,000**
-- Transactions: **4,737**
-- Revenue: **$217,478.50**
-- Session conversion rate: approximately **6.30%**
-- AOV: approximately **$45.91**
-
-Local `.pbi` workspace/cache files are not required for distribution and should remain excluded from version control.
-
----
-
-## 5. Supervised Learning — Regression & Classification
-
-**Status: PASS**
-
-The R Markdown analysis was knitted successfully to PDF after installing the required LaTeX environment.
-
-Verified:
-- Required datasets resolve through relative paths.
-- Regression workflow executes.
-- Model diagnostics execute.
-- Cross-validation executes.
-- Logistic-regression classification workflow executes.
-- ROC/AUC evaluation executes.
-- Threshold comparison executes.
-- Final PDF renders successfully from beginning to end.
-
-Verified classification outputs include:
-- Test accuracy at threshold 0.5: approximately **0.736**
-- AUC: approximately **0.813**
-
-A fixed seed of **599** is used for reproducibility where random procedures are required.
-
----
-
-## 6. Insurance Risk Segmentation
-
-**Status: PASS**
-
-The project was tested with PostgreSQL 18 using pgAdmin 4.
-
-Verified workflow:
-1. Created the project database.
-2. Ran `setup_schema.sql`.
-3. Imported `data/insurance.csv` into `raw.insurance`.
-4. Ran `insurance_charges_analysis.sql`.
-5. Verified final analytical outputs.
-
-Verified row counts:
-- Raw: **1,338**
-- Clean: **1,338**
-- Final analytical dataset: **1,337**
-
-The reduction from 1,338 to 1,337 is caused by removal of one exact duplicate.
-
-Final risk-segmentation queries returned populated ranked tables including:
-- risk rank
-- age bucket
-- BMI bucket
-- smoker group
-- customer count
-- average charges
-- median charges
-- 90th-percentile charges
-
----
-
-## 7. Product Affinity & Co-Purchase Network Analysis
-
-**Status: PASS**
-
-Verification completed by executing the notebook from top to bottom.
-
-Runtime checks:
-- 38/38 code cells executed successfully.
-- No execution errors.
-- Source data loaded through project-relative paths.
-- Large intermediate files can be regenerated locally.
-- Gephi-compatible network exports were produced successfully.
-
-Verified network outputs:
-- Focused threshold: **581 nodes / 1,948 edges**
-- Broader threshold: **1,653 nodes / 20,065 edges**
-
----
-
-## 8. Australian Airline Performance Visual Analytics
-
-**Status: PASS**
-
-Both the R pipeline and Tableau workbook were tested.
-
-### R pipeline
-
-All four R Markdown stages knitted successfully:
-
-1. `01_data_audit`
-2. `02_data_cleaning`
-3. `03_feature_engineering`
-4. `04_analysis_findings`
-
-Verified pipeline:
-- Raw workbook read successfully.
-- Multi-sheet data combined.
-- Clean dataset exported successfully.
-- Analysis dataset exported successfully.
-- Analytical findings executed successfully.
-
-Verified data outputs:
-- Rows before cleaning: **80,977**
-- Rows after cleaning: **80,972**
-- Analysis dataset: **80,972 rows**
-- Analysis period: **2010-01 to 2024-02**
-- Analysis levels:
-  - Airline: **1,174**
-  - Airline Route: **59,472**
-  - Network: **170**
-  - Route: **20,156**
-- Duplicate analytical keys found: **0**
-
-### Tableau
-
-Verified:
-- Workbook opens successfully.
-- Datasource resolves using the project-relative path:
-  `../data/processed/airline_performance_analysis.csv`
-- Tableau does not require manual datasource relocation.
-- Worksheets render successfully.
-- Calculated fields and filters work.
-- Network trend, cancellation trend, geographic map, heatmaps, route scatter and airline comparison views load correctly.
-
----
-
-## Repository-Level Functional Checks
-
-Verified across the repository:
-- Eight project folders are present at the repository root.
-- Project READMEs are directly accessible from the root README.
-- Python notebooks use portable project-relative paths.
-- R analyses use project-relative paths.
-- Tableau uses a relative datasource path.
-- PostgreSQL setup and analysis scripts are separated clearly.
-- Required reproducibility datasets are bundled where redistribution is appropriate.
-- Large reproducible intermediate files are excluded where they can be regenerated.
-- Repository archive integrity was checked successfully.
-
----
-
-## Final Functional Verdict
-
-**8/8 projects: FULL FUNCTIONAL PASS**
-
-No known functional or publication blockers remain in the audited repository snapshot. Final preflight also confirmed that project navigation links resolve, machine-specific absolute paths are absent from project source files, required binary artifacts open successfully, and no working-tree file exceeds GitHub's 100 MB per-file limit.
-
-Third-party and coursework-provided datasets remain subject to the usage and redistribution notes in `DATA_SOURCES.md`. Core project logic should not be changed unless a new reproducible functional defect is discovered.
+# Portfolio Publication Audit
+
+**Audit date:** 23 September 2026  
+**Outcome:** PASS for public portfolio packaging  
+**Career target:** entry-level Customer, CRM, Growth, Marketing, Product, or Commercial Analytics
+
+## What changed
+
+- Expanded the former RFM case into lifecycle state, repeat purchase, mature-cohort retention, CRM prioritisation, and a test plan.
+- Added a complete checkout experimentation module to the product-funnel case: user-level randomisation, SRM, balance, 95% CI, p-value, 80% power MDE, guardrails, subgroup cautions, and a staged-rollout decision.
+- Replaced the campaign source with deterministic synthetic data because the former third-party redistribution license was unclear.
+- Removed duplicate nested Excel and Power BI project copies and local Power BI caches.
+- Removed stale notebooks whose scope no longer matched the canonical scripts.
+- Curated out the supervised-learning coursework project because it was less aligned to the career target, required a leakage correction, lacked clear raw-data redistribution permission, and could not be natively re-knitted in this environment. The original upload remains unchanged outside this public build.
+- Excluded the coursework-packaged airline raw workbook while retaining the public BITRE attribution, processed analytical layer, Tableau workbook, scripts, figures, and report.
+- Rebuilt the root README around three flagship decisions and four supporting proof projects.
+
+## Automated publication gate
+
+Command:
+
+```bash
+python scripts/audit_portfolio.py
+```
+
+Final result:
+
+```text
+PASS — customer lifecycle analysis completed
+PASS — campaign analysis completed
+PASS — experiment analysis completed
+All QA checks passed.
+PASS — portfolio publication audit completed
+```
+
+The automated gate verifies:
+
+- exact seven-project scope;
+- no embedded Git metadata, local Power BI caches, notebook checkpoints, or nested `FINAL` copies;
+- no file at or above GitHub's 100 MiB limit;
+- all local Markdown links resolve;
+- no machine-specific user paths;
+- Python syntax and notebook error-output checks;
+- rerun of all three flagship Python analyses;
+- rerun of the Power BI dataset validator;
+- customer/revenue and cohort-range reconciliation;
+- campaign data-quality and channel-metric checks;
+- experiment SRM, pre-treatment balance, positive confidence interval, significance, and guardrail gates;
+- presence of the intended recruiter fast path.
+
+## Flagship results
+
+| Flagship | Runtime status | Decision evidence |
+|---|---|---|
+| Customer Lifecycle & Retention | PASS | 5,878 unique customers; 72.39% repeat-customer rate; 47.59% eligible 90-day repeat; mature 1/3/6/12-month cohort metrics; lifecycle and CRM action tables reconcile to revenue |
+| Campaign & Growth Performance | PASS | 10,000 deterministic records regenerate; zero missing/duplicate/date/funnel/negative-value failures; weighted CTR 4.20%, CAC $22.52, ROAS 3.35x |
+| Product Funnel & Experimentation | PASS | Power BI dataset QA passes; experiment allocation 16,000/16,000, SRM p=1.000, all balance and guardrail gates pass, conversion 5.28%→6.06%, p=0.0027 |
+
+## Supporting-project checks
+
+### Commercial & CRM Excel
+
+- Workbook contains ten sheets, ten structured tables, four charts, and 1,800 synthetic leads.
+- Formula and displayed-value scan found no spreadsheet error tokens.
+- Won revenue, open pipeline, weighted pipeline, win rate, average won deal, and stale-opportunity totals reconcile with supporting sheets.
+- The duplicate nested `FINAL` workbook was removed; one canonical workbook remains.
+
+### Insurance SQL
+
+- Static SQL review covers schema setup, cleaning/final views, exact-duplicate control, safe division, CTEs, conditional segments, percentiles, interactions, and ranking.
+- Included screenshots document the PostgreSQL execution path and row reconciliation.
+- The supporting project is descriptive and does not claim that observed cost associations are causal.
+
+### Product Affinity Network
+
+- The executed notebook contains no error outputs.
+- Independent Python execution reproduced 1,041,670 clean rows, 32,406 baskets, 2,076,826 raw edges, and the documented thresholded networks.
+- The README states that co-occurrence is not the same as association strength or causality and identifies support/confidence/lift as the next extension.
+
+### Airline R/Tableau
+
+- Processed analytical data, report, figures, R Markdown scripts, and relative-path Tableau workbook remain inspectable.
+- The raw coursework wrapper is not redistributed; an authorised-input instruction file links to the underlying BITRE public source.
+- Native R rerun is not claimed in this environment. This project is supporting evidence rather than a flagship publication gate.
+
+## Native-file boundary
+
+The remaster did not modify the canonical Excel workbook, Power BI PBIP definitions, or Tableau workbook. Their previously validated native files and screenshots remain unchanged. The new retention, campaign, and experiment layers are independently reproducible with Python. Any future edit to a native workbook/report must be followed by the application spot checks in [`PUBLISHING_CHECKLIST.md`](PUBLISHING_CHECKLIST.md).
+
+## Final rubric result
+
+| Criterion | Status |
+|---|---|
+| North Star fit | PASS |
+| Three-flagship completeness | PASS |
+| Business framing and decision value | PASS |
+| Metric correctness and quality controls | PASS |
+| Retention/lifecycle depth | PASS |
+| Experimentation/statistical reasoning | PASS |
+| SQL/Excel/BI/Python evidence | PASS |
+| Reproducibility and portability | PASS within declared native boundaries |
+| Recruiter navigation | PASS |
+| Repository hygiene | PASS |
+| Synthetic-data disclosure and causal boundaries | PASS |
+| Public-data packaging | PASS with external-source attribution and coursework raw input excluded |
+
+**Release decision:** the portfolio is ready to use as the evidence base for CV construction. The CV should feature the three flagship projects and treat the remaining four as supporting proof rather than listing all projects equally.

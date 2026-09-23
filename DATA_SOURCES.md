@@ -1,143 +1,74 @@
-# Data Sources & Usage Notes
+# Data Sources, Licensing & Disclosure
 
-This file documents the provenance of datasets bundled with or referenced by the portfolio.
+The repository license covers original code and documentation only. Third-party data retain their original terms and are not relicensed here. Synthetic data are labelled explicitly so portfolio demonstrations cannot be mistaken for employer or client results.
 
-The repository license applies to original code and documentation unless otherwise stated. **Third-party datasets are not relicensed by this repository** and remain subject to the terms of their original providers.
+## Customer Lifecycle, Retention & CRM Prioritisation
 
----
-
-## 1. E-commerce Customer Segmentation & Retention Analysis
-
-**Project:** `ecommerce_customer_segmentation_rfm/`  
-**Bundled file:** `data/online_retail_II.csv.gz`
-
-**Dataset:** Online Retail II  
-**Original source:** UCI Machine Learning Repository  
+**Bundled file:** `ecommerce_customer_segmentation_rfm/data/online_retail_II.csv.gz`  
+**Source:** UCI Machine Learning Repository, *Online Retail II*  
 **Creator:** Daqing Chen  
 **DOI:** `10.24432/C5CG6D`  
 **Source page:** https://archive.ics.uci.edu/dataset/502/online+retail+ii  
-**License shown by UCI:** CC BY 4.0
+**License displayed by UCI:** CC BY 4.0
 
-The repository stores a compressed CSV representation for reproducibility. The data describe transactions from a UK-based non-store online retailer between December 2009 and December 2011.
+The compressed CSV is retained for reproducibility with source attribution.
 
----
+## Campaign & Growth Performance
 
-## 2. Marketing Campaign Funnel & Channel Performance
+**Bundled file:** `marketing_campaign_funnel_analysis/data/marketing_campaign_performance_10000.csv`  
+**Source type:** deterministic synthetic portfolio data  
+**Generator:** `marketing_campaign_funnel_analysis/src/generate_synthetic_campaigns.py`  
+**Seed:** `2026`
 
-**Project:** `marketing_campaign_funnel_analysis/`
+The former third-party campaign file was replaced because its redistribution license was not explicit. The replacement data do not represent a real advertiser, employer, client, or commercial outcome.
 
-**Dataset:** Marketing Campaign Performance Dataset  
-**Source:** Kaggle  
-**Source page:** https://www.kaggle.com/datasets/mirzayasirabdullah07/marketing-campaign-performance-dataset
+## Commercial & CRM Operations
 
-The dataset is used as a portfolio analysis dataset and is not presented as proprietary data from a specific employer or client.
+**Bundled file:** `commercial_crm_excel_analytics/data/crm_sales_pipeline_raw.csv`  
+**Source type:** synthetic portfolio data
 
-Refer to the source page for the dataset's current licensing and usage terms.
+The records were created for auditable CRM, funnel, pipeline, sales-rep, and stale-opportunity analysis. They contain no real customers or confidential business information.
 
----
+## Product Funnel, Growth & Experimentation
 
-## 3. Commercial & CRM Operations Analysis
+**Bundled files:** CSV tables under `ecommerce_growth_conversion_power_bi/data/` and `experiment/data/`  
+**Source type:** deterministic synthetic GA4-style e-commerce and A/B-test data  
+**Experiment generator:** `experiment/run_experiment.py`  
+**Seed:** `2026`
 
-**Project:** `commercial_crm_excel_analytics/`  
-**Bundled file:** `data/crm_sales_pipeline_raw.csv`
+The files are not presented as official Google or employer production data. BigQuery SQL templates show a compatible pathway using Google's public GA4 Merchandise Store sample dataset:
 
-**Source type:** Synthetic portfolio data
-
-The dataset was created for reproducible portfolio demonstration. It does not represent real customer, employer, or confidential business data.
-
-The synthetic records are designed to support practical CRM analysis including source normalisation, pipeline health, funnel conversion, sales-rep performance, target attainment, and stale-opportunity analysis.
-
----
-
-## 4. E-commerce Growth & Conversion Analytics
-
-**Project:** `ecommerce_growth_conversion_power_bi/`  
-**Bundled files:** CSV tables under `data/`
-
-**Source type:** Deterministic synthetic GA4-style e-commerce data
-
-The bundled dataset was created for reproducible Power BI portfolio use and is **not** presented as official Google production data.
-
-The project also includes BigQuery SQL templates that document a compatible analytical pathway using Google's public GA4 Merchandise Store sample dataset.
-
-**Google reference:**  
 https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset
 
-The bundled synthetic CSVs and the public Google sample should be treated as separate data sources.
+## Insurance Cost Drivers
 
----
+**Bundled file:** `insurance_risk_segmentation_sql/data/insurance.csv`  
+**Source:** Kaggle, `mirichoi0218/insurance`  
+**Source page:** https://www.kaggle.com/datasets/mirichoi0218/insurance  
+**Source metadata:** Open Database
 
-## 5. Supervised Learning — Regression & Classification
+The SQL workflow uses 1,338 input rows and produces 1,337 rows after exact-duplicate removal. Users should review the current source terms before redistributing a modified copy.
 
-**Project:** `supervised_learning_regression_classification_r/`  
-**Bundled files:**
-- `data/energy_homes.csv`
-- `data/learners.csv`
+## Product Affinity Network
 
-**Source type:** Coursework-provided datasets
-
-The analysis describes `energy_homes.csv` as simulated residential-building data. The repository does not establish an external public source or redistribution license for these coursework-provided files.
-
-Accordingly, these datasets are included only as supporting material for the reproduced analysis and are **not claimed as original data created or owned by the portfolio author**.
-
-If a public version of the repository is distributed beyond assessment/portfolio review, the dataset files should be retained only where redistribution is permitted by the course/provider terms.
-
----
-
-## 6. Insurance Risk Segmentation
-
-**Project:** `insurance_risk_segmentation_sql/`  
-**Bundled file:** `data/insurance.csv`
-
-**Dataset:** Insurance dataset  
-**Source:** Kaggle — `mirichoi0218/insurance`  
-**Source page:** https://www.kaggle.com/datasets/mirichoi0218/insurance
-
-The SQL workflow was tested with 1,338 raw rows and produces 1,337 final analytical rows after exact-duplicate removal.
-
-Refer to the Kaggle source page for the dataset's current licensing and usage terms.
-
----
-
-## 7. Product Affinity & Co-Purchase Network Analysis
-
-**Project:** `product_affinity_network_analysis/`  
-**Bundled file:** `data/raw/online_retail_II.csv.gz`
-
-**Dataset:** Online Retail II  
-**Original source:** UCI Machine Learning Repository  
-**Creator:** Daqing Chen  
+**Bundled file:** `product_affinity_network_analysis/data/raw/online_retail_II.csv.gz`  
+**Source:** the same UCI *Online Retail II* dataset used by the lifecycle project  
 **DOI:** `10.24432/C5CG6D`  
-**Source page:** https://archive.ics.uci.edu/dataset/502/online+retail+ii  
-**License shown by UCI:** CC BY 4.0
+**License displayed by UCI:** CC BY 4.0
 
-This project uses the same underlying transaction dataset as the RFM project but answers a different question: repeated product co-purchase relationships rather than customer segmentation.
+This project answers a different question: product co-purchase relationships rather than customer lifecycle and retention.
 
-Large intermediate network files are regenerated locally and are not required to be distributed with the repository.
+## Australian Airline Performance
 
----
+**Bundled analytical files:** processed CSVs under `airline_performance_visual_analytics/data/processed/`  
+**Underlying public source:** Bureau of Infrastructure and Transport Research Economics (BITRE), Australian airline on-time performance reports and time-series data  
+**Source page:** https://www.bitre.gov.au/resource/aviation/airline-time-performance-monthly-reports-and-time-series-data
 
-## 8. Australian Airline Performance Visual Analytics
+The coursework-packaged raw workbook is intentionally not redistributed because its wrapper did not state explicit redistribution permission. [`airline_performance_visual_analytics/data/raw/README.md`](airline_performance_visual_analytics/data/raw/README.md) explains how to supply an authorised local input. The Tableau workbook remains inspectable using the bundled processed analytical CSV.
 
-**Project:** `airline_performance_visual_analytics/`  
-**Bundled raw file:** `data/raw/Dataset Assignment 2.xlsx`
+## Publication rule
 
-**Bundled-file provenance:** Coursework-provided workbook containing Australian domestic airline on-time performance data.
-
-The underlying public statistics are published by the Australian Government's **Bureau of Infrastructure and Transport Research Economics (BITRE)**.
-
-**BITRE reference:**  
-https://www.bitre.gov.au/resource/aviation/airline-time-performance-monthly-reports-and-time-series-data
-
-The bundled workbook is retained as the reproducible input used for this portfolio analysis. It should not be interpreted as an original dataset created by the portfolio author.
-
----
-
-## Licensing Scope
-
-Unless a project states otherwise:
-
-- Original analysis code, project documentation, and portfolio-written material are covered by the repository's own license.
-- Third-party and coursework-provided datasets remain subject to their original terms.
-- A dataset being included in this repository does **not** transfer ownership or relicense that dataset under the repository license.
-- Synthetic datasets created specifically for this portfolio are identified explicitly as synthetic.
+- Never describe synthetic results as real business impact.
+- Preserve attribution for UCI, Kaggle, Google, and BITRE sources.
+- Do not add coursework, employer, customer, or confidential raw data without explicit permission.
+- Recheck external source terms before republishing third-party files in another channel.

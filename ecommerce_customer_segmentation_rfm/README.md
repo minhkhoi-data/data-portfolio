@@ -1,239 +1,79 @@
-# E-commerce Customer Segmentation & Retention Opportunity Analysis
+# Customer Lifecycle, Retention & CRM Prioritisation
 
-## 1. Project Overview
+**Flagship 1 of 3 · Customer & Growth Analytics**  
+**Tools:** Python, pandas, matplotlib  
+**Data:** 779,425 clean transaction lines · 36,969 orders · 5,878 customers · Dec 2009–Dec 2011
 
-This project analyzes transaction-level data from an online retail business to identify customer segments and recommend CRM actions for retention, reactivation, and revenue growth.
+## Business decision
 
-The analysis uses a simple and interpretable RFM segmentation approach:
+Which customers should the business protect, develop, win back, or deprioritise—and what evidence should CRM use before spending on each group?
 
-- **Recency**: how recently a customer purchased
-- **Frequency**: how often a customer purchased
-- **Monetary**: how much revenue a customer generated
+The answer cannot come from RFM alone. This project therefore connects four views of customer behaviour:
 
-The goal is not only to segment customers, but also to translate customer behavior patterns into practical CRM recommendations.
+1. **RFM value segmentation** identifies who has historically mattered.
+2. **Repeat-purchase analysis** measures whether acquisition turns into a second order.
+3. **Cohort retention** shows whether customers return in later months without mixing mature and immature cohorts.
+4. **Lifecycle status** converts recency and purchase history into an actionable CRM queue.
 
----
+![Customer lifecycle decision dashboard](figures/customer_lifecycle_decision_dashboard.png)
 
-## 2. Business Context
+## Decision summary
 
-For an online retail business, not all customers contribute equally to revenue.
+- **72.4%** of customers placed at least two orders.
+- Among customers observed for at least 90 days, **47.6%** made a second purchase within 90 days; repeat customers took a median **55 days** to reach their second order.
+- Weighted cohort retention was **23.4% in month 1**, **24.9% in month 3**, **22.1% in month 6**, and **22.7% in month 12**. Only cohorts with a complete observation window enter each headline rate.
+- **2,524 active repeat customers** generated **79.7%** of historical revenue, so protecting this group is the first priority.
+- **589 at-risk customers** generated **6.1%** of historical revenue. Within them, 131 high-value customers form the most defensible win-back test audience.
+- Dormant customers are numerous but should receive low-cost treatment unless a holdout test proves incremental ROI.
 
-Some customers purchase frequently and generate high value, while others may buy once and never return. Treating all customers the same can lead to inefficient CRM and retention efforts.
+The recommended action is not “send more discounts.” It is to protect high-value active customers, trigger a second-purchase journey before the observed 55-day median, and randomise eligible at-risk customers into win-back and holdout groups.
 
-This project uses customer transaction data to answer a practical business question:
+## Metric definitions
 
-**Which customer segments should the business prioritize for retention, reactivation, and revenue growth?**
+| Metric | Definition | Bias control |
+|---|---|---|
+| Repeat customer rate | Customers with at least two distinct orders ÷ all customers | Order count uses distinct invoices, not transaction lines |
+| 90-day repeat rate | Customers whose second order occurred within 90 days ÷ customers observable for at least 90 days | Recent customers without a full window are excluded |
+| Monthly cohort retention | Customers active in month *n* after first purchase ÷ acquisition-cohort size | Headline rates use only cohorts with a complete month-*n* window |
+| Recency | Days from last order to one day after the final observed transaction | Snapshot date is fixed and reproducible |
+| Lifecycle status | New, active repeat, at risk, or dormant based on order count and 90/180-day inactivity rules | Rules are disclosed business cut-offs, not learned causal thresholds |
 
----
+December 2011 ends on the ninth day of the month. November 2011 is therefore treated as the last complete month when calculating mature-cohort retention.
 
-## 3. Dataset
+## Analysis workflow
 
-The project uses the **Online Retail II UCI** dataset hosted on Kaggle.
+`analysis/run_analysis.py` is the canonical analysis. It validates the schema; cleans transaction data; reconciles revenue; creates order-, customer-, segment-, cohort-, and CRM-priority outputs; excludes right-censored cohorts from headline retention rates; runs quality assertions; and writes reproducible tables, figures, and a decision memo.
 
-Dataset source: [Online Retail II UCI on Kaggle](https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci)
+Run from the repository root:
 
-The dataset contains transaction-level records from an anonymized UK-based non-store online retail business between **December 2009 and December 2011**.
-
-Each row represents one product line within an invoice.
-
-Main columns include:
-
-- `Invoice`
-- `StockCode`
-- `Description`
-- `Quantity`
-- `InvoiceDate`
-- `Price`
-- `Customer ID`
-- `Country`
-
----
-
-## 4. Tools Used
-
-- Python
-- pandas
-- matplotlib
-- Jupyter Notebook
-
----
-
-## 5. Methodology
-
-The project follows a simple customer analytics workflow:
-
-1. **Data Loading and Initial Inspection**
-   - Checked dataset size, columns, data types, missing values, duplicate rows, cancelled invoices, and non-positive quantity or price values.
-
-2. **Data Cleaning**
-   - Removed records with missing customer IDs.
-   - Removed cancelled invoices.
-   - Removed rows with non-positive quantity or price.
-   - Removed duplicate rows.
-   - Created a `Revenue` column.
-
-3. **Exploratory Business Analysis**
-   - Reviewed total revenue, number of customers, number of orders, and number of products.
-   - Analyzed monthly revenue trend.
-   - Checked customer revenue concentration.
-
-4. **RFM Segmentation**
-   - Created customer-level Recency, Frequency, and Monetary metrics.
-   - Converted RFM metrics into scores from 1 to 5.
-   - Assigned customers into interpretable customer segments.
-
-5. **CRM Recommendation**
-   - Translated each customer segment into practical CRM actions and KPIs to track.
-
----
-
-## 6. Key Business Metrics
-
-After cleaning, the dataset contains:
-
-| Metric | Value |
-|---|---:|
-| Total revenue | 17,374,804.27 |
-| Number of customers | 5,878 |
-| Number of orders | 36,969 |
-| Number of products | 4,631 |
-| Start date | 2009-12-01 |
-| End date | 2011-12-09 |
-
----
-
-## 7. Key Findings
-
-### 7.1 Customer revenue is highly concentrated
-
-The top 10% of customers contribute **63.9% of total revenue**.
-
-This shows that customer value is not evenly distributed. CRM actions should therefore be prioritized by customer segment instead of being applied equally to all customers.
-
-### 7.2 Champions are the most valuable segment
-
-The **Champions** segment represents **21.93% of customers** but contributes **68.03% of total revenue**.
-
-This segment should be prioritized for retention, loyalty actions, VIP benefits, early access, personalized offers, and referral incentives.
-
-### 7.3 At Risk customers are potential win-back targets
-
-The **At Risk** segment contributes **9.15% of total revenue** and has a high average recency.
-
-These customers generated meaningful revenue in the past but have not purchased recently, making them suitable for win-back or reactivation campaigns.
-
-### 7.4 Hibernating customers should be handled carefully
-
-The **Hibernating** segment is the largest by customer count, representing **25.96% of customers**, but contributes only **3.77% of total revenue**.
-
-This suggests that reactivation campaigns for this group should be low-cost and carefully measured.
-
----
-
-## 8. CRM Recommendations
-
-| Segment | Data Insight | Recommended CRM Action | KPI to Track |
-|---|---|---|---|
-| Champions | High-value customers with strong revenue contribution | VIP benefits, early access, referral incentives, personalized offers | Repeat purchase rate, average order value, referral rate |
-| Loyal Customers | Regular customers with meaningful revenue contribution | Loyalty rewards, bundle offers, personalized product recommendations | Purchase frequency, revenue per customer, repeat purchase rate |
-| Potential Loyalists | Recent customers with potential to become more loyal | Onboarding flow, product recommendations, second-purchase incentives | Second purchase rate, purchase frequency |
-| New Customers | Newly acquired customers with limited purchase history | Post-purchase follow-up and first repeat-purchase incentive | 30-day repeat purchase rate, second purchase rate |
-| At Risk | Previously valuable customers who have not purchased recently | Win-back campaigns with limited-time offers or personalized messages | Reactivation rate, win-back conversion rate |
-| Needs Attention | Customers with moderate engagement but unclear loyalty | Reminder campaigns, product recommendations, light promotional offers | Email click rate, conversion rate, repeat purchase rate |
-| Hibernating | Inactive customers with low revenue contribution | Low-cost reactivation campaigns or deprioritization if ROI is weak | Reactivation rate, campaign ROI, unsubscribe rate |
-
----
-
-## 9. Segment Priority Summary
-
-| Priority | Segment | Reason | Suggested Focus |
-|---|---|---|---|
-| 1 | Champions | Small customer group with the highest revenue contribution | Retention, loyalty, VIP treatment, referral |
-| 2 | At Risk | Previously valuable customers who have not purchased recently | Win-back and reactivation |
-| 3 | Potential Loyalists | Recent customers with potential to become more loyal | Second-purchase and onboarding actions |
-| 4 | Loyal Customers | Regular customers with meaningful contribution | Loyalty rewards and personalized offers |
-| 5 | Hibernating | Large group but low revenue contribution | Low-cost reactivation only |
-
----
-
-## 10. Expected Business Value
-
-| Action Area | Expected Business Value |
-|---|---|
-| Retain Champions | Protect the largest revenue-contributing customer group |
-| Win back At Risk customers | Recover revenue from customers with previous purchase value |
-| Convert Potential Loyalists | Increase repeat purchase and move recent customers toward loyalty |
-| Use low-cost reactivation for Hibernating customers | Avoid overspending on low-value inactive customers |
-| Track segment KPIs over time | Monitor whether CRM actions improve retention and revenue efficiency |
-
----
-
-## 11. Limitations
-
-This analysis is based only on transaction data. It does not include:
-
-- Customer demographics
-- Acquisition channels
-- Website behavior
-- Email engagement
-- Campaign exposure data
-
-Because of this, the recommendations should be interpreted as CRM opportunities based on purchase behavior, not as evidence of causal marketing impact.
-
-The dataset also covers a historical period from December 2009 to December 2011, so the results should be viewed as an analytical exercise rather than a current business diagnosis.
-
----
-
-## 12. Next Steps
-
-If more data were available, this analysis could be extended by:
-
-- Adding customer acquisition channel data to compare customer value by source
-- Including email or campaign engagement data to evaluate CRM response
-- Tracking repeat purchase rate after each CRM campaign
-- Building a simple churn or reactivation model after enough behavioral data is collected
-- Creating a dashboard to monitor segment size, revenue share, and retention KPIs over time
-
----
-
-## 13. Project Structure
-
-```text
-ecommerce_customer_segmentation_rfm/
-│
-├── data/
-│   └── online_retail_II.csv.gz
-│
-├── README.md
-└── ecommerce_customer_segmentation_rfm.ipynb
+```bash
+python ecommerce_customer_segmentation_rfm/analysis/run_analysis.py
 ```
 
----
-
-## 14. How to Run
-
-1. Clone or download this project folder.
-
-2. Make sure the dataset is stored in:
+Expected result:
 
 ```text
-data/online_retail_II.csv.gz
+PASS — customer lifecycle analysis completed
+Customers: 5,878
+Repeat customer rate: 72.39%
+90-day repeat rate: 47.59%
+Month-1 weighted retention: 23.45%
+Month-3 weighted retention: 24.86%
 ```
 
-3. Open the notebook:
+## Start here
 
-```text
-ecommerce_customer_segmentation_rfm.ipynb
-```
+- [Decision memo](memo/business_memo.md)
+- [Lifecycle decision dashboard](figures/customer_lifecycle_decision_dashboard.png)
+- [Cohort-retention heatmap](figures/cohort_retention_heatmap.png)
+- [Canonical analysis](analysis/run_analysis.py)
+- [Retention KPI table](outputs/retention_kpis.csv)
+- [Customer-level action table](outputs/customer_lifecycle_table.csv)
 
-4. Run the notebook cells from top to bottom.
+## Limits and next test
 
----
+The analysis is observational. RFM, cohort retention, and lifecycle status describe behaviour; they do not prove that a campaign causes repeat purchasing. The 90/180-day cut-offs are transparent operating rules and should be recalibrated against product replenishment cycles. The next step is a randomised holdout test measuring incremental reactivation, contribution margin, and unsubscribe rate—not raw campaign conversion alone.
 
-## 15. Final Conclusion
+## Data source
 
-This project shows how transaction data can be used to understand customer behavior, identify customer value patterns, and support CRM decision-making.
-
-The key business insight is that customer value is highly concentrated. Champions should be protected, At Risk customers should be reviewed for win-back opportunities, and Hibernating customers should only receive low-cost reactivation efforts.
-
-Overall, the project moves from basic transaction analysis to practical customer segmentation and CRM action planning.
+Online Retail II, UCI Machine Learning Repository, DOI `10.24432/C5CG6D`, licensed by UCI under CC BY 4.0. See the repository-level [`DATA_SOURCES.md`](../DATA_SOURCES.md) for attribution and usage notes.

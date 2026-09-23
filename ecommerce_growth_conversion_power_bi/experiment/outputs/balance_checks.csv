@@ -1,0 +1,12 @@
+Variable,Level,Control,Treatment,Absolute Difference,Scale,Pass
+pre_period_sessions,numeric,2.361375,2.3409375,0.017496406062688045,standardised mean difference,True
+device_category,desktop,0.37,0.37,0.0,proportion difference,True
+device_category,mobile,0.578375,0.5791875,0.0008124999999999938,proportion difference,True
+device_category,tablet,0.051625,0.0508125,0.0008125000000000007,proportion difference,True
+channel,Direct,0.228875,0.226375,0.0025000000000000022,proportion difference,True
+channel,Display,0.0621875,0.0603125,0.0018750000000000017,proportion difference,True
+channel,Email,0.0609375,0.06225,0.0013125000000000012,proportion difference,True
+channel,Organic Search,0.3049375,0.309,0.004062500000000024,proportion difference,True
+channel,Organic Social,0.063375,0.05925,0.004125000000000004,proportion difference,True
+channel,Paid Search,0.18025,0.1804375,0.0001875000000000071,proportion difference,True
+channel,Referral,0.0994375,0.102375,0.0029374999999999957,proportion difference,True

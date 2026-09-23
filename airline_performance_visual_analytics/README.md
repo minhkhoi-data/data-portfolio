@@ -197,7 +197,7 @@ Then open:
 tableau/airline_visual_analytics.twb
 ```
 
-The final Tableau workbook has been tested with the bundled processed dataset and the relative datasource path.
+The final Tableau workbook has been tested with the bundled processed dataset and the relative datasource path. The original coursework-packaged raw workbook is intentionally not redistributed; [`data/raw/README.md`](data/raw/README.md) records the public BITRE source and the expected local filename for an authorised rerun.
 
 ## Detailed Report
 
@@ -211,7 +211,7 @@ The full analytical discussion, visual-design rationale, limitations, scalabilit
 airline_performance_visual_analytics/
 ├── data/
 │   ├── raw/
-│   │   └── Dataset Assignment 2.xlsx
+│   │   └── README.md                    # source and authorised-input instructions
 │   └── processed/
 │       ├── airline_performance_clean.csv
 │       └── airline_performance_analysis.csv

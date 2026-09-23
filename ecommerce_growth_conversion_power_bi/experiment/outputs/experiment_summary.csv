@@ -1,0 +1,13 @@
+Metric,Value
+Users,32000.0
+Control users,16000.0
+Treatment users,16000.0
+SRM p-value,1.0
+Control conversion,0.0528125
+Treatment conversion,0.0605625
+Absolute lift,0.00775
+Relative lift,0.14674556213017753
+95% CI low,0.002683435679469484
+95% CI high,0.012816564320530516
+Primary p-value,0.0027210489981406294
+80% power MDE,0.0072431968902928875

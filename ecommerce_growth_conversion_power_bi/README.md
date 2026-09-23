@@ -1,17 +1,18 @@
-# E-commerce Growth & Conversion Analytics | Power BI
+# Product Funnel, Growth & Experimentation
 
-**Project type:** E-commerce / Growth Analytics  
-**Tools:** Power BI, DAX, Power Query  
+**Flagship 3 of 3 · Customer & Growth Analytics**  
+**Project type:** Product / E-commerce Growth Analytics  
+**Tools:** Power BI, DAX, Power Query, Python, SciPy  
 **Dataset:** Deterministic synthetic GA4-style e-commerce data  
-**Runtime verification:** Power BI Desktop refresh and slicer interactions passed
+**Coverage:** Descriptive funnel diagnosis plus a reproducible randomised-experiment case
 
 ![Executive Overview](screenshots/01_01_overview_dashboard.png)
 
 ---
 
-## Business Question
+## Business decision
 
-How can an e-commerce team connect traffic, funnel conversion, acquisition quality, customer behaviour, geography, and product performance to identify the most useful growth opportunities?
+Where does the product funnel lose users, which growth opportunities deserve attention, and how should the team test whether a checkout change causes an improvement rather than merely correlating with one?
 
 The report is organised into five decision-focused pages:
 
@@ -20,6 +21,18 @@ The report is organised into five decision-focused pages:
 3. Acquisition & Channel
 4. Product Performance
 5. Customer & Geography
+
+The linked [checkout experimentation module](experiment/) then moves from diagnosis to a causal launch decision. It includes random assignment, SRM, balance checks, confidence intervals, p-values, MDE/power, guardrails, exploratory segments, and a rollout rule.
+
+![Experiment decision dashboard](experiment/figures/experiment_decision_dashboard.png)
+
+## Experiment decision
+
+The deterministic synthetic case randomises **32,000 users** equally between control and treatment. The quality gates pass: SRM p-value is **1.000**, pre-treatment balance is within declared thresholds, and the primary result increases conversion from **5.28% to 6.06%**—an absolute lift of **0.78 percentage points** with p-value **0.0027** and a positive 95% confidence interval.
+
+Average order value, refund rate, and bounce rate remain within their pre-declared guardrails. The resulting decision is a **staged rollout**, with continued monitoring rather than an unconditional full launch. Subgroup findings remain exploratory because the experiment is powered for the overall effect.
+
+Start with the [experiment decision memo](experiment/memo/experiment_memo.md) or [reproduce the analysis](experiment/run_experiment.py).
 
 ---
 
@@ -250,6 +263,13 @@ ecommerce_growth_conversion_power_bi/
 │   ├── DAX_REFERENCE.md
 │   └── QA_CHECKS.md
 ├── outputs/
+├── experiment/
+│   ├── README.md
+│   ├── run_experiment.py
+│   ├── data/
+│   ├── outputs/
+│   ├── figures/
+│   └── memo/
 ├── powerbi/
 │   ├── Ecommerce_Growth_Conversion_Analytics.pbip
 │   ├── EcommerceGrowth.Model/
@@ -273,4 +293,5 @@ ecommerce_growth_conversion_power_bi/
 - The bundled dataset is synthetic, so findings demonstrate analytical workflow rather than real Google or employer performance.
 - Media spend is not available, so CAC and ROAS are intentionally not calculated.
 - Margin and fulfilment cost are not available, so revenue should not be interpreted as profit.
-- The report is descriptive and diagnostic; it does not establish causal impact or incrementality.
+- The Power BI report is descriptive and diagnostic. Causal reasoning is demonstrated separately through a randomised synthetic experiment; it is not evidence of real commercial uplift.
+- The experiment is powered for the overall result, so channel and device estimates are exploratory rather than targeting recommendations.

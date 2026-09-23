@@ -1,179 +1,84 @@
-# Data Analytics Portfolio
+# Customer & Growth Analytics Portfolio
 
-## Customer, Growth & Business Analytics
+I am an entry-level, business-facing Data Analyst focused on customer, marketing, product, and commercial decisions. This portfolio shows how I move from data quality and metric design to an actionable recommendation—without presenting descriptive patterns as causal proof.
 
-This portfolio contains eight end-to-end analytics projects focused on a common objective: turning operational, customer, marketing, and commercial data into decisions.
+**Core tools:** SQL · Excel · Power BI/DAX · Python · Statistics · Tableau  
+**Target roles:** Customer Analyst · CRM Analyst · Growth Analyst · Marketing/Data Analyst · Product Analyst · Commercial Analyst
 
-The projects cover customer segmentation, CRM and sales operations, marketing performance, e-commerce growth, predictive modelling, SQL-based risk analysis, product affinity networks, and airline performance analytics.
+## Start here: three flagship decisions
 
-**Core toolkit:** Excel • Power BI • Python • R • PostgreSQL • Tableau
+These three projects are the shortest route through the portfolio.
 
----
+### 1. [Customer Lifecycle, Retention & CRM Prioritisation](ecommerce_customer_segmentation_rfm/)
 
-## Portfolio Projects
+**Decision:** who should be protected, developed, won back, or deprioritised?  
+**Evidence:** 5,878 customers; RFM, repeat purchase, mature-cohort retention, lifecycle state, right-censoring control, and CRM action queue.  
+**Result:** 72.4% repeat-customer rate; 47.6% 90-day repeat among eligible customers; active repeat customers generated 79.7% of historical revenue.
 
-### 1. E-commerce Customer Segmentation & Retention Analysis
-**Tools:** Python, pandas, matplotlib
+### 2. [Campaign & Growth Performance](marketing_campaign_funnel_analysis/)
 
-**Business question:** Which customer groups should be prioritised for retention, reactivation, and revenue growth?
+**Decision:** where does the funnel weaken, and which campaigns deserve scale, optimisation, pause, or investigation review?  
+**Evidence:** 10,000 reproducible synthetic campaigns; weighted CTR, lead rates, CAC, ROAS, data-quality gates, and transparent triage rules.  
+**Result:** 4.20% weighted CTR, $22.52 observed CAC, and 3.35x observed ROAS; recommendations remain review actions rather than automatic budget changes.
 
-Key work:
-- Built customer-level RFM metrics from transaction data.
-- Segmented **5,878 customers** from **36,969 orders**.
-- Identified that the Champions segment represented **21.93% of customers but 68.03% of revenue**.
-- Translated segmentation results into CRM and retention actions.
+### 3. [Product Funnel, Growth & Experimentation](ecommerce_growth_conversion_power_bi/)
 
-[View project](./ecommerce_customer_segmentation_rfm)
+**Decision:** where does the product funnel lose users, and should a checkout change be rolled out?  
+**Evidence:** a five-page Power BI funnel model plus a 32,000-user synthetic randomised experiment with SRM, balance, 95% CI, p-value, MDE/power, guardrails, and subgroup cautions.  
+**Result:** treatment conversion increased from 5.28% to 6.06%; the pre-declared gates support a monitored staged rollout.
 
----
+## Supporting evidence
 
-### 2. Marketing Campaign Funnel & Channel Performance
-**Tools:** Python, pandas, NumPy, matplotlib
+| Project | Primary proof | Why it remains in the portfolio |
+|---|---|---|
+| [Commercial & CRM Operations](commercial_crm_excel_analytics/) | Excel formulas, pipeline logic, dashboarding | Demonstrates auditable spreadsheet analysis for sales and CRM decisions |
+| [Insurance Cost Drivers](insurance_risk_segmentation_sql/) | PostgreSQL, CTEs, windows, percentiles, QA | Demonstrates SQL depth and careful descriptive segmentation |
+| [Product Affinity Network](product_affinity_network_analysis/) | Python, basket transformation, network exports | Demonstrates an additional customer/product analytical technique |
+| [Australian Airline Performance](airline_performance_visual_analytics/) | R pipeline and Tableau | Demonstrates reproducible visual analytics on a public operational domain |
 
-**Business question:** Where does marketing performance weaken across the funnel, and which campaigns or channels need optimisation?
+Supporting projects add tool evidence; they are not presented as equally important flagship stories.
 
-Key work:
-- Analysed **10,000 campaign records**.
-- Built CTR, lead rate, conversion rate, CPC, CPL, CAC, and ROAS metrics.
-- Reproduced an overall CTR of approximately **5.48%**.
-- Connected campaign metrics to practical scale, optimise, investigate, or reduce-spend decisions.
+## How the portfolio is evaluated
 
-[View project](./marketing_campaign_funnel_analysis)
+Every flagship contains:
 
----
+1. a decision question;
+2. metric definitions and data-quality gates;
+3. reproducible analysis and inspectable outputs;
+4. findings connected to an action;
+5. limitations, causal boundaries, and a next test.
 
-### 3. Commercial & CRM Operations Analysis
-**Tools:** Excel
+The repository-level [`FUNCTIONAL_AUDIT.md`](FUNCTIONAL_AUDIT.md) records runtime, integrity, link, hygiene, and recruiter-readiness checks. Dataset origin and redistribution scope are documented in [`DATA_SOURCES.md`](DATA_SOURCES.md).
 
-**Business question:** Which parts of the sales funnel, acquisition mix, sales team, and open pipeline deserve management attention?
+## Reproduce the Python flagships
 
-Key work:
-- Built a formula-driven CRM model from **1,800 synthetic leads**.
-- Analysed funnel leakage, channel performance, sales-rep performance, stale opportunities, and weighted pipeline.
-- Produced an executive dashboard with auditable supporting sheets.
-- Final model tracks **$9.78M won revenue**, **$13.01M open pipeline**, and **358 stale open leads**.
+```bash
+python ecommerce_customer_segmentation_rfm/analysis/run_analysis.py
+python marketing_campaign_funnel_analysis/src/generate_synthetic_campaigns.py
+python marketing_campaign_funnel_analysis/analysis/run_analysis.py
+python ecommerce_growth_conversion_power_bi/experiment/run_experiment.py
+python ecommerce_growth_conversion_power_bi/scripts/validate_dataset.py
+```
 
-[View project](./commercial_crm_excel_analytics)
+All paths are repository-relative. Generated outputs are deterministic, and each canonical script stops on failed validation gates.
 
----
-
-### 4. E-commerce Growth & Conversion Analytics
-**Tools:** Power BI, DAX, Power Query
-
-**Business question:** How do traffic, funnel conversion, acquisition channels, customers, and products contribute to e-commerce growth?
-
-Key work:
-- Built a multi-page Power BI report and semantic model.
-- Analysed **75,237 sessions**, **32,000 users**, and **4,737 transactions**.
-- Validated total revenue of **$217,478.50**.
-- Covered acquisition, conversion funnel, customer behaviour, geographic performance, and product performance.
-
-[View project](./ecommerce_growth_conversion_power_bi)
-
----
-
-### 5. Supervised Learning — Regression & Classification
-**Tools:** R, R Markdown, `boot`, `pROC`
-
-**Business question:** How should predictive models be selected, validated, and interpreted for continuous and binary outcomes?
-
-Key work:
-- Compared linear, polynomial, multiple-regression, and interaction models.
-- Used model diagnostics and **10-fold cross-validation** for model selection.
-- Built a logistic model for learner completion.
-- Achieved **AUC = 0.813** and evaluated threshold trade-offs between sensitivity and specificity.
-
-[View project](./supervised_learning_regression_classification_r)
-
----
-
-### 6. Insurance Risk Segmentation
-**Tools:** PostgreSQL, SQL
-
-**Business question:** Which customer characteristics are associated with higher insurance charges, and which segments represent the highest observed cost risk?
-
-Key work:
-- Built a reproducible PostgreSQL workflow from raw data to analytical views.
-- Used CTEs, bucketing, percentiles, ranking, aggregation, and segmentation.
-- Verified **1,338 raw records** and **1,337 final records** after exact-duplicate removal.
-- Ranked high-cost customer segments using average, median, and 90th-percentile charges.
-
-[View project](./insurance_risk_segmentation_sql)
-
----
-
-### 7. Product Affinity & Co-Purchase Network Analysis
-**Tools:** Python, pandas, Jupyter, Gephi-compatible network data
-
-**Business question:** Which products are repeatedly purchased together, and which products act as important nodes in the co-purchase network?
-
-Key work:
-- Converted transaction baskets into weighted product-product relationships.
-- Built reusable edge and node datasets for network analysis.
-- At the focused threshold, reproduced a network of **581 nodes and 1,948 edges**.
-- Exported network files for further exploration in Gephi.
-
-[View project](./product_affinity_network_analysis)
-
----
-
-### 8. Australian Airline Performance Visual Analytics
-**Tools:** R, R Markdown, Tableau
-
-**Business question:** How do Australian airlines, airports, routes, and network conditions differ in punctuality, cancellation performance, and operating volume?
-
-Key work:
-- Built a reproducible pipeline from a multi-sheet workbook to clean and analysis-ready datasets.
-- Processed **80,972 analytical records** covering **2010–2024**.
-- Calculated weighted departure OTP, arrival OTP, cancellation rates, airport performance, route performance, and airline comparisons.
-- Built Tableau views covering network trends, geographic performance, heatmaps, route analysis, and airline comparisons.
-
-[View project](./airline_performance_visual_analytics)
-
----
-
-## Repository Structure
+## Repository structure
 
 ```text
 data-portfolio/
-├── ecommerce_customer_segmentation_rfm/
-├── marketing_campaign_funnel_analysis/
-├── commercial_crm_excel_analytics/
-├── ecommerce_growth_conversion_power_bi/
-├── supervised_learning_regression_classification_r/
-├── insurance_risk_segmentation_sql/
-├── product_affinity_network_analysis/
-├── airline_performance_visual_analytics/
+├── ecommerce_customer_segmentation_rfm/       # flagship 1
+├── marketing_campaign_funnel_analysis/        # flagship 2
+├── ecommerce_growth_conversion_power_bi/      # flagship 3
+├── commercial_crm_excel_analytics/             # supporting Excel
+├── insurance_risk_segmentation_sql/            # supporting SQL
+├── product_affinity_network_analysis/           # supporting network analysis
+├── airline_performance_visual_analytics/        # supporting R/Tableau
 ├── DATA_SOURCES.md
 ├── FUNCTIONAL_AUDIT.md
-├── README.md
+├── PUBLISHING_CHECKLIST.md
 └── LICENSE
 ```
 
-Each project folder contains its own README with the business question, methodology, outputs, and reproduction instructions.
+## Scope
 
----
-
-## Reproducibility
-
-The portfolio is structured so that project files can be opened and reproduced without relying on machine-specific working directories.
-
-- Python notebooks use project-relative paths.
-- Excel includes its supporting dataset and formula-driven analysis workbook.
-- Power BI is stored as a PBIP project with its semantic model and report definition.
-- R projects use relative paths and include the required analysis data.
-- PostgreSQL includes separate schema-setup and analysis scripts.
-- Tableau connects to the processed airline dataset through a relative datasource path.
-- Large reproducible intermediate files are excluded where they can be regenerated from the included source data.
-
-`FUNCTIONAL_AUDIT.md` records the final runtime verification status of the portfolio.
-
----
-
-## Data Sources & Licensing
-
-Datasets in this repository come from a mixture of public sources, coursework-provided datasets, and synthetic portfolio data.
-
-Dataset provenance and usage notes are documented separately in [`DATA_SOURCES.md`](./DATA_SOURCES.md).
-
-The repository license applies to original code and documentation unless otherwise stated. Third-party datasets remain subject to the terms of their original sources.
+Synthetic datasets are labelled explicitly. Third-party data retain their original terms and are not relicensed by this repository. Descriptive projects identify patterns and prioritise follow-up; only a randomised design can support an incremental causal claim.
