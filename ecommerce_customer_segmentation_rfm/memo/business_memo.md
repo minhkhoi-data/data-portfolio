@@ -9,8 +9,8 @@ Protect high-value active customers first, run a measured win-back test for high
 * **72.4%** of 5,878 customers made at least two orders.
 * Among customers observed for at least 90 days, **47.6%** made a second purchase within 90 days; the median time to second purchase among repeat customers was **55 days**.
 * Weighted cohort retention was **23.4%** in month 1 and **24.9%** in month 3. Only cohorts with a complete observation window are used in these headline rates.
-* \*\*2,524 active repeat customers generated 79.7% of historical revenue.\*\*
-* \*\*589 at-risk customers generated 6.1% of historical revenue and form the most defensible win-back pool.\*\*
+* \*\*2,524 active repeat customers generated 79.7% of historical revenue.
+* \*\*589 at-risk customers generated 6.1% of historical revenue and form the most defensible win-back pool.
 
 ## Recommended test plan
 
