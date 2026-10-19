@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "outputs_valid": true,
+  "optional_validators": {
+    "official_TMDL": "PASS_IDENTICAL_INPUT_REUSED",
+    "official_M_grammar": "PASS_IDENTICAL_INPUT_REUSED",
+    "report_JSON_schema": "PASS",
+    "local_opener": "PASS"
+  },
+  "native_power_bi": "NOT_VERIFIED"
+}

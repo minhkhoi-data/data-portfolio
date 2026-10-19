@@ -1,0 +1,40 @@
+{
+  "input_log_sha256": "b4559e6c2f5a2baa27b2785f9dfcfead2997367121ae829dbbdc65dfb65b23a5",
+  "observed_status": "Both prior embedded loaders FAILED to open; basic Enter Data test succeeded",
+  "desktop_release": "August 2026",
+  "desktop_version": "2.157.1354.0 (x64)",
+  "observed_error": "M Engine error: System; Can not access a closed Stream.",
+  "server_error_code": "PFE_M_ENGINE_INTERNAL",
+  "observed_stage": [
+    "LocalAnalysisServicesDatabaseCreator.CreateAnalysisServicesDatabaseAsyncImpl",
+    "AnalysisServicesService.CreateDatabase",
+    "TomDatabase.Update",
+    "Model.SaveChangesImpl"
+  ],
+  "query_identified": false,
+  "definitive_cause_identified": false,
+  "working_hypothesis": "Model-specific startup processing; large embedded M expressions remain a plausible factor. Neither log proves the internal stream cause.",
+  "mitigation": "Clean eight-table file-backed CSV import model, short M expressions, one configured DataFolder parameter, no embedded compression or calculated partitions",
+  "new_windows_engine_result": "NOT_VERIFIED",
+  "private_log_content_bundled": false,
+  "history": [
+    {
+      "loader": "embedded CSV/GZip",
+      "native_result": "FAILED",
+      "error_code": "PFE_M_ENGINE_INTERNAL"
+    },
+    {
+      "loader": "embedded JSON/Deflate buffered",
+      "native_result": "FAILED",
+      "reported_date": "2026-10-13",
+      "log_sha256": "5265d00380ba2e068ad5c0d701509e964d5319a095c72771ec3c501b65754bab",
+      "error_code": "PFE_M_ENGINE_INTERNAL"
+    }
+  ],
+  "basic_native_M_test": {
+    "test": "Enter Data: Test = 1 then Load",
+    "status": "PASS",
+    "reported_date": "2026-10-13",
+    "evidence": "User reported successful Load and supplied a chart showing Sum of Test = 1. No project opening or complex M validation established."
+  }
+}

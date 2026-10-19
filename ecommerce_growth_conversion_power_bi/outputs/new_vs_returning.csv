@@ -1,3 +1,3 @@
-session_type,sessions,purchase_sessions,conversion_rate
-Returning-user session,43237,3020,0.06984758424497536
-New-user session,32000,1717,0.05365625
+is_new_user,sessions,purchase_sessions,session_type,conversion_rate
+0,98891,3068,Returning-user indication in GA4,0.03102405678979887
+1,261238,1780,New-user indication in GA4,0.0068137101034305885

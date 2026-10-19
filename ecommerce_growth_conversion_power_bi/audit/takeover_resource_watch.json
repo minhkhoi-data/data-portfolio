@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "maximum_observed_total_cgroup_GiB": 4.913,
+  "memory_ceiling_GiB": 7.0,
+  "elapsed_seconds": 67.9,
+  "wall_ceiling_seconds": 600,
+  "stop_reason": null
+}

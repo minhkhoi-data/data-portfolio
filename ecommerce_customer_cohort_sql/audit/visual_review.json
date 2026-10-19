@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "offline_html_rendered": true,
+  "method": "HTML rendered via WeasyPrint to temporary PDF and rasterized; six-page contact sheet visually inspected. SVG separately rasterized and inspected.",
+  "checks": [
+    "Vietnamese glyphs visible after font adjustment",
+    "six-column result tables fit in print rendering",
+    "chart labels match validated CSV values",
+    "no remote script/image/font assets"
+  ],
+  "temporary_preview_not_in_release": true,
+  "scope": "Generated HTML rendering, not native Windows browser interaction."
+}

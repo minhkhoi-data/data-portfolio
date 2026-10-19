@@ -1,0 +1,124 @@
+table FactPurchases
+	lineageTag: 97fbc586-0972-524d-9739-fab3d7d8881b
+
+	column purchase_key
+		dataType: int64
+		lineageTag: e2b06dde-9fa6-5203-a01c-0a742983dbcd
+		summarizeBy: none
+		sourceColumn: purchase_key
+
+	column source_event_id
+		dataType: string
+		lineageTag: eb55cb7d-d832-5d10-9fe2-f5f42c733175
+		summarizeBy: none
+		sourceColumn: source_event_id
+
+	column session_id
+		dataType: string
+		lineageTag: e6426359-eb1d-56a5-9838-ce7f322eefcc
+		summarizeBy: none
+		sourceColumn: session_id
+
+	column user_id
+		dataType: string
+		lineageTag: 6ef290cc-08d6-5838-9e87-0b7f7e1765b9
+		summarizeBy: none
+		sourceColumn: user_id
+
+	column purchase_date
+		dataType: dateTime
+		lineageTag: 94898530-8270-5bd4-a9a1-4369beaf7416
+		summarizeBy: none
+		sourceColumn: purchase_date
+		formatString: yyyy-MM-dd
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column event_timestamp
+		dataType: string
+		lineageTag: 82d67f6f-d61f-5e6e-98b3-b2cee9097d6d
+		summarizeBy: none
+		sourceColumn: event_timestamp
+
+	column transaction_id
+		dataType: string
+		lineageTag: 0d232cdf-9f1b-5d9f-b8e6-312694d67d0d
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+	column purchase_revenue_usd
+		dataType: decimal
+		lineageTag: a6fb86f2-c092-504e-af82-49d272cfb493
+		summarizeBy: none
+		sourceColumn: purchase_revenue_usd
+		formatString: $#,##0.00
+
+	column total_quantity
+		dataType: int64
+		lineageTag: a4199751-d61a-5526-ad85-2337b1f0ee97
+		summarizeBy: none
+		sourceColumn: total_quantity
+
+	column distinct_products
+		dataType: int64
+		lineageTag: 9200239d-d1f2-5ab6-87cd-48feb2b1bdbf
+		summarizeBy: none
+		sourceColumn: distinct_products
+
+	column currency
+		dataType: string
+		lineageTag: 86bf938a-b9cf-5ea5-b909-b4eee2954aef
+		summarizeBy: none
+		sourceColumn: currency
+
+	column transaction_id_known
+		dataType: int64
+		lineageTag: fe3a92a0-6425-515b-a645-92732824c52a
+		summarizeBy: none
+		sourceColumn: transaction_id_known
+
+	column channel_id
+		dataType: int64
+		lineageTag: 7e912b48-ffb9-59d8-aa0c-84acad1fe644
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column device_id
+		dataType: int64
+		lineageTag: 65828bb5-04c5-504f-a2f0-30df490a7e1f
+		summarizeBy: none
+		sourceColumn: device_id
+
+	column geo_id
+		dataType: int64
+		lineageTag: e52a1ec8-1700-5196-8a86-315bfaac44b2
+		summarizeBy: none
+		sourceColumn: geo_id
+
+	partition FactPurchases = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "/fact_purchases.csv"), [Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.Csv, ExtraValues=ExtraValues.Error]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Checked = if Table.ColumnNames(Headers) = {"purchase_key", "source_event_id", "session_id", "user_id", "purchase_date", "event_timestamp", "transaction_id", "purchase_revenue_usd", "total_quantity", "distinct_products", "currency", "transaction_id_known", "channel_id", "device_id", "geo_id"} then Headers else error Error.Record("SchemaMismatch", "CSV headers do not match FactPurchases", null),
+					Nulls = Table.ReplaceValue(Checked, "", null, Replacer.ReplaceValue, {"total_quantity", "distinct_products"}),
+					Typed = Table.TransformColumnTypes(Nulls, {
+					{"purchase_key", Int64.Type},
+					{"source_event_id", type text},
+					{"session_id", type text},
+					{"user_id", type text},
+					{"purchase_date", type date},
+					{"event_timestamp", type text},
+					{"transaction_id", type text},
+					{"purchase_revenue_usd", Currency.Type},
+					{"total_quantity", Int64.Type},
+					{"distinct_products", Int64.Type},
+					{"currency", type text},
+					{"transaction_id_known", Int64.Type},
+					{"channel_id", Int64.Type},
+					{"device_id", Int64.Type},
+					{"geo_id", Int64.Type}
+					}, "en-US")
+				in
+					Typed

@@ -1,0 +1,6 @@
+{
+  "release": "ga4-takeover-2026-10-15",
+  "authoritative_inventory": "audit/release_manifest.json",
+  "runtime_CSV_integrity": "runtime_manifest.json",
+  "note": "Full rebuild/source/audit package; native operation is not certified."
+}

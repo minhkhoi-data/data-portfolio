@@ -1,15 +1,15 @@
 table DimChannel
-	lineageTag: df7936be-506d-42d4-80b7-48e6db55c703
+	lineageTag: f56e37aa-3783-52a5-9830-f7713a7a4df2
 
 	column channel_id
 		dataType: int64
-		lineageTag: a36eee4d-9afc-4ea6-8e11-326a1342a64c
+		lineageTag: 4f14f363-86f9-5be1-80c6-22f0ca6997c3
 		summarizeBy: none
 		sourceColumn: channel_id
 
 	column channel
 		dataType: string
-		lineageTag: c41b237f-8e3c-476a-be27-31dfe3951f3f
+		lineageTag: 637a16f2-8ea2-51b2-802b-3d5bfbe9a762
 		summarizeBy: none
 		sourceColumn: channel
 
@@ -17,17 +17,12 @@ table DimChannel
 		mode: import
 		source =
 				let
-					EmbeddedBase64 = Text.Combine({
-						"H4sIAPhNsWoC/0vOSMzLS82Jz0zRSYYwuQx1/IvSE/MykxWCUxOLkjO4jHRcMotSk0u4jHUCEjNTYMImOkGpaalFRYk5XKZAFcUFOYmVXGY6rrmJmTlc5ghD8pMzgUoAb91UWmkAAAA="
-					}),
-					CompressedBinary = Binary.FromText(EmbeddedBase64, BinaryEncoding.Base64),
-					CsvBinary = Binary.Decompress(CompressedBinary, Compression.GZip),
-					Source = Csv.Document(CsvBinary, [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Source = Csv.Document(File.Contents(DataFolder & "/dim_channel.csv"), [Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.Csv, ExtraValues=ExtraValues.Error]),
 					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-					Typed = Table.TransformColumnTypes(Headers, {
+					Checked = if Table.ColumnNames(Headers) = {"channel_id", "channel"} then Headers else error Error.Record("SchemaMismatch", "CSV headers do not match DimChannel", null),
+					Typed = Table.TransformColumnTypes(Checked, {
 					{"channel_id", Int64.Type},
 					{"channel", type text}
-					})
+					}, "en-US")
 				in
 					Typed
-

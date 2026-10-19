@@ -1,0 +1,210 @@
+{
+  "release": "remaster-1.0.2",
+  "checked_utc": "2026-10-07T14:41:43.617366+00:00",
+  "status": "PASS_WITH_APPLICANT_EVIDENCE_OUTSTANDING",
+  "artifact_verdict": "VERIFIED within declared static Python scope",
+  "interview_verdict": "BLOCKED HR-01/02/03",
+  "criteria_verdicts": {
+    "PASS": 63,
+    "N/A": 41,
+    "BLOCKED": 3
+  },
+  "artifact_criteria_pass": 63,
+  "artifact_criteria_applicable": 63,
+  "all_criteria_pass": false,
+  "checks": {
+    "criteria_complete_unchanged": true,
+    "source_reverified": true,
+    "SQL_validation": true,
+    "extended_validation": true,
+    "fixtures": true,
+    "fresh_equivalence": true,
+    "notebook_9_cells": true,
+    "notebook_errors_not_hidden": true,
+    "self_contained_preview": true,
+    "all_local_links": true,
+    "no_private_path_in_public_code_docs": true,
+    "current_config_version": true
+  },
+  "local_links": [
+    {
+      "document": "DATA_SOURCES.md",
+      "target": "audit/source_verification.json",
+      "exists": true
+    },
+    {
+      "document": "DATA_SOURCES.md",
+      "target": "audit/source_reverification.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "memo/business_memo.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/LEARNING_GUIDE_VI.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/METHODS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/AUDIT_REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "ecommerce_customer_segmentation_rfm.ipynb",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "notebook_preview.html",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "figures/customer_lifecycle_decision_dashboard.png",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/notebook_execution.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/run_summary.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/cleaning_reconciliation.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/orders.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/customer_lifecycle_table.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/rfm_cutoffs.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/rfm_lifecycle_crosswalk.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/repeat_90_curve.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/repeat_90_by_cohort.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/retention_kpis.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/rule_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/duplicate_sensitivity.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/tenure_context.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/independent_validation.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/extended_validation.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/CHECKLIST.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/CONTRIBUTION.md",
+      "exists": true
+    },
+    {
+      "document": "docs/LEARNING_GUIDE_VI.md",
+      "target": "../memo/business_memo.md",
+      "exists": true
+    }
+  ],
+  "fixed_issues": [
+    {
+      "issue": "Out-of-range Customer ID integer wrap",
+      "before": "1e20 became -9223372036854775808",
+      "after": "excluded and counted before casting; valid rows retained",
+      "test": "test_unrepresentable_identifiers_and_quantities_excluded"
+    },
+    {
+      "issue": "Undefined-rate plots hide horizons / suggest zero",
+      "before": "NaN-only mature chart auto-axis showed only month 1; no explicit N/A label",
+      "after": "all four horizons visible; N/A at each; repeat x-axis 0–90 days",
+      "test": "test_no_eligible_chart_labels_not_zero; actual counterexample PNGs viewed"
+    },
+    {
+      "issue": "Notebook retries cell failures / wrong registered interpreter",
+      "before": "broad Exception fallback and registered python3 kernel selection",
+      "after": "runner interpreter selected; cell/dependency errors propagate; managed network-free method recorded",
+      "test": "9 cells succeed and deliberate error yields CellExecutionError"
+    }
+  ],
+  "tests": 12,
+  "independent_SQL_checks": 45,
+  "extended_independent_checks": 68,
+  "notebook_code_cells": 9,
+  "source_rows_all_eight_fields_compared": 1067371,
+  "fresh_generated_files_compared": 26,
+  "source_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45",
+  "config_sha256": "3d03c4c3923177c2397f1c1edf1e64b1171a49940034bf2b04409d23eda32782",
+  "script_hashes": {
+    "analysis/__init__.py": "2a96903d5e5688bfc8362253d90297e4d60d329688e174aaa0069c06b2563fef",
+    "analysis/execute_notebook.py": "b0b99b37e1d700fcb8b9365963177df9234481a9663ef272e9145aebc96052ee",
+    "analysis/inprocess_kernel.py": "5a78873b19bcbfd8ac7fbf78f3d977ac4fd871549f3a6e126ded86eaeb144e84",
+    "analysis/run_analysis.py": "f653b59d5eeaea9c5c553ebc4a6063b1a6ca518170574e5562f693903a07fb43",
+    "analysis/validate_project.py": "fb5816fb4eacc6e7f8c0f199fb91f5f9a10b6be4455a887d4965af1ffba1a137",
+    "analysis/verify_release.py": "b229ac1dacce5a5aff2faae9789405973e01e454bd3327808b10f70f5782b0e1"
+  },
+  "environment_record": "audit/environment.json",
+  "frontend_gui_verified": false,
+  "archive_verification": "All manifest entries and CRC checked by packaging step after writing this report."
+}

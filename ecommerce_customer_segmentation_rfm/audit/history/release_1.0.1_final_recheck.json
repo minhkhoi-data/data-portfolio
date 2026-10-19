@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "original_zip_crc_and_manifest": "PASS (56 original entries)",
+  "metrics_unchanged_except_version_and_config_hash": true,
+  "fresh_run_all_generated_files_identical": 26,
+  "links_checked_after_notebook": [
+    {
+      "document": "README.md",
+      "target": "memo/business_memo.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/LEARNING_GUIDE_VI.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/METHODS.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/AUDIT_REPORT.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "ecommerce_customer_segmentation_rfm.ipynb",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "notebook_preview.html",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "figures/customer_lifecycle_decision_dashboard.png",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/notebook_execution.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/run_summary.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/cleaning_reconciliation.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/orders.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/customer_lifecycle_table.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/rfm_cutoffs.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/rfm_lifecycle_crosswalk.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/repeat_90_curve.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/repeat_90_by_cohort.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/retention_kpis.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/rule_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/duplicate_sensitivity.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "outputs/tenure_context.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "audit/independent_validation.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "DATA_SOURCES.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "docs/CONTRIBUTION.md",
+      "exists": true
+    },
+    {
+      "document": "DATA_SOURCES.md",
+      "target": "audit/source_verification.json",
+      "exists": true
+    },
+    {
+      "document": "docs/LEARNING_GUIDE_VI.md",
+      "target": "../memo/business_memo.md",
+      "exists": true
+    }
+  ],
+  "notebook_code_cells": 9,
+  "notebook_errors": 0,
+  "independent_checks": 43,
+  "unit_tests": 10,
+  "fixed_delivery_issue": "Duplicate sensitivity is now recreated by canonical pipeline and checked after notebook refresh",
+  "artifact_verdict": "VERIFIED in declared scope",
+  "interview_verdict": "BLOCKED HR-01/02/03"
+}

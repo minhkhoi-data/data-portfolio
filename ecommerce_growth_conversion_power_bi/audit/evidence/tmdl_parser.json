@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "validator": "Microsoft.AnalysisServices.Tabular.TmdlSerializer.DeserializeDatabaseFromFolder",
+  "assembly": "Microsoft.AnalysisServices.Tabular, Version=19.117.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91",
+  "runtime": "8.0.31",
+  "table_count": 8,
+  "m_partition_count": 8,
+  "parameter_count": 1,
+  "relationship_count": 8,
+  "measure_count": 35,
+  "compatibility_level": 1702,
+  "current_model_sha256": {
+    "database.tmdl": "70ab80d94316635a0a7a30c02b75c43919d12c05faa0f62361705e7495b19c99",
+    "expressions.tmdl": "3764e3cc74abfb9abc5dfcdffa463b00f209b4a879e6566edd55a74411aeaa01",
+    "model.tmdl": "8eb5cbe547c7e7db36ec02cd010c54ac14512deb79cc059c05ff3b0589a35f04",
+    "relationships.tmdl": "34c9a5af090ffd9a76501e9cad517fbaf18222c94525af2b23ecf032e8c519aa",
+    "tables/DimChannel.tmdl": "806eeb8f06cc394a8a126259bd1c2f13cfb4a2f5107a7ab959ac68594a2ea5e8",
+    "tables/DimDate.tmdl": "ea2034da305a5e3017c7817ac306c6ebce296a95f765aefe9732a583cdcf7ca8",
+    "tables/DimDevice.tmdl": "bc321165ee910d89196d8d3f8f2a58e2ddd0d8911f7dd961bd2d641072617744",
+    "tables/DimGeo.tmdl": "cf49867730995d07f39584724167dfaded0ec11f200e94d84685d3f430f87473",
+    "tables/FactPurchases.tmdl": "03464b45aa9097ae5bafed6d30ce2daffeec6fb3f68529f7431d7a3bcfcdaaf1",
+    "tables/FactSessions.tmdl": "2eaf59c1a3239cf22d06b87155ce67ffa19d2dfb0dad425e46019dffc84fba05",
+    "tables/FunnelStage.tmdl": "8981069ebf4561c4498915807d8b9f76153e15bb46fd379f736dc51066b02c05",
+    "tables/_Measures.tmdl": "60d609fcbb536378f27be712e82131a9646788c5d5069736e24af6ef613896f2"
+  },
+  "negative_controls": [
+    {
+      "case": "prior_dimdate_scope",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "TMDL Format Error:\n\tParsing error type - UnknownKeyword\n\tDetailed error - The keyword 'isKey' is neither a property nor an object in the current context!\n\tDocument - './tables/DimDate'\n\tLine Number - 13\n\tLine - '\t\tisKey'\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.IdentifyKeyword(String keyword, Boolean allowProperty, TmdlPropertyInfo& propertyInfo, TmdlObjectInfo& objectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.IdentifyAndValidateNextLine(TmdlTextLine line, Boolean allowProperty, TmdlPropertyInfo& propertyInfo, TmdlObjectInfo& objectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadChildObject(TmdlObject result, TmdlObjectInfo objectInfo, TmdlPropertyInfo& nextPropertyInfo, TmdlObjectInfo& nextObjectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadObject(TmdlObjectInfo objectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadChildObject(TmdlObject result, TmdlObjectInfo objectInfo, TmdlPropertyInfo& nextPropertyInfo, TmdlObjectInfo& nextObjectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadObject(TmdlObjectInfo objectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ParseDocumentImpl(TmdlSchema schema, ITmdlReader reader, String path, Boolean disposeReader)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.<>c__DisplayClass15_0.<ParseProject>b__0(String logicalPath)\n   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlProject..ctor(TmdlContentSource contentSource, IEnumerable`1 documents)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ParseProject(TmdlContentSource contentSource, TmdlSchema schema, IMetadataDeserializationController controller, Object context)\n   at Microsoft.AnalysisServices.Tabular.TmdlSerializer.DeserializeDatabaseImpl(MetadataDeserializationOptions options, TmdlContentSource contentSource, IMetadataDeserializationController controller, Object context)\n   at Microsoft.AnalysisServices.Tabular.TmdlSerializer.DeserializeDatabaseFromFolder(String path)\n   at InvokeStub_TmdlSerializer.DeserializeDatabaseFromFolder(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+    },
+    {
+      "case": "prior_indented_model_refs",
+      "status": "REJECTED_AS_EXPECTED",
+      "error": "TMDL Format Error:\n\tParsing error type - InvalidLineType\n\tDetailed error - Unexpected line type: ReferenceObject!\n\tDocument - './model'\n\tLine Number - 15\n\tLine - '\tref table FactSessions'\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadObject(TmdlObjectInfo objectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadChildObject(TmdlObject result, TmdlObjectInfo objectInfo, TmdlPropertyInfo& nextPropertyInfo, TmdlObjectInfo& nextObjectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ObjectContext.ReadObject(TmdlObjectInfo objectInfo)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ParseDocumentImpl(TmdlSchema schema, ITmdlReader reader, String path, Boolean disposeReader)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.<>c__DisplayClass15_0.<ParseProject>b__0(String logicalPath)\n   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlProject..ctor(TmdlContentSource contentSource, IEnumerable`1 documents)\n   at Microsoft.AnalysisServices.Tabular.Tmdl.TmdlParser.ParseProject(TmdlContentSource contentSource, TmdlSchema schema, IMetadataDeserializationController controller, Object context)\n   at Microsoft.AnalysisServices.Tabular.TmdlSerializer.DeserializeDatabaseImpl(MetadataDeserializationOptions options, TmdlContentSource contentSource, IMetadataDeserializationController controller, Object context)\n   at Microsoft.AnalysisServices.Tabular.TmdlSerializer.DeserializeDatabaseFromFolder(String path)\n   at InvokeStub_TmdlSerializer.DeserializeDatabaseFromFolder(Object, Span`1)\n   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)"
+    }
+  ],
+  "scope": "Metadata deserialization only. Does NOT compile/evaluate DAX, execute M/refresh, render PBIR or run Power BI Desktop.",
+  "native_desktop": "NOT_VERIFIED",
+  "evidence_reuse": "Historical execution; SHA256-identical tested inputs verified during this rebuild. No fresh parser execution."
+}

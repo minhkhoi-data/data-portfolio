@@ -5,7 +5,7 @@
     "x": 1060,
     "y": 430,
     "z": 6000,
-    "height": 120,
+    "height": 188.57142857142858,
     "width": 200,
     "tabOrder": 6000
   },
@@ -55,7 +55,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Channel'"
+                  "Value": "'First-user channel'"
                 }
               }
             },

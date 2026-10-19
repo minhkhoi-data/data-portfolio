@@ -1,0 +1,81 @@
+{
+  "fact_sessions": {
+    "columns": [
+      "session_id",
+      "user_id",
+      "session_date",
+      "channel_id",
+      "device_id",
+      "geo_id",
+      "source",
+      "medium",
+      "is_new_user",
+      "engagement_known",
+      "engaged_session",
+      "engagement_seconds",
+      "pageviews",
+      "view_item",
+      "add_to_cart",
+      "begin_checkout",
+      "purchase",
+      "ordered_view_item",
+      "ordered_add_to_cart",
+      "ordered_begin_checkout",
+      "ordered_purchase",
+      "event_count",
+      "purchase_event_count",
+      "session_revenue"
+    ]
+  },
+  "fact_purchases": {
+    "columns": [
+      "purchase_key",
+      "source_event_id",
+      "session_id",
+      "user_id",
+      "purchase_date",
+      "event_timestamp",
+      "transaction_id",
+      "purchase_revenue_usd",
+      "total_quantity",
+      "distinct_products",
+      "currency",
+      "transaction_id_known",
+      "channel_id",
+      "device_id",
+      "geo_id"
+    ]
+  },
+  "dim_date": {
+    "columns": [
+      "date",
+      "year",
+      "month_no",
+      "month",
+      "year_month",
+      "week_start",
+      "day_of_week",
+      "day_of_week_no",
+      "is_weekend"
+    ]
+  },
+  "dim_channel": {
+    "columns": [
+      "channel_id",
+      "channel"
+    ]
+  },
+  "dim_device": {
+    "columns": [
+      "device_id",
+      "device_category"
+    ]
+  },
+  "dim_geo": {
+    "columns": [
+      "geo_id",
+      "country",
+      "region_group"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "tests": [
+    "Identical fixture accepted",
+    "Zero substituted for BLANK rejected"
+  ],
+  "native_DAX_executed": false
+}

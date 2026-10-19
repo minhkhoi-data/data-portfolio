@@ -1,0 +1,1261 @@
+{
+  "status": "PASS",
+  "checks": 139,
+  "passed": 139,
+  "engine": "Separately recalculated LibreOffice Calc workbook",
+  "Microsoft_Excel": "PENDING_USER",
+  "sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+  "results": [
+    {
+      "check": "all_lead_input_mql_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_first_contact_date",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_landing_page_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_origin",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_seller_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_sdr_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_sr_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_won_date",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_business_segment",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_lead_type",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_lead_behaviour_profile",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_has_company",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_has_gtin",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_average_stock",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_business_type",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_declared_product_catalog_size",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_input_declared_monthly_revenue",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_R",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_S",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_T",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_U",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_V",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_W",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_X",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_Y",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_Z",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_lead_derived_AA",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_order_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_order_item_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_product_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_seller_id",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_shipping_limit_date",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_price",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_freight_value",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_order_status",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_source_order_purchase_timestamp",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_derived_J",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_derived_K",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_derived_L",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_derived_M",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_derived_N",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_item_derived_O",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "all_842_seller_metrics",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "headline_A6",
+      "status": "PASS",
+      "details": {
+        "actual": 8000,
+        "expected": 8000
+      }
+    },
+    {
+      "check": "headline_C6",
+      "status": "PASS",
+      "details": {
+        "actual": 842,
+        "expected": 842
+      }
+    },
+    {
+      "check": "headline_E6",
+      "status": "PASS",
+      "details": {
+        "actual": 0.10525,
+        "expected": 0.10525
+      }
+    },
+    {
+      "check": "headline_G6",
+      "status": "PASS",
+      "details": {
+        "actual": 14,
+        "expected": 14.0
+      }
+    },
+    {
+      "check": "headline_I6",
+      "status": "PASS",
+      "details": {
+        "actual": 380,
+        "expected": 380
+      }
+    },
+    {
+      "check": "headline_K6",
+      "status": "PASS",
+      "details": {
+        "actual": 664858,
+        "expected": 664858.0
+      }
+    },
+    {
+      "check": "headline_M6",
+      "status": "PASS",
+      "details": {
+        "actual": 287,
+        "expected": 287
+      }
+    },
+    {
+      "check": "channel_Organic search",
+      "status": "PASS",
+      "details": [
+        2296,
+        271,
+        2025,
+        0.11803135888501742,
+        270,
+        50.19259259259259,
+        95,
+        113,
+        111,
+        204509.78999999998
+      ]
+    },
+    {
+      "check": "channel_Paid search",
+      "status": "PASS",
+      "details": [
+        1586,
+        195,
+        1391,
+        0.12295081967213115,
+        195,
+        56.6,
+        70,
+        101,
+        100,
+        151444.15
+      ]
+    },
+    {
+      "check": "channel_Unknown (source label)",
+      "status": "PASS",
+      "details": [
+        1099,
+        179,
+        920,
+        0.16287534121929026,
+        179,
+        41.29050279329609,
+        50,
+        81,
+        80,
+        209651.37
+      ]
+    },
+    {
+      "check": "channel_Social",
+      "status": "PASS",
+      "details": [
+        1350,
+        75,
+        1275,
+        0.05555555555555555,
+        75,
+        60.96,
+        36,
+        31,
+        31,
+        43394.2
+      ]
+    },
+    {
+      "check": "channel_Direct traffic",
+      "status": "PASS",
+      "details": [
+        499,
+        56,
+        443,
+        0.11222444889779559,
+        56,
+        31.125,
+        15,
+        31,
+        31,
+        21852.9
+      ]
+    },
+    {
+      "check": "channel_Referral",
+      "status": "PASS",
+      "details": [
+        284,
+        24,
+        260,
+        0.08450704225352113,
+        24,
+        32.541666666666664,
+        9,
+        9,
+        9,
+        16578.25
+      ]
+    },
+    {
+      "check": "channel_Email",
+      "status": "PASS",
+      "details": [
+        493,
+        15,
+        478,
+        0.030425963488843813,
+        15,
+        52.2,
+        5,
+        6,
+        6,
+        8484.99
+      ]
+    },
+    {
+      "check": "channel_Missing origin",
+      "status": "PASS",
+      "details": [
+        60,
+        14,
+        46,
+        0.23333333333333334,
+        14,
+        49.214285714285715,
+        3,
+        4,
+        4,
+        1242.6000000000001
+      ]
+    },
+    {
+      "check": "channel_Display",
+      "status": "PASS",
+      "details": [
+        118,
+        6,
+        112,
+        0.05084745762711865,
+        6,
+        10.333333333333334,
+        0,
+        2,
+        2,
+        923.0
+      ]
+    },
+    {
+      "check": "channel_Other",
+      "status": "PASS",
+      "details": [
+        150,
+        4,
+        146,
+        0.02666666666666667,
+        4,
+        15.25,
+        1,
+        2,
+        2,
+        6776.749999999998
+      ]
+    },
+    {
+      "check": "channel_Other publicities",
+      "status": "PASS",
+      "details": [
+        65,
+        3,
+        62,
+        0.046153846153846156,
+        3,
+        39.333333333333336,
+        3,
+        0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "rep_SR 08",
+      "status": "PASS",
+      "details": [
+        133,
+        133,
+        30.48872180451128,
+        27
+      ]
+    },
+    {
+      "check": "rep_SR 20",
+      "status": "PASS",
+      "details": [
+        82,
+        82,
+        46.646341463414636,
+        29
+      ]
+    },
+    {
+      "check": "rep_SR 10",
+      "status": "PASS",
+      "details": [
+        74,
+        74,
+        25.783783783783782,
+        20
+      ]
+    },
+    {
+      "check": "rep_SR 12",
+      "status": "PASS",
+      "details": [
+        64,
+        64,
+        33.703125,
+        22
+      ]
+    },
+    {
+      "check": "rep_SR 06",
+      "status": "PASS",
+      "details": [
+        63,
+        62,
+        49.403225806451616,
+        22
+      ]
+    },
+    {
+      "check": "rep_SR 04",
+      "status": "PASS",
+      "details": [
+        59,
+        59,
+        48.389830508474574,
+        21
+      ]
+    },
+    {
+      "check": "rep_SR 22",
+      "status": "PASS",
+      "details": [
+        59,
+        59,
+        21.966101694915253,
+        8
+      ]
+    },
+    {
+      "check": "rep_SR 21",
+      "status": "PASS",
+      "details": [
+        53,
+        53,
+        61.735849056603776,
+        20
+      ]
+    },
+    {
+      "check": "rep_SR 14",
+      "status": "PASS",
+      "details": [
+        51,
+        51,
+        41.705882352941174,
+        18
+      ]
+    },
+    {
+      "check": "rep_SR 19",
+      "status": "PASS",
+      "details": [
+        36,
+        36,
+        22.38888888888889,
+        8
+      ]
+    },
+    {
+      "check": "rep_SR 01",
+      "status": "PASS",
+      "details": [
+        32,
+        32,
+        25.21875,
+        6
+      ]
+    },
+    {
+      "check": "rep_SR 02",
+      "status": "PASS",
+      "details": [
+        27,
+        27,
+        122.33333333333333,
+        20
+      ]
+    },
+    {
+      "check": "rep_SR 17",
+      "status": "PASS",
+      "details": [
+        26,
+        26,
+        96.65384615384616,
+        18
+      ]
+    },
+    {
+      "check": "rep_SR 16",
+      "status": "PASS",
+      "details": [
+        24,
+        24,
+        17.0,
+        2
+      ]
+    },
+    {
+      "check": "rep_SR 09",
+      "status": "PASS",
+      "details": [
+        24,
+        24,
+        55.125,
+        11
+      ]
+    },
+    {
+      "check": "rep_SR 05",
+      "status": "PASS",
+      "details": [
+        10,
+        10,
+        172.0,
+        10
+      ]
+    },
+    {
+      "check": "rep_SR 07",
+      "status": "PASS",
+      "details": [
+        9,
+        9,
+        180.55555555555554,
+        9
+      ]
+    },
+    {
+      "check": "rep_SR 13",
+      "status": "PASS",
+      "details": [
+        7,
+        7,
+        234.0,
+        7
+      ]
+    },
+    {
+      "check": "rep_SR 15",
+      "status": "PASS",
+      "details": [
+        6,
+        6,
+        214.33333333333334,
+        6
+      ]
+    },
+    {
+      "check": "rep_SR 03",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        306.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SR 11",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        321.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SR 18",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        175.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 14",
+      "status": "PASS",
+      "details": [
+        140,
+        140,
+        33.58571428571429,
+        45
+      ]
+    },
+    {
+      "check": "rep_SDR 01",
+      "status": "PASS",
+      "details": [
+        81,
+        81,
+        31.22222222222222,
+        20
+      ]
+    },
+    {
+      "check": "rep_SDR 15",
+      "status": "PASS",
+      "details": [
+        74,
+        74,
+        27.135135135135137,
+        19
+      ]
+    },
+    {
+      "check": "rep_SDR 21",
+      "status": "PASS",
+      "details": [
+        66,
+        66,
+        45.5,
+        21
+      ]
+    },
+    {
+      "check": "rep_SDR 23",
+      "status": "PASS",
+      "details": [
+        59,
+        58,
+        26.017241379310345,
+        11
+      ]
+    },
+    {
+      "check": "rep_SDR 22",
+      "status": "PASS",
+      "details": [
+        55,
+        55,
+        18.29090909090909,
+        10
+      ]
+    },
+    {
+      "check": "rep_SDR 27",
+      "status": "PASS",
+      "details": [
+        53,
+        53,
+        33.0377358490566,
+        16
+      ]
+    },
+    {
+      "check": "rep_SDR 12",
+      "status": "PASS",
+      "details": [
+        51,
+        51,
+        50.78431372549019,
+        18
+      ]
+    },
+    {
+      "check": "rep_SDR 03",
+      "status": "PASS",
+      "details": [
+        42,
+        42,
+        36.666666666666664,
+        14
+      ]
+    },
+    {
+      "check": "rep_SDR 30",
+      "status": "PASS",
+      "details": [
+        42,
+        42,
+        78.33333333333333,
+        19
+      ]
+    },
+    {
+      "check": "rep_SDR 11",
+      "status": "PASS",
+      "details": [
+        41,
+        41,
+        43.390243902439025,
+        10
+      ]
+    },
+    {
+      "check": "rep_SDR 32",
+      "status": "PASS",
+      "details": [
+        34,
+        34,
+        30.029411764705884,
+        9
+      ]
+    },
+    {
+      "check": "rep_SDR 04",
+      "status": "PASS",
+      "details": [
+        25,
+        25,
+        64.68,
+        10
+      ]
+    },
+    {
+      "check": "rep_SDR 26",
+      "status": "PASS",
+      "details": [
+        25,
+        25,
+        92.68,
+        14
+      ]
+    },
+    {
+      "check": "rep_SDR 29",
+      "status": "PASS",
+      "details": [
+        13,
+        13,
+        199.23076923076923,
+        13
+      ]
+    },
+    {
+      "check": "rep_SDR 13",
+      "status": "PASS",
+      "details": [
+        8,
+        8,
+        208.625,
+        8
+      ]
+    },
+    {
+      "check": "rep_SDR 19",
+      "status": "PASS",
+      "details": [
+        6,
+        6,
+        163.66666666666666,
+        6
+      ]
+    },
+    {
+      "check": "rep_SDR 25",
+      "status": "PASS",
+      "details": [
+        3,
+        3,
+        182.66666666666666,
+        3
+      ]
+    },
+    {
+      "check": "rep_SDR 31",
+      "status": "PASS",
+      "details": [
+        3,
+        3,
+        90.0,
+        2
+      ]
+    },
+    {
+      "check": "rep_SDR 08",
+      "status": "PASS",
+      "details": [
+        3,
+        3,
+        274.3333333333333,
+        3
+      ]
+    },
+    {
+      "check": "rep_SDR 10",
+      "status": "PASS",
+      "details": [
+        3,
+        3,
+        215.33333333333334,
+        3
+      ]
+    },
+    {
+      "check": "rep_SDR 09",
+      "status": "PASS",
+      "details": [
+        3,
+        3,
+        104.33333333333333,
+        3
+      ]
+    },
+    {
+      "check": "rep_SDR 05",
+      "status": "PASS",
+      "details": [
+        2,
+        2,
+        23.5,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 17",
+      "status": "PASS",
+      "details": [
+        2,
+        2,
+        290.5,
+        2
+      ]
+    },
+    {
+      "check": "rep_SDR 16",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        163.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 02",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        306.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 06",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        195.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 07",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        340.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 24",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        321.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 20",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        4.0,
+        0
+      ]
+    },
+    {
+      "check": "rep_SDR 18",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        69.0,
+        1
+      ]
+    },
+    {
+      "check": "rep_SDR 28",
+      "status": "PASS",
+      "details": [
+        1,
+        1,
+        260.0,
+        1
+      ]
+    },
+    {
+      "check": "month_2017-06",
+      "status": "PASS",
+      "details": [
+        4,
+        0,
+        0,
+        0.0,
+        0.0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "month_2017-07",
+      "status": "PASS",
+      "details": [
+        239,
+        0,
+        2,
+        0.008368200836820083,
+        0.0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "month_2017-08",
+      "status": "PASS",
+      "details": [
+        386,
+        0,
+        9,
+        0.023316062176165803,
+        0.0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "month_2017-09",
+      "status": "PASS",
+      "details": [
+        312,
+        0,
+        7,
+        0.022435897435897436,
+        0.0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "month_2017-10",
+      "status": "PASS",
+      "details": [
+        416,
+        0,
+        14,
+        0.03365384615384615,
+        0.0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "month_2017-11",
+      "status": "PASS",
+      "details": [
+        445,
+        0,
+        18,
+        0.04044943820224719,
+        0.0,
+        0,
+        null
+      ]
+    },
+    {
+      "check": "month_2017-12",
+      "status": "PASS",
+      "details": [
+        200,
+        3,
+        11,
+        0.055,
+        0.0,
+        3,
+        12.666666666666666
+      ]
+    },
+    {
+      "check": "month_2018-01",
+      "status": "PASS",
+      "details": [
+        1141,
+        73,
+        152,
+        0.13321647677475898,
+        794.3,
+        73,
+        16.301369863013697
+      ]
+    },
+    {
+      "check": "month_2018-02",
+      "status": "PASS",
+      "details": [
+        1028,
+        113,
+        149,
+        0.14494163424124515,
+        11264.25,
+        113,
+        15.88495575221239
+      ]
+    },
+    {
+      "check": "month_2018-03",
+      "status": "PASS",
+      "details": [
+        1174,
+        147,
+        167,
+        0.14224872231686542,
+        53649.21000000001,
+        146,
+        17.78767123287671
+      ]
+    },
+    {
+      "check": "month_2018-04",
+      "status": "PASS",
+      "details": [
+        1352,
+        207,
+        183,
+        0.13535502958579881,
+        83154.16,
+        207,
+        26.28985507246377
+      ]
+    },
+    {
+      "check": "month_2018-05",
+      "status": "PASS",
+      "details": [
+        1303,
+        122,
+        130,
+        0.0997697620874904,
+        122436.62,
+        122,
+        29.057377049180328
+      ]
+    },
+    {
+      "check": "month_2018-06",
+      "status": "PASS",
+      "details": [
+        0,
+        57,
+        0,
+        null,
+        111799.01999999999,
+        57,
+        73.0701754385965
+      ]
+    },
+    {
+      "check": "month_2018-07",
+      "status": "PASS",
+      "details": [
+        0,
+        37,
+        0,
+        null,
+        134044.74,
+        37,
+        139.1081081081081
+      ]
+    },
+    {
+      "check": "month_2018-08",
+      "status": "PASS",
+      "details": [
+        0,
+        33,
+        0,
+        null,
+        147715.7,
+        33,
+        180.3939393939394
+      ]
+    },
+    {
+      "check": "month_2018-09",
+      "status": "PASS",
+      "details": [
+        0,
+        23,
+        0,
+        null,
+        0.0,
+        23,
+        189.30434782608697
+      ]
+    },
+    {
+      "check": "month_2018-10",
+      "status": "PASS",
+      "details": [
+        0,
+        21,
+        0,
+        null,
+        0.0,
+        21,
+        241.33333333333334
+      ]
+    },
+    {
+      "check": "month_2018-11",
+      "status": "PASS",
+      "details": [
+        0,
+        6,
+        0,
+        null,
+        0.0,
+        6,
+        249.16666666666666
+      ]
+    },
+    {
+      "check": "no_base_formula_errors",
+      "status": "PASS",
+      "details": []
+    },
+    {
+      "check": "four_native_editable_charts",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "check": "all_quality_reconciliations",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "check": "raw_source_not_synthetic",
+      "status": "PASS",
+      "details": "Original publisher CSV bytes are locked in source_manifest.json; no synthetic filler fields."
+    },
+    {
+      "check": "unmatched_seller_amounts_blank",
+      "status": "PASS",
+      "details": null
+    },
+    {
+      "check": "date_issue_kept_in_won_count",
+      "status": "PASS",
+      "details": null
+    }
+  ]
+}

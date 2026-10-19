@@ -1,0 +1,14 @@
+GA4 - bản dựng CSV ngày 13/10/2026
+
+1. Giải nén toàn bộ ZIP vào folder mới.
+2. Bấm đúp MO_PROJECT.cmd để đặt đường dẫn và mở Power BI.
+3. Bấm Home > Refresh trong Power BI, chờ nạp xong, rồi chụp Executive Overview.
+
+Tám CSV đã nằm sẵn trong data/. Không cần tự chép thêm CSV hay sửa DAX.
+Giữ nguyên data/, scripts/, powerbi/ và runtime_manifest.json.
+Nếu Windows không tự mở PBIP, sau khi chạy MO_PROJECT.cmd hãy dùng
+Power BI > File > Open > powerbi/MO_GA4_CSV_13_10.pbip.
+
+Bản dựng có kiểm tra dữ liệu và cấu trúc tĩnh. Trạng thái cú pháp, schema và bằng chứng ứng dụng gốc được ghi riêng trong audit/evidence/build_status.json và audit/NATIVE_STATUS.md.
+Chưa chạy được Power BI Desktop ở môi trường dựng; vẫn cần xác nhận
+mở và Refresh thực tế trên máy ông. Đây không phải cam kết đã hết lỗi native.

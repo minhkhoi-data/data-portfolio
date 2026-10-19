@@ -1,0 +1,36 @@
+{
+  "leadRows": 8000,
+  "itemRows": 5044,
+  "sellerRows": 842,
+  "sheets": [
+    "Dashboard",
+    "Channel_Performance",
+    "Rep_Performance",
+    "Monthly_Trend",
+    "Seller_Value",
+    "Action_List",
+    "Lookups",
+    "Leads",
+    "Sales_Items",
+    "Data_Dictionary",
+    "Project_Overview",
+    "Quality_Review"
+  ],
+  "channels": [
+    "Organic search",
+    "Paid search",
+    "Unknown (source label)",
+    "Social",
+    "Direct traffic",
+    "Referral",
+    "Email",
+    "Missing origin",
+    "Display",
+    "Other",
+    "Other publicities"
+  ],
+  "srEnd": 23,
+  "sdrStart": 29,
+  "sdrEnd": 61,
+  "monthEnd": 19
+}

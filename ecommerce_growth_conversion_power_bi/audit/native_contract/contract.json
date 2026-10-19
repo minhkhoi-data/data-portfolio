@@ -1,0 +1,17 @@
+{
+  "status": "PREPARED_NOT_NATIVE_EXECUTED",
+  "contexts": 19,
+  "measures": 35,
+  "numeric_absolute_tolerance": 1e-06,
+  "blank_contract": "CSV empty = DAX BLANK, not numeric zero",
+  "data_sha256": {
+    "dim_channel.csv": "77a598950a88da74de9c2cc1d75ac166f681d04d7d604587bc9b2dffdf43fc00",
+    "dim_date.csv": "14f39665c687cf584bab299882a39a1ee3645a094d3b3f76c974192386f7ff6f",
+    "dim_device.csv": "3f27a52611a05174dc7d77b4a787fd3ad9a9099df2fbfd277846f87671d8b5a2",
+    "dim_geo.csv": "f9aa063ccff997b92b0d884cebe55322592a188a70a046b84b9a140faa3ad096",
+    "fact_purchases.csv": "33027412aa3827781edab83782aff2ecd97aff4b6ac82fe930b6e3842ae54c39",
+    "fact_sessions.csv": "af3796a6055c1e178b25b571956d56a9de000b27a810881b3126ef3ab27dbdea",
+    "funnel_stage.csv": "d8966b0471b4e67d842d0d655c2c2af1c5148bc9a5c45c9ee3ef7c76d44e4507",
+    "measures.csv": "f77a3ddb4a90efa37d0a1b53334381cbb283d014f33006fe7f49219a1c1dacbb"
+  }
+}

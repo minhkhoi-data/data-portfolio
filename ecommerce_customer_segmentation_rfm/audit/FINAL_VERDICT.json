@@ -1,0 +1,21 @@
+{
+  "PASS": 63,
+  "FAIL": 0,
+  "BLOCKED": 3,
+  "N/A": 41,
+  "N": 66,
+  "pass_percent": 95.45,
+  "coverage_percent": 95.45,
+  "artifact_frozen": true,
+  "artifact_verdict": "ARTIFACT VERIFIED WITHIN DECLARED SCOPE",
+  "interview_verdict": "BLOCKED",
+  "artifact_applicable": 63,
+  "artifact_pass": 63,
+  "blocked_ids": [
+    "HR-01",
+    "HR-02",
+    "HR-03"
+  ],
+  "release": "rfm-takeover-2026-10-15",
+  "checked_utc": "2026-10-15T05:19:48.498046+00:00"
+}

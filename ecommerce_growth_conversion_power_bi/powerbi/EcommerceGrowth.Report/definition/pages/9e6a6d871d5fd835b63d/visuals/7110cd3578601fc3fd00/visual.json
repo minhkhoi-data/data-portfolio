@@ -46,7 +46,7 @@
                 }
               },
               "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "nativeQueryRef": "Purchase-event revenue (USD)"
             }
           ]
         }

@@ -1,5 +1,5 @@
-Month,Eligible Cohorts,Eligible Customers,Retained Customers,Weighted Retention Rate
-1,23,5659,1327,0.234494
-3,21,5249,1305,0.248619
-6,18,4933,1089,0.220758
-12,12,4266,968,0.22691
+Month,EligibleCohorts,EligibleCustomers,ActiveCustomers,WeightedRetentionRate
+1,23,5659,1327,0.2344937268
+3,21,5249,1305,0.2486187845
+6,18,4933,1089,0.2207581593
+12,12,4266,968,0.2269104548

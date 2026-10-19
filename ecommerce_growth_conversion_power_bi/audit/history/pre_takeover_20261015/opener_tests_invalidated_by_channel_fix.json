@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "ConfigureOnly_succeeds_spaces_Unicode_hash_apostrophe_dollar",
+      "status": "PASS"
+    },
+    {
+      "case": "Only_DataFolder_file_changes",
+      "status": "PASS"
+    },
+    {
+      "case": "Parameter_decodes_to_exact_local_data_path",
+      "status": "PASS"
+    },
+    {
+      "case": "Parameter_keeps_metadata_and_has_no_BOM",
+      "status": "PASS"
+    },
+    {
+      "case": "Configured_parameter_official_M_grammar",
+      "status": "PASS"
+    },
+    {
+      "case": "Second_run_idempotent",
+      "status": "PASS"
+    },
+    {
+      "case": "Relocation_updates_DataFolder",
+      "status": "PASS"
+    },
+    {
+      "case": "Altered_CSV_rejected_before_parameter_write",
+      "status": "PASS"
+    },
+    {
+      "case": "Missing_CSV_rejected_before_parameter_write",
+      "status": "PASS"
+    },
+    {
+      "case": "Missing_PBIP_rejected_before_parameter_write",
+      "status": "PASS"
+    },
+    {
+      "case": "Launcher_ASCII_compatible_source",
+      "status": "PASS"
+    }
+  ],
+  "powershell_version": "7.5.3",
+  "file_sha256": {
+    "MO_PROJECT.cmd": "261f3fdc81aaf481569c273d2ca220b97246261fc95c198d80af1bdd04c10f70",
+    "scripts/Open-GA4.ps1": "edfcca32809a8ecda5967d8cf8b1ee0da4844876df777bf6cfef3fa0cecb34b3",
+    "runtime_manifest.json": "66e00955e985773e3584fceb5b0fc9bacf14f3914c2e8e382b5c6965d62fe883"
+  },
+  "scope": "ConfigureOnly filesystem tests on PowerShell 7/Linux. Windows PowerShell 5.1 and native launch association are NOT VERIFIED. No M functions or Desktop executed.",
+  "evidence_reuse": "Historical execution; SHA256-identical tested inputs verified during this rebuild. No fresh parser execution."
+}

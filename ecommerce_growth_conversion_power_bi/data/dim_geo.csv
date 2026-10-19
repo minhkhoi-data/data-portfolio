@@ -1,11 +1,114 @@
 geo_id,country,region_group
-1,United States,North America
-2,Canada,North America
-3,United Kingdom,Europe
-4,India,Asia
+1,Albania,Europe
+2,Algeria,Africa
+3,Argentina,Americas
+4,Armenia,Asia
 5,Australia,Oceania
-6,Germany,Europe
-7,France,Europe
-8,Japan,Asia
-9,Singapore,Asia
-10,Other,Other
+6,Austria,Europe
+7,Azerbaijan,Asia
+8,Bahamas,Americas
+9,Bahrain,Asia
+10,Bangladesh,Asia
+11,Belarus,Europe
+12,Belgium,Europe
+13,Bolivia,Americas
+14,Bosnia & Herzegovina,Europe
+15,Brazil,Americas
+16,Bulgaria,Europe
+17,Cambodia,Asia
+18,Canada,Americas
+19,Chile,Americas
+20,China,Asia
+21,Colombia,Americas
+22,Costa Rica,Americas
+23,Croatia,Europe
+24,Cyprus,Asia
+25,Czechia,Europe
+26,Denmark,Europe
+27,Dominican Republic,Americas
+28,Ecuador,Americas
+29,Egypt,Africa
+30,El Salvador,Americas
+31,Estonia,Europe
+32,Finland,Europe
+33,France,Europe
+34,Georgia,Asia
+35,Germany,Europe
+36,Ghana,Africa
+37,Greece,Europe
+38,Guatemala,Americas
+39,Honduras,Americas
+40,Hong Kong,Asia
+41,Hungary,Europe
+42,Iceland,Europe
+43,India,Asia
+44,Indonesia,Asia
+45,Iraq,Asia
+46,Ireland,Europe
+47,Israel,Asia
+48,Italy,Europe
+49,Jamaica,Americas
+50,Japan,Asia
+51,Jordan,Asia
+52,Kazakhstan,Asia
+53,Kenya,Africa
+54,Kosovo,Europe
+55,Kuwait,Asia
+56,Latvia,Europe
+57,Lebanon,Asia
+58,Lithuania,Europe
+59,Luxembourg,Europe
+60,Macao,Asia
+61,Malaysia,Asia
+62,Malta,Europe
+63,Mexico,Americas
+64,Mongolia,Asia
+65,Morocco,Africa
+66,Myanmar (Burma),Asia
+67,Nepal,Asia
+68,Netherlands,Europe
+69,New Zealand,Oceania
+70,Nigeria,Africa
+71,North Macedonia,Europe
+72,Norway,Europe
+73,Oman,Asia
+74,Pakistan,Asia
+75,Palestine,Asia
+76,Panama,Americas
+77,Paraguay,Americas
+78,Peru,Americas
+79,Philippines,Asia
+80,Poland,Europe
+81,Portugal,Europe
+82,Puerto Rico,Americas
+83,Qatar,Asia
+84,Romania,Europe
+85,Russia,Europe
+86,Saudi Arabia,Asia
+87,Serbia,Europe
+88,Singapore,Asia
+89,Slovakia,Europe
+90,Slovenia,Europe
+91,South Africa,Africa
+92,South Korea,Asia
+93,Spain,Europe
+94,Sri Lanka,Asia
+95,Sweden,Europe
+96,Switzerland,Europe
+97,Taiwan,Asia
+98,Thailand,Asia
+99,Trinidad & Tobago,Americas
+100,Tunisia,Africa
+101,Turkey,Asia
+102,Ukraine,Europe
+103,United Arab Emirates,Asia
+104,United Kingdom,Europe
+105,United States,Americas
+106,Unknown / masked,Africa
+107,Unknown / masked,Americas
+108,Unknown / masked,Asia
+109,Unknown / masked,Europe
+110,Unknown / masked,Unknown / masked
+111,Uruguay,Americas
+112,Venezuela,Americas
+113,Vietnam,Asia

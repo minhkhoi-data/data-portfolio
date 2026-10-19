@@ -1,0 +1,1072 @@
+[
+  {
+    "ID": "AUD-01",
+    "Condition": "Scope, yêu cầu gốc và tiêu chí áp dụng được khóa trước khi kết luận.",
+    "Evidence_required": "Bản scope có version, claim và output; N/A có lý do nghiệp vụ. Thiếu access không thành N/A; thu hẹp scope không được nhận là đã hoàn thành yêu cầu gốc.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`audit/SCOPE.md` locks purpose, claims, audience, inputs, outputs, dependencies and applied IDs before this report.",
+    "Resolution_or_limit": "Scope and criteria hashes are carried in the release manifest.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AUD-02",
+    "Condition": "Mỗi verdict xét đầy đủ các điều kiện bắt buộc trong cùng tiêu chí.",
+    "Evidence_required": "PASS chỉ khi mọi điều kiện áp dụng đạt; có vi phạm thì FAIL; không có vi phạm đã thấy nhưng thiếu evidence thì BLOCKED. Nếu vừa lỗi vừa thiếu evidence, ghi FAIL cùng phần chưa kiểm tra.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "This matrix covers all AUD, common and CUS IDs; every row records a verdict and evidence.",
+    "Resolution_or_limit": "No criterion was silently skipped; N/A reasons are explicit.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AUD-03",
+    "Condition": "Evidence đủ độc lập, liên quan và khớp phiên bản kiểm chứng.",
+    "Evidence_required": "Có file/range/log và môi trường; không dùng screenshot làm bằng chứng chạy native hoặc test lặp lại cùng công thức để chứng minh công thức đúng. Tolerance của số liệu quan trọng có lý do trước khi đối chiếu.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Independent SQL, fixture tests, source workbook comparison, fresh-run byte comparison and environment records are separate from the implementation.",
+    "Resolution_or_limit": "`audit/independent_validation.json`, `audit/extended_validation.json`, `audit/fresh_run_comparison.json`.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AUD-04",
+    "Condition": "Những claim có rủi ro lớn được ưu tiên và có kiểm tra phủ định.",
+    "Evidence_required": "Danh sách claim trọng yếu, tác động nếu sai và check tương ứng; thử biên, trường hợp sai dễ xảy ra, đối chiếu độc lập. “Chạy thành công” không thay kiểm tra nghĩa nghiệp vụ.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`audit/CLAIM_EVIDENCE_LEDGER.md` lists high-risk claims; tests cover ties, boundaries, censoring, credits, malformed input and duplicate sensitivity.",
+    "Resolution_or_limit": "Counterexamples pass; unsupported causal/profit claims were removed.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AUD-05",
+    "Condition": "Kết luận, thay đổi scope và freeze có thể truy vết.",
+    "Evidence_required": "Lưu thay đổi, lý do, ảnh hưởng và retest; tách artifact verdict khỏi interview verdict. Evidence hết hiệu lực khi input/code/môi trường thay đổi material; không đổi luật sau khi thấy FAIL mà bỏ dấu vết.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`audit/CHANGELOG.md` records material fixes and why; this report separates artifact from interview verdict.",
+    "Resolution_or_limit": "Retest logs and final manifest freeze the checked release.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "BUS-01",
+    "Condition": "Nêu một vấn đề, người dùng kết quả và quyết định cần hỗ trợ.",
+    "Evidence_required": "README và memo trả lời rõ ai cần quyết định gì; phân biệt mục tiêu mô tả, dự báo và nhân quả.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "README and memo state the CRM/marketing analyst decision: which historical customer histories justify review or a test.",
+    "Resolution_or_limit": "Scope excludes measured uplift, profit, CLV and production deployment.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "BUS-02",
+    "Condition": "Dữ liệu và phương pháp có khả năng trả lời câu hỏi đã nêu.",
+    "Evidence_required": "Chỉ ra biến và mức quan sát cần thiết; thiếu dữ liệu thì thu hẹp câu hỏi, không suy diễn.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`docs/METHODS.md` maps invoice lines → orders → customers → lifecycle/RFM → conditional test audiences; the available fields support descriptive decisions only.",
+    "Resolution_or_limit": "Claims were narrowed where data cannot answer them.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "BUS-03",
+    "Condition": "Phạm vi, thời gian, đơn vị tiền và đối tượng được xác định trước khi diễn giải.",
+    "Evidence_required": "Có scope sheet; kết luận không vượt thị trường, giai đoạn hoặc tập khách được quan sát.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`audit/SCOPE.md`, `DATA_SOURCES.md` and `outputs/run_summary.json` define UK retailer, source period, GBP, source-local timestamps and identified purchase customers.",
+    "Resolution_or_limit": "Coverage limits appear next to the memo decisions.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "BUS-04",
+    "Condition": "Từng phần phân tích có câu hỏi, đầu vào, đầu ra và vai trò riêng.",
+    "Evidence_required": "Bản đồ analysis → finding → decision; phần mô tả được gọi đúng là mô tả.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Methods, notebook and memo give each preparation, lifecycle, RFM, repeat, cohort and action component a separate input/output role.",
+    "Resolution_or_limit": "Crosswalk and ledger connect analysis to decisions.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "BUS-05",
+    "Condition": "Tiêu chí thành công của project phù hợp mục tiêu và có thể kiểm tra.",
+    "Evidence_required": "Xác định đầu ra phải giao và mức bằng chứng cần thiết; không dùng độ phức tạp làm thước đo chất lượng.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Scope defines required outputs and checks; the release has runnable code, notebook, tables, figures, memo and audit records.",
+    "Resolution_or_limit": "Fresh run and independent checks complete the acceptance test.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SRC-01",
+    "Condition": "Nguồn, phiên bản và lịch sử tạo dữ liệu được truy vết.",
+    "Evidence_required": "File nguồn, ngày lấy, tên/URL/DOI nếu có; synthetic phải công bố, không đoán người tạo.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`DATA_SOURCES.md` identifies UCI Online Retail II, DOI, official URL, workbook sheets and local/input hashes.",
+    "Resolution_or_limit": "`audit/source_verification.json` and `audit/source_reverification.json` compare all 1,067,371 rows; source acquisition/reverification date is recorded.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SRC-02",
+    "Condition": "Một dòng đại diện cho gì và khóa định danh được xác định đúng.",
+    "Evidence_required": "Kiểm tra schema, uniqueness/cardinality; phân biệt dòng hàng, hóa đơn, khách, phiên và campaign.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Methods define raw invoice/product line grain, customer/invoice order key and one-row-per-customer output.",
+    "Resolution_or_limit": "SQL population, invoice count and uniqueness reconcile.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SRC-03",
+    "Condition": "Đơn vị, kiểu, ý nghĩa và phạm vi biến quan trọng được ghi rõ.",
+    "Evidence_required": "Data dictionary đối chiếu file thực tế; nhận diện rate/proportion, currency, timezone và đơn vị thời gian.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Methods document signed quantity, GBP unit price, source-local timestamp, nominal Customer ID and unused Description/Country semantics.",
+    "Resolution_or_limit": "Source schema and parser checks are recorded in outputs.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SRC-04",
+    "Condition": "Biết dữ liệu thiếu hoặc không đại diện cho những đối tượng nào.",
+    "Evidence_required": "Ghi nhận anonymous customers, giao dịch bị loại, thời gian quan sát, sampling và synthetic assumptions.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Missing customer IDs (245,007), credit-only customers, partial months and wholesale/missing-coverage limits are quantified and disclosed.",
+    "Resolution_or_limit": "`outputs/data_quality_summary.csv`, `DATA_SOURCES.md`.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SRC-05",
+    "Condition": "Quyền sử dụng, thông tin nhạy cảm và giới hạn chia sẻ được xử lý.",
+    "Evidence_required": "Attribution/license đối chiếu nguồn; loại thông tin riêng khỏi bản công khai; không tự cấp lại quyền dữ liệu bên thứ ba.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "UCI CC BY 4.0 attribution is retained; no contact data, secrets or private identities are included.",
+    "Resolution_or_limit": "License/PII boundaries are in `DATA_SOURCES.md` and README.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CLN-01",
+    "Condition": "Mỗi thao tác loại, sửa hoặc bổ sung dữ liệu có lý do gắn với câu hỏi.",
+    "Evidence_required": "Cleaning log: điều kiện, lý do, số dòng chịu ảnh hưởng; không giả nhận các bước chưa thực hiện.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "`docs/METHODS.md` gives a business reason for each sequential exclusion, credit sign rule and duplicate assumption.",
+    "Resolution_or_limit": "`outputs/cleaning_reconciliation.csv` records each stage.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CLN-02",
+    "Condition": "Số dòng và số tiền trước/sau từng bước có thể đối chiếu.",
+    "Evidence_required": "Reconciliation gồm các tập loại có thể chồng nhau; không cộng số lỗi thô thành số dòng loại.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Row/value ledgers reconcile raw, retained and removed values; value reconciliation separates analysed and credit-only populations.",
+    "Resolution_or_limit": "Fixture plus independent SQL checks pass within GBP 0.01.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CLN-03",
+    "Condition": "Ô trống, trùng, hủy/hoàn và bất thường được xử lý theo nghĩa nghiệp vụ.",
+    "Evidence_required": "Kiểm tra mẫu và counterexample; blank hợp lệ không bị điền bừa; duplicate không được định nghĩa tùy tiện.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Blanks, exact duplicates, credits, cancellations, nonpositive prices and unusual large valid orders are handled by explicit rules.",
+    "Resolution_or_limit": "Duplicate-retention sensitivity changes 55 actions and is disclosed.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CLN-04",
+    "Condition": "Gom nhóm và nối bảng bảo toàn mức dữ liệu dự định.",
+    "Evidence_required": "Đối chiếu số đơn/khách, join cardinality, unmatched keys và totals; không nhân doanh thu do many-to-many.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Positive lines are aggregated to distinct customer/invoice orders; ambiguous multi-customer or cross-date invoices fail validation.",
+    "Resolution_or_limit": "`orders.csv` and SQL aggregation reconcile 36,969 invoices.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CLN-05",
+    "Condition": "Dữ liệu gốc và quy tắc biến đổi được giữ để truy vết.",
+    "Evidence_required": "Có đường raw → prepared → outputs; ngày snapshot và mapping được công bố, unknown/fallback được thống kê.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Raw input, prepared purchase/credit lines, orders, customer table, config and output mappings are retained.",
+    "Resolution_or_limit": "Input/config hashes and lineage appear in `run_summary.json` and METHODS.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CLN-06",
+    "Condition": "Kiểu dữ liệu, parsing và đơn vị không âm thầm làm sai quan sát.",
+    "Evidence_required": "Đếm giá trị parse thất bại, invalid dates, encoding, dấu thập phân và currency/unit conversion; quarantine hoặc xử lý có lý do, không silently coerce thành số/ngày hợp lệ giả.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Dates/numerics use strict parsing; failures, invalid IDs, nonfinite values and signs are counted rather than silently coerced.",
+    "Resolution_or_limit": "Parser fixtures and `data_quality_summary.csv` pass; out-of-range IDs/quantities are excluded before conversion rather than wrapped.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "MET-01",
+    "Condition": "Mỗi KPI có công thức nghiệp vụ, tử số, mẫu số và tập đủ điều kiện.",
+    "Evidence_required": "Metric dictionary và đối chiếu code; không tráo all customers với eligible customers.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Methods define numerator, denominator and eligibility for orders, repeat rates, cohorts, R/F/M and value tiers.",
+    "Resolution_or_limit": "Output names and independent SQL use the same definitions.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "MET-02",
+    "Condition": "KPI đúng tên gọi và đơn vị.",
+    "Evidence_required": "Không gọi revenue là profit, cost/conversion là CAC khi chưa xác nhận khách mới, hoặc pipeline là doanh thu thực nhận.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Gross purchases, recorded credits and net recorded value are named with GBP units; profit, margin and CLV are explicitly excluded.",
+    "Resolution_or_limit": "Memo and README use the bounded terms consistently.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "MET-03",
+    "Condition": "Tổng hợp rate và average dùng trọng số phù hợp câu hỏi.",
+    "Evidence_required": "Tính lại từ tổng tử/mẫu hoặc trọng số hợp lệ; tránh trung bình đơn giản của các tỷ lệ khi cần pooled rate.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Mature repeat is pooled 2,486/5,281; cohort KPIs use weighted active/customers rather than averaging cohort rates.",
+    "Resolution_or_limit": "SQL month-1/3/6/12 counts match retention outputs.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "MET-04",
+    "Condition": "Các phép tính vượt qua kiểm tra độc lập và sanity check.",
+    "Evidence_required": "Ví dụ tính tay nhỏ; reconciliation, bounds, zero denominators, totals, magnitude, rounding và missing outcomes.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Reconciliation, SQL, bounds, exact fixtures, duplicate sensitivity and source checks independently recompute material totals.",
+    "Resolution_or_limit": "`audit/independent_validation.json` contains 43 PASS checks; `audit/extended_validation.json` contains 68 additional independent checks.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "MET-05",
+    "Condition": "Định nghĩa thời gian và cửa sổ so sánh nhất quán.",
+    "Evidence_required": "Cùng observation window, cohort maturity và timezone; phân biệt creation month, close month, age và inactivity.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Exact elapsed timestamps govern 90-day repeat; snapshot, complete-month policy and source-local timezone are documented.",
+    "Resolution_or_limit": "Boundary and fresh-run checks pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "MET-06",
+    "Condition": "Kết quả không xác định được hiển thị đúng nghĩa.",
+    "Evidence_required": "Zero denominator, empty group, missing outcome, NaN/Inf và rounding không thành 0 hay thứ hạng giả; quy tắc ngoại lệ đối chiếu ở calculation lẫn dashboard.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Future/partial cohort cells are blank/NaN and grey; no-eligible repeat rates remain undefined rather than zero.",
+    "Resolution_or_limit": "`test_future_cohorts_nan_and_observed_zero`, `test_no_eligible_not_zero`.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ANA-01",
+    "Condition": "Phương pháp được chọn vì phù hợp câu hỏi, không vì tên công cụ.",
+    "Evidence_required": "Nêu vì sao segmentation/cohort/test/model cần thiết và giả định nào ảnh hưởng kết luận.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Methods justify lifecycle, RFM, repeat curve and cohorts as descriptive tools for different CRM questions.",
+    "Resolution_or_limit": "No model or causal claim is implied.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ANA-02",
+    "Condition": "Quy tắc phân nhóm, threshold, precedence và fallback rõ ràng.",
+    "Evidence_required": "Kiểm tra boundaries, overlap, coverage; cùng trường hợp nhận nhãn nhất quán; không cần liệt kê mọi tổ hợp riêng.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Exact precedence for credit review, lifecycle, value tier and audience fallback is documented and exhaustive.",
+    "Resolution_or_limit": "Segment coverage/precedence fixture passes; crosswalk has full customer coverage.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ANA-03",
+    "Condition": "Nhãn nhóm có ý nghĩa phù hợp đúng điều kiện tính.",
+    "Evidence_required": "Đối chiếu nhãn với raw facts; điểm F thấp không tự đồng nghĩa khách mới, stale không tự đồng nghĩa không hoạt động.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Relative labels are “Recent/Lapsed/Frequent/Intermediate”; they do not claim “new” or “loyal” from a quantile alone.",
+    "Resolution_or_limit": "Label semantics are tested against raw conditions.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ANA-04",
+    "Condition": "Giá trị của từng nhánh và quan hệ giữa các nhánh được giải thích đúng.",
+    "Evidence_required": "Chỉ ra kết quả nào dùng trong quyết định; không nhận các module đứng riêng là đã tích hợp trong code.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Crosswalk shows how lifecycle selects stage, RFM describes relative history, M supplies value context and credit review overrides outreach.",
+    "Resolution_or_limit": "README/METHODS/memo agree; no disconnected integration claim remains.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ANA-05",
+    "Condition": "Các giả định/quy tắc có ảnh hưởng lớn được kiểm tra hoặc công bố giới hạn.",
+    "Evidence_required": "Có sensitivity/alternative hợp lý ở điểm quyết định; không gọi ngưỡng analyst-defined là tối ưu hoặc đã validated.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Rule sensitivity covers lifecycle, value and credit thresholds; tenure and duplicate alternatives are reported.",
+    "Resolution_or_limit": "`outputs/rule_sensitivity.csv`, `duplicate_sensitivity.json`.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ANA-06",
+    "Condition": "Quyết định không dựa vào một lựa chọn tùy tiện chưa được kiểm tra ở điểm trọng yếu.",
+    "Evidence_required": "Với rule dẫn tới hành động, thử biên/ties và lựa chọn thay thế hợp lý; giải thích nhãn/action thay đổi thế nào. Claim “tối ưu” cần mục tiêu và validation; phân tích mô tả chỉ cần mức kiểm tra tương xứng.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Ties, cutoffs, 90/180-day boundaries and credit gates are tested; thresholds are called hypotheses, not optima.",
+    "Resolution_or_limit": "All edge fixtures and sensitivity checks pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "INF-01",
+    "Condition": "Claim quan trọng có bằng chứng đúng đối tượng và phiên bản.",
+    "Evidence_required": "Claim–evidence ledger dẫn tới bảng, range, query hoặc output cụ thể; số liệu khớp.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Critical claims have file/query/test destinations in `audit/CLAIM_EVIDENCE_LEDGER.md`.",
+    "Resolution_or_limit": "Values match the frozen release outputs.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "INF-02",
+    "Condition": "Phân biệt mô tả, suy luận, giả định, dự báo và nhân quả.",
+    "Evidence_required": "Câu chữ không biến association thành effect; synthetic không chứng minh tác động tại doanh nghiệp thật.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Memo/README distinguish descriptive history, proposed tests and missing causal evidence.",
+    "Resolution_or_limit": "No uplift, profit or response-probability claim remains.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "INF-03",
+    "Condition": "Kết luận xem xét các giải thích khác có thể làm đổi quyết định.",
+    "Evidence_required": "Kiểm tra exposure, tenure, seasonality, product mix, selection và open/censored outcomes khi liên quan.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Tenure, seasonality/cohort, wholesale mix, credit linkage, selection and censored-window alternatives are disclosed.",
+    "Resolution_or_limit": "`tenure_context.csv` and cohort outputs support the limitations.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "INF-04",
+    "Condition": "Sai số và độ bất định được thể hiện phù hợp loại claim.",
+    "Evidence_required": "CI/variation khi cần suy luận; descriptive census không bị ép có p-value; precision không vượt input.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "This is a descriptive census; pooled rates, denominators, missing cells and rounded display are explicit without invented inferential precision.",
+    "Resolution_or_limit": "Bounds and zero-denominator fixtures pass; N/A chart labels, all four mature horizons and the 0–90-day x-axis remain visible for empty eligible populations.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "INF-05",
+    "Condition": "Các hạn chế material đi cùng kết luận bị ảnh hưởng.",
+    "Evidence_required": "Không giấu thiếu chi phí, margin, data coverage hoặc chưa xác minh native app trong phụ lục.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Material limits sit in the memo beside the decision: missing IDs, margin/cost/consent, source coverage, tenure and credit pairing.",
+    "Resolution_or_limit": "README, METHODS and memo are reconciled.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "DEC-01",
+    "Condition": "Mỗi đề xuất nối với một finding và mục tiêu cụ thể.",
+    "Evidence_required": "Chuỗi question → evidence → interpretation → action; không lấy mức cao/thấp làm lý do duy nhất.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Each proposed audience/test in the memo is linked to lifecycle, value/credit or mature repeat/cohort evidence.",
+    "Resolution_or_limit": "Conditional test list includes the objective and outcome.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "DEC-02",
+    "Condition": "Các dữ liệu cần cho quyết định đều có hoặc được nêu rõ còn thiếu.",
+    "Evidence_required": "Revenue-only chưa đủ quyết định lợi nhuận/budget; không tự phát minh cost, margin hoặc khả năng triển khai.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Missing margin, treatment cost, consent, current status and contactability are named before operational use.",
+    "Resolution_or_limit": "No invented economic inputs.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "DEC-03",
+    "Condition": "Mức hành động tương xứng bằng chứng.",
+    "Evidence_required": "Descriptive analysis hỗ trợ rà soát/test; không tự động scale, rollout hoặc discount nếu chưa qua các gate cần thiết.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Outputs are review/test hypotheses; credit/value review gates outreach; no automatic discount, rollout or scale is recommended.",
+    "Resolution_or_limit": "Memo language and priority labels are conditional.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "DEC-04",
+    "Condition": "Phân biệt đề xuất, thử nghiệm dự kiến và tác động đã đo.",
+    "Evidence_required": "Memo ghi đúng trạng thái; không nhận thành công chiến dịch chưa triển khai.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "The memo says no messages were sent and no causal impact was measured.",
+    "Resolution_or_limit": "Proposed tests are labelled proposals.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "DEC-05",
+    "Condition": "Có cách kiểm chứng bước tiếp theo nếu muốn dùng kết quả ra quyết định thật.",
+    "Evidence_required": "Nêu đối tượng, comparison/holdout nếu cần, success metric và ràng buộc; không bắt project mô tả phải tự chạy một experiment.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Memo specifies assignment-time eligibility, holdout, 90-day follow-up, success/guardrail metrics and predeclared stopping/power inputs.",
+    "Resolution_or_limit": "Next step is to collect missing inputs if the test cannot be run.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "DEC-06",
+    "Condition": "Đề xuất đủ cụ thể và khả thi với mức triển khai được tuyên bố.",
+    "Evidence_required": "Nếu đề xuất hành động: nêu đối tượng đủ điều kiện, người/nhóm phụ trách dự kiến, KPI và ràng buộc chi phí/quyền liên hệ khi liên quan. Chưa có đầu vào thì đề xuất thu thập/test, không giả đã có execution plan hoàn chỉnh.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Actions name audience, owner/CRM gate, KPI and contact/cost constraints at the level supported by the data.",
+    "Resolution_or_limit": "Send-ready/contact-ready status is explicitly false.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "RUN-01",
+    "Condition": "Đường chạy và dependencies được ghi đủ để tái lập trong môi trường hỗ trợ.",
+    "Evidence_required": "Fresh-run hoặc native-open evidence, phiên bản, lệnh và data paths; không chỉ đọc code.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "README gives pinned requirements, commands, data paths and notebook command; `audit/fresh_run.log` is a clean run record.",
+    "Resolution_or_limit": "`requirements*.txt` and release manifest freeze the environment.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "RUN-02",
+    "Condition": "Entrypoint chính hoàn tất và tạo đầu ra mong đợi.",
+    "Evidence_required": "Logs, exit status, outputs tồn tại; fail/skip và external dependency được ghi rõ.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Canonical CLI exits 0 and creates all promised outputs, figures and memo.",
+    "Resolution_or_limit": "Fresh-run comparison matches the checked release.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "RUN-03",
+    "Condition": "File native hoạt động trong ứng dụng đích nếu tuyên bố usable.",
+    "Evidence_required": "Excel/Power BI/Tableau/R/SQL mở, render/recalc/refresh/query theo scope; static inspection không thay native verification.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "This release is a Python/CSV/PNG/HTML artifact; no native Excel, Power BI, Tableau or R usability claim is in scope.",
+    "Resolution_or_limit": "Native verification would be required only after adding that deliverable/claim.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "RUN-04",
+    "Condition": "Thay đổi input liên quan được phản ánh đúng hoặc trạng thái tĩnh được công bố.",
+    "Evidence_required": "Kiểm tra có chủ đích; cached KPI, hard-coded chart, manual memo không bị nhận là tự cập nhật.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Successful rerun regenerates tables, figures and memo; README says snapshots remain static until rerun.",
+    "Resolution_or_limit": "Byte-identical clean rerun proves the shipped state is reproducible.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "RUN-05",
+    "Condition": "Kết quả tái lập khớp với bản bàn giao và QA phát hiện lỗi thực chất.",
+    "Evidence_required": "So sánh totals/output với tolerance có lý do; kiểm tra không chỉ mirror code; đã pass thì không chạy lại vô cớ.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Clean temporary run matches all 26 generated files byte-for-byte; SQL and fixture checks are not copies of the pipeline assertions.",
+    "Resolution_or_limit": "`audit/fresh_run_comparison.json`.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "RUN-06",
+    "Condition": "Lỗi input/dependency được phát hiện và không tạo đầu ra thành công giả.",
+    "Evidence_required": "Thử input thiếu cột, sai kiểu hoặc thiếu nguồn quan trọng phù hợp scope; thông báo/validation rõ. Không nhận cached/stale output của lần trước là kết quả mới; không ép demo batch có SLA production.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Missing/bad schema input exits nonzero, prints no PASS and preserves the destination marker without publishing outputs.",
+    "Resolution_or_limit": "Negative CLI checks are in `audit/independent_validation.json`.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "OUT-01",
+    "Condition": "Bảng/biểu đồ thể hiện đúng metric, mẫu số, đơn vị và khoảng thời gian.",
+    "Evidence_required": "Đối chiếu data backing và quan sát trực quan; nhãn, legend, sorting và axes không gây hiểu sai.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Figures label counts, rates, GBP, horizons, cohort percentage and grey unobserved windows; visuals were inspected.",
+    "Resolution_or_limit": "`audit/visual_review.json`; metrics match memo/output tables.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "OUT-02",
+    "Condition": "Bộ lọc và tương tác giữ đúng semantics và phạm vi chỉ số.",
+    "Evidence_required": "Kiểm tra filter contexts, empty selections, relationships và cross-highlights khi có; scope không tương tác được ghi rõ.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "The deliverable has static PNG/HTML outputs and makes no interactive filter/cross-highlight claim.",
+    "Resolution_or_limit": "An interactive dashboard would add a new native scope and checks.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "OUT-03",
+    "Condition": "Mọi đầu ra quan trọng nhất quán về số liệu, phiên bản và thông điệp.",
+    "Evidence_required": "README, code, memo, chart, native file và preview được reconcile; không có hai kết luận rollout khác nhau.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "README, methods, memo, tables, figures, notebook and preview are generated from the same canonical pipeline and match the fresh run.",
+    "Resolution_or_limit": "No stale parallel notebook result remains.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "OUT-04",
+    "Condition": "Người đọc tìm được vấn đề, bằng chứng, kết luận và giới hạn dễ dàng.",
+    "Evidence_required": "Một đường Start here; ảnh/text đọc được, layout không mất nội dung; không chỉ đẹp nhưng thiếu logic.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "README has a Start here path; memo, methods and Vietnamese guide separate question, evidence, decision and limits.",
+    "Resolution_or_limit": "Preview and static visual QA are supplied.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "OUT-05",
+    "Condition": "Link, đường dẫn và hướng dẫn khớp file thực giao.",
+    "Evidence_required": "Không broken links, missing files hoặc absolute paths cá nhân không thể dùng; thay đổi schema được cập nhật tài liệu.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Local-link checks cover README, memo, METHODS and learning guide; all referenced release files exist.",
+    "Resolution_or_limit": "Validator includes 43 PASS checks.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "OUT-06",
+    "Condition": "Gói bàn giao đủ các file đã hứa và sạch nội dung gây hiểu sai hoặc lộ thông tin.",
+    "Evidence_required": "Kiểm inventory, notebooks/cells/output cũ, sample files và cấu hình; đánh dấu bản deprecated. Bản công khai không chứa secrets/PII ngoài quyền chia sẻ; không yêu cầu đóng gói production nếu scope không có.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Final inventory contains source, code, tests, outputs, figures, memo and audit records without secrets, PII or obsolete success outputs.",
+    "Resolution_or_limit": "Release manifest records the final inventory.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "HR-01",
+    "Condition": "Có thể trình bày đủ 6 pillar mà không phóng đại đóng góp.",
+    "Evidence_required": "Mục tiêu, data, preparation, analysis, findings, limits/contribution; giải thích được bằng lời của mình.",
+    "Applicability": "Yes",
+    "Verdict": "BLOCKED",
+    "Evidence_and_observation": "The artifact includes `docs/LEARNING_GUIDE_VI.md`, but no file can prove the user can explain all six pillars aloud.",
+    "Resolution_or_limit": "User practice/evidence is required; no artifact change can close this row.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "HR-02",
+    "Condition": "Có thể giải thích metric và lựa chọn phương pháp bằng một ví dụ nhỏ.",
+    "Evidence_required": "Ví dụ một khách, một đơn, một campaign; hiểu denominator và why, không cần thuộc mọi syntax.",
+    "Applicability": "Yes",
+    "Verdict": "BLOCKED",
+    "Evidence_and_observation": "Tests demonstrate metric examples, but they do not establish the user's ability to explain a denominator and method in an interview.",
+    "Resolution_or_limit": "User must work a small example verbally.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "HR-03",
+    "Condition": "Biết đóng góp cá nhân và mức AI hỗ trợ.",
+    "Evidence_required": "Không nhận dữ liệu synthetic là real, AI-generated work là tự viết toàn bộ, hoặc checks hiện tại là checks đã làm trước đây.",
+    "Applicability": "Yes",
+    "Verdict": "BLOCKED",
+    "Evidence_and_observation": "`docs/CONTRIBUTION.md` accurately states AI assistance, but personal authorship/mastery is not independently verified.",
+    "Resolution_or_limit": "User must describe their actual contribution and assistance honestly.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "HR-04",
+    "Condition": "Claim trên CV/README được kiểm tra cùng bộ tiêu chí.",
+    "Evidence_required": "Không claim measured uplift, profit, production deployment hoặc integrated strategy khi chưa có bằng chứng.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "README, memo and contribution boundaries avoid measured uplift, profit, production deployment and false independent authorship claims.",
+    "Resolution_or_limit": "Claim ledger and contribution note are frozen.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "HR-05",
+    "Condition": "Bản bàn giao có verdict, phạm vi kiểm tra và danh sách điều kiện chưa xác minh.",
+    "Evidence_required": "Auditor nêu pass/fail/blocked theo evidence; không bảo đảm HR sẽ tuyển hay project không thể cải thiện thêm.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "This report states verdicts, scope, evidence, N/A reasons and blocked conditions.",
+    "Resolution_or_limit": "Artifact/interview verdicts remain separate.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-01",
+    "Condition": "Frequency dùng đơn đúng định nghĩa và nêu hạn chế hóa đơn cùng ngày.",
+    "Evidence_required": "Unique customer–invoice; phân biệt orders, purchase days và visits; nếu quyết định phụ thuộc quay lại ngày khác thì kiểm tra thêm.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "F is distinct positive customer/invoice count; purchase days and same-day invoices are separate; visits are not inferred.",
+    "Resolution_or_limit": "SQL invoice check and methods caveat pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-02",
+    "Condition": "RFM scoring không tạo khác biệt tùy tiện không được công bố.",
+    "Evidence_required": "Kiểm tra tie handling, input-order stability và cut-off boundaries; xử lý hoặc trình bày hạn chế chấm điểm cùng raw value khác score.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "R/F/M use raw-value quantile cutoffs with equal-value tie preservation and strict boundary rules.",
+    "Resolution_or_limit": "Permutation/tie fixture and cutoffs output pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-03",
+    "Condition": "Vai trò RFM so với Lifecycle/CRM Priority được nêu và đánh giá.",
+    "Evidence_required": "Không bắt M vào mọi nhãn; kiểm tra nhóm phản ánh mục tiêu gì, nhánh mô tả có vai trò gì và quyết định dùng biến nào.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Lifecycle and RFM have separate roles; M contributes to value/action context without being forced into every descriptive label.",
+    "Resolution_or_limit": "Crosswalk demonstrates the mapping.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-04",
+    "Condition": "Repeat và cohort rates kiểm soát cửa sổ quan sát.",
+    "Evidence_required": "90-day eligible denominator; complete-month cohorts; median second-order days chỉ trong repeaters; first observed purchase không tự chắc là lần đầu thật.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Exact 90-day eligibility, mature cohort windows and repeater-only median are defined; first observed purchase is not called acquisition.",
+    "Resolution_or_limit": "SQL, fixtures and cohort masking checks pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-05",
+    "Condition": "Lifecycle và high-value rules minh bạch, nhãn không xung đột không giải thích.",
+    "Evidence_required": "Dùng raw order count/recency/value đúng code; kiểm tra 90/180-day boundaries, percentile ties và sensitivity ở quyết định quan trọng.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "90/180 lifecycle, M-tier, credit override and precedence are explicit; alternate rules show label sensitivity.",
+    "Resolution_or_limit": "Boundary fixtures and `rule_sensitivity.csv` pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-06",
+    "Condition": "Doanh thu và chương trình giữ khách được diễn giải đúng.",
+    "Evidence_required": "Positive purchase revenue khác net-of-returns; historical share khác future CLV/profit; win-back/second-order actions là đề xuất thử, chưa causal impact.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Positive purchases, credits and net recorded history are distinguished from profit/CLV; win-back and second-order actions are proposed tests.",
+    "Resolution_or_limit": "Memo and value reconciliation pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CUS-07",
+    "Condition": "F/M và repeat comparisons xem xét độ dài lịch sử quan sát.",
+    "Evidence_required": "Khách được quan sát lâu có nhiều cơ hội mua hơn; nhóm/cohort so sánh có tenure/window phù hợp hoặc giới hạn rõ. Không biến F/M cao thành bằng chứng lòng trung thành hay giá trị tương lai chắc chắn.",
+    "Applicability": "Yes",
+    "Verdict": "PASS",
+    "Evidence_and_observation": "Tenure bands and last-365-day context expose unequal observation opportunity; F/M are not called future loyalty/value.",
+    "Resolution_or_limit": "`outputs/tenure_context.csv` and methods limits pass.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-01",
+    "Condition": "Xác định đúng một dòng và tính cộng được của các cột.",
+    "Evidence_required": "Campaign record/campaign-day khác unique campaign; kiểm tra repeated IDs, currency và thời gian.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-02",
+    "Condition": "CTR và các funnel rates được đối chiếu bằng tổng đúng denominator.",
+    "Evidence_required": "Impressions → clicks → leads → conversions; tính pooled rate nếu mục tiêu overall; flag order/range anomalies.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-03",
+    "Condition": "Chi phí, conversion và revenue đủ cơ sở cho CAC/ROAS.",
+    "Evidence_required": "Xác minh new-customer counts nếu gọi CAC; ROAS đúng spend và attributed revenue; không đồng nhất ROAS với profit.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-04",
+    "Condition": "Quy tắc scale/optimise/pause dùng bằng chứng và xử lý low-volume.",
+    "Evidence_required": "Threshold/precedence, sample adequacy, uncertainty, zero spend và median-based cutoffs được kiểm tra/công bố.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-05",
+    "Condition": "Channel/campaign comparisons có scope và giới hạn attribution.",
+    "Evidence_required": "Không suy incrementality từ attributed conversions; product mix, time coverage và overlap có thể ảnh hưởng.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-06",
+    "Condition": "Review queue là đề xuất có điều kiện, không phải budget optimisation đã validated.",
+    "Evidence_required": "Nêu guardrails và dữ liệu bổ sung trước hành động; output/memo không claim đã tăng ROI.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "CAM-07",
+    "Condition": "So sánh hiệu quả và khuyến nghị ngân sách có cơ sở kinh tế phù hợp.",
+    "Evidence_required": "Chi phí/revenue cùng currency và window; record lặp không bị gọi là campaign độc lập. Average ROAS không tự cho biết lợi suất biên khi tăng spend; thiếu cost/margin thì giữ đề xuất ở mức rà soát/test.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No campaign/spend/attribution module or result is promised.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-01",
+    "Condition": "Mức dữ liệu, định danh và relationships hợp lệ.",
+    "Evidence_required": "Users/sessions/events/orders rõ; grain và join cardinality không tạo duplicate; tính lại các funnel totals độc lập.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-02",
+    "Condition": "DAX và filters tính đúng KPI dưới các tình huống sử dụng.",
+    "Evidence_required": "Native checks cho filter contexts, rate denominators, date coverage và missing steps; số UI khớp source.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-03",
+    "Condition": "Experiment có assignment unit, target population và outcome window rõ.",
+    "Evidence_required": "Randomisation, uniqueness, exposure/eligibility và contamination được kiểm tra; synthetic-generation assumptions công bố.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-04",
+    "Condition": "SRM, balance và exclusions được kiểm tra theo thiết kế.",
+    "Evidence_required": "Kiểm tra groups/assignment independently; không đổi eligibility sau khi xem outcome để có kết quả đẹp.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-05",
+    "Condition": "Ước lượng effect, CI, p-value và planning assumptions nhất quán.",
+    "Evidence_required": "Absolute pp khác relative uplift; unit-level independence; MDE/power/sample và sidedness khớp protocol.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-06",
+    "Condition": "Guardrail pass dùng đúng câu hỏi thống kê.",
+    "Evidence_required": "Threshold point estimate và bằng chứng non-inferiority/uncertainty được phân biệt; CI vượt harm margin không được nhận là đã chứng minh an toàn.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-07",
+    "Condition": "Rollout claim phù hợp mọi gate, dữ liệu synthetic và subgroup limits.",
+    "Evidence_required": "Không lấy primary p-value để bỏ qua guardrails; subgroup exploration/multiplicity rõ; demo không chứng minh uplift ở sản phẩm thật.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "EXP-08",
+    "Condition": "Luật so sánh và dừng thử nghiệm phù hợp mức suy luận công bố.",
+    "Evidence_required": "Phân biệt analysis dự định và post-hoc; xử lý nhiều comparisons/peeking khi đưa confirmatory claim. Exploratory findings ghi đúng trạng thái; không sửa stopping rule sau khi thấy significance rồi gọi đã xác nhận.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No implemented experimental-event/Power BI deliverable; proposed tests are not executed experiments.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "XLS-01",
+    "Condition": "Raw columns, Lookups và derived columns có lineage đúng.",
+    "Evidence_required": "Mapping giữ raw source, unmatched fallback có thể rà soát; targets và snapshot có nguồn/giả định.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No Excel workbook; Python/CSV/PNG/notebook scope.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "XLS-02",
+    "Condition": "Outcome, revenue và pipeline không tráo nghĩa.",
+    "Evidence_required": "Won/(Won+Lost); discount revenue; open value vs probability-weighted estimate; assigned probability chưa phải calibrated forecast.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No Excel workbook; Python/CSV/PNG/notebook scope.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "XLS-03",
+    "Condition": "Ngày và cờ stale phù hợp định nghĩa được công bố.",
+    "Evidence_required": "Age since creation khác inactivity since last update; kiểm tra snapshot, close dates, valid blanks và 30-day boundaries.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No Excel workbook; Python/CSV/PNG/notebook scope.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "XLS-04",
+    "Condition": "Funnel, rep/channel/month comparisons có mẫu và thời gian đúng.",
+    "Evidence_required": "Open negotiation chưa won không tự là lost; target attainment khác absolute revenue; created month khác close month.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No Excel workbook; Python/CSV/PNG/notebook scope.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "XLS-05",
+    "Condition": "Workbook mở/recalc và dependency giữa sheets đúng với claim.",
+    "Evidence_required": "KPI/chart source ranges, formulas, tables và data limits; Action_List tĩnh và sự cập nhật input được công bố đúng.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No Excel workbook; Python/CSV/PNG/notebook scope.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SQL-01",
+    "Condition": "Schema, import và clean views có thể tái lập trên database đích.",
+    "Evidence_required": "Raw/clean counts, data types, duplicate rule và scripts đúng dialect.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "SQL is a validation reference only; no standalone query/database optimisation deliverable is claimed.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SQL-02",
+    "Condition": "JOIN, CTE, window và percentile tính đúng trên dữ liệu kiểm tra.",
+    "Evidence_required": "Ties, NULL, partition, ordering, small groups và boundary rules được đối chiếu độc lập.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "SQL is a validation reference only; no standalone query/database optimisation deliverable is claimed.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SQL-03",
+    "Condition": "Nhóm chi phí và aggregates dùng đúng đơn vị/định nghĩa.",
+    "Evidence_required": "Charges khác probability of illness/risk hoặc causal cost; bucket coverage và denominators hợp lệ.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "SQL is a validation reference only; no standalone query/database optimisation deliverable is claimed.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "SQL-04",
+    "Condition": "Kết luận mô tả và screenshots truy về query thực.",
+    "Evidence_required": "Association với smoker/BMI không tự là causal estimate; không áp dụng risk/policy recommendation ngoài bằng chứng.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "SQL is a validation reference only; no standalone query/database optimisation deliverable is claimed.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "NET-01",
+    "Condition": "Basket transformation bảo toàn hóa đơn và item presence.",
+    "Evidence_required": "Returns/cancellations, anonymous customers, repeated items và singleton baskets được xử lý theo scope.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No network/basket graph module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "NET-02",
+    "Condition": "Edge metric và threshold được định nghĩa đúng.",
+    "Evidence_required": "Co-occurrence count khác lift/confidence; frequent-item bias và threshold sensitivity có thể đổi kết luận.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No network/basket graph module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "NET-03",
+    "Condition": "Graph/community results ổn định và có nghĩa phù hợp.",
+    "Evidence_required": "Node/edge counts, undirected/directed choice, weights, seeds và algorithm kiểm tra; clusters chưa tự chứng minh cross-sell impact.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No network/basket graph module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "NET-04",
+    "Condition": "Exports và đề xuất product affinity có evidence đủ.",
+    "Evidence_required": "Graph files mở được nếu claim native usability; hướng mua/causation không suy từ undirected association; next test có mục tiêu.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No network/basket graph module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AIR-01",
+    "Condition": "Nguồn, coverage và population được thống nhất.",
+    "Evidence_required": "Reporting month/route/airport/airline rõ; partial periods, cancelled vs scheduled/operated và missing coverage có xử lý.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No airline/OTP/Tableau module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AIR-02",
+    "Condition": "OTP/cancellation dùng numerator, denominator và weighting đúng.",
+    "Evidence_required": "Scheduled/operated flights đúng theo metric; không average unweighted route percentages nếu muốn overall rate.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No airline/OTP/Tableau module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AIR-03",
+    "Condition": "So sánh hãng/sân bay/thời gian có thể kiểm tra.",
+    "Evidence_required": "Route mix, sample volumes và seasonality được nêu khi ảnh hưởng; không xếp hạng nguyên nhân từ raw averages.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No airline/OTP/Tableau module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "AIR-04",
+    "Condition": "R outputs và Tableau native workbook khớp và usable theo scope.",
+    "Evidence_required": "Data source references, extracts, filters, maps và totals kiểm tra; không lấy PNG thay native-open evidence.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No airline/OTP/Tableau module.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-01",
+    "Condition": "Target, features, split unit và prediction-time availability rõ.",
+    "Evidence_required": "Không dùng future/target-derived variables; classification label và regression units đúng.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-02",
+    "Condition": "Preprocessing được fit trong training/fold phù hợp.",
+    "Evidence_required": "Imputation/scaling/selection không nhìn test hoặc validation fold; pipeline kiểm tra leakage.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-03",
+    "Condition": "Training, tuning và final evaluation được tách đúng.",
+    "Evidence_required": "CV dùng chọn model/hyperparameters; final holdout độc lập với tuning; seeds và split version lưu.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-04",
+    "Condition": "Model có baseline và metrics phù hợp mục tiêu.",
+    "Evidence_required": "Regression MAE/RMSE và scale; classification confusion matrix, ROC/AUC hoặc PR khi phù hợp; threshold không tune trên final test.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-05",
+    "Condition": "Overfit/underfit, errors và uncertainty được đánh giá tương xứng scope.",
+    "Evidence_required": "Train/validation comparison, residual/error analysis và subgroup/sample limits; không ép mọi mô hình phải có SHAP.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-06",
+    "Condition": "Interpretation và phạm vi sử dụng không vượt evaluation.",
+    "Evidence_required": "Predictive performance khác causation; coefficient/explanation không tự là policy; artifacts reproduce được.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  },
+  {
+    "ID": "ML-07",
+    "Condition": "Cách chia dữ liệu phản ánh đối tượng và thời điểm dự báo thật.",
+    "Evidence_required": "Kiểm nhóm khách/đơn lặp, related rows và temporal leakage; split theo group/time khi deployment yêu cầu. Random split chỉ hợp lệ với giả định phù hợp; synthetic demo không chứng minh generalisation thật.",
+    "Applicability": "No",
+    "Verdict": "N/A",
+    "Evidence_and_observation": "No predictive training/tuning/holdout model.",
+    "Resolution_or_limit": "Outside the original declared RFM descriptive Python scope.",
+    "release": "remaster-1.0.2"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "prior_revision": 1,
+  "prior_revision_open": "FAILED",
+  "observed_error_type": "InvalidLineType",
+  "observed_line_type": "ReferenceObject",
+  "document": "./model",
+  "line_number": 15,
+  "line": "ref table FactSessions",
+  "evidence": "native_error_model_refs.png",
+  "cause": "The first correction incorrectly indented direct model references; Microsoft documents root-level direct Model children in folder TMDL",
+  "correction": "Restore all model-level annotations and table references to root level; correct the generator and incorrect previous indentation test",
+  "corrected_native_open": "NOT_VERIFIED",
+  "data_source_changed": false
+}

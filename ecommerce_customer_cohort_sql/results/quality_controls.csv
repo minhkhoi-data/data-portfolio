@@ -1,0 +1,2 @@
+window_start,window_end,observed_session_dates,sessions,unique_sessions,events_represented_by_audited_sessions,users,purchase_events,purchasers,purchase_revenue_usd,users_with_varying_channel,users_with_ambiguous_anchor_channel,users_with_multiple_anchor_day_sessions,purchase_before_anchor_users,orphan_purchase_events,purchase_user_mismatches
+2020-11-01,2021-01-31,92,360129,360129,4295584,270154,5692,4419,362165.000000,38775,18620,24309,0,0,0

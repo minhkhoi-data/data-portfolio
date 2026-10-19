@@ -5,22 +5,20 @@ model Model
 	sourceQueryCulture: en-US
 	dataAccessOptions
 		legacyRedirects
-		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["FactSessions","FactOrders","FactOrderItems","DimDate","DimChannel","DimDevice","DimGeo","DimProduct"]
+annotation PBI_QueryOrder = ["DataFolder", "FactSessions", "FactPurchases", "DimDate", "DimChannel", "DimDevice", "DimGeo", "FunnelStage", "_Measures"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table FactSessions
-ref table FactOrders
-ref table FactOrderItems
+ref table FactPurchases
 ref table DimDate
 ref table DimChannel
 ref table DimDevice
 ref table DimGeo
-ref table DimProduct
 ref table FunnelStage
 ref table _Measures
 
+ref expression DataFolder

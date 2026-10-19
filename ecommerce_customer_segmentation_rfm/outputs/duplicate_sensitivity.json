@@ -1,0 +1,10 @@
+{
+  "Scenario": "Retain exact duplicate rows",
+  "PurchaseLines": 805549,
+  "BasePurchaseLines": 779425,
+  "GrossPurchaseValueGBP": 17743429.178,
+  "BaseGrossPurchaseValueGBP": 17374804.268,
+  "NetRecordedValueGBP": 16709343.308,
+  "BaseNetRecordedValueGBP": 16351040.958,
+  "CustomersWithChangedAction": 55
+}

@@ -1,0 +1,303 @@
+{
+  "release": "Remaster 1.0.1",
+  "manifest_scope": "All deliverable files except this manifest and interpreter caches",
+  "file_count": 58,
+  "source_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45",
+  "config_sha256": "b234ca97aaa0b12dd851b92cb856f2aa7cd7010060da27be6f0a10719084dac2",
+  "criteria_sha256": "a4e3f9e1772982c0165e8c2bee13d287577cebbe28beeefc0b5f73493817a65a",
+  "scope_sha256": "e53d5e476e6949a24fb72c63315337b18ce97ab84060651526b78f0aa7863b1d",
+  "audit_report_sha256": "ac82e95ad63ff74a5250f356e338cf362a20d0ad26958a14010c93ea9fb5ea85",
+  "python": "3.12.14",
+  "files": [
+    {
+      "path": "DATA_SOURCES.md",
+      "bytes": 2068,
+      "sha256": "d45d270af3c2bdf3ee5a6320311d693303a91e12a507dee141cfbce0b399cdfa"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6076,
+      "sha256": "ab2fa720457edf61b6d64d6e0bde4862808fdd6ea30d351dad89a6f7fcf55e5a"
+    },
+    {
+      "path": "analysis/__init__.py",
+      "bytes": 70,
+      "sha256": "2a96903d5e5688bfc8362253d90297e4d60d329688e174aaa0069c06b2563fef"
+    },
+    {
+      "path": "analysis/config.json",
+      "bytes": 449,
+      "sha256": "b234ca97aaa0b12dd851b92cb856f2aa7cd7010060da27be6f0a10719084dac2"
+    },
+    {
+      "path": "analysis/execute_notebook.py",
+      "bytes": 5566,
+      "sha256": "7bf7198f6443df99d042928e02e9db6fe72201f4e7b7194a420c796026727e9d"
+    },
+    {
+      "path": "analysis/inprocess_kernel.py",
+      "bytes": 813,
+      "sha256": "5a78873b19bcbfd8ac7fbf78f3d977ac4fd871549f3a6e126ded86eaeb144e84"
+    },
+    {
+      "path": "analysis/run_analysis.py",
+      "bytes": 36264,
+      "sha256": "6e10973edd71c6c7247105f99acef78637fbad382d582be92beba1639ba15e82"
+    },
+    {
+      "path": "analysis/validate_project.py",
+      "bytes": 9901,
+      "sha256": "fb5816fb4eacc6e7f8c0f199fb91f5f9a10b6be4455a887d4965af1ffba1a137"
+    },
+    {
+      "path": "audit/AUDIT_REPORT.md",
+      "bytes": 18335,
+      "sha256": "ac82e95ad63ff74a5250f356e338cf362a20d0ad26958a14010c93ea9fb5ea85"
+    },
+    {
+      "path": "audit/CHANGELOG.md",
+      "bytes": 3263,
+      "sha256": "af0076514e6a09992ca9231572f79ef6d53d9caaff204070010b70a6f55a0ae0"
+    },
+    {
+      "path": "audit/CLAIM_EVIDENCE_LEDGER.md",
+      "bytes": 3145,
+      "sha256": "aac199464f755d84eddbcd91889e1749c07ee1f3f9d594acc2d8c5bfb9c1e3be"
+    },
+    {
+      "path": "audit/CRITERIA_V2.md",
+      "bytes": 44096,
+      "sha256": "a4e3f9e1772982c0165e8c2bee13d287577cebbe28beeefc0b5f73493817a65a"
+    },
+    {
+      "path": "audit/SCOPE.md",
+      "bytes": 2926,
+      "sha256": "e53d5e476e6949a24fb72c63315337b18ce97ab84060651526b78f0aa7863b1d"
+    },
+    {
+      "path": "audit/final_recheck.json",
+      "bytes": 3393,
+      "sha256": "5c3ca89ea7f792d658fa4e54e905bfc58da0da4528d6b683d618ce0d96d271c5"
+    },
+    {
+      "path": "audit/fresh_run.log",
+      "bytes": 136,
+      "sha256": "a4258ade7174ccb521169b3a6df67e5fc2dc0602fef8f8cb35b8c73ac0d5024d"
+    },
+    {
+      "path": "audit/fresh_run_comparison.json",
+      "bytes": 4725,
+      "sha256": "9620616b7f8b0ca9d4fd9f3ba10b26f9cb529385f2d8bd0a2776153b1c75298c"
+    },
+    {
+      "path": "audit/independent_validation.json",
+      "bytes": 7364,
+      "sha256": "3d479fe1cd790ca6ce4922bf5fafb7bc29473e36b941ccccf9226359041f48ad"
+    },
+    {
+      "path": "audit/notebook_execution.json",
+      "bytes": 434,
+      "sha256": "3f4edd7dc492ad28cb4e605de6a97674da782c8f5a50975a5274728563ace04d"
+    },
+    {
+      "path": "audit/notebook_run.log",
+      "bytes": 594,
+      "sha256": "d1d9a887c70205ed1cc0e94664b57adcab7de478afe51190a1d117c32abe4ae9"
+    },
+    {
+      "path": "audit/source_verification.json",
+      "bytes": 1063,
+      "sha256": "0423226f0b0dfd96925468d2e2a1f33b2f4f1628a34390876d9bbbc86b7e6d06"
+    },
+    {
+      "path": "audit/unit_tests.log",
+      "bytes": 2173,
+      "sha256": "b897ca7a8fa96ce2a28165d9cea010c6c84e2bc47ec63e9611544506e386a10e"
+    },
+    {
+      "path": "audit/validator.log",
+      "bytes": 350,
+      "sha256": "03260d96f2e796ec09dba56479e92d1385a0aab35581b4e8a99ba631c3671aaf"
+    },
+    {
+      "path": "audit/visual_review.json",
+      "bytes": 1189,
+      "sha256": "9716f8043181a41030c7599731c6229695ede4fbf9eb00865e94520e2d235944"
+    },
+    {
+      "path": "data/online_retail_II.csv.gz",
+      "bytes": 15032746,
+      "sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45"
+    },
+    {
+      "path": "docs/CONTRIBUTION.md",
+      "bytes": 980,
+      "sha256": "66932340ea8cd86bfd7b4af94b2c6975a4cb8502828b44569d2a0571b16ad629"
+    },
+    {
+      "path": "docs/LEARNING_GUIDE_VI.md",
+      "bytes": 6503,
+      "sha256": "e5dd770611ed228ccca2a03eb54e56cafa6dd0cc882408c61d35cb5803b64a3c"
+    },
+    {
+      "path": "docs/METHODS.md",
+      "bytes": 12385,
+      "sha256": "a622cc1d2a665a4f11c7400168bdcc48e2b7d9fcde941fa1e686284863bd6655"
+    },
+    {
+      "path": "ecommerce_customer_segmentation_rfm.ipynb",
+      "bytes": 729545,
+      "sha256": "41ef468909ec9d92bbd74e35008acd5973c137cbccc252a85eac1c8f565621a6"
+    },
+    {
+      "path": "figures/cohort_retention_heatmap.png",
+      "bytes": 149597,
+      "sha256": "76eb9b5baf2afbcee882709f09bf011165ac433ebb2f32901bba07cd49ddec2c"
+    },
+    {
+      "path": "figures/customer_lifecycle_decision_dashboard.png",
+      "bytes": 249088,
+      "sha256": "6ca10d627c7624ba1c76cdc8ea041a4fd59cce110faa5828628316ac7984d7db"
+    },
+    {
+      "path": "figures/mature_cohort_rates.png",
+      "bytes": 51021,
+      "sha256": "1347bf9ebb1f5c09bef41e5c8462a6f9c7cf1bff9c3c9482ffdf16269dbe14f6"
+    },
+    {
+      "path": "memo/business_memo.md",
+      "bytes": 4717,
+      "sha256": "d7edeafb9f9dc3da89f4d7fcfe714aec5a60c84dc2c97d5b6b6312b43b3ada2c"
+    },
+    {
+      "path": "notebook_preview.html",
+      "bytes": 658540,
+      "sha256": "50070811a6351e731d13b0e854cfda82fe1af000bc5fb7ba7a4a4d22ec652b89"
+    },
+    {
+      "path": "outputs/cleaning_reconciliation.csv",
+      "bytes": 491,
+      "sha256": "6247c1221f36e8c6e890cfab528f5a34b3fc1df062884c6e99dbb15ad638e16f"
+    },
+    {
+      "path": "outputs/cohort_activity_observed.csv",
+      "bytes": 1898,
+      "sha256": "ddc688537c071b2f1f34423ff67d17fdbe95c22538486cc1747f7e9843d8bfd3"
+    },
+    {
+      "path": "outputs/cohort_counts.csv",
+      "bytes": 1551,
+      "sha256": "d1714e5a6d4214e847f245f721cb6d512809c549e9427bc004954ab12530f824"
+    },
+    {
+      "path": "outputs/cohort_retention.csv",
+      "bytes": 4237,
+      "sha256": "a2e1d87269a4be634e67f685bd36afa57ff8adc49a70baee002e0f8e1e4707c2"
+    },
+    {
+      "path": "outputs/credit_lines.csv.gz",
+      "bytes": 368206,
+      "sha256": "22e2dbdd594e26f9655122a386f0d0a0c09ba7f35ec71a73760a8456030dea02"
+    },
+    {
+      "path": "outputs/crm_priority_summary.csv",
+      "bytes": 1372,
+      "sha256": "8ffe15a7fbca9ecdf614fbf10c3764aa00f6954fd7a8e774c873a4549c39b2da"
+    },
+    {
+      "path": "outputs/customer_lifecycle_table.csv",
+      "bytes": 2058494,
+      "sha256": "21b498aee6dab71ad96961fc049d8d78ef06e725edbe324e1869392f9b951e38"
+    },
+    {
+      "path": "outputs/data_quality_summary.csv",
+      "bytes": 1000,
+      "sha256": "a491553f117b19eb4c206c8cd4b9d23303e438707fd0f828f58568fb79bbea8e"
+    },
+    {
+      "path": "outputs/duplicate_sensitivity.json",
+      "bytes": 309,
+      "sha256": "b4ba431925f1a856d2b2f246e8f00e8f6d2d85f7552e3b909b4102c2bd5ae2cf"
+    },
+    {
+      "path": "outputs/lifecycle_summary.csv",
+      "bytes": 597,
+      "sha256": "7b50e88122e83436310fac5ed7dafd2638e61aed833d41c18b78dfea2ac1223d"
+    },
+    {
+      "path": "outputs/orders.csv",
+      "bytes": 2385936,
+      "sha256": "bfab95f7797decd03b9c18783a1a4eedefba14dc9959bd4c2ff813cc18e6f477"
+    },
+    {
+      "path": "outputs/purchase_lines.csv.gz",
+      "bytes": 12702017,
+      "sha256": "89cb1cec0ec899cd10fe685e5ef79f17001e20712f89acdb81d35f9f5b698478"
+    },
+    {
+      "path": "outputs/repeat_90_by_cohort.csv",
+      "bytes": 823,
+      "sha256": "76fd4544fe229253335f6181129ca382aaa70d92cfbad1d44b4d494b952fc80f"
+    },
+    {
+      "path": "outputs/repeat_90_curve.csv",
+      "bytes": 216,
+      "sha256": "f34c09efe2f80dead177478a5b77188cc73c435dc1239940459db96a324ee52e"
+    },
+    {
+      "path": "outputs/retention_kpis.csv",
+      "bytes": 190,
+      "sha256": "3fbd52de5fb4bfca91b44e4225973706dd44d3a25cdf9d92275ab68d848a0814"
+    },
+    {
+      "path": "outputs/rfm_cutoffs.csv",
+      "bytes": 1191,
+      "sha256": "05be2eae700de4456f5992c5db11f7ef28f6e546a7f0524c2872a935102a12ed"
+    },
+    {
+      "path": "outputs/rfm_lifecycle_crosswalk.csv",
+      "bytes": 4183,
+      "sha256": "e55bd9fda491156be2bca71bce34fa1a8a629d1967f2bd8b96953078a3394dd5"
+    },
+    {
+      "path": "outputs/rfm_segment_summary.csv",
+      "bytes": 959,
+      "sha256": "7afe00218cfd71adee0ee1ce16dc036ebb0f4557d0ba53b3c8597531768ea994"
+    },
+    {
+      "path": "outputs/rule_sensitivity.csv",
+      "bytes": 421,
+      "sha256": "3b0f1df745201e8edafaba2f85c5935ce3365754d5110efe6ab32d8eab697354"
+    },
+    {
+      "path": "outputs/run_summary.json",
+      "bytes": 1041,
+      "sha256": "d340df2dbea3b94660634e574af4fcf8fe248c36c3f8a58bd4d1f923bdce2859"
+    },
+    {
+      "path": "outputs/tenure_context.csv",
+      "bytes": 270,
+      "sha256": "509b06d4688edf3f553823b50417c56d3581ea28cef40c5b35ec16180b26c6ee"
+    },
+    {
+      "path": "outputs/value_reconciliation.csv",
+      "bytes": 308,
+      "sha256": "0b5b62fe4c239a31d320e258c87c69ad1cd15e446fa40673ebcfbbdfd1c78b10"
+    },
+    {
+      "path": "requirements-notebook.txt",
+      "bytes": 71,
+      "sha256": "ca7110c0d36f2fea0119e2f07ecf26fa0447ae13939bad78ed97058ff464c062"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 46,
+      "sha256": "0bf7466ec8d0bc18d2ecc5db4bae9e132590df827eba743092e88474b4800849"
+    },
+    {
+      "path": "tests/test_analysis.py",
+      "bytes": 7595,
+      "sha256": "58eb9c73b2bd68d90fe06570d8336619a21592f08bb0f1476f474a3b9b90d4ac"
+    }
+  ]
+}

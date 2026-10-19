@@ -1,0 +1,37 @@
+{
+  "status": "ANALYTICAL_PASS_NOTEBOOK_BLOCKED",
+  "outputs_valid": true,
+  "fresh_notebook": "BLOCKED",
+  "steps": [
+    {
+      "step": "pipeline",
+      "status": "PASS",
+      "log": "audit/remaster_pipeline.log"
+    },
+    {
+      "step": "fixture_tests",
+      "status": "PASS",
+      "log": "audit/remaster_fixture_tests.log"
+    },
+    {
+      "step": "pipeline_validator",
+      "status": "PASS",
+      "log": "audit/remaster_pipeline_validator.log"
+    },
+    {
+      "step": "independent_SQL_and_boundaries",
+      "status": "PASS",
+      "log": "audit/remaster_independent_SQL_and_boundaries.log"
+    }
+  ],
+  "input_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45",
+  "config_sha256": "3d03c4c3923177c2397f1c1edf1e64b1171a49940034bf2b04409d23eda32782",
+  "missing_dependencies": [
+    "nbformat",
+    "nbclient",
+    "ipykernel",
+    "jupyter_client",
+    "IPython"
+  ],
+  "notebook_execution_note": "Bundled historical notebook execution remains historical evidence; not rerun by this command."
+}

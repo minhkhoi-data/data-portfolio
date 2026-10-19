@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "before_sha256": "ed98f65649dead67154450a32e17c262fa6fc46e45badf0bec88c16b44c82d17",
+  "workbook_sha256": "b568eaaa2e674970f9fa4fe62b14a77bb9a65cb1a74b03a6c070956a128f3432",
+  "changed_parts": [
+    "xl/drawings/drawing1.xml",
+    "xl/worksheets/sheet5.xml",
+    "xl/worksheets/sheet8.xml",
+    "xl/worksheets/sheet9.xml"
+  ],
+  "all_cell_values_formulas_styles_preserved": true,
+  "all_chart_definitions_and_series_preserved": true,
+  "all_tables_preserved": true,
+  "Microsoft_Excel": "PENDING_USER"
+}

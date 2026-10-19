@@ -1,0 +1,23 @@
+{
+  "PASS": 52,
+  "FAIL": 0,
+  "BLOCKED": 11,
+  "N/A": 44,
+  "N": 63,
+  "pass_percent": 82.54,
+  "coverage_percent": 82.54,
+  "artifact_frozen": false,
+  "blocked_ids": [
+    "AUD-03",
+    "SRC-05",
+    "MET-06",
+    "RUN-03",
+    "RUN-04",
+    "OUT-01",
+    "OUT-02",
+    "HR-01",
+    "HR-02",
+    "HR-03",
+    "EXP-02"
+  ]
+}

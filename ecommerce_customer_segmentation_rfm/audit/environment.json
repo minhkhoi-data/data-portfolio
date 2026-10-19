@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-10-15T05:19:48.498046+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "sqlite": "3.53.1",
+  "packages": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "jupyter-client": "8.10.0",
+    "jupyter-core": "5.9.1",
+    "pyzmq": "27.2.0",
+    "traitlets": "5.16.1",
+    "tornado": "6.5.10",
+    "openpyxl": "3.1.5"
+  },
+  "scope": "Linux Python pipeline and fresh in-process Jupyter execution; no browser GUI or universal Windows certification"
+}

@@ -1,0 +1,331 @@
+{
+  "files": [
+    {
+      "path": "Olist_CRM_Acquisition_Seller_Value.xlsx",
+      "sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+      "bytes": 2272042
+    },
+    {
+      "path": "README.md",
+      "sha256": "55d10d58485f6bb7ed74d92334a4a7d8bbfad63985810d3b12e77211efd1980a",
+      "bytes": 3874
+    },
+    {
+      "path": "REPLACEMENT_CONTEXT.md",
+      "sha256": "96a355a16c1f2aec0bd7e7b2d80ba6d04228721bfa83b61dd91020d4ad0ab734",
+      "bytes": 2206
+    },
+    {
+      "path": "START_HERE_VI.md",
+      "sha256": "25ecaa353feae9f5465724502f8d52df4ed913461cc8355daa2f41bbf787f154",
+      "bytes": 1202
+    },
+    {
+      "path": "analysis/apply_layout_fragment.py",
+      "sha256": "137e1310897bdad94da94328746499b626bb5540938b6284df4cbe2fb1264fec",
+      "bytes": 4660
+    },
+    {
+      "path": "analysis/apply_styles_fragment.py",
+      "sha256": "8e0ab4234972366de0e65a096bb1c30b4a231f9b14d4fe096d8332eb7a529f5c",
+      "bytes": 4053
+    },
+    {
+      "path": "analysis/assemble_fragments.py",
+      "sha256": "f380909c3a2483f03dc6cac3c83f0779353c64c947939bd4ab08de61f2094dcc",
+      "bytes": 6917
+    },
+    {
+      "path": "analysis/build_fragment.mjs",
+      "sha256": "cb0b8a0369fb5da13172e604ab5e4389cd91a85f93d1b9ab7fde9a6acbfb297c",
+      "bytes": 2950
+    },
+    {
+      "path": "analysis/build_workbook.mjs",
+      "sha256": "3d8c117a965d3188fcf20ccc0a286e40a974a751eeb749b7abb1927dc0c19bad",
+      "bytes": 27984
+    },
+    {
+      "path": "analysis/finalize_workbook.py",
+      "sha256": "ebbb3adae9cc3c599c770bcefffac21bcef46dc7bf566211cdfce63fbfa73941",
+      "bytes": 4134
+    },
+    {
+      "path": "analysis/outputs/RUN_STATUS.json",
+      "sha256": "75fd456a5bd77357e4b2d45ae58b692128be53077357ccba3588940995b1494b",
+      "bytes": 88
+    },
+    {
+      "path": "analysis/outputs/channel_metrics.csv",
+      "sha256": "8a9818a04a9ce5e16a4d15a469453fc26be5d2e7c1012ac56517d1a8895961f6",
+      "bytes": 907
+    },
+    {
+      "path": "analysis/outputs/monthly_metrics.csv",
+      "sha256": "ed4954dddf9eb9e2b3708fa3c29ab07a75b04bec88b6717ee60836bc7da3e567",
+      "bytes": 707
+    },
+    {
+      "path": "analysis/outputs/sdr_metrics.csv",
+      "sha256": "f22694b82b5447f7f9ecca07e45659c2092cff96fd0290439f2a553a840d3d0b",
+      "bytes": 823
+    },
+    {
+      "path": "analysis/outputs/source_manifest.json",
+      "sha256": "f7b8b9bbe31b99497e344631b74b2d0319c46f9705715e5e335324aa1520ce7a",
+      "bytes": 683
+    },
+    {
+      "path": "analysis/outputs/sr_metrics.csv",
+      "sha256": "793e680609e678a07e94e710508e486fd59221d5c56612842eec31595f33513c",
+      "bytes": 666
+    },
+    {
+      "path": "analysis/outputs/summary.json",
+      "sha256": "781967ce8bb07a5a2840b9a66d17a5be71280f9c3be7251417f45fffa160de52",
+      "bytes": 690
+    },
+    {
+      "path": "analysis/rebuild_in_codex.py",
+      "sha256": "3779e593eebf046dd205760df5b4f959a6d56e1034cb7f0983cae3a61991bc50",
+      "bytes": 3012
+    },
+    {
+      "path": "analysis/repair_layout.mjs",
+      "sha256": "c113f5a5bcb274ea6c21527bbf80a12e64e992569eb40f41101ff01ac6545f72",
+      "bytes": 1714
+    },
+    {
+      "path": "analysis/repair_styles.mjs",
+      "sha256": "05ee650a5467ed1bcdc73ef6e128dc764a1b7ac36b90d4db6fc4865c79f8f94f",
+      "bytes": 496
+    },
+    {
+      "path": "analysis/run_analysis.py",
+      "sha256": "6df953e690ce6d0c41bba2ae5e7e1f37805edefe65856360dfe34730d2089850",
+      "bytes": 9705
+    },
+    {
+      "path": "audit/AUDIT_CRITERIA.csv",
+      "sha256": "62a97f456924068be72387ad5cd37634c6ce851e5b7119a4a3a3ef9c15dcfe0f",
+      "bytes": 24977
+    },
+    {
+      "path": "audit/AUDIT_CRITERIA.json",
+      "sha256": "a9c76cc6c8ce29049e18111e6fcd71336c72032b3e7501d8c50fcd0d1d2f91e6",
+      "bytes": 34720
+    },
+    {
+      "path": "audit/AUDIT_REPORT.md",
+      "sha256": "913eb258d4ddabd2b4c37285d1822ae47a2776a0ea92eab094ab660612c2921a",
+      "bytes": 246
+    },
+    {
+      "path": "audit/LAYOUT_REPAIR.json",
+      "sha256": "7908439ce7dfff4b5f6f65410bdb18db0d312febc58a64cb04c5edfc36ac6900",
+      "bytes": 527
+    },
+    {
+      "path": "audit/NATIVE_STRUCTURE.json",
+      "sha256": "2ed303bd0ac1626f52931f54bfb25ea4fae05fe521bf10b914c94dafe7330843",
+      "bytes": 387
+    },
+    {
+      "path": "audit/PROVENANCE.json",
+      "sha256": "aba672bc6be8ff41653a71dfb919d46640abec47e1cb216f0e2f0c8dd571ec09",
+      "bytes": 1298
+    },
+    {
+      "path": "audit/RELEASE_STATUS.json",
+      "sha256": "69f3ca8e8fbf66b53e01f821b29d9b61813cc0acca0cc1e4249ec04ef4bc75a7",
+      "bytes": 664
+    },
+    {
+      "path": "audit/SCENARIO_VALIDATION.json",
+      "sha256": "7e040006048e3078a0e7c784b6ff64c25f282de34c602e3ae7c071dde13c2c5d",
+      "bytes": 3010
+    },
+    {
+      "path": "audit/STYLE_FIX_HANDOFF.md",
+      "sha256": "90ecdbba37f0634d0e518ccc9be20644970629590c6d18980f2c69ab73573570",
+      "bytes": 2073
+    },
+    {
+      "path": "audit/STYLE_REPAIR.json",
+      "sha256": "af2ac106e2f74295e4328aaef4718e98872ef2a0c94af539096fd3ff3f16dab5",
+      "bytes": 699
+    },
+    {
+      "path": "audit/TAKEOVER_AUDIT.md",
+      "sha256": "142fcb05ad1020e33a3f2b25b948c762141d11299619b7f086fa437582702ea2",
+      "bytes": 6920
+    },
+    {
+      "path": "audit/TAKEOVER_EXECUTION.json",
+      "sha256": "00b3b02f0309731a1d8c0eddd7b1b63085f71ffb5e92ef8cbc299512de02360c",
+      "bytes": 2092
+    },
+    {
+      "path": "audit/TAKEOVER_SCOPE.md",
+      "sha256": "a69ec36b9fb2ee374377c2ebee848ebc19206458021c79624cf5a384da6e7efd",
+      "bytes": 2699
+    },
+    {
+      "path": "audit/WORKBOOK_VALIDATION.json",
+      "sha256": "1d32a8291e6d3d6e38e721886042d98e142a9b75a888b5910a7e0b650bc39dfc",
+      "bytes": 20804
+    },
+    {
+      "path": "audit/authoring_dimensions.json",
+      "sha256": "dcbfbc854d3730075a7fb68b860adb07c224f05d9554ba1f63dfded310f82cfb",
+      "bytes": 622
+    },
+    {
+      "path": "audit/history/AUDIT_REPORT_original.md",
+      "sha256": "1543729ae8544a19d401de7a29009a716d39a3a50a921577415412c82fcb857c",
+      "bytes": 2171
+    },
+    {
+      "path": "audit/history/SCENARIO_FIRST_ATTEMPT.json",
+      "sha256": "4c93b5808a8dc090246481c8828b26eb9e29f5a86ec3c40145935ffe8709ca44",
+      "bytes": 2555
+    },
+    {
+      "path": "audit/validate_controls.py",
+      "sha256": "64b70a62447863a8a5d08c3adf7e397f84494b384457b53db39d19ebc660ef8d",
+      "bytes": 5901
+    },
+    {
+      "path": "audit/verify_workbook.py",
+      "sha256": "330d0b8049bcb459a721f31d056cd7c837c3cbf54c664eb00db5e8dcb9dacd9a",
+      "bytes": 8416
+    },
+    {
+      "path": "data/source/olist_closed_deals_dataset.csv",
+      "sha256": "1433f402d8fff00ca167579de641d9525f6e846368958c166f699ef1b0c31f3d",
+      "bytes": 171352
+    },
+    {
+      "path": "data/source/olist_marketing_qualified_leads_dataset.csv",
+      "sha256": "5537753b7549ce4068e52e2402c29f2773c5375fc0575520ae8f3f301f666573",
+      "bytes": 703836
+    },
+    {
+      "path": "data/source/olist_order_items_dataset.csv",
+      "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+      "bytes": 15438671
+    },
+    {
+      "path": "data/source/olist_orders_dataset.csv",
+      "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+      "bytes": 17654914
+    },
+    {
+      "path": "data/source/olist_sellers_dataset.csv",
+      "sha256": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e",
+      "bytes": 174703
+    },
+    {
+      "path": "docs/DECISION_MEMO.md",
+      "sha256": "ed9acc9346180cd6aaeabbdc9a2729c68fadd4ef440e5d7203c36e02a8cd8841",
+      "bytes": 1802
+    },
+    {
+      "path": "docs/METHODS.md",
+      "sha256": "7a53c573af6abbe5e6d4194cb656c005237805d30fc4ff8313072f250274b0fc",
+      "bytes": 3672
+    },
+    {
+      "path": "docs/MICROSOFT_EXCEL_CHECKLIST.md",
+      "sha256": "bb076dedf3439af574eafd7707915bdba01d99e7df2c0eb1111337c8cda22d87",
+      "bytes": 1534
+    },
+    {
+      "path": "docs/SOURCES.md",
+      "sha256": "258d4a096ec189ad35bb8d6c7f74d5539b5ba038771ab3a61bed7aa9dae16b8b",
+      "bytes": 1967
+    },
+    {
+      "path": "preview/Action_List.png",
+      "sha256": "5fac732de98c54b866aab271034bbfb254d4fb573728506f2e1c76339048eb6a",
+      "bytes": 67901
+    },
+    {
+      "path": "preview/Boolean_source_STYLEFIX_v3.png",
+      "sha256": "43fd1c8263f3805bbcef525e207b3a04ef73bd8bdc897bcf9d53baf81ea0409a",
+      "bytes": 7734
+    },
+    {
+      "path": "preview/Channel_Performance.png",
+      "sha256": "4cce841bb29f64c3cfa62bf501fd805239e7cad8611769daf2bece1dbfb81d28",
+      "bytes": 91469
+    },
+    {
+      "path": "preview/Dashboard.png",
+      "sha256": "dc3c2db30aa3164662a9e56b1317868c95a9a4312b04faa2e1c16e1103ea9904",
+      "bytes": 166240
+    },
+    {
+      "path": "preview/Data_Dictionary.png",
+      "sha256": "75c179f85f81fb3e00cac2ab9fc4769e5fda79c0081e7a37c6d58077f0b14ffc",
+      "bytes": 121758
+    },
+    {
+      "path": "preview/Leads.png",
+      "sha256": "790bfc0d8c87c66936dcce1741f0257b4fa503c8e9c149e3ff6ad2f9cb347b50",
+      "bytes": 109984
+    },
+    {
+      "path": "preview/Lookups.png",
+      "sha256": "11a405bb0ab1103ed4ed638fb4008cf46c603f22cb297211da03b02237d89b64",
+      "bytes": 226397
+    },
+    {
+      "path": "preview/Monthly_Trend.png",
+      "sha256": "6b722a572ecdd446b55d10633dcea3b7971f5ed5502d7afae898f7a10081e1df",
+      "bytes": 72999
+    },
+    {
+      "path": "preview/Project_Overview.png",
+      "sha256": "8d2baca42c3e8be4f8cff5d9e501101158bf16c219f7078218972f01ac15faf3",
+      "bytes": 111167
+    },
+    {
+      "path": "preview/Quality_Review.png",
+      "sha256": "6d0d9d0c810903b404d40b5a413a0a0c3c85841a2c2e709c66a83c35d5b5972f",
+      "bytes": 58462
+    },
+    {
+      "path": "preview/Rep_Performance.png",
+      "sha256": "237085f2ec2b3c60651907f045a546b84a0a28922c230f9e666c5df1705362fd",
+      "bytes": 266701
+    },
+    {
+      "path": "preview/Sales_Items.png",
+      "sha256": "8a1070998c59f18e15f0966858904131b30eee73adb81db786f17c8e3e6fe6c6",
+      "bytes": 102496
+    },
+    {
+      "path": "preview/Seller_Value.png",
+      "sha256": "ae418f9d58da2cc396857a37fe286060676b6681792898049ee780eb7d85b7ca",
+      "bytes": 89285
+    },
+    {
+      "path": "requirements-analysis.txt",
+      "sha256": "507e5cb774b0f36c4ac9ea3494553824e86ea1c747825a8272afe5f6323ee5e3",
+      "bytes": 14
+    },
+    {
+      "path": "requirements-rebuild.txt",
+      "sha256": "7a87341e9c36aa6be09c7b239374ca590a06dc12b0767b9803bf101601ec0429",
+      "bytes": 57
+    }
+  ],
+  "all_five_source_CSVs_included": true,
+  "omitted_reproducible_intermediates": [
+    "workbook_input.json",
+    "leads_prepared.csv",
+    "sales_items_prepared.csv",
+    "seller_value.csv"
+  ]
+}

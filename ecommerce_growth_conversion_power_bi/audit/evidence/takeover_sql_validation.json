@@ -1,0 +1,386 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-15T05:35:05.124336+00:00",
+  "checks_passed": 45,
+  "checks": [
+    {
+      "check": "All bundled source rows inspected",
+      "status": "PASS",
+      "evidence": 4295584
+    },
+    {
+      "check": "Source event IDs unique",
+      "status": "PASS",
+      "evidence": 4295584
+    },
+    {
+      "check": "Session population and unique keys",
+      "status": "PASS",
+      "evidence": {
+        "expected": 360129,
+        "actual": 360129
+      }
+    },
+    {
+      "check": "Every session key matches raw input",
+      "status": "PASS",
+      "evidence": 360129
+    },
+    {
+      "check": "Every session: user_id",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: session_date",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: source",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: medium",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: channel",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: device_category",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: country",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: region_group",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: engagement_known",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: engaged_session",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: engagement_seconds",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: is_new_user",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: pageviews",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: view_item",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: add_to_cart",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: begin_checkout",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: purchase",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: ordered_view_item",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: ordered_add_to_cart",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: ordered_begin_checkout",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: ordered_purchase",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: event_count",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: purchase_event_count",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every session: session_revenue",
+      "status": "PASS",
+      "evidence": {
+        "rows": 360129,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Purchase population and unique source-row keys",
+      "status": "PASS",
+      "evidence": {
+        "expected": 5692,
+        "actual": 5692
+      }
+    },
+    {
+      "check": "Every purchase key matches raw input",
+      "status": "PASS",
+      "evidence": 5692
+    },
+    {
+      "check": "Every purchase: source_event_id",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: session_id",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: user_id",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: purchase_date",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: event_timestamp",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: transaction_id",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: currency",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: channel",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: device_category",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: country",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: region_group",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: purchase_revenue_usd",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: total_quantity",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: distinct_products",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    },
+    {
+      "check": "Every purchase: transaction_id_known",
+      "status": "PASS",
+      "evidence": {
+        "rows": 5692,
+        "mismatches": 0
+      }
+    }
+  ],
+  "summary": {
+    "source_events": 4295584,
+    "sessions": 360129,
+    "purchase_events": 5692,
+    "unknown_sessions": 119526,
+    "strict_funnel": [
+      77020,
+      14380,
+      5187,
+      2778
+    ],
+    "purchase_revenue_usd": 362165.0
+  },
+  "duckdb_version": "1.5.6",
+  "memory_limit": "1GB",
+  "threads": 1,
+  "elapsed_seconds": 41.2,
+  "production_functions_imported": false,
+  "scope": "Complete bundled source to delivered fact-row validation; does not execute DAX, M or compare the Kaggle projection with a new external download.",
+  "tested_data_sha256": {
+    "data/measures.csv": "f77a3ddb4a90efa37d0a1b53334381cbb283d014f33006fe7f49219a1c1dacbb",
+    "data/dim_geo.csv": "f9aa063ccff997b92b0d884cebe55322592a188a70a046b84b9a140faa3ad096",
+    "data/dim_date.csv": "14f39665c687cf584bab299882a39a1ee3645a094d3b3f76c974192386f7ff6f",
+    "data/dim_device.csv": "3f27a52611a05174dc7d77b4a787fd3ad9a9099df2fbfd277846f87671d8b5a2",
+    "data/fact_purchases.csv": "33027412aa3827781edab83782aff2ecd97aff4b6ac82fe930b6e3842ae54c39",
+    "data/funnel_stage.csv": "d8966b0471b4e67d842d0d655c2c2af1c5148bc9a5c45c9ee3ef7c76d44e4507",
+    "data/dim_channel.csv": "77a598950a88da74de9c2cc1d75ac166f681d04d7d604587bc9b2dffdf43fc00",
+    "data/fact_sessions.csv": "af3796a6055c1e178b25b571956d56a9de000b27a810881b3126ef3ab27dbdea"
+  },
+  "source_projection_sha256": "db97f1394a7a1e1142791b6ca6819a0228f2e9b329d641f33a964aa84be1acc5",
+  "verifier_sha256": "a35daff9b1ca83dbccd53ebf4bdb200fc5053cb3cbfc02f688e75d2c73545ea3"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "tests_run": 12,
+  "failures": 0,
+  "errors": 0,
+  "scope": "Hand-calculated synthetic edge cases only; project business findings use audited GA4 data."
+}

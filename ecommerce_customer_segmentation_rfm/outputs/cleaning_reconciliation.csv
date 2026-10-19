@@ -1,0 +1,9 @@
+Stage,RowsAfter,SignedValueAfterGBP,UnpricedRowsAfter,RowsRemoved,SignedValueRemovedGBP
+Raw parsed,1067371,19287250.57,0,0,0
+Missing customer ID,824364,16648292.39,0,243007,2638958.18
+Invalid customer ID,824364,16648292.39,0,0,0
+Invalid required value/date/key,824364,16648292.39,0,0,0
+Zero/noninteger quantity,824364,16648292.39,0,0,0
+Nonpositive price,824293,16648292.39,0,71,0
+Inconsistent credit sign,824293,16648292.39,0,0,0
+Exact duplicate raw rows,797815,16289991.29,0,26478,358301.1

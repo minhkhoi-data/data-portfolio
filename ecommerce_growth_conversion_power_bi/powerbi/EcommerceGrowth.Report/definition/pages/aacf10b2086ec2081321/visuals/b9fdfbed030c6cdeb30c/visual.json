@@ -84,7 +84,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue per Session by Channel'"
+                  "Value": "'Revenue per session by first-user channel'"
                 }
               }
             },

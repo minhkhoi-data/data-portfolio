@@ -1,52 +1,55 @@
-relationship ca584b9b-b1b1-4356-8609-d24e83cc52cd
+relationship 0903896f-3ed8-555d-b3f0-0e1fa7cf5886
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
 	fromColumn: FactSessions.session_date
 	toColumn: DimDate.date
 
-relationship 6702455c-a2bb-45cd-a74a-d6b2e7faf5e6
-	fromColumn: FactOrders.order_date
-	toColumn: DimDate.date
-
-relationship 44c0f3a0-b60b-4600-b7d4-fd1e89154461
-	fromColumn: FactOrderItems.order_date
-	toColumn: DimDate.date
-
-relationship 90ed74c6-2fed-45ce-bf3f-1d39fcc2473f
+relationship 21df1eeb-3ee2-5315-9ef2-0bf98e089901
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
 	fromColumn: FactSessions.channel_id
 	toColumn: DimChannel.channel_id
 
-relationship d2e6d8d2-80e0-4b86-a77e-d1ea45a245e2
+relationship 03955936-47ad-5093-8c1e-18d57e1b1db1
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
 	fromColumn: FactSessions.device_id
 	toColumn: DimDevice.device_id
 
-relationship e516ee00-398b-4369-9c9e-429a3eea15ea
+relationship 72b4854e-93eb-54c9-b9c2-45ff48406571
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
 	fromColumn: FactSessions.geo_id
 	toColumn: DimGeo.geo_id
 
-relationship 3f18c420-d85e-4a3f-a068-3ee356564bab
-	fromColumn: FactOrders.channel_id
+relationship bceef16e-f53e-5ad8-8a50-5fd814c13790
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.purchase_date
+	toColumn: DimDate.date
+
+relationship b8366c9e-299b-5c65-ad13-8267b042ed8d
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.channel_id
 	toColumn: DimChannel.channel_id
 
-relationship 46ddd837-be3a-4e61-b079-1df80c0e3bfe
-	fromColumn: FactOrders.device_id
+relationship 7d31fdc2-754e-52b4-86e1-192c29781bfa
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.device_id
 	toColumn: DimDevice.device_id
 
-relationship 77b3ee30-a426-40ca-9c9f-872363939a80
-	fromColumn: FactOrders.geo_id
+relationship 8ef9a062-3447-5a27-a4a9-25d63a3ae0a1
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.geo_id
 	toColumn: DimGeo.geo_id
-
-relationship 2df0cfc3-2d8f-467b-9e9c-5e633d3f282f
-	fromColumn: FactOrderItems.channel_id
-	toColumn: DimChannel.channel_id
-
-relationship 31c2654c-1cb2-4b12-9247-7f8ffc147c0b
-	fromColumn: FactOrderItems.device_id
-	toColumn: DimDevice.device_id
-
-relationship 8c39b612-b4f0-46a0-a751-980084d2af93
-	fromColumn: FactOrderItems.geo_id
-	toColumn: DimGeo.geo_id
-
-relationship 711332c2-7857-4e29-b3fc-60cfde3b2e87
-	fromColumn: FactOrderItems.product_key
-	toColumn: DimProduct.product_key
-

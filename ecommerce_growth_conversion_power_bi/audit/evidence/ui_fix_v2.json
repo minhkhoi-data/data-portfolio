@@ -1,0 +1,11 @@
+{
+  "revision": "UIFIX_v2",
+  "checked_utc": "2026-10-15T08:16:51.132425+00:00",
+  "baseline_five_native_pages_observed": true,
+  "current_ui_native_verified": false,
+  "data_and_model_byte_identical": true,
+  "five_footer_geometry_checks": "PASS",
+  "new_user_label": "New-user session CVR",
+  "count_display_units": "None (1), precision 0",
+  "official_format_source": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.137.json"
+}

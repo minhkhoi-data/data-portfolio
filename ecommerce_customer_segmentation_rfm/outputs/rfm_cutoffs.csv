@@ -1,0 +1,13 @@
+Dimension,RawField,Quantile,Cutoff,TieRule
+R,RecencyDays,0.2,20,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+R,RecencyDays,0.4,59,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+R,RecencyDays,0.6,190,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+R,RecencyDays,0.8,411,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+F,Orders,0.2,1,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+F,Orders,0.4,2,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+F,Orders,0.6,4,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+F,Orders,0.8,8,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+M,NetRecordedValueGBP,0.2,266.796,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+M,NetRecordedValueGBP,0.4,589.042,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+M,NetRecordedValueGBP,0.6,1179.542,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending
+M,NetRecordedValueGBP,0.8,2828.046,Ascending bin uses value > cutoff; equal stays lower; R = 6 - ascending

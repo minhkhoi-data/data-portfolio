@@ -1,0 +1,366 @@
+{
+  "status": "PASS",
+  "scope": "bundled-source independent SQL/raw-value customer, order, line, scoring, label, cohort and link checks",
+  "checks_passed": 68,
+  "checks": [
+    {
+      "check": "Input bytes match release",
+      "verdict": "PASS",
+      "evidence": "bundled gzip SHA-256"
+    },
+    {
+      "check": "Config bytes match release",
+      "verdict": "PASS",
+      "evidence": "config SHA-256"
+    },
+    {
+      "check": "Raw grain and schema",
+      "verdict": "PASS",
+      "evidence": 1067371
+    },
+    {
+      "check": "Bundled numeric domain valid",
+      "verdict": "PASS",
+      "evidence": "no unparsed/out-of-range numeric values in retained bundled data"
+    },
+    {
+      "check": "Signed-line domain",
+      "verdict": "PASS",
+      "evidence": "all retained lines are purchases or C-prefixed negative credits"
+    },
+    {
+      "check": "Purchase and credit counts",
+      "verdict": "PASS",
+      "evidence": [
+        779425,
+        18390
+      ]
+    },
+    {
+      "check": "purchase_lines exact row membership/order",
+      "verdict": "PASS",
+      "evidence": 779425
+    },
+    {
+      "check": "purchase_lines line values",
+      "verdict": "PASS",
+      "evidence": "GBP .01 absolute tolerance"
+    },
+    {
+      "check": "credit_lines exact row membership/order",
+      "verdict": "PASS",
+      "evidence": 18390
+    },
+    {
+      "check": "credit_lines line values",
+      "verdict": "PASS",
+      "evidence": "GBP .01 absolute tolerance"
+    },
+    {
+      "check": "Customer keys and population",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All purchase invoice keys/order",
+      "verdict": "PASS",
+      "evidence": 36969
+    },
+    {
+      "check": "Order field OrderGrossValueGBP",
+      "verdict": "PASS",
+      "evidence": 36969
+    },
+    {
+      "check": "Order field Lines",
+      "verdict": "PASS",
+      "evidence": 36969
+    },
+    {
+      "check": "Order field OrderNumber",
+      "verdict": "PASS",
+      "evidence": 36969
+    },
+    {
+      "check": "Order field OrderDate",
+      "verdict": "PASS",
+      "evidence": 36969
+    },
+    {
+      "check": "Order field LastLineTimestamp",
+      "verdict": "PASS",
+      "evidence": 36969
+    },
+    {
+      "check": "Independent linear raw quantile cutoffs",
+      "verdict": "PASS",
+      "evidence": "sorted raw values with interpolation; equal-to-cutoff stays lower"
+    },
+    {
+      "check": "All customer columns covered",
+      "verdict": "PASS",
+      "evidence": 34
+    },
+    {
+      "check": "All customers: Orders",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: GrossPurchaseValueGBP",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: FirstObservedPurchase",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: LastObservedPurchase",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: PurchaseDays",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: SecondObservedPurchase",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: CreditValueGBP",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: NetRecordedValueGBP",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: CreditToGrossRatio",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: AverageGrossOrderValueGBP",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: RecencyDays",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: ObservedTenureDays",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: RepeatCustomer",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: RepeatOnAnotherDay",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: DaysToSecondOrder",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: Eligible90",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: SecondOrderWithin90",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: NextPurchaseDayTimestamp",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: AnotherPurchaseDayWithin90",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: FirstObservedCohort",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: OrdersLast365Days",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: NetRecordedValueLast365DaysGBP",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: R_Score",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: F_Score",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: M_Score",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: RFM_Score",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: RFM_Profile",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: RFM Segment",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: Lifecycle",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: ValueTier",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: CreditReviewRequired",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: CRM Priority",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: ContactReady",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "All customers: AudienceStatus",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "lifecycle_summary counts",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "lifecycle_summary GrossPurchaseValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "lifecycle_summary CreditValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "lifecycle_summary NetRecordedValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "rfm_segment_summary counts",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "rfm_segment_summary GrossPurchaseValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "rfm_segment_summary CreditValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "rfm_segment_summary NetRecordedValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "crm_priority_summary counts",
+      "verdict": "PASS",
+      "evidence": 5878
+    },
+    {
+      "check": "crm_priority_summary GrossPurchaseValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "crm_priority_summary CreditValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "crm_priority_summary NetRecordedValueGBP",
+      "verdict": "PASS",
+      "evidence": "grouped independent customer values"
+    },
+    {
+      "check": "Every cohort count/rate/window",
+      "verdict": "PASS",
+      "evidence": 625
+    },
+    {
+      "check": "90-day headline denominator/outcome",
+      "verdict": "PASS",
+      "evidence": "2486/5281"
+    },
+    {
+      "check": "All delivered Markdown links",
+      "verdict": "PASS",
+      "evidence": "every local target exists"
+    }
+  ],
+  "customer_rows": 5878,
+  "environment": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5"
+  },
+  "tolerance": {
+    "GBP_absolute": 0.01,
+    "serialized_nonmonetary_absolute": 1e-07,
+    "cutoffs_absolute": 1e-06,
+    "counts_keys_labels": "exact"
+  },
+  "production_functions_imported": false,
+  "input_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45",
+  "config_sha256": "3d03c4c3923177c2397f1c1edf1e64b1171a49940034bf2b04409d23eda32782",
+  "verifier_sha256": "b229ac1dacce5a5aff2faae9789405973e01e454bd3327808b10f70f5782b0e1"
+}

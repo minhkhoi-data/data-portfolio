@@ -1,0 +1,644 @@
+[
+  {
+    "ID": "AUD-01",
+    "criterion": "Scope, yêu cầu gốc và tiêu chí áp dụng được khóa trước khi kết luận.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Scope gồm analysis reproduction + XLSX fixed-source + controls + native chart/table handoff, khóa trong TAKEOVER_SCOPE.md. Unsupported synthetic KPI được loại có lý do; không gọi đã hoàn thành các metric đó."
+  },
+  {
+    "ID": "AUD-02",
+    "criterion": "Mỗi verdict xét đầy đủ các điều kiện bắt buộc trong cùng tiêu chí.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Mỗi record dùng PASS/FAIL/BLOCKED/N/A; native/personal chưa có evidence giữ BLOCKED. Không dùng 139+11 test pass thay mọi criterion."
+  },
+  {
+    "ID": "AUD-03",
+    "criterion": "Evidence đủ độc lập, liên quan và khớp phiên bản kiểm chứng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "WORKBOOK_VALIDATION.json khớp hash STYLEFIX v3; scenario và layout checks dùng hash trước, kế thừa qua STYLE_REPAIR.json chứng minh mọi non-style ZIP part nguyên byte. Source/field comparisons độc lập; tolerance trong scope."
+  },
+  {
+    "ID": "AUD-04",
+    "criterion": "Những claim có rủi ro lớn được ưu tiên và có kiểm tra phủ định.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Kiểm tra phủ định missing source, invalid controls, chronology, unmatched sellers, distinct seller-order vs global-order và cache import; source counts/cardinality được đối chiếu."
+  },
+  {
+    "ID": "AUD-05",
+    "criterion": "Kết luận, thay đổi scope và freeze có thể truy vết.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Lưu version trước/sau, issues + retest, native blockers và history của scenario harness giữ cache cũ. Không freeze toàn project."
+  },
+  {
+    "ID": "BUS-01",
+    "criterion": "Nêu một vấn đề, người dùng kết quả và quyết định cần hỗ trợ.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Project_Overview A4/D4 và Action_List xác định source-associated acquisition/won/value question, người đọc Marketing/Sales/Analytics và review cần hỗ trợ."
+  },
+  {
+    "ID": "BUS-02",
+    "criterion": "Dữ liệu và phương pháp có khả năng trả lời câu hỏi đã nêu.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Bốn field MQL, recorded-won seller mapping và order-item/order fields đủ cho mô tả đã giới hạn. Không dựng Lost/Open, ROI hay rep win rate."
+  },
+  {
+    "ID": "BUS-03",
+    "criterion": "Phạm vi, thời gian, đơn vị tiền và đối tượng được xác định trước khi diễn giải.",
+    "verdict": "PASS",
+    "observation_and_evidence": "README/docs/SOURCES.md xác định contact/won/purchase windows, sampled population và original price units; không giả common extraction cutoff."
+  },
+  {
+    "ID": "BUS-04",
+    "criterion": "Từng phần phân tích có câu hỏi, đầu vào, đầu ra và vai trò riêng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Channel, rep, month và seller views có grain/time basis/role riêng; Action_List nối mỗi finding tới review đề xuất."
+  },
+  {
+    "ID": "BUS-05",
+    "criterion": "Tiêu chí thành công của project phù hợp mục tiêu và có thể kiểm tra.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Scope giao source, analytical reproduction, workbook, 12 sheet/4 charts/2 controls và gate native rõ; checks có kết quả kỳ vọng."
+  },
+  {
+    "ID": "SRC-01",
+    "criterion": "Nguồn, phiên bản và lịch sử tạo dữ liệu được truy vết.",
+    "verdict": "PASS",
+    "observation_and_evidence": "5 CSV hashes khớp provenance/manifest; Olist publisher data cards xác nhận nguồn thật ẩn danh. Version/hash từng source có trong source_manifest.json."
+  },
+  {
+    "ID": "SRC-02",
+    "criterion": "Một dòng đại diện cho gì và khóa định danh được xác định đúng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Fresh run kiểm uniqueness MQL/deal/seller/order và composite item key. 8.000 lead rows vẫn là 8.000 sau left join; 842 seller aggregates."
+  },
+  {
+    "ID": "SRC-03",
+    "criterion": "Đơn vị, kiểu, ý nghĩa và phạm vi biến quan trọng được ghi rõ.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Data_Dictionary, METHODS, source schema và field comparisons 139 checks: ngày numeric, count/rate/day/item price units và ID text riêng."
+  },
+  {
+    "ID": "SRC-04",
+    "criterion": "Biết dữ liệu thiếu hoặc không đại diện cho những đối tượng nào.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Non-won states không quan sát; unequal follow-up/linkage, missing origin và independent commercial sample được ghi cạnh outputs/memo."
+  },
+  {
+    "ID": "SRC-05",
+    "criterion": "Quyền sử dụng, thông tin nhạy cảm và giới hạn chia sẻ được xử lý.",
+    "verdict": "PASS",
+    "observation_and_evidence": "SOURCES giữ publisher attribution + CC BY-NC-SA 4.0; không cấp lại licence rộng hơn. Handoff riêng; IDs source đã anonymized, không thêm PII/secrets."
+  },
+  {
+    "ID": "CLN-01",
+    "criterion": "Mỗi thao tác loại, sửa hoặc bổ sung dữ liệu có lý do gắn với câu hỏi.",
+    "verdict": "PASS",
+    "observation_and_evidence": "METHODS ghi left join 1:1, item/order m:1, seller aggregation, date-anomaly duration exclusion và delivered/post-win eligibility."
+  },
+  {
+    "ID": "CLN-02",
+    "criterion": "Số dòng và số tiền trước/sau từng bước có thể đối chiếu.",
+    "verdict": "PASS",
+    "observation_and_evidence": "8.000 MQL, 842 wins, 5.044 candidate items, 4.984 eligible, 4.463 seller-order links/4.457 global orders và 664.858 được đối soát."
+  },
+  {
+    "ID": "CLN-03",
+    "criterion": "Ô trống, trùng, hủy/hoàn và bất thường được xử lý theo nghĩa nghiệp vụ.",
+    "verdict": "PASS",
+    "observation_and_evidence": "60 blank origin khác 1.099 unknown; giữ 1 won-before-contact ở wins; không biến 462 unmatched sellers thành zero-sales; chỉ delivered items được cộng."
+  },
+  {
+    "ID": "CLN-04",
+    "criterion": "Gom nhóm và nối bảng bảo toàn mức dữ liệu dự định.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Merge cardinality asserts + independent field/seller/channel totals; seller grain trước join lead summaries tránh nhân lead/value."
+  },
+  {
+    "ID": "CLN-05",
+    "criterion": "Dữ liệu gốc và quy tắc biến đổi được giữ để truy vết.",
+    "verdict": "PASS",
+    "observation_and_evidence": "CSV nguồn nguyên byte; prepared outputs tái lập bằng run_analysis.py; formulas/table mappings có lineage + stable aliases."
+  },
+  {
+    "ID": "CLN-06",
+    "criterion": "Kiểu dữ liệu, parsing và đơn vị không âm thầm làm sai quan sát.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Ngày parse errors=raise, source nonnegative prices/freight, source dates giữ đúng giá trị, duration calendar days và chronology check riêng."
+  },
+  {
+    "ID": "MET-01",
+    "criterion": "Mỗi KPI có công thức nghiệp vụ, tử số, mẫu số và tập đủ điều kiện.",
+    "verdict": "PASS",
+    "observation_and_evidence": "METHODS/Data_Dictionary định numerator/denominator/eligibility: recorded wins/MQLs, linked sellers/wins, valid won durations, eligible price sum."
+  },
+  {
+    "ID": "MET-02",
+    "criterion": "KPI đúng tên gọi và đơn vị.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Không gọi sampled item price là Olist revenue/profit/LTV/deal value; không gọi recorded won share là closed-outcome win rate hoặc mature cohort conversion."
+  },
+  {
+    "ID": "MET-03",
+    "criterion": "Tổng hợp rate và average dùng trọng số phù hợp câu hỏi.",
+    "verdict": "PASS",
+    "observation_and_evidence": "10.525%=842/8.000; channel shares tính từ totals, cycle means dùng valid won counts; không average không trọng số các rates."
+  },
+  {
+    "ID": "MET-04",
+    "criterion": "Các phép tính vượt qua kiểm tra độc lập và sanity check.",
+    "verdict": "PASS",
+    "observation_and_evidence": "139/139 source/derived/aggregate comparisons và sanity/cardinality checks; distinct links/global orders và price totals khớp."
+  },
+  {
+    "ID": "MET-05",
+    "criterion": "Định nghĩa thời gian và cửa sổ so sánh nhất quán.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Contact cohort khác calendar won/purchase month; cycle INT(won)-contact_date; unequal follow-up và source timezone không biết được công bố."
+  },
+  {
+    "ID": "MET-06",
+    "criterion": "Kết quả không xác định được hiển thị đúng nghĩa.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Zero MQL month -> blank share; zero valid cycle -> blank mean; seller no eligible activity -> blank value. Invalid controls cho #N/A khi full recalculation."
+  },
+  {
+    "ID": "ANA-01",
+    "criterion": "Phương pháp được chọn vì phù hợp câu hỏi, không vì tên công cụ.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Descriptive joins/counts/cycles/value trả lời đúng question; không thêm model/causal ranking ngoài scope."
+  },
+  {
+    "ID": "ANA-02",
+    "criterion": "Quy tắc phân nhóm, threshold, precedence và fallback rõ ràng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Controls nguyên 1..365; slow là >threshold, support valid_cycles>=minimum. Kiểm 14/30 boundary (16/8 bằng cutoff) và invalid 0; stable ID alias sorting."
+  },
+  {
+    "ID": "ANA-03",
+    "criterion": "Nhãn nhóm có ý nghĩa phù hợp đúng điều kiện tính.",
+    "verdict": "PASS",
+    "observation_and_evidence": "No won record không là Lost/Open; Slow won cycle không là inactivity; sales sample linkage không là activation probability."
+  },
+  {
+    "ID": "ANA-04",
+    "criterion": "Giá trị của từng nhánh và quan hệ giữa các nhánh được giải thích đúng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Seller build feed channel/rep value; separate calendar/cohort views có vai trò mô tả. Action evidence nối formulas; không nhận tích hợp RFM hoặc pipeline."
+  },
+  {
+    "ID": "ANA-05",
+    "criterion": "Các giả định/quy tắc có ảnh hưởng lớn được kiểm tra hoặc công bố giới hạn.",
+    "verdict": "PASS",
+    "observation_and_evidence": "20/30 là analyst review rules, không validated optimal thresholds; unequal sample/time coverage material được nêu trong memo và sheet notes."
+  },
+  {
+    "ID": "ANA-06",
+    "criterion": "Quyết định không dựa vào một lựa chọn tùy tiện chưa được kiểm tra ở điểm trọng yếu.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Thử alternate 14-day threshold vs 30 (414 vs 287), support=1 và invalid controls; chỉ đề xuất review, không claim optimal allocation."
+  },
+  {
+    "ID": "INF-01",
+    "criterion": "Claim quan trọng có bằng chứng đúng đối tượng và phiên bản.",
+    "verdict": "PASS",
+    "observation_and_evidence": "DECISION_MEMO số 2296/271,1586/195,842/8000,841,14,287,380,376,664858 khớp source/outputs và Dashboard cuối."
+  },
+  {
+    "ID": "INF-02",
+    "criterion": "Phân biệt mô tả, suy luận, giả định, dự báo và nhân quả.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Mọi findings dùng descriptive/source-associated language; không causal effect/ROI/measured uplift/forecast."
+  },
+  {
+    "ID": "INF-03",
+    "criterion": "Kết luận xem xét các giải thích khác có thể làm đổi quyết định.",
+    "verdict": "PASS",
+    "observation_and_evidence": "README/METHODS/memo xem xét follow-up, sample linkage, assignment/account mix, acquisition spend và margins trước channel/rep conclusions."
+  },
+  {
+    "ID": "INF-04",
+    "criterion": "Sai số và độ bất định được thể hiện phù hợp loại claim.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Scope là descriptive sample, không confirmatory/general population claim; precision counts exact, rates 1 decimal trên UI, mean approx trong memo."
+  },
+  {
+    "ID": "INF-05",
+    "criterion": "Các hạn chế material đi cùng kết luận bị ảnh hưởng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Non-won status, linkage, currency, revenue meaning và native Excel pending ở README/memo/handoff; không chỉ giấu trong audit."
+  },
+  {
+    "ID": "DEC-01",
+    "criterion": "Mỗi đề xuất nối với một finding và mục tiêu cụ thể.",
+    "verdict": "PASS",
+    "observation_and_evidence": "5 Action_List reviews nối origin missing, chronology, unobserved outcome, sample coverage và slow cycles với evidence cụ thể."
+  },
+  {
+    "ID": "DEC-02",
+    "criterion": "Các dữ liệu cần cho quyết định đều có hoặc được nêu rõ còn thiếu.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Spend/margins/outcome/status/history/consent missing được ghi rõ; không tự phát minh inputs cho allocation hoặc outreach."
+  },
+  {
+    "ID": "DEC-03",
+    "criterion": "Mức hành động tương xứng bằng chứng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Đề xuất reconcile/instrument/review và collect comparison; không tự scale budget, rollout hoặc contact seller."
+  },
+  {
+    "ID": "DEC-04",
+    "criterion": "Phân biệt đề xuất, thử nghiệm dự kiến và tác động đã đo.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Action rows là proposed owner roles/windows/KPIs; no deployment/no measured improvement; không nhận kết quả kinh doanh chưa đo."
+  },
+  {
+    "ID": "DEC-05",
+    "criterion": "Có cách kiểm chứng bước tiếp theo nếu muốn dùng kết quả ra quyết định thật.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Action_List có next extract/data comparison, success measure và scope limits; descriptive project không phải experiment đã chạy."
+  },
+  {
+    "ID": "DEC-06",
+    "criterion": "Đề xuất đủ cụ thể và khả thi với mức triển khai được tuyên bố.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Có proposed Marketing/Sales/CRM/Analytics owners, population/finding, window, success metric và thiếu consent/cost khi liên quan."
+  },
+  {
+    "ID": "RUN-01",
+    "criterion": "Đường chạy và dependencies được ghi đủ để tái lập trong môi trường hỗ trợ.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Fresh run trong folder outputs rỗng hoàn tất với pandas2.2.3. README sửa đúng bounded full-authoring entrypoint; optional full rebuild nêu chưa fresh-run."
+  },
+  {
+    "ID": "RUN-02",
+    "criterion": "Entrypoint chính hoàn tất và tạo đầu ra mong đợi.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Entrypoint mandatory run_analysis.py exit0/RUN_STATUS PASS; summary + 5 source hashes + 4 analytical CSVs khớp byte bản giao. Optional full XLSX rebuild chưa chạy trọn."
+  },
+  {
+    "ID": "RUN-03",
+    "criterion": "File native hoạt động trong ứng dụng đích nếu tuyên bố usable.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "Chưa mở/recalculate/save/reopen đúng workbook trong Microsoft Excel Desktop. Calc không thay evidence ứng dụng đích."
+  },
+  {
+    "ID": "RUN-04",
+    "criterion": "Thay đổi input liên quan được phản ánh đúng hoặc trạng thái tĩnh được công bố.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "Công thức cho đúng kết quả ở 4 full-recalculation scenarios. UI dependency/update sau thao tác đổi control trong Excel vẫn chưa kiểm tra."
+  },
+  {
+    "ID": "RUN-05",
+    "criterion": "Kết quả tái lập khớp với bản bàn giao và QA phát hiện lỗi thực chất.",
+    "verdict": "PASS",
+    "observation_and_evidence": "139 baseline checks chạy lại trên STYLEFIX v3; 11 scenario checks trước tái sử dụng qua non-style byte-preservation proof, không nhận fresh-run mới. Source analytical outputs vẫn khớp; style repair giữ cells/formulas/charts/tables."
+  },
+  {
+    "ID": "RUN-06",
+    "criterion": "Lỗi input/dependency được phát hiện và không tạo đầu ra thành công giả.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Thiếu source -> exit1/RUN_STATUS FAIL và không tạo summary mới; source schema/types có guards; invalid controls hiển thị INVALID/#N/A khi full recalculation."
+  },
+  {
+    "ID": "OUT-01",
+    "criterion": "Bảng/biểu đồ thể hiện đúng metric, mẫu số, đơn vị và khoảng thời gian.",
+    "verdict": "PASS",
+    "observation_and_evidence": "4 charts/series/ranges/caches đối chiếu dữ liệu, đủ 11 origins và 10 SRs; sửa overlap, xem final Calc Dashboard. Period/unit names + zero baseline đúng."
+  },
+  {
+    "ID": "OUT-02",
+    "criterion": "Bộ lọc và tương tác giữ đúng semantics và phạm vi chỉ số.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "Control/auto-filter descriptors có trong file; chưa kiểm tra tương tác/filter thực tế trong Microsoft Excel."
+  },
+  {
+    "ID": "OUT-03",
+    "criterion": "Mọi đầu ra quan trọng nhất quán về số liệu, phiên bản và thông điệp.",
+    "verdict": "PASS",
+    "observation_and_evidence": "README, METHODS, memo, analytical outputs, workbook/cached outputs/final Calc và release hash thống nhất; historical failed harness được đánh dấu riêng."
+  },
+  {
+    "ID": "OUT-04",
+    "criterion": "Người đọc tìm được vấn đề, bằng chứng, kết luận và giới hạn dễ dàng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "README Start here; Dashboard/12 sheet viewports đã xem, 4 changed views retest. IDs/dates widen để đọc source; không dùng PNG thay native gate."
+  },
+  {
+    "ID": "OUT-05",
+    "criterion": "Link, đường dẫn và hướng dẫn khớp file thực giao.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Relative paths/file inventory/source references có thật. README không còn hướng người dùng chạy whole-data authoring từng OOM; dependencies/optional limitations nêu rõ."
+  },
+  {
+    "ID": "OUT-06",
+    "criterion": "Gói bàn giao đủ các file đã hứa và sạch nội dung gây hiểu sai hoặc lộ thông tin.",
+    "verdict": "PASS",
+    "observation_and_evidence": "ZIP có 5 unchanged source CSVs, workbook, code/docs/audit + current evidence, không scenario XLSX variants/stale generated summaries/secrets; history đánh dấu rõ."
+  },
+  {
+    "ID": "HR-01",
+    "criterion": "Có thể trình bày đủ 6 pillar mà không phóng đại đóng góp.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "Chưa có người học tự trình bày 6 pillar trên bản Olist này."
+  },
+  {
+    "ID": "HR-02",
+    "criterion": "Có thể giải thích metric và lựa chọn phương pháp bằng một ví dụ nhỏ.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "Chưa có ví dụ nhỏ và lời giải thích metric/phương pháp từ chính người học."
+  },
+  {
+    "ID": "HR-03",
+    "criterion": "Biết đóng góp cá nhân và mức AI hỗ trợ.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "README khai báo AI đúng, nhưng chưa có evidence đóng góp/khả năng bảo vệ từ người học."
+  },
+  {
+    "ID": "HR-04",
+    "criterion": "Claim trên CV/README được kiểm tra cùng bộ tiêu chí.",
+    "verdict": "PASS",
+    "observation_and_evidence": "README/memo/workbook không nhận measured uplift, profit, production/causal hoặc independent authorship. Không có CV trong scope, không claim đã audit CV."
+  },
+  {
+    "ID": "HR-05",
+    "criterion": "Bản bàn giao có verdict, phạm vi kiểm tra và danh sách điều kiện chưa xác minh.",
+    "verdict": "PASS",
+    "observation_and_evidence": "TAKEOVER_AUDIT.md/criteria.csv ghi version, checks, scope, gate native Excel/personal và hạn chế reproduction; verdict không hứa tuyển dụng."
+  },
+  {
+    "ID": "CUS-01",
+    "criterion": "Frequency dùng đơn đúng định nghĩa và nêu hạn chế hóa đơn cùng ngày.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CUS-02",
+    "criterion": "RFM scoring không tạo khác biệt tùy tiện không được công bố.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CUS-03",
+    "criterion": "Vai trò RFM so với Lifecycle/CRM Priority được nêu và đánh giá.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CUS-04",
+    "criterion": "Repeat và cohort rates kiểm soát cửa sổ quan sát.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CUS-05",
+    "criterion": "Lifecycle và high-value rules minh bạch, nhãn không xung đột không giải thích.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CUS-06",
+    "criterion": "Doanh thu và chương trình giữ khách được diễn giải đúng.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CUS-07",
+    "criterion": "F/M và repeat comparisons xem xét độ dài lịch sử quan sát.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-01",
+    "criterion": "Xác định đúng một dòng và tính cộng được của các cột.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-02",
+    "criterion": "CTR và các funnel rates được đối chiếu bằng tổng đúng denominator.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-03",
+    "criterion": "Chi phí, conversion và revenue đủ cơ sở cho CAC/ROAS.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-04",
+    "criterion": "Quy tắc scale/optimise/pause dùng bằng chứng và xử lý low-volume.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-05",
+    "criterion": "Channel/campaign comparisons có scope và giới hạn attribution.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-06",
+    "criterion": "Review queue là đề xuất có điều kiện, không phải budget optimisation đã validated.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "CAM-07",
+    "criterion": "So sánh hiệu quả và khuyến nghị ngân sách có cơ sở kinh tế phù hợp.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-01",
+    "criterion": "Mức dữ liệu, định danh và relationships hợp lệ.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-02",
+    "criterion": "DAX và filters tính đúng KPI dưới các tình huống sử dụng.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-03",
+    "criterion": "Experiment có assignment unit, target population và outcome window rõ.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-04",
+    "criterion": "SRM, balance và exclusions được kiểm tra theo thiết kế.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-05",
+    "criterion": "Ước lượng effect, CI, p-value và planning assumptions nhất quán.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-06",
+    "criterion": "Guardrail pass dùng đúng câu hỏi thống kê.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-07",
+    "criterion": "Rollout claim phù hợp mọi gate, dữ liệu synthetic và subgroup limits.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "EXP-08",
+    "criterion": "Luật so sánh và dừng thử nghiệm phù hợp mức suy luận công bố.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "XLS-01",
+    "criterion": "Raw columns, Lookups và derived columns có lineage đúng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Lookups map raw origin/rep IDs, prepared and formula columns có trace; raw source giữ nguyên; controls là assumptions không targets/quota."
+  },
+  {
+    "ID": "XLS-02",
+    "criterion": "Outcome, revenue và pipeline không tráo nghĩa.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Áp dụng nguồn mới: recorded won share = observed wins/sample MQLs; item-price sum không deal/Olist revenue. Lost/Open/pipeline/discount/probability không dựng vì không có source."
+  },
+  {
+    "ID": "XLS-03",
+    "criterion": "Ngày và cờ stale phù hợp định nghĩa được công bố.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Calendar-day cycle, chronology exclusion và explicit threshold >14/>30 đúng; không tạo inactivity/last-contact field từ age."
+  },
+  {
+    "ID": "XLS-04",
+    "criterion": "Funnel, rep/channel/month comparisons có mẫu và thời gian đúng.",
+    "verdict": "PASS",
+    "observation_and_evidence": "Channel sample denominator, rep won-only counts/cycles, calendar vs cohort month được kiểm; không suy lost hoặc rep target attainment."
+  },
+  {
+    "ID": "XLS-05",
+    "criterion": "Workbook mở/recalc và dependency giữa sheets đúng với claim.",
+    "verdict": "BLOCKED",
+    "observation_and_evidence": "12 sheet, 4 chart native và table ranges/series đúng qua static + Calc. Gate Microsoft Excel open/recalc/UI còn thiếu."
+  },
+  {
+    "ID": "SQL-01",
+    "criterion": "Schema, import và clean views có thể tái lập trên database đích.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "SQL-02",
+    "criterion": "JOIN, CTE, window và percentile tính đúng trên dữ liệu kiểm tra.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "SQL-03",
+    "criterion": "Nhóm chi phí và aggregates dùng đúng đơn vị/định nghĩa.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "SQL-04",
+    "criterion": "Kết luận mô tả và screenshots truy về query thực.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "NET-01",
+    "criterion": "Basket transformation bảo toàn hóa đơn và item presence.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "NET-02",
+    "criterion": "Edge metric và threshold được định nghĩa đúng.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "NET-03",
+    "criterion": "Graph/community results ổn định và có nghĩa phù hợp.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "NET-04",
+    "criterion": "Exports và đề xuất product affinity có evidence đủ.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "AIR-01",
+    "criterion": "Nguồn, coverage và population được thống nhất.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "AIR-02",
+    "criterion": "OTP/cancellation dùng numerator, denominator và weighting đúng.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "AIR-03",
+    "criterion": "So sánh hãng/sân bay/thời gian có thể kiểm tra.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "AIR-04",
+    "criterion": "R outputs và Tableau native workbook khớp và usable theo scope.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-01",
+    "criterion": "Target, features, split unit và prediction-time availability rõ.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-02",
+    "criterion": "Preprocessing được fit trong training/fold phù hợp.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-03",
+    "criterion": "Training, tuning và final evaluation được tách đúng.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-04",
+    "criterion": "Model có baseline và metrics phù hợp mục tiêu.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-05",
+    "criterion": "Overfit/underfit, errors và uncertainty được đánh giá tương xứng scope.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-06",
+    "criterion": "Interpretation và phạm vi sử dụng không vượt evaluation.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  },
+  {
+    "ID": "ML-07",
+    "criterion": "Cách chia dữ liệu phản ánh đối tượng và thời điểm dự báo thật.",
+    "verdict": "N/A",
+    "observation_and_evidence": "Module khác project Excel Olist fixed-source; không chấm thay năng lực RFM/campaign/experiment/SQL/network/airline/ML."
+  }
+]

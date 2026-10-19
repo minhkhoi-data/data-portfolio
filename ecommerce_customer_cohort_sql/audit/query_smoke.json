@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "read_only_query_runner": true,
+  "csv_matches_published_result": true,
+  "rows": 3
+}

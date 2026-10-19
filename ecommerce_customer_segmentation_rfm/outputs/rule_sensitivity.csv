@@ -1,0 +1,7 @@
+Variant,ActiveDays,DormantDays,HighValueMinMScore,CreditReviewRatio,ChangedActions,AtRiskCustomers,CreditReviewCustomers,HigherValueCustomers
+base,90,180,4,0.5,0,588,73,2351
+shorter lifecycle,60,120,4,0.5,863,742,73,2351
+longer lifecycle,120,240,4,0.5,529,667,73,2351
+higher value stricter,90,180,5,0.5,1163,588,73,1176
+credit review earlier,90,180,4,0.25,78,588,151,2351
+credit review later,90,180,4,0.75,20,588,53,2351

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "python_files_parsed": 7,
+  "sql_files": 12,
+  "html_tables": 4,
+  "html_remote_assets": 0,
+  "offline_report": true,
+  "upstream_input_files": 11
+}

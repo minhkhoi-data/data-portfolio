@@ -1,15 +1,15 @@
 table DimDevice
-	lineageTag: 6d2051ea-c74f-4251-a1f2-9482912d372a
+	lineageTag: 5b99b014-800f-572f-bf11-a7e46fbeea85
 
 	column device_id
 		dataType: int64
-		lineageTag: 001e46db-576d-440d-8a7c-6328deddab40
+		lineageTag: 4da25cfe-324b-5121-9136-cf9c7ab7c6d8
 		summarizeBy: none
 		sourceColumn: device_id
 
 	column device_category
 		dataType: string
-		lineageTag: 126aa224-8c79-4af1-a3a9-78f7bf9c8bb6
+		lineageTag: 38c0beee-c963-5cc8-999d-55a3b4ba4855
 		summarizeBy: none
 		sourceColumn: device_category
 
@@ -17,17 +17,12 @@ table DimDevice
 		mode: import
 		source =
 				let
-					EmbeddedBase64 = Text.Combine({
-						"H4sIAPhNsWoC/0tJLctMTo3PTNFJgbCSE0tS0/OLKrkMdXLzkzJzUrmMgFLF2SX5BVzGOiWJSTmpJVwALsuAbDYAAAA="
-					}),
-					CompressedBinary = Binary.FromText(EmbeddedBase64, BinaryEncoding.Base64),
-					CsvBinary = Binary.Decompress(CompressedBinary, Compression.GZip),
-					Source = Csv.Document(CsvBinary, [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Source = Csv.Document(File.Contents(DataFolder & "/dim_device.csv"), [Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.Csv, ExtraValues=ExtraValues.Error]),
 					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-					Typed = Table.TransformColumnTypes(Headers, {
+					Checked = if Table.ColumnNames(Headers) = {"device_id", "device_category"} then Headers else error Error.Record("SchemaMismatch", "CSV headers do not match DimDevice", null),
+					Typed = Table.TransformColumnTypes(Checked, {
 					{"device_id", Int64.Type},
 					{"device_category", type text}
-					})
+					}, "en-US")
 				in
 					Typed
-

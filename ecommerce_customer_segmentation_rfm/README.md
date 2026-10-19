@@ -1,79 +1,77 @@
-# Customer Lifecycle, Retention & CRM Prioritisation
+# Customer Lifecycle, RFM & Retention — Remaster
 
-**Flagship 1 of 3 · Customer & Growth Analytics**  
-**Tools:** Python, pandas, matplotlib  
-**Data:** 779,425 clean transaction lines · 36,969 orders · 5,878 customers · Dec 2009–Dec 2011
+**Customer & Growth Analytics · Python / pandas / SQLite QA · Standalone takeover 2026-10-15 (analytical core 1.0.2)**
 
-## Business decision
+Current standalone handoff: read `START_HERE_VI.md` and `audit/AUDIT_REPORT.md`. The consolidated runner records pipeline, fixtures, SQL validation and fresh notebook execution. It explicitly blocks notebook completion when dependencies are absent. Historical evidence is retained under `audit/history/` and is not presented as a current execution.
 
-Which customers should the business protect, develop, win back, or deprioritise—and what evidence should CRM use before spending on each group?
+**Business question:** Which observed customer histories justify a retention, second-order or win-back **test**, and which require value/credit review first?
 
-The answer cannot come from RFM alone. This project therefore connects four views of customer behaviour:
-
-1. **RFM value segmentation** identifies who has historically mattered.
-2. **Repeat-purchase analysis** measures whether acquisition turns into a second order.
-3. **Cohort retention** shows whether customers return in later months without mixing mature and immature cohorts.
-4. **Lifecycle status** converts recency and purchase history into an actionable CRM queue.
-
-![Customer lifecycle decision dashboard](figures/customer_lifecycle_decision_dashboard.png)
-
-## Decision summary
-
-- **72.4%** of customers placed at least two orders.
-- Among customers observed for at least 90 days, **47.6%** made a second purchase within 90 days; repeat customers took a median **55 days** to reach their second order.
-- Weighted cohort retention was **23.4% in month 1**, **24.9% in month 3**, **22.1% in month 6**, and **22.7% in month 12**. Only cohorts with a complete observation window enter each headline rate.
-- **2,524 active repeat customers** generated **79.7%** of historical revenue, so protecting this group is the first priority.
-- **589 at-risk customers** generated **6.1%** of historical revenue. Within them, 131 high-value customers form the most defensible win-back test audience.
-- Dormant customers are numerous but should receive low-cost treatment unless a holdout test proves incremental ROI.
-
-The recommended action is not “send more discounts.” It is to protect high-value active customers, trigger a second-purchase journey before the observed 55-day median, and randomise eligible at-risk customers into win-back and holdout groups.
-
-## Metric definitions
-
-| Metric | Definition | Bias control |
-|---|---|---|
-| Repeat customer rate | Customers with at least two distinct orders ÷ all customers | Order count uses distinct invoices, not transaction lines |
-| 90-day repeat rate | Customers whose second order occurred within 90 days ÷ customers observable for at least 90 days | Recent customers without a full window are excluded |
-| Monthly cohort retention | Customers active in month *n* after first purchase ÷ acquisition-cohort size | Headline rates use only cohorts with a complete month-*n* window |
-| Recency | Days from last order to one day after the final observed transaction | Snapshot date is fixed and reproducible |
-| Lifecycle status | New, active repeat, at risk, or dormant based on order count and 90/180-day inactivity rules | Rules are disclosed business cut-offs, not learned causal thresholds |
-
-December 2011 ends on the ninth day of the month. November 2011 is therefore treated as the last complete month when calculating mature-cohort retention.
-
-## Analysis workflow
-
-`analysis/run_analysis.py` is the canonical analysis. It validates the schema; cleans transaction data; reconciles revenue; creates order-, customer-, segment-, cohort-, and CRM-priority outputs; excludes right-censored cohorts from headline retention rates; runs quality assertions; and writes reproducible tables, figures, and a decision memo.
-
-Run from the repository root:
-
-```bash
-python ecommerce_customer_segmentation_rfm/analysis/run_analysis.py
-```
-
-Expected result:
-
-```text
-PASS — customer lifecycle analysis completed
-Customers: 5,878
-Repeat customer rate: 72.39%
-90-day repeat rate: 47.59%
-Month-1 weighted retention: 23.45%
-Month-3 weighted retention: 24.86%
-```
+This is a historical descriptive project using Online Retail II. It produces auditable test-audience hypotheses; it does not claim campaign uplift, profit, future CLV or production deployment.
 
 ## Start here
 
-- [Decision memo](memo/business_memo.md)
-- [Lifecycle decision dashboard](figures/customer_lifecycle_decision_dashboard.png)
-- [Cohort-retention heatmap](figures/cohort_retention_heatmap.png)
-- [Canonical analysis](analysis/run_analysis.py)
-- [Retention KPI table](outputs/retention_kpis.csv)
-- [Customer-level action table](outputs/customer_lifecycle_table.csv)
+1. [Decision memo — generated from this release](memo/business_memo.md)
+2. [Beginner explanation in Vietnamese](docs/LEARNING_GUIDE_VI.md)
+3. [Methods, metric definitions and exact rules](docs/METHODS.md)
+4. [Audit verdict and evidence](audit/AUDIT_REPORT.md)
+5. [Jupyter notebook](ecommerce_customer_segmentation_rfm.ipynb) or [saved notebook HTML](notebook_preview.html)
 
-## Limits and next test
+![Customer behaviour and CRM test audiences](figures/customer_lifecycle_decision_dashboard.png)
 
-The analysis is observational. RFM, cohort retention, and lifecycle status describe behaviour; they do not prove that a campaign causes repeat purchasing. The 90/180-day cut-offs are transparent operating rules and should be recalibrated against product replenishment cycles. The next step is a randomised holdout test measuring incremental reactivation, contribution margin, and unsubscribe rate—not raw campaign conversion alone.
+## One connected analytical flow
 
-## Data source
+**Invoice lines → purchases and credits → distinct orders → customer history → lifecycle + RFM/value review → conditional CRM test audiences.**
 
-Online Retail II, UCI Machine Learning Repository, DOI `10.24432/C5CG6D`, licensed by UCI under CC BY 4.0. See the repository-level [`DATA_SOURCES.md`](../DATA_SOURCES.md) for attribution and usage notes.
+- **Lifecycle** uses absolute recency and distinct purchase invoices to select the journey.
+- **RFM** uses tie-preserving relative scores. R describes recency, F purchase invoices, M purchase value less recorded credits. Monetary value distinguishes treatment across lifecycle states; it is not used only for Champions.
+- **Repeat analysis** measures second-order conversion in a common, fully observable 90-day window. It frames timing/baseline questions for a proposed second-order test; it is not an individual prediction.
+- **Calendar cohorts** measure purchase activity at later months. They show time/cohort context; partial or future windows remain missing, not fake zeros.
+- **Value review** overrides outreach if recorded net value is nonpositive or credits are at least 50% of gross purchase value. This threshold is a disclosed screening hypothesis, with sensitivity checks.
+
+The median delay among repeaters does **not** identify the best campaign day. Both current RFM labels and observed repeat status are descriptive outcomes, not proof that a treatment works.
+
+## Run the project
+
+Tested with Python 3.12. Extract the ZIP and open a terminal in this folder (the folder containing this README):
+
+```bash
+python -m pip install -r requirements.txt
+python analysis/run_analysis.py
+python -m unittest discover -s tests -v
+python analysis/validate_project.py
+python analysis/verify_release.py
+```
+
+The script resolves its data paths from its own location, so it can also run from another working directory. Identifiers and integer quantities must be positive-ID/nonzero-quantity integers within the exactly representable range (absolute quantity and ID at most 2^53−1); larger values are excluded and counted, never wrapped. For another compatible input, use `--data path/to/file.csv.gz --destination path/to/new_folder`; the current source attribution/audit applies only to the bundled source and release. A changed source or rule requires a new audit.
+
+For the notebook:
+
+```bash
+python -m pip install -r requirements-notebook.txt
+python analysis/execute_notebook.py
+```
+
+Or open the notebook in Jupyter and run all cells from the project folder. The delivered notebook was executed through a fresh Jupyter kernel; the kernel method and actual environment are recorded (see [execution evidence](audit/notebook_execution.json)). The runner supports both fresh subprocess and in-process kernels; `audit/notebook_execution.json` records the method actually tested for this handoff. Outside managed runtimes it tries a subprocess using the runner’s interpreter. Set RFM_KERNEL_MODE to auto, subprocess or inprocess to choose explicitly. No browser/frontend compatibility certification is claimed. All figures, CSVs and the memo are static snapshots until rerun. The notebook calls the same pipeline, so it does not contain a second incompatible implementation.
+
+## Outputs and evidence
+
+- [Run summary — exact counts, values, window and input hash](outputs/run_summary.json)
+- [Sequential cleaning/value reconciliation](outputs/cleaning_reconciliation.csv)
+- `outputs/purchase_lines.csv.gz` / `credit_lines.csv.gz`: prepared invoice lines, retaining source columns plus line value.
+- [Orders](outputs/orders.csv): one row per customer/invoice.
+- [Customer table](outputs/customer_lifecycle_table.csv): R/F/M, lifecycle, credits, observation tenure and proposed audience.
+- [RFM cutoffs](outputs/rfm_cutoffs.csv) and [crosswalk](outputs/rfm_lifecycle_crosswalk.csv): inspect how states, scores and actions connect.
+- [90-day curve](outputs/repeat_90_curve.csv), [cohort repeat](outputs/repeat_90_by_cohort.csv), [mature cohort KPIs](outputs/retention_kpis.csv).
+- [Rule sensitivity](outputs/rule_sensitivity.csv), [duplicate sensitivity](outputs/duplicate_sensitivity.json), [tenure context](outputs/tenure_context.csv).
+- [Independent SQL validation](audit/independent_validation.json), [all-customer/cohort verification](audit/extended_validation.json), fixture tests, fresh-run and notebook evidence in `audit/`. A fresh full official-source comparison is recorded in `audit/takeover_source_verification.json`; see `DATA_SOURCES.md` to repeat it with the optional verification requirements.
+- [All 107 current criteria decisions](audit/FINAL_CHECKLIST.csv): 63 PASS, 0 FAIL, 3 BLOCKED (the three personal evidence gates), 41 N/A with reasons. The artifact is verified within the declared Python/fresh-kernel scope; interview readiness remains blocked. Previous reports are preserved as history.
+
+## Source, coverage and limitations
+
+[Source attribution and verification](DATA_SOURCES.md). The source is one UK non-store retailer, includes wholesale customers, and covers December 2009–December 2011. It is not current market evidence for Vietnam. Missing customer IDs limit identifiable-customer coverage. First observed purchase is not verified acquisition. Two invoices on one day do not prove separate visits. Returns/credits are not linked to individual purchase invoices: order frequency is positive purchase invoices, not confirmed non-returned orders. Net recorded value includes invoice charges and is not margin. Lifetime F/M depend on observation tenure; review the 365-day context and sensitivity outputs before allocating real resources.
+
+Customer IDs are public source identifiers, not contact permissions. Every audience has `ContactReady=False`; a CRM lead must verify live status, consent, costs, margin and treatment design before a test. No marketing action was executed.
+
+## Ownership and interview readiness
+
+This remaster was implemented with AI assistance under the user's direction. Original personal authorship is not independently established. The audit certifies only checked artifacts in the declared scope; the user's ability to explain/apply them is a separate assessment. See [contribution and interview boundaries](docs/CONTRIBUTION.md). Do not claim measured business improvement or that every line was written independently.

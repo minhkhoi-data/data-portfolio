@@ -1,0 +1,10 @@
+{
+  "fixed_population_users": 181033,
+  "return_rate_d7": 0.08940911325559428,
+  "return_rate_d30": 0.1181165864787083,
+  "first_purchase_rate_d30": 0.01875348693332155,
+  "share_d30_purchasers_purchased_by_d7": 0.8200294550810014,
+  "varying_channel_users": 38775,
+  "channel_variation_share": 0.1435292462817504,
+  "january_d30_eligible_users": 1948
+}

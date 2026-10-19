@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "files_compared": 26,
+  "all_generated_files_identical": true,
+  "comparison": "separate clean destination versus delivered notebook-refreshed output",
+  "files": [
+    {
+      "path": "figures/cohort_retention_heatmap.png",
+      "equal": true,
+      "sha256": "76eb9b5baf2afbcee882709f09bf011165ac433ebb2f32901bba07cd49ddec2c"
+    },
+    {
+      "path": "figures/customer_lifecycle_decision_dashboard.png",
+      "equal": true,
+      "sha256": "f8f638552f34b9293231e77bfe5c5230337177aeefa63c822ab5e4be838ab1d1"
+    },
+    {
+      "path": "figures/mature_cohort_rates.png",
+      "equal": true,
+      "sha256": "6e103b2d6cd87365b9ac7afe9dbfda2318e05c3576a80bad0bac70c5f6fbb1e3"
+    },
+    {
+      "path": "memo/business_memo.md",
+      "equal": true,
+      "sha256": "d7edeafb9f9dc3da89f4d7fcfe714aec5a60c84dc2c97d5b6b6312b43b3ada2c"
+    },
+    {
+      "path": "outputs/cleaning_reconciliation.csv",
+      "equal": true,
+      "sha256": "6247c1221f36e8c6e890cfab528f5a34b3fc1df062884c6e99dbb15ad638e16f"
+    },
+    {
+      "path": "outputs/cohort_activity_observed.csv",
+      "equal": true,
+      "sha256": "ddc688537c071b2f1f34423ff67d17fdbe95c22538486cc1747f7e9843d8bfd3"
+    },
+    {
+      "path": "outputs/cohort_counts.csv",
+      "equal": true,
+      "sha256": "d1714e5a6d4214e847f245f721cb6d512809c549e9427bc004954ab12530f824"
+    },
+    {
+      "path": "outputs/cohort_retention.csv",
+      "equal": true,
+      "sha256": "a2e1d87269a4be634e67f685bd36afa57ff8adc49a70baee002e0f8e1e4707c2"
+    },
+    {
+      "path": "outputs/credit_lines.csv.gz",
+      "equal": true,
+      "sha256": "22e2dbdd594e26f9655122a386f0d0a0c09ba7f35ec71a73760a8456030dea02"
+    },
+    {
+      "path": "outputs/crm_priority_summary.csv",
+      "equal": true,
+      "sha256": "8ffe15a7fbca9ecdf614fbf10c3764aa00f6954fd7a8e774c873a4549c39b2da"
+    },
+    {
+      "path": "outputs/customer_lifecycle_table.csv",
+      "equal": true,
+      "sha256": "21b498aee6dab71ad96961fc049d8d78ef06e725edbe324e1869392f9b951e38"
+    },
+    {
+      "path": "outputs/data_quality_summary.csv",
+      "equal": true,
+      "sha256": "a491553f117b19eb4c206c8cd4b9d23303e438707fd0f828f58568fb79bbea8e"
+    },
+    {
+      "path": "outputs/duplicate_sensitivity.json",
+      "equal": true,
+      "sha256": "b4ba431925f1a856d2b2f246e8f00e8f6d2d85f7552e3b909b4102c2bd5ae2cf"
+    },
+    {
+      "path": "outputs/lifecycle_summary.csv",
+      "equal": true,
+      "sha256": "7b50e88122e83436310fac5ed7dafd2638e61aed833d41c18b78dfea2ac1223d"
+    },
+    {
+      "path": "outputs/orders.csv",
+      "equal": true,
+      "sha256": "bfab95f7797decd03b9c18783a1a4eedefba14dc9959bd4c2ff813cc18e6f477"
+    },
+    {
+      "path": "outputs/purchase_lines.csv.gz",
+      "equal": true,
+      "sha256": "89cb1cec0ec899cd10fe685e5ef79f17001e20712f89acdb81d35f9f5b698478"
+    },
+    {
+      "path": "outputs/repeat_90_by_cohort.csv",
+      "equal": true,
+      "sha256": "76fd4544fe229253335f6181129ca382aaa70d92cfbad1d44b4d494b952fc80f"
+    },
+    {
+      "path": "outputs/repeat_90_curve.csv",
+      "equal": true,
+      "sha256": "f34c09efe2f80dead177478a5b77188cc73c435dc1239940459db96a324ee52e"
+    },
+    {
+      "path": "outputs/retention_kpis.csv",
+      "equal": true,
+      "sha256": "3fbd52de5fb4bfca91b44e4225973706dd44d3a25cdf9d92275ab68d848a0814"
+    },
+    {
+      "path": "outputs/rfm_cutoffs.csv",
+      "equal": true,
+      "sha256": "05be2eae700de4456f5992c5db11f7ef28f6e546a7f0524c2872a935102a12ed"
+    },
+    {
+      "path": "outputs/rfm_lifecycle_crosswalk.csv",
+      "equal": true,
+      "sha256": "e55bd9fda491156be2bca71bce34fa1a8a629d1967f2bd8b96953078a3394dd5"
+    },
+    {
+      "path": "outputs/rfm_segment_summary.csv",
+      "equal": true,
+      "sha256": "7afe00218cfd71adee0ee1ce16dc036ebb0f4557d0ba53b3c8597531768ea994"
+    },
+    {
+      "path": "outputs/rule_sensitivity.csv",
+      "equal": true,
+      "sha256": "3b0f1df745201e8edafaba2f85c5935ce3365754d5110efe6ab32d8eab697354"
+    },
+    {
+      "path": "outputs/run_summary.json",
+      "equal": true,
+      "sha256": "664d42c254d0cb358921d1c71feb040a93b43ac0b02e0508b02458960e497dfa"
+    },
+    {
+      "path": "outputs/tenure_context.csv",
+      "equal": true,
+      "sha256": "509b06d4688edf3f553823b50417c56d3581ea28cef40c5b35ec16180b26c6ee"
+    },
+    {
+      "path": "outputs/value_reconciliation.csv",
+      "equal": true,
+      "sha256": "0b5b62fe4c239a31d320e258c87c69ad1cd15e446fa40673ebcfbbdfd1c78b10"
+    }
+  ]
+}

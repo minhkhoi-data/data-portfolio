@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-15T05:16:46.474180+00:00",
+  "official_url": "https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip",
+  "xlsx_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "csv_gzip_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45",
+  "source_sheets": [
+    "Year 2009-2010",
+    "Year 2010-2011"
+  ],
+  "rows_compared": 1067371,
+  "all_eight_fields_compared": true,
+  "mismatches_after_documented_normalization": {
+    "Invoice": 0,
+    "StockCode": 0,
+    "Description": 0,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "Price": 0,
+    "Customer ID": 0,
+    "Country": 0
+  },
+  "examples": [],
+  "numeric_description_rows_normalized_as_text": [
+    6911,
+    274052,
+    274053,
+    945851
+  ],
+  "numeric_tolerance": 1e-10,
+  "normalization": "Blank=None/empty; identifiers and descriptions as text; numeric labels rendered without .0; ISO timestamps; numeric fields absolute tolerance 1e-10.",
+  "verifier_sha256": "8ed2dfde953e467a5ec7e5d0d31289dbb723ce970b4352abe757b45f5b7f7901"
+}

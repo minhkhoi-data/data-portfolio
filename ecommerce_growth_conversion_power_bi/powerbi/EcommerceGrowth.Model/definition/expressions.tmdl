@@ -1,0 +1,4 @@
+expression DataFolder = "C:\GA4_DATA_FOLDER_NOT_CONFIGURED" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: b44fe56a-afd7-5a93-b07e-3a6e57d1c452
+
+	annotation PBI_ResultType = Text

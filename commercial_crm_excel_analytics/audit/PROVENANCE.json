@@ -1,0 +1,33 @@
+{
+  "retrieved_utc_date": "2026-10-14",
+  "publisher": "Olist and collaborators",
+  "marketing_url": "https://www.kaggle.com/datasets/olistbr/marketing-funnel-olist",
+  "commerce_url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+  "licence": "CC BY-NC-SA 4.0",
+  "marketing_archive_sha256": "d476efe8d16ab267ce10535859ed3dd2d6e186bbb50c9d405a1e7bc05c200171",
+  "commerce_archive_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "csv_manifest": [
+    {
+      "file": "olist_closed_deals_dataset.csv",
+      "sha256": "1433f402d8fff00ca167579de641d9525f6e846368958c166f699ef1b0c31f3d"
+    },
+    {
+      "file": "olist_marketing_qualified_leads_dataset.csv",
+      "sha256": "5537753b7549ce4068e52e2402c29f2773c5375fc0575520ae8f3f301f666573"
+    },
+    {
+      "file": "olist_order_items_dataset.csv",
+      "sha256": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279"
+    },
+    {
+      "file": "olist_orders_dataset.csv",
+      "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf"
+    },
+    {
+      "file": "olist_sellers_dataset.csv",
+      "sha256": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e"
+    }
+  ],
+  "sourced_data_generated_by_ai": false,
+  "Microsoft_Excel": "PENDING_USER"
+}

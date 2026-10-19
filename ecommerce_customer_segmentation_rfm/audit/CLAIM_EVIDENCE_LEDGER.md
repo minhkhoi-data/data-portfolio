@@ -1,0 +1,16 @@
+# Critical claim → evidence ledger
+
+This ledger is refreshed for the standalone takeover on 2026-10-15; analytical definitions remain Remaster 1.0.2. It is deliberately limited to claims that could change a business interpretation or a release decision.
+
+| Claim | Evidence | Independent or counterexample check | Boundaries stated |
+|---|---|---|---|
+| The population contains 5,878 identified purchase customers and 36,969 distinct positive purchase invoices. | `outputs/run_summary.json`; `outputs/customer_lifecycle_table.csv`; `outputs/orders.csv` | `audit/independent_validation.json`: SQL customer population and distinct invoice frequency | Anonymous rows and credit-only customers are outside the purchase segmentation population. |
+| Historical recorded value is £17.375m gross, £1.024m recorded credits and £16.351m net. | `outputs/value_reconciliation.csv`; `outputs/run_summary.json` | Independent SQL gross/credit/net checks; GBP 0.01 reconciliation tolerance | Invoice charges are included; this is not profit, margin, audited net sales or future CLV. |
+| The mature 90-day second-order rate is 2,486/5,281 = 47.1%. | `outputs/repeat_90_curve.csv`; `outputs/repeat_90_by_cohort.csv`; memo | Exact timestamp fixture boundaries plus independent SQL check | Eligibility requires first timestamp + 90 full days ≤ observation end; first observed purchase is not verified acquisition. |
+| Calendar cohort activity uses complete windows and does not turn future cells into zero. | `outputs/cohort_retention.csv`; `outputs/retention_kpis.csv`; heatmap | `tests/test_analysis.py::test_future_cohorts_nan_and_observed_zero`; SQL month checks | December 2011 is treated as partial; observed zero and unobserved/partial are distinct. |
+| RFM scores are stable for equal raw values and do not depend on row order. | `outputs/rfm_cutoffs.csv`; `docs/METHODS.md` | `tests/test_analysis.py::test_equal_values_permutation_and_collapsed_bins` | Percentile thresholds are analyst-defined relative descriptors; tied cutoffs can leave empty score bands. |
+| Lifecycle and RFM/value rules produce one covered, conditional test/review queue. | `outputs/rfm_lifecycle_crosswalk.csv`; `outputs/crm_priority_summary.csv` | `tests/test_analysis.py::test_segment_coverage_precedence`; credit/value boundary fixtures | Actions are hypotheses; credit review overrides outreach when net ≤ 0 or credit/gross ≥ 0.5. |
+| The release is reproducible and fails closed on malformed input. | `audit/takeover_output_comparison.json`; `audit/remaster_execution.json`; README | 12 fixture tests and negative CLI checks in `audit/independent_validation.json` | Results are static until rerun; current source/config hashes are recorded in `run_summary.json`. |
+| The source is the official UCI Online Retail II file represented by the bundled CSV. | `DATA_SOURCES.md`; `audit/takeover_source_verification.json` | Official workbook row/field comparison with four documented Description type differences | The local CSV's original conversion date is unknown; no claim is made about who created it. |
+
+Claims about measured uplift, profit, production deployment, individual response probability and the applicant's personal mastery are outside this evidence ledger.

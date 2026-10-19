@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "fresh_build_exit_code": 0,
+  "path_with_spaces": true,
+  "elapsed_seconds": 25.764,
+  "csv_files_compared": 10,
+  "files": [
+    {
+      "file": "channel_sensitivity.csv",
+      "sha256": "2ca96cf2892fbd78089d9798b79fcced89022e14e41b136724abcda5b4f02220",
+      "matches": true
+    },
+    {
+      "file": "daily_cohorts.csv",
+      "sha256": "a429822d5c20134ea7b8c3765619e71f8fdf4322427f87f7ec7dcb9e587300df",
+      "matches": true
+    },
+    {
+      "file": "device_cohorts.csv",
+      "sha256": "29d89cb5930160e76e408536e478d1938f762997f4e390df8970a66f901a228b",
+      "matches": true
+    },
+    {
+      "file": "fixed_population.csv",
+      "sha256": "f7995ef60cac8c75f3e037a5c56cb421dfe9d726c2c4590de5d0b2a510a69b9f",
+      "matches": true
+    },
+    {
+      "file": "monthly_cohorts.csv",
+      "sha256": "25a2c9ff4152ed7f8a7cf870f5a08cadb9692e26ef3fd089d09fd7e656faf4d3",
+      "matches": true
+    },
+    {
+      "file": "monthly_fixed_population.csv",
+      "sha256": "74799fb95a00bafdc8f417d32df2e6a4112fb5bdaa9a7063a4c4cf0e5c686829",
+      "matches": true
+    },
+    {
+      "file": "overall_windows.csv",
+      "sha256": "401697e875b9c0fbc8edfe49a91a7e5e11f622bcfd64854229efe01e61b87c17",
+      "matches": true
+    },
+    {
+      "file": "purchase_timing.csv",
+      "sha256": "617ce3326502d162096874ad31359a97270dbd2cd2680ef630a2464947961938",
+      "matches": true
+    },
+    {
+      "file": "quality_controls.csv",
+      "sha256": "95fe79a21ea4272342e4a02a9945ee9ca773e13d3c3125bd128303531374c0d5",
+      "matches": true
+    },
+    {
+      "file": "return_gaps.csv",
+      "sha256": "f1cf56c9597d710b85e0a885e3ff2ed987441b4a6301a9c57a7e77716ab06a00",
+      "matches": true
+    }
+  ],
+  "scope": "Fresh database and CSV outputs after relocating SQL/scripts/inputs; Linux environment, not Windows native."
+}

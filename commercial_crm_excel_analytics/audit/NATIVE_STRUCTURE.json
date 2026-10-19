@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "formula_caches_imported": 45839,
+  "uniform_table_columns_synchronized": 52,
+  "chart_reference_caches_imported": 10,
+  "source_rows_removed": 0,
+  "Microsoft_Excel": "PENDING_USER",
+  "current_workbook_sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+  "layout_repair": "See LAYOUT_REPAIR.json; cell/chart/table contents preserved"
+}

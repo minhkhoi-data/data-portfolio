@@ -1,0 +1,304 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-15T09:03:10.277935+00:00",
+  "checks_passed": 55,
+  "checks": [
+    {
+      "check": "Sessions reconcile with audited Power BI input",
+      "status": "PASS",
+      "detail": 360129
+    },
+    {
+      "check": "Users reconcile with audited Power BI input",
+      "status": "PASS",
+      "detail": 270154
+    },
+    {
+      "check": "Purchase events reconcile",
+      "status": "PASS",
+      "detail": 5692
+    },
+    {
+      "check": "Recorded USD revenue reconciles exactly",
+      "status": "PASS",
+      "detail": "362165.000000"
+    },
+    {
+      "check": "Source event count reconciles with retained provenance",
+      "status": "PASS",
+      "detail": 4295584
+    },
+    {
+      "check": "Session calendar has full 92-day observed range",
+      "status": "PASS",
+      "detail": [
+        "2020-11-01",
+        "2021-01-31"
+      ]
+    },
+    {
+      "check": "Every user cohort row independently matches CSV oracle",
+      "status": "PASS",
+      "detail": 270154
+    },
+    {
+      "check": "Every user-horizon outcome independently matches CSV oracle",
+      "status": "PASS",
+      "detail": 810462
+    },
+    {
+      "check": "One unique row per user and horizon",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Ineligible users carry NULL outcomes, not zero",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "No missing channel dimension keys",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "No missing device dimension keys",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchase/session user identities match",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Every output cell matches independent oracle: overall_windows",
+      "status": "PASS",
+      "detail": {
+        "rows": 3
+      }
+    },
+    {
+      "check": "Every output cell matches independent oracle: monthly_cohorts",
+      "status": "PASS",
+      "detail": {
+        "rows": 9
+      }
+    },
+    {
+      "check": "Every output cell matches independent oracle: channel_sensitivity",
+      "status": "PASS",
+      "detail": {
+        "rows": 30
+      }
+    },
+    {
+      "check": "Every output cell matches independent oracle: device_cohorts",
+      "status": "PASS",
+      "detail": {
+        "rows": 9
+      }
+    },
+    {
+      "check": "Every output cell matches independent oracle: daily_cohorts",
+      "status": "PASS",
+      "detail": {
+        "rows": 276
+      }
+    },
+    {
+      "check": "Every output cell matches independent oracle: fixed_population",
+      "status": "PASS",
+      "detail": {
+        "rows": 3
+      }
+    },
+    {
+      "check": "Every output cell matches independent oracle: monthly_fixed_population",
+      "status": "PASS",
+      "detail": {
+        "rows": 9
+      }
+    },
+    {
+      "check": "Purchase timing bucket 0",
+      "status": "PASS",
+      "detail": 2563
+    },
+    {
+      "check": "Purchase timing denominator 0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchaser timing share 0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchase timing bucket 1",
+      "status": "PASS",
+      "detail": 980
+    },
+    {
+      "check": "Purchase timing denominator 1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchaser timing share 1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchase timing bucket 2",
+      "status": "PASS",
+      "detail": 295
+    },
+    {
+      "check": "Purchase timing denominator 2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchaser timing share 2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchase timing bucket 3",
+      "status": "PASS",
+      "detail": 369
+    },
+    {
+      "check": "Purchase timing denominator 3",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchaser timing share 3",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchase timing bucket 4",
+      "status": "PASS",
+      "detail": 212
+    },
+    {
+      "check": "Purchase timing denominator 4",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchaser timing share 4",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchase timing bucket 5",
+      "status": "PASS",
+      "detail": 265735
+    },
+    {
+      "check": "Purchase timing denominator 5",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Purchaser timing share 5",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap interval bucket 0",
+      "status": "PASS",
+      "detail": 35976
+    },
+    {
+      "check": "Return gap unique users 0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap denominator 0",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap interval bucket 1",
+      "status": "PASS",
+      "detail": 5374
+    },
+    {
+      "check": "Return gap unique users 1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap denominator 1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap interval bucket 2",
+      "status": "PASS",
+      "detail": 5084
+    },
+    {
+      "check": "Return gap unique users 2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap denominator 2",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap interval bucket 3",
+      "status": "PASS",
+      "detail": 1906
+    },
+    {
+      "check": "Return gap unique users 3",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Return gap denominator 3",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Fixed-population denominators identical across horizons",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Fixed-population cumulative outcomes monotone: returned_users",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Fixed-population cumulative outcomes monotone: purchasing_users",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Fixed-population cumulative outcomes monotone: purchase_events",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Fixed-population cumulative outcomes monotone: purchase_revenue_usd",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "aggregate_cells_compared": 2391,
+  "all_user_rows_compared": 270154,
+  "independent_oracle": "Python csv/datetime/Decimal; no production SQL reused",
+  "all_user_horizon_rows_compared": 810462,
+  "scope": "Bundled audited inputs to new cohort SQL and exported results; not an external source re-download or Windows UI test."
+}

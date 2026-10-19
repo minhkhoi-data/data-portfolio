@@ -1,18 +1,29 @@
 table FunnelStage
-	lineageTag: 682be2fb-8bf5-4151-ab9e-55e60a86a852
+	lineageTag: 5b4e1ed4-a72e-5982-b68f-e2d9824c0449
 
 	column Stage
-		lineageTag: 8f83d925-0246-4d6e-896c-c899daaab0e9
-		isNameInferred
-		sourceColumn: [Stage]
+		dataType: string
+		lineageTag: e6fb3847-86b0-5df7-b064-46f3269c44fb
+		summarizeBy: none
+		sourceColumn: Stage
 		sortByColumn: Sort
 
 	column Sort
-		lineageTag: 803f5546-b60e-4668-aa5b-e51888037992
-		isNameInferred
-		sourceColumn: [Sort]
+		dataType: int64
+		lineageTag: 99360800-52c0-549b-8ba5-6f1257c5bca0
+		summarizeBy: none
+		sourceColumn: Sort
 
-	partition FunnelStage = calculated
+	partition FunnelStage = m
 		mode: import
-		source = DATATABLE("Stage", STRING, "Sort", INTEGER, {{"Sessions",1},{"Product View",2},{"Add to Cart",3},{"Checkout",4},{"Purchase",5}})
-
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "/funnel_stage.csv"), [Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.Csv, ExtraValues=ExtraValues.Error]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Checked = if Table.ColumnNames(Headers) = {"Stage", "Sort"} then Headers else error Error.Record("SchemaMismatch", "CSV headers do not match FunnelStage", null),
+					Typed = Table.TransformColumnTypes(Checked, {
+					{"Stage", type text},
+					{"Sort", Int64.Type}
+					}, "en-US")
+				in
+					Typed

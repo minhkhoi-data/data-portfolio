@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "method": "nbclient fresh in-process Jupyter kernel",
+  "code_cells": 9,
+  "errors": 0,
+  "frontend_gui_verified": false,
+  "kernel_name": "python3",
+  "python_kernel_path_removed_from_deliverable": true,
+  "python_version": "3.12.14",
+  "kernel_type": "in-process",
+  "fresh_kernel": true,
+  "interpreter_matches_runner": true,
+  "network_free": true,
+  "selection": "managed runtime network-free default"
+}

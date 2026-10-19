@@ -1,0 +1,42 @@
+{
+  "original_url": "https://archive.ics.uci.edu/static/public/502/online+retail+ii.zip",
+  "xlsx_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "source_sheets": [
+    "Year 2009-2010",
+    "Year 2010-2011"
+  ],
+  "rows": 1067371,
+  "comparison": "same row order and all eight columns; identifiers cast to text, timestamps parsed, numeric tolerance 1e-10",
+  "mismatches_by_column": {
+    "Invoice": 0,
+    "StockCode": 0,
+    "Description": 4,
+    "Quantity": 0,
+    "InvoiceDate": 0,
+    "Price": 0,
+    "Customer ID": 0,
+    "Country": 0
+  },
+  "description_differences": [
+    {
+      "row_index": 6911,
+      "xlsx_description": 21494,
+      "csv_parsed_description": "21494"
+    },
+    {
+      "row_index": 274052,
+      "xlsx_description": 22719,
+      "csv_parsed_description": "22719"
+    },
+    {
+      "row_index": 274053,
+      "xlsx_description": 22467,
+      "csv_parsed_description": "22467"
+    },
+    {
+      "row_index": 945851,
+      "xlsx_description": 20713,
+      "csv_parsed_description": "20713"
+    }
+  ]
+}

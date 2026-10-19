@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "checks": 11,
+  "passed": 11,
+  "engine": "LibreOffice Calc; four freshly recalculated disposable copies",
+  "method": "All formula caches cleared before independent full import evaluation. This is not a UI-interaction test in Calc or Microsoft Excel.",
+  "workbook_sha256": "b568eaaa2e674970f9fa4fe62b14a77bb9a65cb1a74b03a6c070956a128f3432",
+  "Microsoft_Excel": "PENDING_USER",
+  "results": [
+    {
+      "check": "slow14_KPI",
+      "status": "PASS",
+      "detail": 414
+    },
+    {
+      "check": "slow14_live_action",
+      "status": "PASS",
+      "detail": "414 observed wins exceed 14 days"
+    },
+    {
+      "check": "slow14_unchanged_A6",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "slow14_unchanged_C6",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "slow14_unchanged_K6",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "invalid_slow_exposed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "invalid_slow_source_facts_retained",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "support1_all_channel_flags",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "support1_all_SR_flags",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "invalid_support_exposed",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "check": "invalid_support_does_not_fabricate_new_KPIs",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "logs": {
+    "Slow14": {
+      "exit_code": 0,
+      "output": "convert /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/Slow14.xlsx as a Calc document -> /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/calc_Slow14/Slow14.xlsx using filter : Calc Office Open XML"
+    },
+    "InvalidSlow": {
+      "exit_code": 0,
+      "output": "convert /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/InvalidSlow.xlsx as a Calc document -> /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/calc_InvalidSlow/InvalidSlow.xlsx using filter : Calc Office Open XML"
+    },
+    "Support1": {
+      "exit_code": 0,
+      "output": "convert /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/Support1.xlsx as a Calc document -> /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/calc_Support1/Support1.xlsx using filter : Calc Office Open XML"
+    },
+    "InvalidSupport": {
+      "exit_code": 0,
+      "output": "convert /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/InvalidSupport.xlsx as a Calc document -> /workspace/scratch/4040756f9ee4/tmp/control_full_recheck/calc_InvalidSupport/InvalidSupport.xlsx using filter : Calc Office Open XML"
+    }
+  },
+  "reused_on_final_workbook_sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+  "reuse_evidence": "STYLE_REPAIR.json: all worksheets, formulas, controls and charts byte-identical to the scenario-tested version. No scenario rerun claimed."
+}

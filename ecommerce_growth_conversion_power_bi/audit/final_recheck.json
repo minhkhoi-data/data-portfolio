@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-15T05:43:11.860818+00:00",
+  "criterion_wording_matches": 107,
+  "local_markdown_links": 0,
+  "independent_SQL_tested_data_hashes_match_final": true,
+  "source_projection_unchanged": true,
+  "current_schema_files": 55,
+  "native_contract_contexts": 19,
+  "native_contract_measures": 35,
+  "DAX_native_execution": false,
+  "native_gates_closed": false,
+  "ui_revision": "UIFIX_v2",
+  "baseline_native_render_evidence": "Five user screenshots, no filter/Refresh certification",
+  "current_ui_native_verified": false
+}

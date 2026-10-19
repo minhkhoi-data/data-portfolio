@@ -1,297 +1,72 @@
-# Product Funnel, Growth & Experimentation
+# Ecommerce growth and conversion — GA4 remaster
 
-**Flagship 3 of 3 · Customer & Growth Analytics**  
-**Project type:** Product / E-commerce Growth Analytics  
-**Tools:** Power BI, DAX, Power Query, Python, SciPy  
-**Dataset:** Deterministic synthetic GA4-style e-commerce data  
-**Coverage:** Descriptive funnel diagnosis plus a reproducible randomised-experiment case
+An existing five-page Power BI project remastered against a public Google Merchandise Store GA4 sample mirrored on Kaggle. The bundled source is a public obfuscated Google sample, not AI-generated outcomes; it is not an unaltered production export. Derived tables, DAX, report metadata and documentation were prepared with AI assistance. No claim is made that the author independently wrote every component.
 
-![Executive Overview](screenshots/01_01_overview_dashboard.png)
+## Open the report
 
----
+Extract the complete ZIP into a fresh folder and double-click `MO_PROJECT.cmd`. The opener validates eight CSV files, sets the local DataFolder parameter and requests Windows to open `powerbi/MO_GA4_CSV_13_10.pbip`. Click Home → Refresh in Power BI Desktop. All CSVs are included in `data/`; no Kaggle/BigQuery account, Python installation or manual path editing is required to open this snapshot. Keep the complete folder together. Run the opener again after moving the folder, with the project closed in Desktop.
 
-## Business decision
+This release uses file-backed CSV partitions instead of compressed data embedded in M expressions. The two support tables are also CSV imports; no calculated partition needs initialization. If the PBIP file association is missing, the opener configures the path first and tells you to use Desktop → File → Open. Desktop opening, M execution, DAX execution and visual rendering of this rebuild remain **NOT VERIFIED** here. The user's one-row Enter Data test succeeded; both prior embedded loaders failed native model creation with the same closed-Stream error. The exact internal engine cause is unestablished.
 
-Where does the product funnel lose users, which growth opportunities deserve attention, and how should the team test whether a checkout change causes an improvement rather than merely correlating with one?
+## Source and scope
 
-The report is organised into five decision-focused pages:
+- Source: https://www.kaggle.com/datasets/hashiromer/ga4-merchandise-store-flattened-bigquery
+- Upstream sample: https://developers.google.com/analytics/bigquery/web-ecommerce-demo-dataset
+- Property dates: 2020-11-01 through 2021-01-31.
+- Original CSV: 4,295,584 events, 88 columns. Included `data/source/ga4_events.csv.gz`: exact 25-column projection of **all** rows; all source IDs, values and blanks in those columns preserved.
+- Original ZIP is not duplicated in this folder. Download URL, original ZIP/CSV SHA-256 and projection SHA-256 are in `data/source/provenance.json`.
+- Google describes the source as obfuscated and limits its internal consistency. It is suitable for a scoped public-data analytics portfolio, not audited commerce accounting.
+- The uploader labels the mirror MIT; this does not establish additional rights over upstream Google data. Consult upstream terms for redistribution or other uses.
 
-1. Executive Overview
-2. Conversion Funnel
-3. Acquisition & Channel
-4. Product Performance
-5. Customer & Geography
+Product SKU rankings, margins, verified order/AOV accounting and observed checkout A/B outcomes are unsupported. The report includes a coverage page, and a future experiment design is clearly separated from results.
 
-The linked [checkout experimentation module](experiment/) then moves from diagnosis to a causal launch decision. It includes random assignment, SRM, balance checks, confidence intervals, p-values, MDE/power, guardrails, exploratory segments, and a rollout rule.
+## Contents
 
-![Experiment decision dashboard](experiment/figures/experiment_decision_dashboard.png)
+| Path | Purpose |
+| --- | --- |
+| powerbi/ | Portable PBIP, semantic model and five report pages |
+| data/source/ | All-row source projection, hashes and user-supplied BigQuery controls |
+| data/ | Six rebuilt analytical CSV tables |
+| scripts/ | Import, deterministic transforms, CSV model generation, opener, documentation and verification |
+| outputs/ | CSV results and explicitly labeled Python preview |
+| docs/ | Business questions, metric definitions and descriptive findings |
+| audit/ | Executed checks and native validation status |
+| experiment_design/ | Future test protocol, no observed results |
+| sql/ | Independent BigQuery source-profile query |
 
-## Experiment decision
+## Reproduce
 
-The deterministic synthetic case randomises **32,000 users** equally between control and treatment. The quality gates pass: SRM p-value is **1.000**, pre-treatment balance is within declared thresholds, and the primary result increases conversion from **5.28% to 6.06%**—an absolute lift of **0.78 percentage points** with p-value **0.0027** and a positive 95% confidence interval.
+Python 3.12 was used with pinned libraries in requirements.txt. From this project folder:
 
-Average order value, refund rate, and bounce rate remain within their pre-declared guardrails. The resulting decision is a **staged rollout**, with continued monitoring rather than an unconditional full launch. Subgroup findings remain exploratory because the experiment is powered for the overall effect.
-
-Start with the [experiment decision memo](experiment/memo/experiment_memo.md) or [reproduce the analysis](experiment/run_experiment.py).
-
----
-
-## Headline KPIs
-
-| KPI | Result |
-|---|---:|
-| Sessions | 75,237 |
-| Users | 32,000 |
-| Transactions | 4,737 |
-| Revenue | $217,478.50 |
-| Session Conversion Rate | 6.30% |
-| Average Order Value | $45.91 |
-
-These totals were rechecked after opening and refreshing the PBIP project in Power BI Desktop.
-
----
-
-## Key Findings
-
-### 1. Product view → add to cart is the largest funnel loss
-
-The funnel contains:
-
-| Stage | Sessions |
-|---|---:|
-| Sessions | 75,237 |
-| Product View | 51,592 |
-| Add to Cart | 15,090 |
-| Checkout | 8,111 |
-| Purchase | 4,737 |
-
-Only **29.25%** of product-view sessions progress to add-to-cart.
-
-This makes product-page relevance, merchandising, price perception, product information, and CTA friction sensible diagnostic areas before simply increasing traffic.
-
-### 2. Mobile brings the most traffic but converts less efficiently
-
-Mobile represents the largest traffic share but converts at approximately **4.76%**, compared with approximately **8.77%** on desktop.
-
-The practical implication is to investigate mobile product-view and checkout friction before treating additional traffic as the primary growth lever.
-
-### 3. Email is the strongest observed direct-response channel
-
-Email converts at approximately **8.85%** and produces about **$4.17 revenue per session** in the bundled dataset.
-
-Display converts at approximately **3.32%** and produces about **$1.60 revenue per session**.
-
-This does not imply that all spend should be shifted to Email. Lifecycle and paid-acquisition channels serve different roles, and the bundled dataset does not contain complete media-cost or incrementality data.
-
-### 4. Returning-user sessions convert better
-
-Returning-user session conversion is approximately **6.98%**, compared with **5.37%** for new-user sessions.
-
-This supports further lifecycle, remarketing, and repeat-purchase analysis.
-
-### 5. Product revenue is concentrated
-
-The highest-revenue SKU in the bundled dataset is **Google Zip Hoodie**, generating approximately **$17.97K** during the demo period.
-
----
-
-## Semantic Model
-
-The model uses separate fact tables at different grains:
-
-- **FactSessions** — one row per website session
-- **FactOrders** — one row per order
-- **FactOrderItems** — one row per product line
-
-Shared dimensions:
-
-- `DimDate`
-- `DimChannel`
-- `DimDevice`
-- `DimGeo`
-- `DimProduct`
-
-Supporting model objects:
-
-- `_Measures` — dedicated DAX measure table
-- `FunnelStage` — disconnected helper table for funnel ordering
-
-The model contains **13 one-to-many relationships** and **31 DAX measures**.
-
-This grain separation prevents session and order metrics from being duplicated when product-level analysis is introduced.
-
-See:
-- [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md)
-- [`docs/DAX_REFERENCE.md`](docs/DAX_REFERENCE.md)
-- [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md)
-
----
-
-## Report Pages
-
-### Executive Overview
-
-Traffic, revenue, conversion, channel, funnel and device performance in one management view.
-
-![Executive Overview](screenshots/01_01_overview_dashboard.png)
-
-### Conversion Funnel
-
-Step conversion rates plus device and channel conversion comparison.
-
-![Conversion Funnel](screenshots/02_01_funnel_conversion_dashboard.png)
-
-### Acquisition & Channel
-
-Revenue, conversion rate, revenue per session and traffic trends by acquisition channel.
-
-![Acquisition & Channel](screenshots/03_01_acquisition_channel_dashboard.png)
-
-### Product Performance
-
-Revenue, units, orders, selling price, category mix and SKU performance.
-
-![Product Performance](screenshots/04_01_product_performance_dashboard.png)
-
-### Customer & Geography
-
-Purchasers, repeat purchase, new-vs-returning conversion, country and region performance.
-
-![Customer & Geography](screenshots/05_01_customer_geography_dashboard.png)
-
-### Data Model
-
-![Power BI Data Model](screenshots/06_01_data_model.png)
-
----
-
-## Core DAX Coverage
-
-Measures include:
-
-- Sessions
-- Users
-- Engaged Sessions
-- Product View Sessions
-- Add to Cart Sessions
-- Checkout Sessions
-- Purchase Sessions
-- Product View Rate
-- View-to-Cart Rate
-- Cart-to-Checkout Rate
-- Checkout-to-Purchase Rate
-- Session Conversion Rate
-- Revenue
-- Transactions
-- AOV
-- Revenue per Session
-- Revenue per User
-- Purchasers
-- Repeat Purchasers
-- Repeat Purchase Rate
-- New User Session Conversion
-- Returning User Session Conversion
-- Product Revenue
-- Product Units
-- Product Orders
-- Average Selling Price
-- Revenue Previous Month
-- Revenue MoM %
-
-Full definitions are documented in [`docs/DAX_REFERENCE.md`](docs/DAX_REFERENCE.md).
-
----
-
-## Portable PBIP Build
-
-Main project file:
-
-```text
-powerbi/Ecommerce_Growth_Conversion_Analytics.pbip
+```bash
+python -m pip install -r requirements.txt
+python scripts/run_all.py
 ```
 
-The semantic model stores the eight bundled analytical tables inside the PBIP model definition, so the report does not depend on a machine-specific CSV path when opened.
+Allow roughly 8 GB RAM and several minutes for the full 4.3-million-event rebuild. `run_all.py` validates source hash and controls, writes analytical and support CSV tables, rebuilds the model, updates report bindings, regenerates documentation/preview and runtime manifest, and runs checks. Failure exits nonzero and marks build outputs invalid. Optional external validator arguments are shown by `python scripts/run_all.py --help`; omitted parsers are marked NOT RUN rather than retaining evidence from a prior model. Current parser status is recorded in audit/evidence/build_status.json; historical parser evidence is reused only for identical tested inputs. After a rebuild, run MO_PROJECT.cmd to set the machine-local DataFolder before opening Desktop.
 
-The original CSV tables remain under `data/` for transparency and validation.
+To rebuild the included source projection from the downloaded original archive:
 
-Local Power BI workspace/cache folders (`.pbi/`) are intentionally excluded from version control because they are regenerated by Power BI Desktop and are not required to reproduce the project.
-
----
-
-## How to Reproduce
-
-1. Install Power BI Desktop.
-2. Clone or download this repository.
-3. Open:
-   ```text
-   powerbi/Ecommerce_Growth_Conversion_Analytics.pbip
-   ```
-4. Allow the project to load.
-5. Select **Refresh**.
-6. Confirm the headline totals against [`docs/QA_CHECKS.md`](docs/QA_CHECKS.md).
-7. Test a Channel or Month slicer to confirm filter interactions.
-
-The final runtime test verified that the project opens, refreshes, renders all five pages, and responds to slicer interactions.
-
----
-
-## Data
-
-The bundled data are **synthetic deterministic portfolio data** designed to resemble a GA4-style e-commerce analytical schema. They are not presented as official Google production figures.
-
-The repository also contains BigQuery SQL templates showing how a similar semantic structure could be created from Google's public GA4 Merchandise Store sample dataset.
-
-See:
-- [`DATA_NOTE.md`](DATA_NOTE.md)
-- [`../DATA_SOURCES.md`](../DATA_SOURCES.md)
-- [`sql/README.md`](sql/README.md)
-
----
-
-## Project Structure
-
-```text
-ecommerce_growth_conversion_power_bi/
-├── README.md
-├── DATA_NOTE.md
-├── data/
-├── docs/
-│   ├── ANALYSIS_REPORT.md
-│   ├── BUSINESS_BRIEF.md
-│   ├── DATA_DICTIONARY.md
-│   ├── DATA_MODEL.md
-│   ├── DAX_REFERENCE.md
-│   └── QA_CHECKS.md
-├── outputs/
-├── experiment/
-│   ├── README.md
-│   ├── run_experiment.py
-│   ├── data/
-│   ├── outputs/
-│   ├── figures/
-│   └── memo/
-├── powerbi/
-│   ├── Ecommerce_Growth_Conversion_Analytics.pbip
-│   ├── EcommerceGrowth.Model/
-│   ├── EcommerceGrowth.Report/
-│   └── ARTIFACT_NOTE.md
-├── screenshots/
-│   ├── 01_01_overview_dashboard.png
-│   ├── 02_01_funnel_conversion_dashboard.png
-│   ├── 03_01_acquisition_channel_dashboard.png
-│   ├── 04_01_product_performance_dashboard.png
-│   ├── 05_01_customer_geography_dashboard.png
-│   └── 06_01_data_model.png
-├── scripts/
-└── sql/
+```bash
+python scripts/import_source.py --zip /path/to/ga4-merchandise-store-flattened-bigquery.zip
+python scripts/run_all.py
 ```
 
----
+Use the same published source snapshot and compare the recorded hashes. The existing independent controls intentionally reject a changed source; a genuinely new dataset requires reviewed definitions, controls and mappings rather than blind substitution.
 
-## Limitations
+## Verification boundary
 
-- The bundled dataset is synthetic, so findings demonstrate analytical workflow rather than real Google or employer performance.
-- Media spend is not available, so CAC and ROAS are intentionally not calculated.
-- Margin and fulfilment cost are not available, so revenue should not be interpreted as profit.
-- The Power BI report is descriptive and diagnostic. Causal reasoning is demonstrated separately through a randomised synthetic experiment; it is not evidence of real commercial uplift.
-- The experiment is powered for the overall result, so channel and device estimates are exploratory rather than targeting recommendations.
+Source counts/revenue match the independent BigQuery profile by month. Analytical totals, keys, foreign keys, ordered-event edge cases, CSV schemas/manifest hashes, M types, references and layout bounds are checked programmatically. The model uses short CSV import expressions with one local DataFolder parameter; identifiers remain text and nullable numeric fields remain null. The current opener evidence records configuration tests for paths with spaces and Unicode, relocation, missing/altered CSVs, and repeated configuration; Windows launch remains unverified. Official metadata and grammar checks do not execute Windows M or DAX. See audit/CHECKS.csv and audit/NATIVE_STATUS.md. No old synthetic-data audit result or experiment outcome is carried into this version.
+
+## Standalone audit and independent source-to-fact checks
+
+Read `AUDIT_SUMMARY_VI.md` and `audit/AUDIT_REPORT.md` for the dated takeover result. Full Desktop/DAX and redistribution gates remain separate from analytical correctness. The source projection is unchanged; the takeover corrects `(data deleted)` acquisition values into Unknown / masked.
+
+Optional independent SQL verification uses a temporary disk database, one thread and a 1 GB DuckDB cap:
+
+```bash
+python -m pip install -r requirements-verification.txt
+python scripts/verify_source_sql.py
+```
+
+This scans every bundled event and compares every session and purchase with the delivered facts. It does not execute DAX or authenticate the mirror against a new external download. Source provenance and supplied BigQuery control totals are retained; no fresh BigQuery query is claimed.

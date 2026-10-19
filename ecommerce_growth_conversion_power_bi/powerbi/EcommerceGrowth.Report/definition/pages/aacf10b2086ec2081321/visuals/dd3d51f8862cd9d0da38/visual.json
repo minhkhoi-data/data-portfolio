@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "AOV"
+                  "Property": "Average Purchase Event Value"
                 }
               },
-              "queryRef": "_Measures.AOV",
-              "nativeQueryRef": "AOV"
+              "queryRef": "_Measures.Average Purchase Event Value",
+              "nativeQueryRef": "Avg purchase value"
             }
           ]
         }
@@ -81,7 +81,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'AOV'"
+                  "Value": "'Avg purchase value'"
                 }
               }
             },
@@ -130,14 +130,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'AOV'"
+                  "Value": "'Avg purchase value'"
                 }
               }
             },

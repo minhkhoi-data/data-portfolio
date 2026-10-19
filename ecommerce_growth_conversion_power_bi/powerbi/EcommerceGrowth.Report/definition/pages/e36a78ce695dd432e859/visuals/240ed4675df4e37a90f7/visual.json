@@ -84,7 +84,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Conversion by Channel'"
+                  "Value": "'Conversion by first-user channel'"
                 }
               }
             },

@@ -1,0 +1,348 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/page.json",
+      "sha256": "ae64784639c4a0de41c33f41a3367c5828215f75853203ed650d8a2db415be0f",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/119728efa6c6121f9f6f/visual.json",
+      "sha256": "26e3e5d4fb95a0b942c87651e16e6be578d6fc8785cd7672ab1efa4511e860cf",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/1bb02857d2fdc86fd2f8/visual.json",
+      "sha256": "b389432fdf0f51547e8a0164e4f81f28a2779536b40cdc45c360d37cbcd4de6d",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/383accca7a7c11ffd25d/visual.json",
+      "sha256": "f7723afd70265af8e4185e4ec2217f2ad42d4e43a519214e785f805fd8a32049",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/3d2a1ad0c800f04cc9a4/visual.json",
+      "sha256": "98254c8468b0d389439a5ad511b6e74b5af097e2b57b050e82b41e7013b54d33",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/46524aa971d410b41f79/visual.json",
+      "sha256": "58761de1d6119196e8dd6496481fc657467059623f4ba5d5d76418da21c91e99",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/7110cd3578601fc3fd00/visual.json",
+      "sha256": "d09f9aa66dcbe3510212fffe821f19ea46e3d66a2425190d98f17c2559043c54",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/aa79098d5365d7ff8f34/visual.json",
+      "sha256": "f14365427a52f2d748245a8554bbd3871b2130a10e9054559b440751e02adeef",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/b09734ae7856c35e1844/visual.json",
+      "sha256": "2aebb9419ceceae6ba6ddf30c8c972d954f649561bd7ba8d5f1c1c1e089f0b25",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/d94898e85688ca63e02d/visual.json",
+      "sha256": "1f74e408df4ad46103d2b0fa1829ab27ffe8a1d3d765c00051d115cd2b0a7b5c",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/ec430ec7b93cb071dde3/visual.json",
+      "sha256": "244c5ea1f774b283bdb1a4e3edd1e0ef119bf2eec9a59eed56c9091f4302a3ba",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9e6a6d871d5fd835b63d/visuals/f30c0578424750e585f3/visual.json",
+      "sha256": "631c3c62eeca9ddd71cf3906cffbca930b9001573d8813dff8d86a587dc17e14",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9ea195da65dccc3ec727/page.json",
+      "sha256": "7d2a9bfcc2195bea0243f897cc9094b09a3de1e08d4d44c51329c13a39c29390",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9ea195da65dccc3ec727/visuals/037ea1ea92405ea88000/visual.json",
+      "sha256": "a5a69fc595b9cc2b008af18fe10728ecdd81b24232eb28633102fc0d5761de02",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9ea195da65dccc3ec727/visuals/17659e74a6e55e69b0c5/visual.json",
+      "sha256": "9cd64132743d72f0b7436232f4382cc7fc5c5b41e1ccd4c11f2120245014d1c8",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9ea195da65dccc3ec727/visuals/a9d5db51fbd152649c2d/visual.json",
+      "sha256": "a3359ca28b3266d1f4100e544a80ef3cccfe2c3d89e93dfdb29f3e94cdbdb702",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9ea195da65dccc3ec727/visuals/d91862eeebf153ccb0c2/visual.json",
+      "sha256": "6c04d97f631b197b6fcbcaffc51cd095c69435f5eede713ef58abf5e28028e7f",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/9ea195da65dccc3ec727/visuals/f30c0578424750e585f3/visual.json",
+      "sha256": "631c3c62eeca9ddd71cf3906cffbca930b9001573d8813dff8d86a587dc17e14",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/page.json",
+      "sha256": "4014a6731ebd5262815de14369b9d9552a2d201cdbb4aafb4f20a4c64535fa31",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/0a8ce34ae9448e8297bf/visual.json",
+      "sha256": "c45f23808fb6a7d843083d78319532ea3c570570b85d9ff38735ddfb1d959906",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/194478e6997ce8ef0326/visual.json",
+      "sha256": "09b166064066e844f351c3d405dae79d606d561dba4bf94b92c4435d9b5d5613",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/78cda39676ce130ad393/visual.json",
+      "sha256": "59da354fbcd293c6f10243c542ca3b616acff51675c635a1a3b0a0fb2aba4180",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/85269e5e91bb6980ae84/visual.json",
+      "sha256": "5c6c310182eb75fdecfdd8b3edfa17a2498ad42de284acd6d8cc084d7a7e6a11",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/8671e3106c1d97c7d7bc/visual.json",
+      "sha256": "ccfea5a4ab1323ea34a8f5791a4c509b39eb719081400fa774ce24b3f3c75cfe",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/b9fdfbed030c6cdeb30c/visual.json",
+      "sha256": "38c4d68a27249c9aed704c415752f4cff259dae77c88be0be5ec72d0d7e7108d",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/c1cfb2834f2874b5709b/visual.json",
+      "sha256": "5d9d0edf9f9193de112138efe063cfa4084fddcf773c5e66a27dc70a1c99f94a",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/dd3d51f8862cd9d0da38/visual.json",
+      "sha256": "84e0c6f9c4e5fde9399e73f9bf56751de2f33ea71bcd74667489d7b8981f8eca",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/ef78fa993eca732e0593/visual.json",
+      "sha256": "46121381c0811434214bee9afe43b7c12be91fa6333b870f39f16af9ab0d1aa4",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/aacf10b2086ec2081321/visuals/f30c0578424750e585f3/visual.json",
+      "sha256": "631c3c62eeca9ddd71cf3906cffbca930b9001573d8813dff8d86a587dc17e14",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/page.json",
+      "sha256": "0676cb0dc0a1ba8de6441184f10e3132242b35b1c5cc319e6edbe70ed76bfd53",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/17c61634fdd3d276c90e/visual.json",
+      "sha256": "8d817c4f1d56faee8df7d9ea60b3583b9495a5e499fce9ecd23bdeb71a2edadf",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/19b18294ced30505d1b9/visual.json",
+      "sha256": "8ea4a55fd8725e1481620ba18589d32fe71801f7bace038fdf2026cd756b2357",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/1e37ca5b6abb07773aea/visual.json",
+      "sha256": "8efdbbd5f93707915d3a8ccf2e13702f5f1620f465873e5935543ef98f439273",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/240ed4675df4e37a90f7/visual.json",
+      "sha256": "26123b222736e2b95c7960b7f4d78d53884187fdb3e76bd5d1fe20b4270069f0",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/2bb48196e30e154efa07/visual.json",
+      "sha256": "8fe8e8b240d869aed8f3c4ecd25aa7454280064424e8d15147311af9ab545cdb",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/9653458fe7a3c5db1952/visual.json",
+      "sha256": "a95a2079a413f8cd1bbd7749354ec37469bf854d29492c3b174d37e280c04854",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/bc73a5d22554ed823a06/visual.json",
+      "sha256": "2b6802f4379dd60e1f44ea79206f70a89572176b65c8b12e515ff61bf24228cd",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/f30c0578424750e585f3/visual.json",
+      "sha256": "631c3c62eeca9ddd71cf3906cffbca930b9001573d8813dff8d86a587dc17e14",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e36a78ce695dd432e859/visuals/f5c8852f59fbbf17c6a3/visual.json",
+      "sha256": "9eaf6214028f3719be211307559e199743236c2c3eeb585a720d243fdf738006",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/page.json",
+      "sha256": "f7cb6e6b5a7a1efa6610f7701c6b913ad77272cf8d02cedd2c121a3468846065",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/0a4988212797a7a6d4a7/visual.json",
+      "sha256": "7d6e8ca758f2d42b14083663e787bd18c12327bb45bb75031bd1df996620d821",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/37518133019d5238dd62/visual.json",
+      "sha256": "a43aff17bfaca6e19850e71588d8955355f777fb3d397a829cfddcb874a17df0",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/4150966a5ad34647e959/visual.json",
+      "sha256": "58e4fb21a8b0e429c7f45f6d3aee13ba4399ec003fba2ea029e051eed6f0a970",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/478c02fcd88771e79535/visual.json",
+      "sha256": "2dae30fd5d6b7bed838149ab605d20750911d06eb3b032d7d8f46e4c144eb7a9",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/488da9156623f78403e2/visual.json",
+      "sha256": "8fe179c4e19374528ad3e1a696a0e6c3d7792dcc8c6337bb6baac32f9a09796f",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/52bad413e293df73b69c/visual.json",
+      "sha256": "0fd1b1cd7819fef85950d61a1166b67ee8af0ea7709e3e104af0cec2214229f7",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/b6f8e122bfca43754b2d/visual.json",
+      "sha256": "75d128e0ecbbfbd41b8c999b56ca6e2c09544edc07d9291c1f451b4f6fce1e30",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/d68e63f870bb9eed63e0/visual.json",
+      "sha256": "6857fdb0acc1a0d51eeba8606b99a82feaf1978023e01e846da6ee325db1f615",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/d87b12edd6a001cb0c13/visual.json",
+      "sha256": "c6b8c31c6ed8ecb0803542fa7b27673aa8d1aef31a5d3ffa81b5cec7f1fbb63d",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/dd492012359adc9491c5/visual.json",
+      "sha256": "73c98786c3f726ff5e986c10ae6bae4724dd207ffe8c99cbf7a70de4fb243e4c",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/ef8627bb5e619d6364d6/visual.json",
+      "sha256": "59eb8abd89616fb4298de6d473fa8e18b7a05c0850193a139a290b9b8ce29398",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/e9f84939d02b2cb7aca2/visuals/f30c0578424750e585f3/visual.json",
+      "sha256": "631c3c62eeca9ddd71cf3906cffbca930b9001573d8813dff8d86a587dc17e14",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/pages/pages.json",
+      "sha256": "337138010a8370ffc557b50772a90b83a0586f44e29248104a09ddce05b8ccb1",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/report.json",
+      "sha256": "41a948341ecf44b75c3284b9dcc92642faa7f19d473d622de5b588c19a459f34",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+      "status": "PASS"
+    },
+    {
+      "file": "powerbi/EcommerceGrowth.Report/definition/version.json",
+      "sha256": "c8bdd966a85f1eaab4312d2096b6d7b508243e4d7bc5a4d25af3cfcb1056a4e7",
+      "schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/versionMetadata/1.0.0/schema.json",
+      "status": "PASS"
+    }
+  ],
+  "schemas_sha256": {
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json": "35c2f150882647855607cce7acd6b7166f7539f8614a1bf534dced5fba7699cc",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json": "625858494e98985060b31a5422bb52f9b09bd5a86cb90ada0a6d646652dfeaf3",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualConfiguration/2.7.0/schema-embedded.json": "c4d4a5fd1c883ac24d87bdd6542ecd2080746bc0bf921059ca73e5243447be28",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/semanticQuery/1.4.0/schema.json": "886a0b90a0d3c064891ee460853d2d7c5525339205fb76f63225337689ee782a",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/formattingObjectDefinitions/1.5.0/schema.json": "8a47dcd4fa55e88938af7f534e6edc3f3529d5a3a29926b639d4469a25f69f5a",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema-embedded.json": "7d65798f4fa51e02347b4a5fe30cb6e326119d481b14772d849045c9f5deaeb3",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json": "aee864ccff93f1b2e072b5b3dcbd3dbb904380d1d51ea22941b3e2a87da459f1",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json": "9f0b94a084d6c2e2cac2f1ee0900fc7f8159ae4e2c308f108000636a6d6bb481",
+    "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/versionMetadata/1.0.0/schema.json": "2c77c510cb12e11f10172174422d0efb1d4e97da06b8d453b2abdf81537e68b2"
+  },
+  "errors": [],
+  "scope": "JSON-schema validation of files with explicit Microsoft $schema URIs. Does not render visuals or execute semantic queries."
+}

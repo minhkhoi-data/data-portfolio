@@ -1,0 +1,6 @@
+stage,sessions,rate_from_previous,not_observed_at_next_step
+Observed sessions,360129,1.0,0
+Product view,77020,0.2138678084797392,283109
+Add to cart,14380,0.18670475201246428,62640
+Checkout,5187,0.36070931849791377,9193
+Purchase,2778,0.5355696934644303,2409

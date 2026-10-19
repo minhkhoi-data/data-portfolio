@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-14",
+  "input_workbook_sha256": "ed98f65649dead67154450a32e17c262fa6fc46e45badf0bec88c16b44c82d17",
+  "final_workbook_sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+  "source_hashes_unchanged": true,
+  "original_manifest_checks": {
+    "passed": 34,
+    "total": 34
+  },
+  "fresh_run": {
+    "exit_code": 0,
+    "outputs_initially_empty": true,
+    "byte_equal_outputs": [
+      "summary.json",
+      "source_manifest.json",
+      "channel_metrics.csv",
+      "monthly_metrics.csv",
+      "sr_metrics.csv",
+      "sdr_metrics.csv"
+    ]
+  },
+  "negative_missing_source": {
+    "exit_code": 1,
+    "run_status": "FAIL",
+    "fresh_summary_created": false
+  },
+  "independent_units": {
+    "lead_rows": 8000,
+    "lead_unique_keys": 8000,
+    "candidate_item_rows": 5044,
+    "candidate_item_unique_composite_keys": 5044,
+    "eligible_items": 4984,
+    "eligible_item_price": 664858.0,
+    "global_orders": 4457,
+    "seller_order_links": 4463,
+    "cycle_equal_14": 16,
+    "cycle_greater_14": 414,
+    "cycle_equal_30": 8,
+    "cycle_greater_30": 287
+  },
+  "baseline_checks": 139,
+  "baseline_passed": 139,
+  "scenario_checks": 11,
+  "scenario_passed": 11,
+  "criteria": {
+    "PASS": 59,
+    "FAIL": 0,
+    "BLOCKED": 7,
+    "N/A": 41
+  },
+  "product_gate": "BLOCKED",
+  "interview_gate": "BLOCKED",
+  "native_Microsoft_Excel": "PENDING_USER",
+  "full_XLSX_reconstruction_fresh_run": "NOT_PERFORMED_OPTIONAL",
+  "versions": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "openpyxl": "3.1.5",
+    "LibreOffice": "LibreOfficeDev 26.8.0.0.alpha0"
+  },
+  "visual_checks": [
+    "Dashboard",
+    "Channel_Performance",
+    "Rep_Performance",
+    "Monthly_Trend",
+    "Seller_Value",
+    "Action_List",
+    "Lookups",
+    "Leads",
+    "Sales_Items",
+    "Data_Dictionary",
+    "Project_Overview",
+    "Quality_Review"
+  ],
+  "style_fix": "STYLE_REPAIR.json",
+  "scenario_evidence_reused_by_non_style_byte_preservation": true,
+  "observed_previous_native_failure": "User repair log: Format from /xl/styles.xml; v3 pending native retest"
+}

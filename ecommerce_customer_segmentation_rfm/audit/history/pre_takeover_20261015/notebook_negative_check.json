@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "case": "Notebook cell error propagates; no fallback retry or success evidence",
+  "exception": "CellExecutionError",
+  "intended_error_detected": true,
+  "runner_sha256": "b0b99b37e1d700fcb8b9365963177df9234481a9663ef272e9145aebc96052ee"
+}

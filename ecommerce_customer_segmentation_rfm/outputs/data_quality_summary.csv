@@ -1,7 +1,14 @@
-Check,Count
-Raw rows,1067371
-Missing customer IDs,243007
-Cancelled invoice rows,19494
-Non-positive quantity rows,22950
-Non-positive price rows,6207
-Duplicate rows,34335
+Check,Count,Meaning
+Missing customer ID,243007,Overlapping input flag; do not sum as removals
+Invalid customer ID,0,Overlapping input flag; do not sum as removals
+Invalid required value/date/key,243007,Overlapping input flag; do not sum as removals
+Zero/noninteger quantity,0,Overlapping input flag; do not sum as removals
+Nonpositive price,6207,Overlapping input flag; do not sum as removals
+Inconsistent credit sign,3458,Overlapping input flag; do not sum as removals
+Exact duplicate raw rows,34335,Overlapping input flag; do not sum as removals
+Parsing failures: Quantity,0,Nonblank source value failed parsing
+Parsing failures: Price,0,Nonblank source value failed parsing
+Parsing failures: Customer ID,0,Nonblank source value failed parsing
+Parsing failures: InvoiceDate,0,Nonblank source value failed parsing
+Missing Description,4382,Allowed: description is not used to infer buying behaviour
+Invoices with multiple within-day timestamps,64,Earliest timestamp defines order; all lines retained

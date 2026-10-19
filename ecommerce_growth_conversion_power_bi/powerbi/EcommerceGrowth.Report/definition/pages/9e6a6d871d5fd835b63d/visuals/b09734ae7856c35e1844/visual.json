@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Repeat Purchasers"
+                  "Property": "Multiple-event Purchasers"
                 }
               },
-              "queryRef": "_Measures.Repeat Purchasers",
-              "nativeQueryRef": "Repeat Purchasers"
+              "queryRef": "_Measures.Multiple-event Purchasers",
+              "nativeQueryRef": "Multi-event purchasers"
             }
           ]
         }
@@ -61,6 +61,20 @@
                   "Value": "true"
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
             }
           },
           "selector": {
@@ -81,7 +95,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Repeat Purchasers'"
+                  "Value": "'Multi-event purchasers'"
                 }
               }
             },
@@ -130,14 +144,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Repeat Purchasers'"
+                  "Value": "'Multi-event purchasers'"
                 }
               }
             },

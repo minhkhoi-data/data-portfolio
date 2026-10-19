@@ -1,0 +1,8 @@
+{
+  "scope": "Observed total sandbox cgroup usage during the build, sampled every 2 seconds after loading; not a per-process RSS peak",
+  "samples": 1,
+  "maximum_observed_GiB": 1.355,
+  "final_GiB": 1.355,
+  "elapsed_seconds": 0.0,
+  "build_status_at_end": "FAIL"
+}

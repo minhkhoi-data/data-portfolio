@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "reviewed_utc": "2026-10-15T05:19:48.498046+00:00",
+  "files": [
+    {
+      "path": "figures/cohort_retention_heatmap.png",
+      "sha256": "76eb9b5baf2afbcee882709f09bf011165ac433ebb2f32901bba07cd49ddec2c",
+      "observations": "Viewed current PNG directly. Labels, axes and units readable; cohort incomplete windows are grey. Underlying outputs passed independent validation."
+    },
+    {
+      "path": "figures/customer_lifecycle_decision_dashboard.png",
+      "sha256": "f8f638552f34b9293231e77bfe5c5230337177aeefa63c822ab5e4be838ab1d1",
+      "observations": "Viewed current PNG directly. Labels, axes and units readable; cohort incomplete windows are grey. Underlying outputs passed independent validation."
+    },
+    {
+      "path": "figures/mature_cohort_rates.png",
+      "sha256": "6e103b2d6cd87365b9ac7afe9dbfda2318e05c3576a80bad0bac70c5f6fbb1e3",
+      "observations": "Viewed current PNG directly. Labels, axes and units readable; cohort incomplete windows are grey. Underlying outputs passed independent validation."
+    }
+  ],
+  "frontend_gui_certified": false
+}

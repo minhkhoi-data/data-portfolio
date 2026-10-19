@@ -1,0 +1,17 @@
+{
+  "analytical_checks": 139,
+  "scenario_checks": 11,
+  "passed": 150,
+  "Microsoft_Excel": "PENDING_USER",
+  "current_workbook_sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+  "source_status": "Publisher real anonymized samples; unchanged CSVs",
+  "visual_review": "All 12 Calc-rendered sheet viewports reviewed; final four edited views rechecked; chart overlap corrected. Microsoft Excel rendering pending.",
+  "artifact_verdict": "STATIC/ANALYTICAL/FULL-RECALC CHECKS PASSED; MICROSOFT EXCEL NATIVE BLOCKED",
+  "criteria": {
+    "PASS": 59,
+    "FAIL": 0,
+    "BLOCKED": 7,
+    "N/A": 41
+  },
+  "live_control_UI": "PENDING_USER"
+}

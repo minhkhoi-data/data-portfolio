@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "kernel_mode": "fresh in-process",
+  "test": "Intentional notebook cell failure propagates as CellExecutionError; no fallback or success claim",
+  "expected_error": "INTENTIONAL_QA_FAILURE"
+}

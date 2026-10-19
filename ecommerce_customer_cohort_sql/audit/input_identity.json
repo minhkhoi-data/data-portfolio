@@ -1,0 +1,61 @@
+{
+  "source_project": "02_GA4_PowerBI_UIFIX_v2",
+  "data_unchanged": true,
+  "files": [
+    {
+      "file": "data/audited/dim_channel.csv",
+      "bytes": 89,
+      "sha256": "77a598950a88da74de9c2cc1d75ac166f681d04d7d604587bc9b2dffdf43fc00"
+    },
+    {
+      "file": "data/audited/dim_date.csv",
+      "bytes": 5463,
+      "sha256": "14f39665c687cf584bab299882a39a1ee3645a094d3b3f76c974192386f7ff6f"
+    },
+    {
+      "file": "data/audited/dim_device.csv",
+      "bytes": 54,
+      "sha256": "3f27a52611a05174dc7d77b4a787fd3ad9a9099df2fbfd277846f87671d8b5a2"
+    },
+    {
+      "file": "data/audited/dim_geo.csv",
+      "bytes": 2203,
+      "sha256": "f9aa063ccff997b92b0d884cebe55322592a188a70a046b84b9a140faa3ad096"
+    },
+    {
+      "file": "data/audited/fact_purchases.csv",
+      "bytes": 787111,
+      "sha256": "33027412aa3827781edab83782aff2ecd97aff4b6ac82fe930b6e3842ae54c39"
+    },
+    {
+      "file": "data/audited/fact_sessions.csv",
+      "bytes": 47217034,
+      "sha256": "af3796a6055c1e178b25b571956d56a9de000b27a810881b3126ef3ab27dbdea"
+    },
+    {
+      "file": "data/audited/funnel_stage.csv",
+      "bytes": 73,
+      "sha256": "d8966b0471b4e67d842d0d655c2c2af1c5148bc9a5c45c9ee3ef7c76d44e4507"
+    },
+    {
+      "file": "data/audited/measures.csv",
+      "bytes": 15,
+      "sha256": "f77a3ddb4a90efa37d0a1b53334381cbb283d014f33006fe7f49219a1c1dacbb"
+    },
+    {
+      "file": "data/audited/source/bigquery_source_profile.csv",
+      "bytes": 224,
+      "sha256": "f3702784cf94b27220f4c3fe8d068adb8ba7d26f24c2a6cb80cbb11fa3bc0e59"
+    },
+    {
+      "file": "data/audited/source/ga4_events.csv.gz",
+      "bytes": 246905369,
+      "sha256": "db97f1394a7a1e1142791b6ca6819a0228f2e9b329d641f33a964aa84be1acc5"
+    },
+    {
+      "file": "data/audited/source/provenance.json",
+      "bytes": 4280,
+      "sha256": "ca910ae2df78a9de1bf1398e4bed590d737ac1014e54a12c6cf6f58e3ec40d21"
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "scope": "independent native-data SQL checks, counterexamples and links; personal HR understanding not assessed",
+  "checks": [
+    {
+      "Check": "SQL customer population",
+      "Verdict": "PASS",
+      "Evidence": "5878 customer rows"
+    },
+    {
+      "Check": "SQL distinct invoice frequency",
+      "Verdict": "PASS",
+      "Evidence": "36969 purchase invoices"
+    },
+    {
+      "Check": "SQL gross value",
+      "Verdict": "PASS",
+      "Evidence": "GBP 17374804.268"
+    },
+    {
+      "Check": "SQL credits and net recorded value",
+      "Verdict": "PASS",
+      "Evidence": "GBP 16351040.958 net"
+    },
+    {
+      "Check": "SQL exact elapsed 90-day rate",
+      "Verdict": "PASS",
+      "Evidence": "2486/5281"
+    },
+    {
+      "Check": "SQL month-1 eligible/active count",
+      "Verdict": "PASS",
+      "Evidence": "1327/5659"
+    },
+    {
+      "Check": "SQL month-3 eligible/active count",
+      "Verdict": "PASS",
+      "Evidence": "1305/5249"
+    },
+    {
+      "Check": "SQL month-6 eligible/active count",
+      "Verdict": "PASS",
+      "Evidence": "1089/4933"
+    },
+    {
+      "Check": "SQL month-12 eligible/active count",
+      "Verdict": "PASS",
+      "Evidence": "968/4266"
+    },
+    {
+      "Check": "Pipeline publishes duplicate sensitivity",
+      "Verdict": "PASS",
+      "Evidence": "outputs/duplicate_sensitivity.json"
+    },
+    {
+      "Check": "Duplicate sensitivity reconciles independently",
+      "Verdict": "PASS",
+      "Evidence": {
+        "Scenario": "Retain exact duplicate rows",
+        "PurchaseLines": 805549,
+        "BasePurchaseLines": 779425,
+        "GrossPurchaseValueGBP": 17743429.178,
+        "BaseGrossPurchaseValueGBP": 17374804.268,
+        "NetRecordedValueGBP": 16709343.308,
+        "BaseNetRecordedValueGBP": 16351040.958,
+        "CustomersWithChangedAction": 55
+      }
+    },
+    {
+      "Check": "Duplicate sensitivity population",
+      "Verdict": "PASS",
+      "Evidence": {
+        "Scenario": "Retain exact duplicate rows",
+        "PurchaseLines": 805549,
+        "BasePurchaseLines": 779425,
+        "GrossPurchaseValueGBP": 17743429.178,
+        "BaseGrossPurchaseValueGBP": 17374804.268,
+        "NetRecordedValueGBP": 16709343.308,
+        "BaseNetRecordedValueGBP": 16351040.958,
+        "CustomersWithChangedAction": 55
+      }
+    },
+    {
+      "Check": "Source observation end",
+      "Verdict": "PASS",
+      "Evidence": "2011-12-09 12:50:00"
+    },
+    {
+      "Check": "Source hash",
+      "Verdict": "PASS",
+      "Evidence": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45"
+    },
+    {
+      "Check": "Equal values share score: R_Score",
+      "Verdict": "PASS",
+      "Evidence": "Every observed tie group"
+    },
+    {
+      "Check": "Equal values share score: F_Score",
+      "Verdict": "PASS",
+      "Evidence": "Every observed tie group"
+    },
+    {
+      "Check": "Equal values share score: M_Score",
+      "Verdict": "PASS",
+      "Evidence": "Every observed tie group"
+    },
+    {
+      "Check": "Malformed schema fails closed",
+      "Verdict": "PASS",
+      "Evidence": "FAIL \u2014 Missing required columns: ['Country', 'Customer ID', 'Description', 'Invoice', 'InvoiceDate', 'Price', 'Quantity', 'StockCode']; previous outputs, if present, are not a new successful run"
+    },
+    {
+      "Check": "Missing input fails closed",
+      "Verdict": "PASS",
+      "Evidence": "nonzero exit, no published outputs"
+    },
+    {
+      "Check": "Local link README.md -> memo/business_memo.md",
+      "Verdict": "PASS",
+      "Evidence": "memo/business_memo.md"
+    },
+    {
+      "Check": "Local link README.md -> docs/LEARNING_GUIDE_VI.md",
+      "Verdict": "PASS",
+      "Evidence": "docs/LEARNING_GUIDE_VI.md"
+    },
+    {
+      "Check": "Local link README.md -> docs/METHODS.md",
+      "Verdict": "PASS",
+      "Evidence": "docs/METHODS.md"
+    },
+    {
+      "Check": "Local link README.md -> audit/AUDIT_REPORT.md",
+      "Verdict": "PASS",
+      "Evidence": "audit/AUDIT_REPORT.md"
+    },
+    {
+      "Check": "Local link README.md -> ecommerce_customer_segmentation_rfm.ipynb",
+      "Verdict": "PASS",
+      "Evidence": "ecommerce_customer_segmentation_rfm.ipynb"
+    },
+    {
+      "Check": "Local link README.md -> notebook_preview.html",
+      "Verdict": "PASS",
+      "Evidence": "notebook_preview.html"
+    },
+    {
+      "Check": "Local link README.md -> figures/customer_lifecycle_decision_dashboard.png",
+      "Verdict": "PASS",
+      "Evidence": "figures/customer_lifecycle_decision_dashboard.png"
+    },
+    {
+      "Check": "Local link README.md -> audit/notebook_execution.json",
+      "Verdict": "PASS",
+      "Evidence": "audit/notebook_execution.json"
+    },
+    {
+      "Check": "Local link README.md -> outputs/run_summary.json",
+      "Verdict": "PASS",
+      "Evidence": "outputs/run_summary.json"
+    },
+    {
+      "Check": "Local link README.md -> outputs/cleaning_reconciliation.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/cleaning_reconciliation.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/orders.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/orders.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/customer_lifecycle_table.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/customer_lifecycle_table.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/rfm_cutoffs.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/rfm_cutoffs.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/rfm_lifecycle_crosswalk.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/rfm_lifecycle_crosswalk.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/repeat_90_curve.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/repeat_90_curve.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/repeat_90_by_cohort.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/repeat_90_by_cohort.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/retention_kpis.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/retention_kpis.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/rule_sensitivity.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/rule_sensitivity.csv"
+    },
+    {
+      "Check": "Local link README.md -> outputs/duplicate_sensitivity.json",
+      "Verdict": "PASS",
+      "Evidence": "outputs/duplicate_sensitivity.json"
+    },
+    {
+      "Check": "Local link README.md -> outputs/tenure_context.csv",
+      "Verdict": "PASS",
+      "Evidence": "outputs/tenure_context.csv"
+    },
+    {
+      "Check": "Local link README.md -> audit/independent_validation.json",
+      "Verdict": "PASS",
+      "Evidence": "generated by this validator"
+    },
+    {
+      "Check": "Local link README.md -> audit/extended_validation.json",
+      "Verdict": "PASS",
+      "Evidence": "audit/extended_validation.json"
+    },
+    {
+      "Check": "Local link README.md -> audit/CHECKLIST.csv",
+      "Verdict": "PASS",
+      "Evidence": "audit/CHECKLIST.csv"
+    },
+    {
+      "Check": "Local link README.md -> DATA_SOURCES.md",
+      "Verdict": "PASS",
+      "Evidence": "DATA_SOURCES.md"
+    },
+    {
+      "Check": "Local link README.md -> docs/CONTRIBUTION.md",
+      "Verdict": "PASS",
+      "Evidence": "docs/CONTRIBUTION.md"
+    },
+    {
+      "Check": "Local link docs/LEARNING_GUIDE_VI.md -> ../memo/business_memo.md",
+      "Verdict": "PASS",
+      "Evidence": "../memo/business_memo.md"
+    }
+  ],
+  "checks_passed": 45,
+  "environment": {
+    "python": "3.12.14",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "sqlite": "3.53.1"
+  }
+}

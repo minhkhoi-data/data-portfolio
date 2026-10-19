@@ -1,0 +1,29 @@
+{
+  "PASS": 53,
+  "FAIL": 0,
+  "BLOCKED": 10,
+  "N/A": 44,
+  "N": 63,
+  "pass_percent": 84.13,
+  "coverage_percent": 84.13,
+  "artifact_frozen": false,
+  "artifact_verdict": "ANALYTICAL/STATIC CHECKS PASSED \u2014 NATIVE AND REDISTRIBUTION GATES BLOCKED",
+  "interview_verdict": "BLOCKED",
+  "blocked_ids": [
+    "SRC-05",
+    "MET-06",
+    "RUN-03",
+    "RUN-04",
+    "OUT-01",
+    "OUT-02",
+    "HR-01",
+    "HR-02",
+    "HR-03",
+    "EXP-02"
+  ],
+  "checked_utc": "2026-10-15T05:43:11.860818+00:00",
+  "release": "ga4-takeover-2026-10-15",
+  "ui_revision": "UIFIX_v2",
+  "baseline_native_render_evidence": "Five user screenshots, no filter/Refresh certification",
+  "current_ui_native_verified": false
+}

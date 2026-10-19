@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checked_utc": "2026-10-15T05:43:11.860818+00:00",
+  "file": "outputs/figures/ga4_overview.png",
+  "sha256": "eeb6159f9b19d50433acdee15d25957ef0d44b5da6d65870d6875036d5c7c475",
+  "observations": "Viewed actual updated PNG; five corrected channel groups, KPI totals, axes and readable labels match validated tables. Explicitly labelled Python preview.",
+  "native_render_verified": false
+}

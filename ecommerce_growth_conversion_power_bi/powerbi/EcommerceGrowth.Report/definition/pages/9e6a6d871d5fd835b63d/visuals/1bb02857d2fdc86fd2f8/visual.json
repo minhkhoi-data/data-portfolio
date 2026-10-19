@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Repeat Purchase Rate"
+                  "Property": "Multiple-event Purchaser Share"
                 }
               },
-              "queryRef": "_Measures.Repeat Purchase Rate",
-              "nativeQueryRef": "Repeat Rate"
+              "queryRef": "_Measures.Multiple-event Purchaser Share",
+              "nativeQueryRef": "Multi-event share"
             }
           ]
         }
@@ -81,7 +81,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Repeat Rate'"
+                  "Value": "'Multi-event share'"
                 }
               }
             },
@@ -130,14 +130,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Repeat Rate'"
+                  "Value": "'Multi-event share'"
                 }
               }
             },

@@ -1,0 +1,52 @@
+RFM Segment,Lifecycle,ValueTier,CRM Priority,Customers
+Champions (relative),Active repeat,Higher recorded value,Protect frequent higher-value,1266
+Champions (relative),Active repeat,Higher recorded value,Review credits before outreach,2
+Intermediate,Active repeat,Higher recorded value,Develop higher-value repeat,59
+Intermediate,Active repeat,Lower recorded value,Develop repeat relationship,58
+Intermediate,Active repeat,Lower recorded value,Review credits before outreach,1
+Intermediate,Active repeat,Middle recorded value,Develop repeat relationship,72
+Intermediate,At risk,Higher recorded value,Win-back higher-value test,64
+Intermediate,At risk,Lower recorded value,Lower-cost win-back test,184
+Intermediate,At risk,Lower recorded value,Review credits before outreach,2
+Intermediate,At risk,Middle recorded value,Lower-cost win-back test,105
+Intermediate,Dormant,Higher recorded value,Review dormant higher-value,3
+Intermediate,Dormant,Lower recorded value,Lower-cost dormant test,24
+Intermediate,Dormant,Lower recorded value,Review credits before outreach,1
+Intermediate,Dormant,Middle recorded value,Lower-cost dormant test,6
+Intermediate,Dormant,Middle recorded value,Review credits before outreach,1
+Intermediate,Recent single-order,Higher recorded value,Second-order journey test,7
+Intermediate,Recent single-order,Lower recorded value,Review credits before outreach,5
+Intermediate,Recent single-order,Lower recorded value,Second-order journey test,101
+Intermediate,Recent single-order,Middle recorded value,Second-order journey test,15
+Lapsed frequent,Dormant,Higher recorded value,Review credits before outreach,4
+Lapsed frequent,Dormant,Higher recorded value,Review dormant higher-value,318
+Lapsed frequent,Dormant,Lower recorded value,Lower-cost dormant test,122
+Lapsed frequent,Dormant,Lower recorded value,Review credits before outreach,8
+Lapsed frequent,Dormant,Middle recorded value,Lower-cost dormant test,251
+Lapsed frequent,Dormant,Middle recorded value,Review credits before outreach,1
+Lapsed low-frequency,Dormant,Higher recorded value,Review dormant higher-value,71
+Lapsed low-frequency,Dormant,Lower recorded value,Lower-cost dormant test,1324
+Lapsed low-frequency,Dormant,Lower recorded value,Review credits before outreach,34
+Lapsed low-frequency,Dormant,Middle recorded value,Lower-cost dormant test,209
+Lapsed low-frequency,Dormant,Middle recorded value,Review credits before outreach,1
+Recent frequent,Active repeat,Higher recorded value,Develop higher-value repeat,190
+Recent frequent,Active repeat,Lower recorded value,Develop repeat relationship,10
+Recent frequent,Active repeat,Lower recorded value,Review credits before outreach,2
+Recent frequent,Active repeat,Middle recorded value,Develop repeat relationship,152
+Recent frequent,Active repeat,Middle recorded value,Review credits before outreach,1
+Recent frequent,At risk,Higher recorded value,Win-back frequent higher-value test,189
+Recent frequent,At risk,Lower recorded value,Lower-cost win-back test,7
+Recent frequent,At risk,Middle recorded value,Lower-cost win-back test,36
+Recent frequent,At risk,Middle recorded value,Review credits before outreach,1
+Recent frequent,Dormant,Higher recorded value,Review dormant higher-value,12
+Recent frequent,Dormant,Lower recorded value,Lower-cost dormant test,1
+Recent frequent,Dormant,Middle recorded value,Lower-cost dormant test,10
+Recent low-frequency,Recent single-order,Higher recorded value,Second-order journey test,5
+Recent low-frequency,Recent single-order,Lower recorded value,Review credits before outreach,2
+Recent low-frequency,Recent single-order,Lower recorded value,Second-order journey test,207
+Recent low-frequency,Recent single-order,Middle recorded value,Second-order journey test,23
+Recent mid-frequency,Active repeat,Higher recorded value,Develop higher-value repeat,160
+Recent mid-frequency,Active repeat,Higher recorded value,Review credits before outreach,1
+Recent mid-frequency,Active repeat,Lower recorded value,Develop repeat relationship,252
+Recent mid-frequency,Active repeat,Lower recorded value,Review credits before outreach,6
+Recent mid-frequency,Active repeat,Middle recorded value,Develop repeat relationship,292

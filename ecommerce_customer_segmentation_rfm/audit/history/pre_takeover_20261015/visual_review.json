@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "reviewed_utc": "2026-10-07T14:39:59.144642+00:00",
+  "files": [
+    {
+      "path": "figures/cohort_retention_heatmap.png",
+      "sha256": "76eb9b5baf2afbcee882709f09bf011165ac433ebb2f32901bba07cd49ddec2c",
+      "observations": "Viewed actual final image; axes/units/labels and content readable; values backed by validated outputs."
+    },
+    {
+      "path": "figures/customer_lifecycle_decision_dashboard.png",
+      "sha256": "f8f638552f34b9293231e77bfe5c5230337177aeefa63c822ab5e4be838ab1d1",
+      "observations": "Viewed actual final image; axes/units/labels and content readable; values backed by validated outputs."
+    },
+    {
+      "path": "figures/mature_cohort_rates.png",
+      "sha256": "6e103b2d6cd87365b9ac7afe9dbfda2318e05c3576a80bad0bac70c5f6fbb1e3",
+      "observations": "Viewed actual final image; axes/units/labels and content readable; values backed by validated outputs."
+    }
+  ],
+  "empty_population_counterexample": "Viewed dashboard and mature-cohort PNG: four horizons visible, explicit N/A, 0\u201390-day repeat axis. Fixture images are temporary QA, not source results.",
+  "frontend_gui_certified": false,
+  "preview_structure": "Executed 9-cell notebook output regenerated to self-contained HTML; embedded tables/images checked; no browser GUI certification."
+}

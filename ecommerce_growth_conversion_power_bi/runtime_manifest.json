@@ -1,0 +1,46 @@
+{
+  "release": "GA4_CSV_REBUILD_2026_10_13",
+  "files": [
+    {
+      "path": "data/fact_sessions.csv",
+      "bytes": 47217034,
+      "sha256": "af3796a6055c1e178b25b571956d56a9de000b27a810881b3126ef3ab27dbdea"
+    },
+    {
+      "path": "data/fact_purchases.csv",
+      "bytes": 787111,
+      "sha256": "33027412aa3827781edab83782aff2ecd97aff4b6ac82fe930b6e3842ae54c39"
+    },
+    {
+      "path": "data/dim_date.csv",
+      "bytes": 5463,
+      "sha256": "14f39665c687cf584bab299882a39a1ee3645a094d3b3f76c974192386f7ff6f"
+    },
+    {
+      "path": "data/dim_channel.csv",
+      "bytes": 89,
+      "sha256": "77a598950a88da74de9c2cc1d75ac166f681d04d7d604587bc9b2dffdf43fc00"
+    },
+    {
+      "path": "data/dim_device.csv",
+      "bytes": 54,
+      "sha256": "3f27a52611a05174dc7d77b4a787fd3ad9a9099df2fbfd277846f87671d8b5a2"
+    },
+    {
+      "path": "data/dim_geo.csv",
+      "bytes": 2203,
+      "sha256": "f9aa063ccff997b92b0d884cebe55322592a188a70a046b84b9a140faa3ad096"
+    },
+    {
+      "path": "data/funnel_stage.csv",
+      "bytes": 73,
+      "sha256": "d8966b0471b4e67d842d0d655c2c2af1c5148bc9a5c45c9ee3ef7c76d44e4507"
+    },
+    {
+      "path": "data/measures.csv",
+      "bytes": 15,
+      "sha256": "f77a3ddb4a90efa37d0a1b53334381cbb283d014f33006fe7f49219a1c1dacbb"
+    }
+  ],
+  "note": "CSV bytes are checked before the local DataFolder parameter is set. No Desktop success is asserted."
+}

@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-15T09:07:00.106217+00:00",
+  "duckdb_version": "1.4.3",
+  "memory_limit": "512MB",
+  "threads": 1,
+  "per_statement_timeout_seconds": 90,
+  "steps": [
+    {
+      "step": "00_load_audited",
+      "seconds": 2.563
+    },
+    {
+      "step": "01_build_cohorts",
+      "seconds": 3.534
+    },
+    {
+      "step": "02_quality_controls",
+      "seconds": 0.12
+    },
+    {
+      "step": "03_overall_windows",
+      "seconds": 0.043
+    },
+    {
+      "step": "04_monthly_cohorts",
+      "seconds": 0.055
+    },
+    {
+      "step": "05_channel_sensitivity",
+      "seconds": 0.113
+    },
+    {
+      "step": "06_purchase_timing",
+      "seconds": 0.023
+    },
+    {
+      "step": "07_return_gaps",
+      "seconds": 0.027
+    },
+    {
+      "step": "08_fixed_population",
+      "seconds": 0.029
+    },
+    {
+      "step": "09_device_cohorts",
+      "seconds": 0.044
+    },
+    {
+      "step": "10_daily_cohorts",
+      "seconds": 0.032
+    },
+    {
+      "step": "11_monthly_fixed_population",
+      "seconds": 0.023
+    }
+  ],
+  "input_files_verified": 11,
+  "validation_checks": 55,
+  "elapsed_seconds": 25.764
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checks": 159,
+  "passed": 159,
+  "failed": 0,
+  "native_power_bi": "NOT_VERIFIED",
+  "scope": "Analytical/static checks and current validator evidence; this verifier does not execute native DAX, Windows M or Desktop."
+}

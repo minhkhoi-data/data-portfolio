@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "validator": "Microsoft @microsoft/powerquery-parser",
+  "version": "2.0.0",
+  "tables": [
+    {
+      "table": "DimChannel",
+      "status": "PASS",
+      "tmdl_sha256": "806eeb8f06cc394a8a126259bd1c2f13cfb4a2f5107a7ab959ac68594a2ea5e8"
+    },
+    {
+      "table": "DimDate",
+      "status": "PASS",
+      "tmdl_sha256": "ea2034da305a5e3017c7817ac306c6ebce296a95f765aefe9732a583cdcf7ca8"
+    },
+    {
+      "table": "DimDevice",
+      "status": "PASS",
+      "tmdl_sha256": "bc321165ee910d89196d8d3f8f2a58e2ddd0d8911f7dd961bd2d641072617744"
+    },
+    {
+      "table": "DimGeo",
+      "status": "PASS",
+      "tmdl_sha256": "cf49867730995d07f39584724167dfaded0ec11f200e94d84685d3f430f87473"
+    },
+    {
+      "table": "FactPurchases",
+      "status": "PASS",
+      "tmdl_sha256": "03464b45aa9097ae5bafed6d30ce2daffeec6fb3f68529f7431d7a3bcfcdaaf1"
+    },
+    {
+      "table": "FactSessions",
+      "status": "PASS",
+      "tmdl_sha256": "2eaf59c1a3239cf22d06b87155ce67ffa19d2dfb0dad425e46019dffc84fba05"
+    },
+    {
+      "table": "FunnelStage",
+      "status": "PASS",
+      "tmdl_sha256": "8981069ebf4561c4498915807d8b9f76153e15bb46fd379f736dc51066b02c05"
+    },
+    {
+      "table": "_Measures",
+      "status": "PASS",
+      "tmdl_sha256": "60d609fcbb536378f27be712e82131a9646788c5d5069736e24af6ef613896f2"
+    }
+  ],
+  "parameter_sha256": "3764e3cc74abfb9abc5dfcdffa463b00f209b4a879e6566edd55a74411aeaa01",
+  "scope": "Lexing and grammar parsing only. Does not evaluate functions, execute Windows M, refresh data or validate DAX.",
+  "native_m_engine": "NOT_VERIFIED",
+  "evidence_reuse": "Historical execution; SHA256-identical tested inputs verified during this rebuild. No fresh parser execution."
+}

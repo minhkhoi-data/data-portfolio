@@ -1,0 +1,4 @@
+source_month,exported_events,purchase_events,refund_events,missing_user_events,missing_session_events,purchase_revenue_usd_sum
+202011,1219988,2054,0,0,0,144260
+202012,1328227,2434,0,0,0,160555
+202101,996047,1204,0,0,0,57350

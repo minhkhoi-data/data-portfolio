@@ -1,0 +1,11 @@
+{
+  "prior_revision_open": "FAILED",
+  "observed_error_type": "UnknownKeyword",
+  "observed_keyword": "isKey",
+  "document": "./tables/DimDate",
+  "line_number": 13,
+  "evidence": "native_error_dimdate.png",
+  "correction": "Move column properties before annotation and separate scopes; indent model child annotations/references",
+  "corrected_native_open": "NOT_VERIFIED",
+  "data_source_changed": false
+}

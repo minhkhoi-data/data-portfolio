@@ -1,0 +1,31 @@
+{
+  "status": "INPUT_IDENTITY_MATCH",
+  "fresh_kernel_this_remaster": false,
+  "records": {
+    "analysis/run_analysis.py": {
+      "current_sha256": "f653b59d5eeaea9c5c553ebc4a6063b1a6ca518170574e5562f693903a07fb43",
+      "tested_sha256": "f653b59d5eeaea9c5c553ebc4a6063b1a6ca518170574e5562f693903a07fb43"
+    },
+    "analysis/config.json": {
+      "current_sha256": "3d03c4c3923177c2397f1c1edf1e64b1171a49940034bf2b04409d23eda32782",
+      "tested_sha256": "3d03c4c3923177c2397f1c1edf1e64b1171a49940034bf2b04409d23eda32782"
+    },
+    "analysis/execute_notebook.py": {
+      "current_sha256": "b0b99b37e1d700fcb8b9365963177df9234481a9663ef272e9145aebc96052ee",
+      "tested_sha256": "b0b99b37e1d700fcb8b9365963177df9234481a9663ef272e9145aebc96052ee"
+    },
+    "analysis/inprocess_kernel.py": {
+      "current_sha256": "5a78873b19bcbfd8ac7fbf78f3d977ac4fd871549f3a6e126ded86eaeb144e84",
+      "tested_sha256": "5a78873b19bcbfd8ac7fbf78f3d977ac4fd871549f3a6e126ded86eaeb144e84"
+    },
+    "ecommerce_customer_segmentation_rfm.ipynb": {
+      "current_sha256": "6aa8438f502b27be2261f40997bf7048370a57ae211a46511cb4319c4820f1a4",
+      "tested_sha256": "6aa8438f502b27be2261f40997bf7048370a57ae211a46511cb4319c4820f1a4"
+    },
+    "data/online_retail_II.csv.gz": {
+      "current_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45",
+      "tested_sha256": "88703abba52824ab26c0f107fb8104637c5dc3a199c6cc5f180a980ea1c78c45"
+    }
+  },
+  "interpretation": "Historical notebook evidence only; fresh execution remains BLOCKED in current checklist."
+}

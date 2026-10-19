@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "input_workbook_sha256": "b568eaaa2e674970f9fa4fe62b14a77bb9a65cb1a74b03a6c070956a128f3432",
+  "final_workbook_sha256": "4f718187e1935bc32501622f29b28f1f69aa545592bbb2c95c46805806f4345b",
+  "only_changed_part": "xl/styles.xml",
+  "replaced_style_indexes": [
+    40
+  ],
+  "boolean_cells_unchanged": 127,
+  "all_non_style_parts_byte_identical": true,
+  "all_ordinary_style_properties_preserved": true,
+  "source": "Microsoft MS-XLSX 2.4.99 xfComplement requires a Feature Property Bag part; none existed.",
+  "spec_url": "https://learn.microsoft.com/en-us/openspecs/office_standards/ms-xlsx/d6ffbc21-ef11-4546-9a07-95885e2fd497",
+  "native_Microsoft_Excel": "PENDING_RETEST"
+}

@@ -1,0 +1,23 @@
+{
+  "mqls": 8000,
+  "observed_wins": 842,
+  "recorded_won_share": 0.10525,
+  "no_won_record": 7158,
+  "valid_close_cycles": 841,
+  "median_calendar_days_to_win": 14.0,
+  "avg_calendar_days_to_win": 48.500594530321045,
+  "slow_wins_30d": 287,
+  "slow_wins_14d": 414,
+  "date_anomalies": 1,
+  "missing_origin": 60,
+  "source_unknown_origin": 1099,
+  "won_sellers_with_candidate_items": 380,
+  "won_sellers_with_eligible_delivered_items": 376,
+  "candidate_items": 5044,
+  "eligible_items": 4984,
+  "eligible_seller_order_links": 4463,
+  "unique_eligible_orders": 4457,
+  "linked_delivered_item_value_source_units": 664858.0,
+  "declared_revenue_zero": 797,
+  "declared_revenue_positive": 45
+}
