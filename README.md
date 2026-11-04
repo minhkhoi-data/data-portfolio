@@ -1,83 +1,35 @@
-# Customer & Growth Analytics Portfolio
 
-I am an entry-level, business-facing Data Analyst focused on customer, marketing, product, and commercial decisions. This portfolio shows how I move from data quality and metric design to an actionable recommendation—without presenting descriptive patterns as causal proof.
+# Data Analytics Portfolio
 
-**Core tools:** SQL · Excel · Power BI/DAX · Python · Statistics · Tableau  
-**Target roles:** Data / BI Analyst · Customer / CRM Analyst · Marketing / Growth Analyst · Product Analyst · Commercial / E-commerce Analyst
+Business (Marketing) graduate currently completing a Bachelor of Applied Data Science. This portfolio explores customer behaviour, marketing performance, and business reporting through projects using **SQL, Excel, Power BI, and Python**.
 
-## Start here: three flagship decisions
+## Featured Projects
 
-These three projects are the shortest route through the portfolio.
-
-### 1. [Customer Lifecycle, Retention & CRM Prioritisation](ecommerce_customer_segmentation_rfm/)
-
-**Decision:** who should be protected, developed, won back, or deprioritised?  
-**Evidence:** 5,878 customers; RFM, repeat purchase, mature-cohort retention, lifecycle state, right-censoring control, and CRM action queue.  
-**Result:** 72.4% repeat-customer rate; 47.6% 90-day repeat among eligible customers; active repeat customers generated 79.7% of historical revenue.
-
-### 2. [Campaign & Growth Performance](marketing_campaign_funnel_analysis/)
-
-**Decision:** where does the funnel weaken, and which campaigns deserve scale, optimisation, pause, or investigation review?  
-**Evidence:** 10,000 campaign-level records; weighted CTR, lead rates, CAC, ROAS, data-quality gates, and transparent triage rules.  
-**Result:** 5.48% weighted CTR, 30.13% click-to-lead, 40.23% lead-to-conversion, $2.53 observed CAC, and 2.00x observed ROAS; recommendations remain review actions rather than automatic budget changes.
-
-### 3. [Product Funnel, Growth & Experimentation](ecommerce_growth_conversion_power_bi/)
-
-**Decision:** where does the product funnel lose users, and should a checkout change be rolled out?  
-**Evidence:** a five-page Power BI funnel model plus a 32,000-user synthetic randomised experiment with SRM, balance, 95% CI, p-value, MDE/power, guardrails, and subgroup cautions.  
-**Result:** treatment conversion increased from 5.28% to 6.06%; the pre-declared gates support a monitored staged rollout.
-
-## Supporting evidence
-
-| Project | Primary proof | Why it remains in the portfolio |
+| Project | Business Focus | Tools |
 |---|---|---|
-| [Commercial & CRM Operations](commercial_crm_excel_analytics/) | Excel formulas, pipeline logic, dashboarding | Demonstrates auditable spreadsheet analysis for sales and CRM decisions |
-| [Insurance Cost Drivers](insurance_risk_segmentation_sql/) | PostgreSQL, CTEs, windows, percentiles, QA | Demonstrates SQL depth and careful descriptive segmentation |
-| [Product Affinity Network](product_affinity_network_analysis/) | Python, basket transformation, network exports | Demonstrates an additional customer/product analytical technique |
-| [Australian Airline Performance](airline_performance_visual_analytics/) | R pipeline and Tableau | Demonstrates reproducible visual analytics on a public operational domain |
-| [Supervised Learning — Regression & Classification](supervised_learning_regression_classification_r/) | R, cross-validation, logistic regression, ROC/AUC | Demonstrates supporting statistical modelling and model-evaluation depth |
+| **[GA4 Customer Cohorts & Purchase Timing](ecommerce_customer_cohort_sql/)** | Analyse website return behaviour, customer cohorts, and purchase timing using observed user activity. | SQL / DuckDB |
+| **[Olist CRM Acquisition & Seller Analysis](commercial_crm_excel_analytics/)** | Examine lead acquisition sources, recorded sales outcomes, closing times, and seller activity. | Excel |
+| **[GA4 Acquisition & Conversion](ecommerce_growth_conversion_power_bi/)** | Explore website performance across acquisition channels and devices, including session and purchase activity. | Power BI |
+| **[Customer Lifecycle & Retention](ecommerce_customer_segmentation_rfm/)** | Analyse customer purchasing patterns, segmentation, and repeat purchase behaviour. | Python / pandas |
 
-Supporting projects add tool evidence; they are not presented as equally important flagship stories.
+The two GA4 projects use the same public dataset snapshot to examine different aspects of website and customer behaviour.
 
-## How the portfolio is evaluated
+The Power BI project also contains a separate synthetic checkout experiment.
 
-Every flagship contains:
+## Additional Projects
 
-1. a decision question;
-2. metric definitions and data-quality gates;
-3. reproducible analysis and inspectable outputs;
-4. findings connected to an action;
-5. limitations, causal boundaries, and a next test.
+| Project | Focus |
+|---|---|
+| [Marketing Campaign & Funnel Analysis](marketing_campaign_funnel_analysis/) | Campaign performance and marketing funnel metrics |
+| [Insurance Risk Segmentation](insurance_risk_segmentation_sql/) | Insurance cost patterns and SQL-based segmentation |
+| [Product Affinity Network](product_affinity_network_analysis/) | Product relationships and basket analysis |
+| [Australian Airline Performance](airline_performance_visual_analytics/) | Operational performance and data visualisation |
+| [Supervised Learning](supervised_learning_regression_classification_r/) | Regression, classification, and model evaluation |
 
-Dataset origin, disclosure, and redistribution scope are documented in [`DATA_SOURCES.md`](DATA_SOURCES.md).
+## Data Sources & Attribution
 
-## Reproduce the Python flagships
+Projects use public or synthetic datasets. Dataset origins and usage notes are available in [DATA_SOURCES.md](DATA_SOURCES.md).
 
-```bash
-python ecommerce_customer_segmentation_rfm/analysis/run_analysis.py
-python marketing_campaign_funnel_analysis/analysis/run_analysis.py
-python ecommerce_growth_conversion_power_bi/experiment/run_experiment.py
-python ecommerce_growth_conversion_power_bi/scripts/validate_dataset.py
-```
+Substantial AI assistance was used in project implementation and documentation. Analytical methods, results, and limitations should be interpreted within the scope described in each project.
 
-All paths are repository-relative. Canonical scripts use repository-relative paths and stop on failed validation gates.
-
-## Repository structure
-
-```text
-data-portfolio/
-├── ecommerce_customer_segmentation_rfm/       # flagship 1
-├── marketing_campaign_funnel_analysis/        # flagship 2
-├── ecommerce_growth_conversion_power_bi/      # flagship 3
-├── commercial_crm_excel_analytics/             # supporting Excel
-├── insurance_risk_segmentation_sql/            # supporting SQL
-├── product_affinity_network_analysis/           # supporting network analysis
-├── airline_performance_visual_analytics/        # supporting R/Tableau
-├── supervised_learning_regression_classification_r/ # supporting statistical modelling
-├── DATA_SOURCES.md
-└── LICENSE
-```
-
-## Scope
-
-Synthetic datasets are labelled explicitly. Third-party data retain their original terms and are not relicensed by this repository. Descriptive projects identify patterns and prioritise follow-up; only a randomised design can support an incremental causal claim.
+[License](LICENSE)
