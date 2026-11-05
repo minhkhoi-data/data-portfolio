@@ -1,4 +1,4 @@
-"""Load the supplied CSVs, execute the SQL, and write the weekly report."""
+"""Load the supplied CSVs, execute the SQL, and write both weekly reports."""
 import argparse
 import csv
 from pathlib import Path
@@ -17,9 +17,17 @@ def load_csv(connection, input_file, insert_statement, columns):
         )
 
 
+def run_query(connection, filename):
+    result = connection.execute((ROOT / "sql" / filename).read_text(encoding="utf-8"))
+    return [column[0] for column in result.description], result.fetchall()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("data_dir", type=Path, help="Folder with the three GA4 CSV inputs")
+    parser.add_argument(
+        "data_dir", nargs="?", type=Path, default=ROOT / "data" / "audited",
+        help="Folder with the three GA4 CSV inputs (default: bundled data/audited)",
+    )
     args = parser.parse_args()
 
     with sqlite3.connect(":memory:") as connection:
@@ -55,20 +63,24 @@ def main():
                 or checks["input_purchase_events"] != checks["matched_purchase_events"]):
             raise SystemExit("Data checks failed. The report was not updated.")
 
-        report = connection.execute((ROOT / "sql/weekly_report.sql").read_text())
-        columns = [column[0] for column in report.description]
-        rows = report.fetchall()
+        columns, rows = run_query(connection, "weekly_report.sql")
         if (sum(row["total_sessions"] for row in rows) != checks["input_sessions"]
                 or sum(row["sessions_with_purchase"] for row in rows)
                 != checks["sessions_flagged_with_purchase"]):
             raise SystemExit("Weekly totals do not reconcile. The report was not updated.")
 
-    output = ROOT / "results/weekly_kpis.csv"
-    with output.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
-        writer.writerow(columns)
-        writer.writerows(rows)
-    print(f"Wrote {len(rows)} weekly rows to {output}")
+        comparison_columns, comparison_rows = run_query(connection, "weekly_comparison.sql")
+
+    for filename, headings, records in (
+        ("weekly_kpis.csv", columns, rows),
+        ("weekly_comparison.csv", comparison_columns, comparison_rows),
+    ):
+        output = ROOT / "results" / filename
+        with output.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.writer(handle)
+            writer.writerow(headings)
+            writer.writerows(records)
+        print(f"Wrote {len(records)} weekly rows to {output}")
 
 
 if __name__ == "__main__":
