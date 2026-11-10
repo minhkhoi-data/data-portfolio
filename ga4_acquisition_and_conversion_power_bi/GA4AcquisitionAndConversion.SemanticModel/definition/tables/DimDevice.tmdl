@@ -1,0 +1,24 @@
+table DimDevice
+
+	column device_id
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: device_id
+
+	column device_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: device_category
+
+	partition DimDevice = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "/dim_device.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+						{"device_id", Int64.Type},
+						{"device_category", type text}
+					}, "en-US")
+				in
+					Typed

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "9653458fe7a3c5db1952",
+  "position": {
+    "x": 638,
+    "y": 467,
+    "width": 622,
+    "height": 268,
+    "z": 700,
+    "tabOrder": 700
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimDevice"
+                    }
+                  },
+                  "Property": "device_category"
+                }
+              },
+              "queryRef": "DimDevice.device_category",
+              "nativeQueryRef": "device_category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactSessions"
+                    }
+                  },
+                  "Property": "Session Conversion Rate"
+                }
+              },
+              "queryRef": "FactSessions.Session Conversion Rate",
+              "nativeQueryRef": "Session Conversion Rate"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactSessions"
+                    }
+                  },
+                  "Property": "Sessions"
+                }
+              },
+              "queryRef": "FactSessions.Sessions",
+              "nativeQueryRef": "Sessions"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactSessions"
+                    }
+                  },
+                  "Property": "Purchase Sessions"
+                }
+              },
+              "queryRef": "FactSessions.Purchase Sessions",
+              "nativeQueryRef": "Purchase Sessions"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "FactSessions"
+                  }
+                },
+                "Property": "Session Conversion Rate"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Conversion by device'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#163A70'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#163A70'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "FactSessions.Session Conversion Rate"
+          }
+        }
+      ]
+    }
+  }
+}

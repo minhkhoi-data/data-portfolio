@@ -1,0 +1,91 @@
+table FactSessions
+
+	measure 'Sessions' = COALESCE(COUNTROWS(FactSessions), 0)
+		formatString: #,##0
+
+	measure 'Purchase Sessions' = CALCULATE([Sessions], FactSessions[purchase] = 1)
+		formatString: #,##0
+
+	measure 'Session Conversion Rate' = DIVIDE([Purchase Sessions], [Sessions])
+		formatString: 0.00%
+
+	measure 'View to Cart Rate' = DIVIDE(SUM(FactSessions[ordered_add_to_cart]), SUM(FactSessions[ordered_view_item]))
+		formatString: 0.00%
+
+	measure 'Funnel Stage Sessions' =
+		SWITCH(
+		    SELECTEDVALUE(FunnelStage[Stage]),
+		    "Product View", SUM(FactSessions[ordered_view_item]),
+		    "Add to Cart", SUM(FactSessions[ordered_add_to_cart]),
+		    "Checkout", SUM(FactSessions[ordered_begin_checkout]),
+		    "Purchase", SUM(FactSessions[ordered_purchase])
+		)
+		formatString: #,##0
+
+	column session_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: session_id
+
+	column session_date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: session_date
+		formatString: yyyy-MM-dd
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column channel_id
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column device_id
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: device_id
+
+	column purchase
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: purchase
+
+	column ordered_view_item
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: ordered_view_item
+
+	column ordered_add_to_cart
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: ordered_add_to_cart
+
+	column ordered_begin_checkout
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: ordered_begin_checkout
+
+	column ordered_purchase
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: ordered_purchase
+
+	partition FactSessions = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "/fact_sessions.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+						{"session_id", type text},
+						{"session_date", type date},
+						{"channel_id", Int64.Type},
+						{"device_id", Int64.Type},
+						{"purchase", Int64.Type},
+						{"ordered_view_item", Int64.Type},
+						{"ordered_add_to_cart", Int64.Type},
+						{"ordered_begin_checkout", Int64.Type},
+						{"ordered_purchase", Int64.Type}
+					}, "en-US")
+				in
+					Typed

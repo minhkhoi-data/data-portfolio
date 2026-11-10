@@ -1,0 +1,25 @@
+table FunnelStage
+
+	column Stage
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Stage
+		sortByColumn: Sort
+
+	column Sort
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Sort
+
+	partition FunnelStage = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "/funnel_stage.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+						{"Stage", type text},
+						{"Sort", Int64.Type}
+					}, "en-US")
+				in
+					Typed

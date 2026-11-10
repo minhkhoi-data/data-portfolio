@@ -1,0 +1,48 @@
+table FactPurchases
+
+	measure 'Revenue' = SUM(FactPurchases[purchase_revenue_usd])
+		formatString: $#,##0.00
+
+	column purchase_key
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: purchase_key
+
+	column purchase_date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: purchase_date
+		formatString: yyyy-MM-dd
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column channel_id
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: channel_id
+
+	column device_id
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: device_id
+
+	column purchase_revenue_usd
+		dataType: decimal
+		summarizeBy: none
+		sourceColumn: purchase_revenue_usd
+
+	partition FactPurchases = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents(DataFolder & "/fact_purchases.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Headers, {
+						{"purchase_key", Int64.Type},
+						{"purchase_date", type date},
+						{"channel_id", Int64.Type},
+						{"device_id", Int64.Type},
+						{"purchase_revenue_usd", Currency.Type}
+					}, "en-US")
+				in
+					Typed

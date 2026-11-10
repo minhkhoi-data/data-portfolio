@@ -1,0 +1,41 @@
+relationship 0903896f-3ed8-555d-b3f0-0e1fa7cf5886
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactSessions.session_date
+	toColumn: DimDate.date
+
+relationship 21df1eeb-3ee2-5315-9ef2-0bf98e089901
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactSessions.channel_id
+	toColumn: DimChannel.channel_id
+
+relationship 03955936-47ad-5093-8c1e-18d57e1b1db1
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactSessions.device_id
+	toColumn: DimDevice.device_id
+
+relationship bceef16e-f53e-5ad8-8a50-5fd814c13790
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.purchase_date
+	toColumn: DimDate.date
+
+relationship b8366c9e-299b-5c65-ad13-8267b042ed8d
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.channel_id
+	toColumn: DimChannel.channel_id
+
+relationship 7d31fdc2-754e-52b4-86e1-192c29781bfa
+	fromCardinality: many
+	toCardinality: one
+	crossFilteringBehavior: oneDirection
+	fromColumn: FactPurchases.device_id
+	toColumn: DimDevice.device_id
